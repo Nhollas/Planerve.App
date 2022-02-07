@@ -1,0 +1,11 @@
+C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.Domain\bin\Release\net6.0\Planerve.App.Domain.deps.json
+C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.Domain\bin\Release\net6.0\Planerve.App.Domain.dll
+C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.Domain\bin\Release\net6.0\ref\Planerve.App.Domain.dll
+C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.Domain\bin\Release\net6.0\Planerve.App.Domain.pdb
+C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.Domain\obj\Release\net6.0\Planerve.App.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.Domain\obj\Release\net6.0\Planerve.App.Domain.AssemblyInfoInputs.cache
+C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.Domain\obj\Release\net6.0\Planerve.App.Domain.AssemblyInfo.cs
+C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.Domain\obj\Release\net6.0\Planerve.App.Domain.csproj.CoreCompileInputs.cache
+C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.Domain\obj\Release\net6.0\Planerve.App.Domain.dll
+C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.Domain\obj\Release\net6.0\ref\Planerve.App.Domain.dll
+C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.Domain\obj\Release\net6.0\Planerve.App.Domain.pdb

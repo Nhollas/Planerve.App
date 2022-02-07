@@ -1,0 +1,12 @@
+C:\Users\nicho\Documents\Github Projects\Planerve\planerve.domain\bin\Release\net6.0\Planerve.Domain.deps.json
+C:\Users\nicho\Documents\Github Projects\Planerve\planerve.domain\bin\Release\net6.0\Planerve.Domain.dll
+C:\Users\nicho\Documents\Github Projects\Planerve\planerve.domain\bin\Release\net6.0\ref\Planerve.Domain.dll
+C:\Users\nicho\Documents\Github Projects\Planerve\planerve.domain\bin\Release\net6.0\Planerve.Domain.pdb
+C:\Users\nicho\Documents\Github Projects\Planerve\planerve.domain\obj\Release\net6.0\Planerve.Domain.csproj.AssemblyReference.cache
+C:\Users\nicho\Documents\Github Projects\Planerve\planerve.domain\obj\Release\net6.0\Planerve.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nicho\Documents\Github Projects\Planerve\planerve.domain\obj\Release\net6.0\Planerve.Domain.AssemblyInfoInputs.cache
+C:\Users\nicho\Documents\Github Projects\Planerve\planerve.domain\obj\Release\net6.0\Planerve.Domain.AssemblyInfo.cs
+C:\Users\nicho\Documents\Github Projects\Planerve\planerve.domain\obj\Release\net6.0\Planerve.Domain.csproj.CoreCompileInputs.cache
+C:\Users\nicho\Documents\Github Projects\Planerve\planerve.domain\obj\Release\net6.0\Planerve.Domain.dll
+C:\Users\nicho\Documents\Github Projects\Planerve\planerve.domain\obj\Release\net6.0\ref\Planerve.Domain.dll
+C:\Users\nicho\Documents\Github Projects\Planerve\planerve.domain\obj\Release\net6.0\Planerve.Domain.pdb

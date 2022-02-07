@@ -1,0 +1,51 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "402bae14-7caa-4a01-8423-28a5e9c13bfe": {
+      "ProjectGuid": "402bae14-7caa-4a01-8423-28a5e9c13bfe",
+      "DisplayName": "Planerve.Persistence",
+      "ColorIndex": 0
+    },
+    "60782ca4-305e-49a4-a0e9-63866260667d": {
+      "ProjectGuid": "60782ca4-305e-49a4-a0e9-63866260667d",
+      "DisplayName": "Planerve.Core",
+      "ColorIndex": 1
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "6901098f-cab7-4075-8a67-3ee6519d7535": {
+      "ProjectGuid": "6901098f-cab7-4075-8a67-3ee6519d7535",
+      "DisplayName": "Planerve.API",
+      "ColorIndex": 2
+    },
+    "4adf13ca-3bac-40aa-bed6-ad59db08a54c": {
+      "ProjectGuid": "4adf13ca-3bac-40aa-bed6-ad59db08a54c",
+      "DisplayName": "Planerve.Domain",
+      "ColorIndex": 3
+    },
+    "2f03241c-9489-47c0-9e05-790b3b97a117": {
+      "ProjectGuid": "2f03241c-9489-47c0-9e05-790b3b97a117",
+      "DisplayName": "Planerve.App.Core",
+      "ColorIndex": 4
+    },
+    "cd948f54-6ec6-49ee-bf02-26aac827da3e": {
+      "ProjectGuid": "cd948f54-6ec6-49ee-bf02-26aac827da3e",
+      "DisplayName": "Planerve.App.Persistence",
+      "ColorIndex": 5
+    },
+    "18431e85-2683-4d6d-9fda-ba78f5649ae5": {
+      "ProjectGuid": "18431e85-2683-4d6d-9fda-ba78f5649ae5",
+      "DisplayName": "Planerve.App.Domain",
+      "ColorIndex": 6
+    },
+    "d8e4aacf-20be-4eed-a846-9f62a4f408f3": {
+      "ProjectGuid": "d8e4aacf-20be-4eed-a846-9f62a4f408f3",
+      "DisplayName": "Planerve.App.API",
+      "ColorIndex": 7
+    }
+  },
+  "NextColorIndex": 8
+}

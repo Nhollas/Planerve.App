@@ -1,0 +1,15 @@
+C:\Users\nicho\Documents\Github Projects\ApplicationPortal\ApplicationPortal.Core\bin\Debug\net6.0\ApplicationPortal.Core.deps.json
+C:\Users\nicho\Documents\Github Projects\ApplicationPortal\ApplicationPortal.Core\bin\Debug\net6.0\ApplicationPortal.Core.dll
+C:\Users\nicho\Documents\Github Projects\ApplicationPortal\ApplicationPortal.Core\bin\Debug\net6.0\ref\ApplicationPortal.Core.dll
+C:\Users\nicho\Documents\Github Projects\ApplicationPortal\ApplicationPortal.Core\bin\Debug\net6.0\ApplicationPortal.Core.pdb
+C:\Users\nicho\Documents\Github Projects\ApplicationPortal\ApplicationPortal.Core\bin\Debug\net6.0\ApplicationPortal.Domain.dll
+C:\Users\nicho\Documents\Github Projects\ApplicationPortal\ApplicationPortal.Core\bin\Debug\net6.0\ApplicationPortal.Domain.pdb
+C:\Users\nicho\Documents\Github Projects\ApplicationPortal\ApplicationPortal.Core\obj\Debug\net6.0\ApplicationPortal.Core.csproj.AssemblyReference.cache
+C:\Users\nicho\Documents\Github Projects\ApplicationPortal\ApplicationPortal.Core\obj\Debug\net6.0\ApplicationPortal.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nicho\Documents\Github Projects\ApplicationPortal\ApplicationPortal.Core\obj\Debug\net6.0\ApplicationPortal.Core.AssemblyInfoInputs.cache
+C:\Users\nicho\Documents\Github Projects\ApplicationPortal\ApplicationPortal.Core\obj\Debug\net6.0\ApplicationPortal.Core.AssemblyInfo.cs
+C:\Users\nicho\Documents\Github Projects\ApplicationPortal\ApplicationPortal.Core\obj\Debug\net6.0\ApplicationPortal.Core.csproj.CoreCompileInputs.cache
+C:\Users\nicho\Documents\Github Projects\ApplicationPortal\ApplicationPortal.Core\obj\Debug\net6.0\ApplicationPortal.Core.csproj.CopyComplete
+C:\Users\nicho\Documents\Github Projects\ApplicationPortal\ApplicationPortal.Core\obj\Debug\net6.0\ApplicationPortal.Core.dll
+C:\Users\nicho\Documents\Github Projects\ApplicationPortal\ApplicationPortal.Core\obj\Debug\net6.0\ref\ApplicationPortal.Core.dll
+C:\Users\nicho\Documents\Github Projects\ApplicationPortal\ApplicationPortal.Core\obj\Debug\net6.0\ApplicationPortal.Core.pdb
