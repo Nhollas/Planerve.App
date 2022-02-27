@@ -1,12 +1,13 @@
-﻿using Planerve.API.Utility;
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
+using Planerve.API.Utility;
 using Planerve.App.Core.Features.ApplicationData.Commands.CreateApplication;
 using Planerve.App.Core.Features.ApplicationData.Commands.DeleteApplication;
 using Planerve.App.Core.Features.ApplicationData.Queries.DownloadApplicationById;
 using Planerve.App.Core.Features.ApplicationData.Queries.GetApplicationById;
-using MediatR;
-using Microsoft.AspNetCore.Mvc;
+using Planerve.App.Core.Features.ApplicationData.Queries.GetApplicationList;
 
-namespace Planerve.API.Controllers;
+namespace Planerve.App.API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -28,9 +29,27 @@ public class ApplicationController : Controller
         return Ok(await _mediator.Send(applicationQuery));
     }
 
+    [HttpGet(Name = "GetApplicationList")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesDefaultResponseType]
+    public async Task<ActionResult<List<ApplicationListVm>>> GetAllApplications()
+    {
+        string LoggedInUser = User.Claims.FirstOrDefault(c => c.Type == "sub")?.Value;
+
+        LoggedInUser = "nigga";
+
+        var applicationListToGet = new GetApplicationListQuery { UserId = LoggedInUser };
+
+        var dtos = await _mediator.Send(applicationListToGet);
+        return Ok(dtos);
+    }
+
     [HttpPost("Create")]
     public async Task<ActionResult<Guid>> CreateApplication([FromBody] CreateApplicationCommand createAppDataCommand)
     {
+        var UserId = User.Claims.FirstOrDefault(c => c.Type == "sub")?.Value;
+        createAppDataCommand.OwnerId = UserId;
+
         var id = await _mediator.Send(createAppDataCommand);
 
         return Ok(id);

@@ -17,7 +17,7 @@ namespace Planerve.App.Persistence.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.1")
+                .HasAnnotation("ProductVersion", "6.0.2")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -28,6 +28,9 @@ namespace Planerve.App.Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("ApplicationName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ApplicationReference")
                         .HasColumnType("nvarchar(max)");
 
@@ -35,6 +38,9 @@ namespace Planerve.App.Persistence.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("FullAddress")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OwnerId")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

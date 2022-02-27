@@ -4,6 +4,8 @@ using System.Threading.Tasks;
 using System.Linq;
 using Planerve.App.Domain.Entities.ApplicationEntities;
 using Microsoft.EntityFrameworkCore;
+using Planerve.App.Core.Features.ApplicationData.Queries.GetApplicationList;
+using System.Collections.Generic;
 
 namespace Planerve.App.Persistence.Repositories
 {
@@ -31,6 +33,20 @@ namespace Planerve.App.Persistence.Repositories
                 .FirstAsync(o => o.Id == id);
 
             return application;
+        }
+
+        public async Task<List<Application>> GetApplicationList(string id)
+        {
+            var applicationList = await DbContext.Application
+                .Include(n => n.ApplicationTypeOne)
+                .Include(n => n.ApplicationTypeTwo)
+                .Include(n => n.SiteApiData)
+                    .ThenInclude(x => x.result)
+                    .ThenInclude(x => x.codes)
+                .Where(x => x.OwnerId == id)
+                .ToListAsync();
+
+            return applicationList;
         }
     }
 }

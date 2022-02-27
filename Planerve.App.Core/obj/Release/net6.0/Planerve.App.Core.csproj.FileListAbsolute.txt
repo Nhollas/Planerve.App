@@ -1,6 +1,5 @@
 C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.Core\bin\Release\net6.0\Planerve.App.Core.deps.json
 C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.Core\bin\Release\net6.0\Planerve.App.Core.dll
-C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.Core\bin\Release\net6.0\ref\Planerve.App.Core.dll
 C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.Core\bin\Release\net6.0\Planerve.App.Core.pdb
 C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.Core\bin\Release\net6.0\Planerve.App.Domain.dll
 C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.Core\bin\Release\net6.0\Planerve.App.Domain.pdb
@@ -13,3 +12,4 @@ C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.Core\obj\Rele
 C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.Core\obj\Release\net6.0\Planerve.App.Core.dll
 C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.Core\obj\Release\net6.0\ref\Planerve.App.Core.dll
 C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.Core\obj\Release\net6.0\Planerve.App.Core.pdb
+C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.Core\obj\Release\net6.0\refint\Planerve.App.Core.dll

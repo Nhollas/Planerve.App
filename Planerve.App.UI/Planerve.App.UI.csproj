@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+    <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+	    <Nullable>enable</Nullable>
+	    <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="11.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="6.0.2" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.15.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+    <Folder Include="wwwroot\css\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Planerve.App.Core\Planerve.App.Core.csproj" />
+      <ProjectReference Include="..\Planerve.App.Domain\Planerve.App.Domain.csproj" />
+      <ProjectReference Include="..\Planerve.App.Identity\Planerve.App.Identity.csproj" />
+      <ProjectReference Include="..\Planerve.App.Persistence\Planerve.App.Persistence.csproj" />
+    </ItemGroup>
+</Project>

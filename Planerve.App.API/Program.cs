@@ -1,34 +1,43 @@
-using Planerve.API.Utility;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.OpenApi.Models;
 using Planerve.App.Core;
+using Planerve.App.Identity;
 using Planerve.App.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
+var config = builder.Configuration;
 
 // CLIENT SERVICES
 builder.Services.AddApplicationServices();
 builder.Services.AddPersistenceServices();
+builder.Services.AddIdentityServices();
 
 builder.Services.AddDbContext<PlanerveDbContext>(options =>
        options.UseSqlServer(builder.Configuration.GetConnectionString("PlanerveConnectionString")));
 
-//DATA SERVICES
 
-builder.Services.AddMvc().AddControllersAsServices();
-builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(c =>
-{
-    c.SwaggerDoc("v1", new OpenApiInfo
+builder.Services.AddAuthentication(options => {
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;})
+    .AddJwtBearer("Bearer", options =>
     {
-        Version = "V1",
-        Title = "Planerve API",
-
+        options.Authority = "https://localhost:7001";
+        options.TokenValidationParameters.ValidateAudience = false;
     });
 
-    c.OperationFilter<FileResultContentTypeOperationFilter>();
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("ApiScope", policy =>
+    {
+        policy.RequireAuthenticatedUser();
+        policy.RequireClaim("scope", "planerveappapi");
+    });
 });
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("Open", builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
@@ -43,9 +52,18 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseAuthentication();
+
 app.UseHttpsRedirection();
+app.UseStaticFiles();
 app.UseRouting();
+app.UseAuthorization();
 app.MapControllers();
 app.UseCors("Open");
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers().RequireAuthorization("ApiScope");
+});
 
 app.Run();

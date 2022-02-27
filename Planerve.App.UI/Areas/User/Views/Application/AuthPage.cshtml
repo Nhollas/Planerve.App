@@ -1,0 +1,35 @@
+﻿@using Microsoft.AspNetCore.Authentication
+
+@{
+    Layout = "_AuthenticatedLayout";
+    ViewBag.Title = "Auth Page";
+}
+
+<section class="flex flex-col w-full justify-center items-center mt-12">
+                <h1 class="text-3xl font-poppins font-semibold mb-8 flex justify-self-start text-white max-w-6xl w-full">
+               Auth Page
+            </h1>
+    <div class="w-full max-w-6xl flex flex-col bg-[#FEFFFF] md:min-h-[75vh] md:p-16 relative border-[1px] border-gray-200">
+        <div class="flex flex-col px-8 py-24 gap-y-6 w-full md:py-0 md:px-0">
+            <h2>Claims</h2>
+
+            <dl>
+                @foreach (var claim in User.Claims)
+                {
+                    <dt>@claim.Type</dt>
+                    <dd>@claim.Value</dd>
+                }
+            </dl>
+
+            <h2>Properties</h2>
+
+            <dl class="w-full">
+                @foreach (var prop in @ViewBag.AuthProps)
+                {
+                    <dt class="font-bold">@prop.Key</dt>
+                    <dd>@prop.Value</dd>
+                }
+            </dl>
+        </div>
+    </div>
+</section>

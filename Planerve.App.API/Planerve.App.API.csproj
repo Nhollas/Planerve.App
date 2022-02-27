@@ -4,18 +4,20 @@
         <TargetFramework>net6.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
+        <UserSecretsId>9ef73fbb-a76d-4ebb-9b5f-6ba50e2c987a</UserSecretsId>
     </PropertyGroup>
 
     <ItemGroup>
         <PackageReference Include="DinkToPdf" Version="1.0.8" />
         <PackageReference Include="MediatR" Version="10.0.1" />
         <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.1">
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="6.0.2" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.2" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.2">
             <PrivateAssets>all</PrivateAssets>
-            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
         <PackageReference Include="Serilog" Version="2.10.0" />
-        <PackageReference Include="Serilog.AspNetCore" Version="4.1.0" />
+        <PackageReference Include="Serilog.AspNetCore" Version="5.0.0" />
         <PackageReference Include="Serilog.Extensions.Logging" Version="3.1.0" />
         <PackageReference Include="Serilog.Settings.Configuration" Version="3.3.0" />
         <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
@@ -25,6 +27,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Planerve.App.Core\Planerve.App.Core.csproj" />
+      <ProjectReference Include="..\Planerve.App.Identity\Planerve.App.Identity.csproj" />
       <ProjectReference Include="..\Planerve.App.Persistence\Planerve.App.Persistence.csproj" />
     </ItemGroup>
 
