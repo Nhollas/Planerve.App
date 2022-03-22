@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Planerve.App.UI.Contracts;
+using Planerve.App.UI.ViewModels.ApplicationVMs;
 
 namespace Planerve.App.UI.Areas.User.Controllers;
 
@@ -35,14 +36,5 @@ public class ApplicationController : Controller
         ViewBag.AuthProps = items;
 
         return View();
-    }
-
-
-    [HttpGet]
-    public async Task<IActionResult> ApplicationId(Guid Id)
-    {
-        var applicationToGet = await _applicationService.GetApplicationById(Id);
-
-        return View(applicationToGet);
     }
 }

@@ -45,6 +45,7 @@ internal static class HostingExtensions
                 options.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
                 options.SignOutScheme = IdentityServerConstants.SignoutScheme;
                 options.SaveTokens = true;
+               
 
                 options.Authority = "https://demo.duendesoftware.com";
                 options.ClientId = "planerveappui";

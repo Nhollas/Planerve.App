@@ -2,7 +2,7 @@ module.exports = {
   content: [
     // Example content paths...
     "./Areas/*/Views/*/*.cshtml",
-    "./Views/Shared/_Layout.cshtml",
+    "./Views/Shared/_*.cshtml",
   ],
   theme: {
     extend: {

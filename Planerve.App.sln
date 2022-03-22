@@ -27,7 +27,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{4F
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Planerve.App.Identity", "Planerve.App.Identity\Planerve.App.Identity.csproj", "{52E69BB6-C0C1-4F2F-9CB4-98FA6A6846DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planerve.App.UI", "Planerve.App.UI\Planerve.App.UI.csproj", "{82E4C89C-5BC8-459A-852D-8E24D68558A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Planerve.App.UI", "Planerve.App.UI\Planerve.App.UI.csproj", "{82E4C89C-5BC8-459A-852D-8E24D68558A8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

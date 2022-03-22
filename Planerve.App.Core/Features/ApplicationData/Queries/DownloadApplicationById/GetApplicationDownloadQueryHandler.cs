@@ -1,12 +1,15 @@
-﻿using Planerve.App.Core.Contracts.Persistence;
-using Planerve.App.Core.Exceptions;
-using Planerve.App.Domain.Entities.ApplicationEntities;
-using AutoMapper;
+﻿using AutoMapper;
 using Kevsoft.PDFtk;
 using MediatR;
+using Planerve.App.Core.Contracts.Identity;
+using Planerve.App.Core.Contracts.Persistence;
+using Planerve.App.Core.Contracts.Specification.ApplicationData;
+using Planerve.App.Core.Exceptions;
+using Planerve.App.Domain.Entities.ApplicationEntities;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -14,29 +17,48 @@ namespace Planerve.App.Core.Features.ApplicationData.Queries.DownloadApplication
 
 public class GetApplicationDownloadQueryHandler : IRequestHandler<GetApplicationDownloadQuery, DownloadExportFileVm>
 {
-    private readonly IApplicationDataRepository _applicationDataRepository;
+    private readonly IAsyncRepository<Application> _repository;
     private readonly IPDFtk _pdFtk;
     private readonly IMapper _mapper;
+    private readonly ILoggedInUserService _loggedInUserService;
 
-    public GetApplicationDownloadQueryHandler(IPDFtk pdFtk, IMapper mapper, IApplicationDataRepository appDataRepository)
+    public GetApplicationDownloadQueryHandler(IPDFtk pdFtk, IMapper mapper, IAsyncRepository<Application> repository, ILoggedInUserService loggedInUserService)
     {
         _pdFtk = pdFtk;
         _mapper = mapper;
-        _applicationDataRepository = appDataRepository;
-
+        _repository = repository;
+        _loggedInUserService = loggedInUserService;
     }
 
     public async Task<DownloadExportFileVm> Handle(GetApplicationDownloadQuery request, CancellationToken cancellationToken)
     {
-        var application = await _applicationDataRepository.GetApplicationById(request.Id);
+        // Grab userId from API user service.
+        var userId = _loggedInUserService.UserId;
 
-        if (application == null)
+        // Get application by id and check that current user is the owner.
+        var specification = new GetApplicationByIdSpecification(request.Id, userId);
+
+        var applicationEntity = _repository.FindWithSpecificationPattern(specification);
+
+        if (!applicationEntity.Any())
         {
             throw new NotFoundException(nameof(Application), request.Id);
         }
 
-        var download = await GenerateDownload(application, cancellationToken);
-        
+        var selectedApplication = applicationEntity.First();
+
+        if (!selectedApplication.AuthorisedUsers.Any(x => x.UserId == userId))
+        {
+            throw new NotAuthorisedException(nameof(Application), userId);
+        }
+
+        if (selectedApplication.FormData is null)
+        {
+            throw new NotFoundException("This application has no form data", request.Id);
+        }
+
+        var download = await GenerateDownload(selectedApplication, cancellationToken);
+
         var applicationExportFileDto = new DownloadExportFileVm() { ContentType = "application/pdf", Data = download, ApplicationExportFileName = $"{Guid.NewGuid()}.pdf" };
 
         return applicationExportFileDto;
@@ -49,37 +71,37 @@ public class GetApplicationDownloadQueryHandler : IRequestHandler<GetApplication
             case 1:
                 var templateDictionary = new Dictionary<string, string>()
                 {
-                    ["1Text1"] = model.ApplicationTypeOne.OneTextOne,
-                    ["1Text2"] = model.ApplicationTypeOne.OneTextTwo,
-                    ["1Text3"] = model.ApplicationTypeOne.OneTextThree,
-                    ["1Text4"] = model.ApplicationTypeOne.OneTextFour,
-                    ["1Text5"] = model.ApplicationTypeOne.OneTextFive,
-                    ["1Text6"] = model.ApplicationTypeOne.OneTextSix,
-                    ["1Text7"] = model.ApplicationTypeOne.OneTextSeven,
-                    ["1Text8"] = model.ApplicationTypeOne.OneTextEight,
-                    ["1Text9"] = model.ApplicationTypeOne.OneTextNine,
-                    ["1Text10"] = model.ApplicationTypeOne.OneTextTen,
-                    ["1Text11"] = model.ApplicationTypeOne.OneTextEleven,
-                    ["1Text12"] = model.ApplicationTypeOne.OneTextTwelve,
-                    ["1Text13"] = model.ApplicationTypeOne.OneTextThirteen,
-                    ["1Text14"] = model.ApplicationTypeOne.OneTextFourteen,
-                    ["1Text15"] = model.ApplicationTypeOne.OneTextFithteen,
+                    ["1Text1"] = model.FormData.FormTypeOneData.OneTextOne,
+                    ["1Text2"] = model.FormData.FormTypeOneData.OneTextTwo,
+                    ["1Text3"] = model.FormData.FormTypeOneData.OneTextThree,
+                    ["1Text4"] = model.FormData.FormTypeOneData.OneTextFour,
+                    ["1Text5"] = model.FormData.FormTypeOneData.OneTextFive,
+                    ["1Text6"] = model.FormData.FormTypeOneData.OneTextSix,
+                    ["1Text7"] = model.FormData.FormTypeOneData.OneTextSeven,
+                    ["1Text8"] = model.FormData.FormTypeOneData.OneTextEight,
+                    ["1Text9"] = model.FormData.FormTypeOneData.OneTextNine,
+                    ["1Text10"] = model.FormData.FormTypeOneData.OneTextTen,
+                    ["1Text11"] = model.FormData.FormTypeOneData.OneTextEleven,
+                    ["1Text12"] = model.FormData.FormTypeOneData.OneTextTwelve,
+                    ["1Text13"] = model.FormData.FormTypeOneData.OneTextThirteen,
+                    ["1Text14"] = model.FormData.FormTypeOneData.OneTextFourteen,
+                    ["1Text15"] = model.FormData.FormTypeOneData.OneTextFithteen,
 
-                    ["2Text1"] = model.ApplicationTypeOne.TwoTextOne,
-                    ["2Text2"] = model.ApplicationTypeOne.TwoTextTwo,
-                    ["2Text3"] = model.ApplicationTypeOne.TwoTextThree,
-                    ["2Text4"] = model.ApplicationTypeOne.TwoTextFour,
-                    ["2Text5"] = model.ApplicationTypeOne.TwoTextFive,
-                    ["2Text6"] = model.ApplicationTypeOne.TwoTextSix,
-                    ["2Text7"] = model.ApplicationTypeOne.TwoTextSeven,
-                    ["2Text8"] = model.ApplicationTypeOne.TwoTextEight,
-                    ["2Text9"] = model.ApplicationTypeOne.TwoTextNine,
-                    ["2Text10"] = model.ApplicationTypeOne.TwoTextTen,
-                    ["2Text11"] = model.ApplicationTypeOne.TwoTextEleven,
-                    ["2Text12"] = model.ApplicationTypeOne.TwoTextTwelve,
-                    ["2Text13"] = model.ApplicationTypeOne.TwoTextThirteen,
-                    ["2Text14"] = model.ApplicationTypeOne.TwoTextFourteen,
-                    ["2Text15"] = model.ApplicationTypeOne.TwoTextFithteen,
+                    ["2Text1"] = model.FormData.FormTypeOneData.TwoTextOne,
+                    ["2Text2"] = model.FormData.FormTypeOneData.TwoTextTwo,
+                    ["2Text3"] = model.FormData.FormTypeOneData.TwoTextThree,
+                    ["2Text4"] = model.FormData.FormTypeOneData.TwoTextFour,
+                    ["2Text5"] = model.FormData.FormTypeOneData.TwoTextFive,
+                    ["2Text6"] = model.FormData.FormTypeOneData.TwoTextSix,
+                    ["2Text7"] = model.FormData.FormTypeOneData.TwoTextSeven,
+                    ["2Text8"] = model.FormData.FormTypeOneData.TwoTextEight,
+                    ["2Text9"] = model.FormData.FormTypeOneData.TwoTextNine,
+                    ["2Text10"] = model.FormData.FormTypeOneData.TwoTextTen,
+                    ["2Text11"] = model.FormData.FormTypeOneData.TwoTextEleven,
+                    ["2Text12"] = model.FormData.FormTypeOneData.TwoTextTwelve,
+                    ["2Text13"] = model.FormData.FormTypeOneData.TwoTextThirteen,
+                    ["2Text14"] = model.FormData.FormTypeOneData.TwoTextFourteen,
+                    ["2Text15"] = model.FormData.FormTypeOneData.TwoTextFithteen,
                 };
                 var pdfFile = await File.ReadAllBytesAsync("FormTemplates/ApplicationTypeOne.pdf", cancellationToken);
 

@@ -6,6 +6,7 @@ using Planerve.App.Core.Features.ApplicationData.Commands.DeleteApplication;
 using Planerve.App.Core.Features.ApplicationData.Queries.DownloadApplicationById;
 using Planerve.App.Core.Features.ApplicationData.Queries.GetApplicationById;
 using Planerve.App.Core.Features.ApplicationData.Queries.GetApplicationList;
+using System.Security.Claims;
 
 namespace Planerve.App.API.Controllers;
 
@@ -23,33 +24,25 @@ public class ApplicationController : Controller
     [HttpGet("Get/{id:guid}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesDefaultResponseType]
-    public async Task<ActionResult<ApplicationDetailVm>> GetApplicationById(Guid id)
+    public async Task<ActionResult<ApplicationDetailVm>> GetById(Guid id)
     {
         var applicationQuery = new GetApplicationDetailQuery { Id = id };
         return Ok(await _mediator.Send(applicationQuery));
     }
-
-    [HttpGet(Name = "GetApplicationList")]
+    [HttpGet("List")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesDefaultResponseType]
-    public async Task<ActionResult<List<ApplicationListVm>>> GetAllApplications()
+    public async Task<ActionResult<List<ApplicationListVm>>> GetAll()
     {
-        string LoggedInUser = User.Claims.FirstOrDefault(c => c.Type == "sub")?.Value;
-
-        LoggedInUser = "nigga";
-
-        var applicationListToGet = new GetApplicationListQuery { UserId = LoggedInUser };
+        var applicationListToGet = new GetApplicationListQuery { };
 
         var dtos = await _mediator.Send(applicationListToGet);
         return Ok(dtos);
     }
 
     [HttpPost("Create")]
-    public async Task<ActionResult<Guid>> CreateApplication([FromBody] CreateApplicationCommand createAppDataCommand)
+    public async Task<ActionResult<Guid>> Create([FromBody] CreateApplicationCommand createAppDataCommand)
     {
-        var UserId = User.Claims.FirstOrDefault(c => c.Type == "sub")?.Value;
-        createAppDataCommand.OwnerId = UserId;
-
         var id = await _mediator.Send(createAppDataCommand);
 
         return Ok(id);
@@ -59,15 +52,16 @@ public class ApplicationController : Controller
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesDefaultResponseType]
-    public async Task<ActionResult> DeleteApplication(Guid id)
+    public async Task<ActionResult> Delete(Guid id)
     {
-        var deleteAppDataCommand = new DeleteApplicationCommand { ApplicationId = id };
+        var deleteAppDataCommand = new DeleteApplicationCommand { Id = id };
         await _mediator.Send(deleteAppDataCommand);
         return NoContent();
     }
     [FileResultContentType("application/pdf")]
     [HttpGet("Download/{id:guid}")]
-    public async Task<FileResult> DownloadApplication(Guid id)
+    [ProducesDefaultResponseType]
+    public async Task<FileResult> Download(Guid id)
     {
         var applicationToDownload = new GetApplicationDownloadQuery { Id = id };
         var downloadDto = await _mediator.Send(applicationToDownload);

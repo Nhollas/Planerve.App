@@ -1,12 +1,7 @@
-using IdentityModel.Client;
-using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Planerve.App.UI.Contracts;
-using Planerve.App.UI.ViewModels;
 using Planerve.App.UI.ViewModels.AccountVMs;
-using System.Net.Http.Headers;
-using System.Text.Json;
 
 namespace Planerve.App.UI.Areas.User.Controllers;
 
@@ -51,31 +46,4 @@ public class AccountController : Controller
     {
         return SignOut("Cookies", "oidc");
     }
-
-    public async Task<IActionResult> CallApi()
-    {
-        var accessToken = await HttpContext.GetTokenAsync("access_token");
-
-        var httpClient = _httpClientFactory.CreateClient("APIClient");
-
-        httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-
-        httpClient.SetBearerToken(accessToken);
-
-        var response = await httpClient.GetAsync("/api/Identity/testapi");
-
-        var content = await response.Content.ReadAsStringAsync();
-
-
-        var parsed = JsonDocument.Parse(content);
-        var formatted = JsonSerializer.Serialize(parsed, new JsonSerializerOptions { WriteIndented = true });
-
-
-        CallApiViewModel model = new CallApiViewModel();
-
-        model.Json = formatted;
-
-        return View(model);
-    }
-
 }

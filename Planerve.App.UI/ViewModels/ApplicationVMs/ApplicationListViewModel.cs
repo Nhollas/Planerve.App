@@ -1,30 +1,24 @@
 ﻿using Planerve.App.UI.Services.Base;
-using System.ComponentModel.DataAnnotations;
 
 namespace Planerve.App.UI.ViewModels.ApplicationVMs
 {
     public class ApplicationListViewModel
     {
-        public string? ApplicationReference { get; set; }
-
-        [Required(ErrorMessage = "An application name is required.")]
-        [Display(Name = "Application Name")]
-        public string? ApplicationName { get; set; }
-        public string? OwnerId { get; set; }
-
-        [Required(ErrorMessage = "An address is required.")]
-        [Display(Name = "Address Line 1")]
-        public string? AddressLineOne { get; set; }
-        [Display(Name = "Address Line 2")]
-        public string? AddressLineTwo { get; set; }
-        [Display(Name = "Address Line 3")]
-        public string? AddressLineThree { get; set; }
-        public string? FullAddress { get; set; }
-        [Required(ErrorMessage = "An application type is required.")]
-        [Display(Name = "Application Type")]
+        public Guid Id { get; set; }
+        public string ApplicationReference { get; set; }
+        public string ApplicationName { get; set; }
+        public string OwnerId { get; set; }
+        public string VersionNumber { get; set; }
+        public string AddressLineOne { get; set; }
+        public string AddressLineTwo { get; set; }
+        public string AddressLineThree { get; set; }
+        public string FullAddress { get; set; }
         public int ApplicationType { get; set; }
-        public SiteApiData? SiteApiData { get; set; }
-        public ApplicationTypeOne? ApplicationTypeOne { get; set; }
-        public ApplicationTypeTwo? ApplicationTypeTwo { get; set; }
+        public string Postcode { get; set; }
+        public string LocalAuthority { get; set; }
+        public DateTime Created { get; set; }
+        public DateTime LastUpdated { get; set; }
+        public FormTypeOne FormTypeOne { get; set; }
+        public FormTypeTwo FormTypeTwo { get; set; }
     }
 }

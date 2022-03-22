@@ -1,6 +1,10 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
+using Planerve.App.API.Services;
 using Planerve.App.Core;
+using Planerve.App.Core.Contracts.Identity;
+using Planerve.App.Core.Contracts.Persistence;
 using Planerve.App.Identity;
 using Planerve.App.Persistence;
 
@@ -15,11 +19,16 @@ builder.Services.AddIdentityServices();
 builder.Services.AddDbContext<PlanerveDbContext>(options =>
        options.UseSqlServer(builder.Configuration.GetConnectionString("PlanerveConnectionString")));
 
+builder.Services.AddScoped<ILoggedInUserService, LoggedInUserService>();
+builder.Services.AddScoped<IPostcodeService, PostcodeService>();
 
-builder.Services.AddAuthentication(options => {
+
+builder.Services.AddAuthentication(options =>
+{
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
     options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;})
+    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+})
     .AddJwtBearer("Bearer", options =>
     {
         options.Authority = "https://localhost:7001";
@@ -36,7 +45,35 @@ builder.Services.AddAuthorization(options =>
 });
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "PlanerveApp API", Version = "v1" });
+
+    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
+    {
+        Name = "Authorization",
+        Type = SecuritySchemeType.ApiKey,
+        Scheme = "Bearer",
+        BearerFormat = "JWT",
+        In = ParameterLocation.Header,
+        Description = "JWT Authorization header using the Bearer scheme."
+
+    });
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+                new OpenApiSecurityScheme
+                {
+                    Reference = new OpenApiReference
+                    {
+                        Type = ReferenceType.SecurityScheme,
+                        Id = "Bearer"
+                    }
+                },
+                new string[] {}
+        }
+    });
+});
 
 builder.Services.AddCors(options =>
 {

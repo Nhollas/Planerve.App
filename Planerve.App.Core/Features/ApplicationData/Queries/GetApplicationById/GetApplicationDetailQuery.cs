@@ -1,5 +1,4 @@
-﻿using Planerve.App.Domain.Entities.ApplicationEntities;
-using MediatR;
+﻿using MediatR;
 using System;
 
 namespace Planerve.App.Core.Features.ApplicationData.Queries.GetApplicationById;

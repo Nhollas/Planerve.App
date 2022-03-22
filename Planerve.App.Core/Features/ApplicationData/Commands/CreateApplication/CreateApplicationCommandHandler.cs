@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
+using Planerve.App.Core.Contracts.Identity;
 using Planerve.App.Core.Contracts.Persistence;
 using Planerve.App.Core.Exceptions;
 using Planerve.App.Domain.Entities.ApplicationEntities;
@@ -11,36 +12,57 @@ namespace Planerve.App.Core.Features.ApplicationData.Commands.CreateApplication;
 
 public class CreateApplicationCommandHandler : IRequestHandler<CreateApplicationCommand, Guid>
 {
-    private readonly IApplicationDataRepository _appDataRepository;
+    private readonly IAsyncRepository<Application> _repository;
+    private readonly IPostcodeService _postcodeService;
     private readonly IMapper _mapper;
+    private readonly ILoggedInUserService _loggedInUserService;
+    private readonly IApplicationDataRepository _applicationDataRepository;
 
 
-    public CreateApplicationCommandHandler(IMapper mapper, IApplicationDataRepository appDataRepository)
+    public CreateApplicationCommandHandler(IMapper mapper, IAsyncRepository<Application> repository, ILoggedInUserService loggedInUserService, IApplicationDataRepository applicationDataRepository, IPostcodeService postcodeService)
     {
         _mapper = mapper;
-        _appDataRepository = appDataRepository;
+        _repository = repository;
+        _loggedInUserService = loggedInUserService;
+        _applicationDataRepository = applicationDataRepository;
+        _postcodeService = postcodeService;
     }
 
     public async Task<Guid> Handle(CreateApplicationCommand request, CancellationToken cancellationToken)
     {
-        var modifiedRequest = GenerateDefaultData(request, cancellationToken);
+        // Grab userId from API user service.
+        var userId = _loggedInUserService.UserId;
 
-        var validator = new CreateApplicationCommandValidator(_appDataRepository);
-        var validationResult = await validator.ValidateAsync(modifiedRequest.Result, cancellationToken);
+        // Grab application address from API address service
+        var addressInfo = await _postcodeService.ValidatePostcode(request.Address.Postcode);
+
+        if (addressInfo == null) throw new NotFoundException(nameof(AddressDto), $"The postcode {request.Address.Postcode} is not valid.");
+
+        request.Address.LocalAuthority = addressInfo.result.nuts;
+        request.OwnerId = userId;
+
+        var modifiedRequest = GenerateDefaultData(request).Result;
+
+        var validator = new CreateApplicationCommandValidator(_applicationDataRepository);
+        var validationResult = await validator.ValidateAsync(modifiedRequest, cancellationToken);
 
         if (validationResult.Errors.Count > 0)
             throw new ValidationException(validationResult);
 
-        var application = _mapper.Map<Application>(request);
+        var application = _mapper.Map<Application>(modifiedRequest);
 
-        application = await _appDataRepository.AddAsync(application);
+        application = await _repository.AddAsync(application);
 
         return application.Id;
     }
 
-    private Task<CreateApplicationCommand> GenerateDefaultData(CreateApplicationCommand model, CancellationToken cancellationToken)
+    private static Task<CreateApplicationCommand> GenerateDefaultData(CreateApplicationCommand model)
     {
         var appReference = GenerateAppReference();
+
+        model.Created = DateTime.Now;
+        model.VersionNumber = "V1";
+        model.AuthorisedUsers[0].UserId = model.OwnerId;
 
         model.ApplicationReference = appReference.Result;
 

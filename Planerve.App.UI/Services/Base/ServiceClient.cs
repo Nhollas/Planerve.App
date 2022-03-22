@@ -687,38 +687,14 @@ namespace Planerve.App.UI.Services.Base
         [System.Text.Json.Serialization.JsonPropertyName("applicationReference")]
         public string? ApplicationReference { get; set; } = default!;
 
-        [System.Text.Json.Serialization.JsonPropertyName("fullAddress")]
-        public string? FullAddress { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("applicationType")]
-        public int ApplicationType { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("siteApiData")]
-        public SiteApiData SiteApiData { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("applicationTypeOne")]
-        public ApplicationTypeOne ApplicationTypeOne { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("applicationTypeTwo")]
-        public ApplicationTypeTwo ApplicationTypeTwo { get; set; } = default!;
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class ApplicationListVm
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("applicationId")]
-        public System.Guid ApplicationId { get; set; } = default!;
-
         [System.Text.Json.Serialization.JsonPropertyName("applicationName")]
         public string? ApplicationName { get; set; } = default!;
 
-        [System.Text.Json.Serialization.JsonPropertyName("applicationReference")]
-        public string? ApplicationReference { get; set; } = default!;
-
         [System.Text.Json.Serialization.JsonPropertyName("ownerId")]
         public string? OwnerId { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("versionNumber")]
+        public string? VersionNumber { get; set; } = default!;
 
         [System.Text.Json.Serialization.JsonPropertyName("addressLineOne")]
         public string? AddressLineOne { get; set; } = default!;
@@ -735,257 +711,71 @@ namespace Planerve.App.UI.Services.Base
         [System.Text.Json.Serialization.JsonPropertyName("applicationType")]
         public int ApplicationType { get; set; } = default!;
 
-        [System.Text.Json.Serialization.JsonPropertyName("siteApiData")]
-        public SiteApiData SiteApiData { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("postcode")]
+        public string? Postcode { get; set; } = default!;
 
-        [System.Text.Json.Serialization.JsonPropertyName("applicationTypeOne")]
-        public ApplicationTypeOne ApplicationTypeOne { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("localAuthority")]
+        public string? LocalAuthority { get; set; } = default!;
 
-        [System.Text.Json.Serialization.JsonPropertyName("applicationTypeTwo")]
-        public ApplicationTypeTwo ApplicationTypeTwo { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("created")]
+        public System.DateTime Created { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("lastUpdated")]
+        public System.DateTime LastUpdated { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("formTypeOne")]
+        public FormTypeOne FormTypeOne { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("formTypeTwo")]
+        public FormTypeTwo FormTypeTwo { get; set; } = default!;
 
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class ApplicationTypeOne
+    public partial class ApplicationListVm
     {
 
         [System.Text.Json.Serialization.JsonPropertyName("id")]
         public System.Guid Id { get; set; } = default!;
 
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextOne")]
-        public string? OneTextOne { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("applicationReference")]
+        public string? ApplicationReference { get; set; } = default!;
 
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextTwo")]
-        public string? OneTextTwo { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("applicationName")]
+        public string? ApplicationName { get; set; } = default!;
 
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextThree")]
-        public string? OneTextThree { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("ownerId")]
+        public string? OwnerId { get; set; } = default!;
 
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextFour")]
-        public string? OneTextFour { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("versionNumber")]
+        public string? VersionNumber { get; set; } = default!;
 
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextFive")]
-        public string? OneTextFive { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("addressLineOne")]
+        public string? AddressLineOne { get; set; } = default!;
 
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextSix")]
-        public string? OneTextSix { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("addressLineTwo")]
+        public string? AddressLineTwo { get; set; } = default!;
 
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextSeven")]
-        public string? OneTextSeven { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("addressLineThree")]
+        public string? AddressLineThree { get; set; } = default!;
 
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextEight")]
-        public string? OneTextEight { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("fullAddress")]
+        public string? FullAddress { get; set; } = default!;
 
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextNine")]
-        public string? OneTextNine { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("applicationType")]
+        public int ApplicationType { get; set; } = default!;
 
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextTen")]
-        public string? OneTextTen { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("postcode")]
+        public string? Postcode { get; set; } = default!;
 
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextEleven")]
-        public string? OneTextEleven { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("localAuthority")]
+        public string? LocalAuthority { get; set; } = default!;
 
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextTwelve")]
-        public string? OneTextTwelve { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("created")]
+        public System.DateTime Created { get; set; } = default!;
 
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextThirteen")]
-        public string? OneTextThirteen { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextFourteen")]
-        public string? OneTextFourteen { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextFithteen")]
-        public string? OneTextFithteen { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextOne")]
-        public string? TwoTextOne { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextTwo")]
-        public string? TwoTextTwo { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextThree")]
-        public string? TwoTextThree { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextFour")]
-        public string? TwoTextFour { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextFive")]
-        public string? TwoTextFive { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextSix")]
-        public string? TwoTextSix { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextSeven")]
-        public string? TwoTextSeven { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextEight")]
-        public string? TwoTextEight { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextNine")]
-        public string? TwoTextNine { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextTen")]
-        public string? TwoTextTen { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextEleven")]
-        public string? TwoTextEleven { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextTwelve")]
-        public string? TwoTextTwelve { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextThirteen")]
-        public string? TwoTextThirteen { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextFourteen")]
-        public string? TwoTextFourteen { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextFithteen")]
-        public string? TwoTextFithteen { get; set; } = default!;
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class ApplicationTypeTwo
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("id")]
-        public System.Guid Id { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextOne")]
-        public string? OneTextOne { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextTwo")]
-        public string? OneTextTwo { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextThree")]
-        public string? OneTextThree { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextFour")]
-        public string? OneTextFour { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextFive")]
-        public string? OneTextFive { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextSix")]
-        public string? OneTextSix { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextSeven")]
-        public string? OneTextSeven { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextEight")]
-        public string? OneTextEight { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextNine")]
-        public string? OneTextNine { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextTen")]
-        public string? OneTextTen { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextEleven")]
-        public string? OneTextEleven { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextTwelve")]
-        public string? OneTextTwelve { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextThirteen")]
-        public string? OneTextThirteen { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextFourteen")]
-        public string? OneTextFourteen { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextFithteen")]
-        public string? OneTextFithteen { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextOne")]
-        public string? TwoTextOne { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextTwo")]
-        public string? TwoTextTwo { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextThree")]
-        public string? TwoTextThree { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextFour")]
-        public string? TwoTextFour { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextFive")]
-        public string? TwoTextFive { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextSix")]
-        public string? TwoTextSix { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextSeven")]
-        public string? TwoTextSeven { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextEight")]
-        public string? TwoTextEight { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextNine")]
-        public string? TwoTextNine { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextTen")]
-        public string? TwoTextTen { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextEleven")]
-        public string? TwoTextEleven { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextTwelve")]
-        public string? TwoTextTwelve { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextThirteen")]
-        public string? TwoTextThirteen { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextFourteen")]
-        public string? TwoTextFourteen { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextFithteen")]
-        public string? TwoTextFithteen { get; set; } = default!;
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Codes
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("id")]
-        public System.Guid Id { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("admin_district")]
-        public string? Admin_district { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("admin_county")]
-        public string? Admin_county { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("admin_ward")]
-        public string? Admin_ward { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("parish")]
-        public string? Parish { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("parliamentary_constituency")]
-        public string? Parliamentary_constituency { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("ccg")]
-        public string? Ccg { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("ccg_id")]
-        public string? Ccg_id { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("ced")]
-        public string? Ced { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("nuts")]
-        public string? Nuts { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("lsoa")]
-        public string? Lsoa { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("msoa")]
-        public string? Msoa { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("lau2")]
-        public string? Lau2 { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("lastUpdated")]
+        public System.DateTime LastUpdated { get; set; } = default!;
 
     }
 
@@ -1002,6 +792,9 @@ namespace Planerve.App.UI.Services.Base
         [System.Text.Json.Serialization.JsonPropertyName("ownerId")]
         public string? OwnerId { get; set; } = default!;
 
+        [System.Text.Json.Serialization.JsonPropertyName("versionNumber")]
+        public string? VersionNumber { get; set; } = default!;
+
         [System.Text.Json.Serialization.JsonPropertyName("addressLineOne")]
         public string? AddressLineOne { get; set; } = default!;
 
@@ -1017,14 +810,212 @@ namespace Planerve.App.UI.Services.Base
         [System.Text.Json.Serialization.JsonPropertyName("applicationType")]
         public int ApplicationType { get; set; } = default!;
 
-        [System.Text.Json.Serialization.JsonPropertyName("siteApiData")]
-        public SiteApiData SiteApiData { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("postcode")]
+        public string? Postcode { get; set; } = default!;
 
-        [System.Text.Json.Serialization.JsonPropertyName("applicationTypeOne")]
-        public ApplicationTypeOne ApplicationTypeOne { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("localAuthority")]
+        public string? LocalAuthority { get; set; } = default!;
 
-        [System.Text.Json.Serialization.JsonPropertyName("applicationTypeTwo")]
-        public ApplicationTypeTwo ApplicationTypeTwo { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("created")]
+        public System.DateTime Created { get; set; } = default!;
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class FormTypeOne
+    {
+
+        [System.Text.Json.Serialization.JsonPropertyName("id")]
+        public System.Guid Id { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("oneTextOne")]
+        public string? OneTextOne { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("oneTextTwo")]
+        public string? OneTextTwo { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("oneTextThree")]
+        public string? OneTextThree { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("oneTextFour")]
+        public string? OneTextFour { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("oneTextFive")]
+        public string? OneTextFive { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("oneTextSix")]
+        public string? OneTextSix { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("oneTextSeven")]
+        public string? OneTextSeven { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("oneTextEight")]
+        public string? OneTextEight { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("oneTextNine")]
+        public string? OneTextNine { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("oneTextTen")]
+        public string? OneTextTen { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("oneTextEleven")]
+        public string? OneTextEleven { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("oneTextTwelve")]
+        public string? OneTextTwelve { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("oneTextThirteen")]
+        public string? OneTextThirteen { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("oneTextFourteen")]
+        public string? OneTextFourteen { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("oneTextFithteen")]
+        public string? OneTextFithteen { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("twoTextOne")]
+        public string? TwoTextOne { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("twoTextTwo")]
+        public string? TwoTextTwo { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("twoTextThree")]
+        public string? TwoTextThree { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("twoTextFour")]
+        public string? TwoTextFour { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("twoTextFive")]
+        public string? TwoTextFive { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("twoTextSix")]
+        public string? TwoTextSix { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("twoTextSeven")]
+        public string? TwoTextSeven { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("twoTextEight")]
+        public string? TwoTextEight { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("twoTextNine")]
+        public string? TwoTextNine { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("twoTextTen")]
+        public string? TwoTextTen { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("twoTextEleven")]
+        public string? TwoTextEleven { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("twoTextTwelve")]
+        public string? TwoTextTwelve { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("twoTextThirteen")]
+        public string? TwoTextThirteen { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("twoTextFourteen")]
+        public string? TwoTextFourteen { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("twoTextFithteen")]
+        public string? TwoTextFithteen { get; set; } = default!;
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class FormTypeTwo
+    {
+
+        [System.Text.Json.Serialization.JsonPropertyName("id")]
+        public System.Guid Id { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("oneTextOne")]
+        public string? OneTextOne { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("oneTextTwo")]
+        public string? OneTextTwo { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("oneTextThree")]
+        public string? OneTextThree { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("oneTextFour")]
+        public string? OneTextFour { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("oneTextFive")]
+        public string? OneTextFive { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("oneTextSix")]
+        public string? OneTextSix { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("oneTextSeven")]
+        public string? OneTextSeven { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("oneTextEight")]
+        public string? OneTextEight { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("oneTextNine")]
+        public string? OneTextNine { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("oneTextTen")]
+        public string? OneTextTen { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("oneTextEleven")]
+        public string? OneTextEleven { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("oneTextTwelve")]
+        public string? OneTextTwelve { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("oneTextThirteen")]
+        public string? OneTextThirteen { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("oneTextFourteen")]
+        public string? OneTextFourteen { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("oneTextFithteen")]
+        public string? OneTextFithteen { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("twoTextOne")]
+        public string? TwoTextOne { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("twoTextTwo")]
+        public string? TwoTextTwo { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("twoTextThree")]
+        public string? TwoTextThree { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("twoTextFour")]
+        public string? TwoTextFour { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("twoTextFive")]
+        public string? TwoTextFive { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("twoTextSix")]
+        public string? TwoTextSix { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("twoTextSeven")]
+        public string? TwoTextSeven { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("twoTextEight")]
+        public string? TwoTextEight { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("twoTextNine")]
+        public string? TwoTextNine { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("twoTextTen")]
+        public string? TwoTextTen { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("twoTextEleven")]
+        public string? TwoTextEleven { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("twoTextTwelve")]
+        public string? TwoTextTwelve { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("twoTextThirteen")]
+        public string? TwoTextThirteen { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("twoTextFourteen")]
+        public string? TwoTextFourteen { get; set; } = default!;
+
+        [System.Text.Json.Serialization.JsonPropertyName("twoTextFithteen")]
+        public string? TwoTextFithteen { get; set; } = default!;
 
     }
 
@@ -1084,103 +1075,6 @@ namespace Planerve.App.UI.Services.Base
 
         [System.Text.Json.Serialization.JsonPropertyName("userId")]
         public string? UserId { get; set; } = default!;
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Result
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("id")]
-        public System.Guid Id { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("codes")]
-        public Codes Codes { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("postcode")]
-        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string Postcode { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("quality")]
-        public int Quality { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("eastings")]
-        public int Eastings { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("northings")]
-        public int Northings { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("country")]
-        public string? Country { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("nhs_ha")]
-        public string? Nhs_ha { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("longitude")]
-        public float Longitude { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("latitude")]
-        public float Latitude { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("european_electoral_region")]
-        public string? European_electoral_region { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("primary_care_trust")]
-        public string? Primary_care_trust { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("region")]
-        public string? Region { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("lsoa")]
-        public string? Lsoa { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("msoa")]
-        public string? Msoa { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("incode")]
-        public string? Incode { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("outcode")]
-        public string? Outcode { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("parliamentary_constituency")]
-        public string? Parliamentary_constituency { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("admin_district")]
-        public string? Admin_district { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("parish")]
-        public string? Parish { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("admin_county")]
-        public string? Admin_county { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("admin_ward")]
-        public string? Admin_ward { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("ced")]
-        public string? Ced { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("ccg")]
-        public string? Ccg { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("nuts")]
-        public string? Nuts { get; set; } = default!;
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class SiteApiData
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("id")]
-        public System.Guid Id { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public int Status { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("result")]
-        public Result Result { get; set; } = default!;
 
     }
 

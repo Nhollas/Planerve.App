@@ -17,6 +17,14 @@ builder.Services.AddHttpClient<IClient, Client>(client =>
     client.DefaultRequestHeaders.Add(HeaderNames.Accept, "application/json");
 }).AddHttpMessageHandler<BearerTokenHandler>();
 
+builder.Services.AddHttpClient("UnauthorisedAPI", client =>
+{
+    client.BaseAddress = new Uri("https://localhost:6001");
+    client.DefaultRequestHeaders.Clear();
+    client.DefaultRequestHeaders.Add(HeaderNames.Accept, "application/json");
+    client.DefaultRequestHeaders.Add(HeaderNames.Accept, "text/plain");
+});
+
 builder.Services.AddHttpClient("IDPClient", client =>
 {
     client.BaseAddress = new Uri("https://localhost:7001");

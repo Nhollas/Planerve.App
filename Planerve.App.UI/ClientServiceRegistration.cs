@@ -14,7 +14,6 @@ public static class ClientServiceRegistration
     public static IServiceCollection AddClientServices(this IServiceCollection services)
     {
         services.AddScoped<IAuthService, AuthenticationService>();
-        services.AddScoped<IPostcodeDataService, PostcodeDataService>();
         services.AddScoped<IApplicationDataService, ApplicationDataService>();
         services.AddAutoMapper(Assembly.GetExecutingAssembly());
         services.AddScoped(typeof(IAsyncRepository<>), typeof(BaseRepository<>));

@@ -7,6 +7,7 @@ namespace Planerve.App.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [AllowAnonymous]
     public class AccountController : ControllerBase
     {
         private readonly IAuthenticationService _authenticationService;
@@ -16,7 +17,6 @@ namespace Planerve.App.API.Controllers
         }
 
         [HttpPost("register")]
-        [AllowAnonymous]
         public async Task<ActionResult<RegistrationResponse>> RegisterAsync(RegistrationRequest request)
         {
             return Ok(await _authenticationService.RegisterAsync(request));

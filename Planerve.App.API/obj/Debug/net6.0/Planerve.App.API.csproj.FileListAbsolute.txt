@@ -1,5 +1,6 @@
 C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.API\bin\Debug\net6.0\Planerve.App.Identity.deps.json
 C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.API\bin\Debug\net6.0\Planerve.App.Identity.runtimeconfig.json
+C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.API\bin\Debug\net6.0\keys\is-signing-key-4B51E9BE2B2558FA917DBCD13011BB1D.json
 C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.API\bin\Debug\net6.0\Planerve.App.Identity.staticwebassets.runtime.json
 C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.API\bin\Debug\net6.0\Planerve.App.Identity.exe
 C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.API\bin\Debug\net6.0\appsettings.Development.json
@@ -52,6 +53,7 @@ C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.API\bin\Debug
 C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.API\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Embedded.dll
 C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.API\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.API\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.API\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.API\bin\Debug\net6.0\Microsoft.Identity.Client.dll
 C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.API\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
 C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.API\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
@@ -136,4 +138,3 @@ C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.API\obj\Debug
 C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.API\obj\Debug\net6.0\Planerve.App.API.pdb
 C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.API\obj\Debug\net6.0\Planerve.App.API.genruntimeconfig.cache
 C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.API\obj\Debug\net6.0\ref\Planerve.App.API.dll
-C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.API\bin\Debug\net6.0\keys\is-signing-key-4B51E9BE2B2558FA917DBCD13011BB1D.json

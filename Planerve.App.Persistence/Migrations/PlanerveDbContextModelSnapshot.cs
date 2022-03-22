@@ -17,10 +17,35 @@ namespace Planerve.App.Persistence.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.2")
+                .HasAnnotation("ProductVersion", "6.0.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+
+            modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.Address", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("AddressLineOne")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AddressLineThree")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AddressLineTwo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LocalAuthority")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Postcode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Address");
+                });
 
             modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.Application", b =>
                 {
@@ -37,10 +62,28 @@ namespace Planerve.App.Persistence.Migrations
                     b.Property<int>("ApplicationType")
                         .HasColumnType("int");
 
-                    b.Property<string>("FullAddress")
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("LastModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("LastModifiedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("LastUpdated")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("OwnerId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("VersionNumber")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -48,146 +91,52 @@ namespace Planerve.App.Persistence.Migrations
                     b.ToTable("Application");
                 });
 
-            modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.SiteApiData", b =>
+            modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.AuthorisedUsers", b =>
                 {
                     b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("status")
-                        .HasColumnType("int");
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("SiteApiData");
+                    b.ToTable("AuthorisedUsers");
                 });
 
-            modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.SiteApiData+Codes", b =>
+            modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.Checklist", b =>
                 {
                     b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("admin_county")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("CalculatedFee")
+                        .HasColumnType("bit");
 
-                    b.Property<string>("admin_district")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("FormSections")
+                        .HasColumnType("bit");
 
-                    b.Property<string>("admin_ward")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("PlansAndDocs")
+                        .HasColumnType("bit");
 
-                    b.Property<string>("ccg")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ccg_id")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ced")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("lau2")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("lsoa")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("msoa")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("nuts")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("parish")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("parliamentary_constituency")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("SubmittedToLocalAuthority")
+                        .HasColumnType("bit");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Codes");
+                    b.ToTable("Checklist");
                 });
 
-            modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.SiteApiData+Result", b =>
+            modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.Form", b =>
                 {
                     b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("admin_county")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("admin_district")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("admin_ward")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ccg")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ced")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("country")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("eastings")
-                        .HasColumnType("int");
-
-                    b.Property<string>("european_electoral_region")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("incode")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<float>("latitude")
-                        .HasColumnType("real");
-
-                    b.Property<float>("longitude")
-                        .HasColumnType("real");
-
-                    b.Property<string>("lsoa")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("msoa")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("nhs_ha")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("northings")
-                        .HasColumnType("int");
-
-                    b.Property<string>("nuts")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("outcode")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("parish")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("parliamentary_constituency")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("postcode")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("primary_care_trust")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("quality")
-                        .HasColumnType("int");
-
-                    b.Property<string>("region")
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("Id");
 
-                    b.ToTable("Result");
+                    b.ToTable("FormData");
                 });
 
-            modelBuilder.Entity("Planerve.App.Domain.Entities.FormEntities.ApplicationTypeOne", b =>
+            modelBuilder.Entity("Planerve.App.Domain.Entities.FormEntities.FormTypeOne", b =>
                 {
                     b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier");
@@ -284,10 +233,10 @@ namespace Planerve.App.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ApplicationTypeOne");
+                    b.ToTable("FormTypeOne");
                 });
 
-            modelBuilder.Entity("Planerve.App.Domain.Entities.FormEntities.ApplicationTypeTwo", b =>
+            modelBuilder.Entity("Planerve.App.Domain.Entities.FormEntities.FormTypeTwo", b =>
                 {
                     b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier");
@@ -384,81 +333,91 @@ namespace Planerve.App.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ApplicationTypeTwo");
+                    b.ToTable("FormTypeTwo");
                 });
 
-            modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.SiteApiData", b =>
+            modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.Address", b =>
                 {
-                    b.HasOne("Planerve.App.Domain.Entities.ApplicationEntities.Application", "Application")
-                        .WithOne("SiteApiData")
-                        .HasForeignKey("Planerve.App.Domain.Entities.ApplicationEntities.SiteApiData", "Id")
+                    b.HasOne("Planerve.App.Domain.Entities.ApplicationEntities.Application", "ApplicationData")
+                        .WithOne("Address")
+                        .HasForeignKey("Planerve.App.Domain.Entities.ApplicationEntities.Address", "Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Application");
+                    b.Navigation("ApplicationData");
                 });
 
-            modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.SiteApiData+Codes", b =>
+            modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.AuthorisedUsers", b =>
                 {
-                    b.HasOne("Planerve.App.Domain.Entities.ApplicationEntities.SiteApiData+Result", "Result")
-                        .WithOne("codes")
-                        .HasForeignKey("Planerve.App.Domain.Entities.ApplicationEntities.SiteApiData+Codes", "Id")
+                    b.HasOne("Planerve.App.Domain.Entities.ApplicationEntities.Application", "ApplicationData")
+                        .WithMany("AuthorisedUsers")
+                        .HasForeignKey("Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Result");
+                    b.Navigation("ApplicationData");
                 });
 
-            modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.SiteApiData+Result", b =>
+            modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.Checklist", b =>
                 {
-                    b.HasOne("Planerve.App.Domain.Entities.ApplicationEntities.SiteApiData", "SiteApiData")
-                        .WithOne("result")
-                        .HasForeignKey("Planerve.App.Domain.Entities.ApplicationEntities.SiteApiData+Result", "Id")
+                    b.HasOne("Planerve.App.Domain.Entities.ApplicationEntities.Application", "ApplicationData")
+                        .WithOne("ChecklistData")
+                        .HasForeignKey("Planerve.App.Domain.Entities.ApplicationEntities.Checklist", "Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("SiteApiData");
+                    b.Navigation("ApplicationData");
                 });
 
-            modelBuilder.Entity("Planerve.App.Domain.Entities.FormEntities.ApplicationTypeOne", b =>
+            modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.Form", b =>
                 {
-                    b.HasOne("Planerve.App.Domain.Entities.ApplicationEntities.Application", "Application")
-                        .WithOne("ApplicationTypeOne")
-                        .HasForeignKey("Planerve.App.Domain.Entities.FormEntities.ApplicationTypeOne", "Id")
+                    b.HasOne("Planerve.App.Domain.Entities.ApplicationEntities.Application", "ApplicationData")
+                        .WithOne("FormData")
+                        .HasForeignKey("Planerve.App.Domain.Entities.ApplicationEntities.Form", "Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Application");
+                    b.Navigation("ApplicationData");
                 });
 
-            modelBuilder.Entity("Planerve.App.Domain.Entities.FormEntities.ApplicationTypeTwo", b =>
+            modelBuilder.Entity("Planerve.App.Domain.Entities.FormEntities.FormTypeOne", b =>
                 {
-                    b.HasOne("Planerve.App.Domain.Entities.ApplicationEntities.Application", "Application")
-                        .WithOne("ApplicationTypeTwo")
-                        .HasForeignKey("Planerve.App.Domain.Entities.FormEntities.ApplicationTypeTwo", "Id")
+                    b.HasOne("Planerve.App.Domain.Entities.ApplicationEntities.Form", "FormData")
+                        .WithOne("FormTypeOneData")
+                        .HasForeignKey("Planerve.App.Domain.Entities.FormEntities.FormTypeOne", "Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Application");
+                    b.Navigation("FormData");
+                });
+
+            modelBuilder.Entity("Planerve.App.Domain.Entities.FormEntities.FormTypeTwo", b =>
+                {
+                    b.HasOne("Planerve.App.Domain.Entities.ApplicationEntities.Form", "FormData")
+                        .WithOne("FormTypeTwoData")
+                        .HasForeignKey("Planerve.App.Domain.Entities.FormEntities.FormTypeTwo", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("FormData");
                 });
 
             modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.Application", b =>
                 {
-                    b.Navigation("ApplicationTypeOne");
+                    b.Navigation("Address");
 
-                    b.Navigation("ApplicationTypeTwo");
+                    b.Navigation("AuthorisedUsers");
 
-                    b.Navigation("SiteApiData");
+                    b.Navigation("ChecklistData");
+
+                    b.Navigation("FormData");
                 });
 
-            modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.SiteApiData", b =>
+            modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.Form", b =>
                 {
-                    b.Navigation("result");
-                });
+                    b.Navigation("FormTypeOneData");
 
-            modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.SiteApiData+Result", b =>
-                {
-                    b.Navigation("codes");
+                    b.Navigation("FormTypeTwoData");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,8 +1,7 @@
-﻿using System.Data;
+﻿using FluentValidation;
+using Planerve.App.Core.Contracts.Persistence;
 using System.Threading;
 using System.Threading.Tasks;
-using Planerve.App.Core.Contracts.Persistence;
-using FluentValidation;
 
 namespace Planerve.App.Core.Features.ApplicationData.Commands.CreateApplication;
 
@@ -23,16 +22,10 @@ public class CreateApplicationCommandValidator : AbstractValidator<CreateApplica
         RuleFor(e => e.ApplicationType)
             .NotEmpty().WithMessage("{PropertyName} is required.")
             .NotNull();
-        RuleFor(e => e.AddressLineOne)
-            .NotEmpty().WithMessage("{PropertyName} is required.")
-            .NotNull();
-        RuleFor(e => e.SiteApiData.result)
-            .NotEmpty().WithMessage("{PropertyName} is required.")
-            .NotNull();
     }
-    
+
     private async Task<bool> AppReferenceNameUnique(CreateApplicationCommand e, CancellationToken token)
     {
-        return !(await _appDataRepository.IsAppReferenceNameUnique(e.ApplicationReference));
+        return !await _appDataRepository.IsAppReferenceNameUnique(e.ApplicationReference);
     }
 }

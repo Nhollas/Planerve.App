@@ -1,36 +1,53 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using Planerve.App.Core.Contracts.Persistence;
+using Planerve.App.Core.Contracts.Specification;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Planerve.App.Core.Contracts.Persistence;
-using Microsoft.EntityFrameworkCore;
 
 namespace Planerve.App.Persistence.Repositories;
 
 public class BaseRepository<T> : IAsyncRepository<T> where T : class
 {
-    protected readonly PlanerveDbContext DbContext;
+    protected readonly PlanerveDbContext _dbContext;
 
     public BaseRepository(PlanerveDbContext dbContext)
     {
-        DbContext = dbContext;
+        _dbContext = dbContext;
+    }
+
+    public virtual async Task<T> GetByIdAsync(Guid id)
+    {
+        return await _dbContext.Set<T>().FindAsync(id);
+    }
+
+    public async Task<IReadOnlyList<T>> ListAllAsync()
+    {
+        return await _dbContext.Set<T>().ToListAsync();
     }
 
     public async Task<T> AddAsync(T entity)
     {
-        await DbContext.Set<T>().AddAsync(entity);
-        await DbContext.SaveChangesAsync();
+        await _dbContext.Set<T>().AddAsync(entity);
+        await _dbContext.SaveChangesAsync();
 
         return entity;
     }
 
     public async Task DeleteAsync(T entity)
     {
-        DbContext.Set<T>().Remove(entity);
-        await DbContext.SaveChangesAsync();
+        _dbContext.Set<T>().Remove(entity);
+        await _dbContext.SaveChangesAsync();
     }
 
-    public async Task<T> GetByIdAsync(Guid id)
+    public async Task UpdateAsync(T entity)
     {
-        return await DbContext.Set<T>().FindAsync(id);
+        _dbContext.Entry(entity);
+        await _dbContext.SaveChangesAsync();
+    }
+
+    public IEnumerable<T> FindWithSpecificationPattern(ISpecification<T> specification = null)
+    {
+        return SpecificationEvaluator<T>.GetQuery(_dbContext.Set<T>().AsQueryable(), specification);
     }
 }
