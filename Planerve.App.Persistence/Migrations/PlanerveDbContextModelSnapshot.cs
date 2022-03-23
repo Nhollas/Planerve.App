@@ -22,6 +22,43 @@ namespace Planerve.App.Persistence.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.AccessToken", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ApplicationId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("ExpiryDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsExpired")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("LastAccessedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("OwnerId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Token")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TokenAccessLevel")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ApplicationId");
+
+                    b.ToTable("AccessToken");
+                });
+
             modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.Address", b =>
                 {
                     b.Property<Guid>("Id")
@@ -91,7 +128,7 @@ namespace Planerve.App.Persistence.Migrations
                     b.ToTable("Application");
                 });
 
-            modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.AuthorisedUsers", b =>
+            modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.AuthorisedUser", b =>
                 {
                     b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier");
@@ -101,7 +138,7 @@ namespace Planerve.App.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("AuthorisedUsers");
+                    b.ToTable("AuthorisedUser");
                 });
 
             modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.Checklist", b =>
@@ -336,6 +373,15 @@ namespace Planerve.App.Persistence.Migrations
                     b.ToTable("FormTypeTwo");
                 });
 
+            modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.AccessToken", b =>
+                {
+                    b.HasOne("Planerve.App.Domain.Entities.ApplicationEntities.Application", null)
+                        .WithMany("AccessTokens")
+                        .HasForeignKey("ApplicationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.Address", b =>
                 {
                     b.HasOne("Planerve.App.Domain.Entities.ApplicationEntities.Application", "ApplicationData")
@@ -347,7 +393,7 @@ namespace Planerve.App.Persistence.Migrations
                     b.Navigation("ApplicationData");
                 });
 
-            modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.AuthorisedUsers", b =>
+            modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.AuthorisedUser", b =>
                 {
                     b.HasOne("Planerve.App.Domain.Entities.ApplicationEntities.Application", "ApplicationData")
                         .WithMany("AuthorisedUsers")
@@ -404,6 +450,8 @@ namespace Planerve.App.Persistence.Migrations
 
             modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.Application", b =>
                 {
+                    b.Navigation("AccessTokens");
+
                     b.Navigation("Address");
 
                     b.Navigation("AuthorisedUsers");

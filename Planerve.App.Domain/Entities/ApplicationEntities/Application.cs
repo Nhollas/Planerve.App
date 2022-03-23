@@ -15,7 +15,8 @@ public class Application : AuditableEntity
     public DateTime Created { get; set; }
     public DateTime LastUpdated { get; set; }
     public Address Address { get; set; }
-    public List<AuthorisedUsers> AuthorisedUsers { get; set; }
+    public ICollection<AuthorisedUser> AuthorisedUsers { get; set; }
+    public ICollection<AccessToken> AccessTokens { get; set; }
     public Checklist ChecklistData { get; set; }
     public Form FormData { get; set; }
 }

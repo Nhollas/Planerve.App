@@ -127,3 +127,4 @@ C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.Identity\bin\
 C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.Identity\obj\Release\net6.0\Planerve.App.Identity.csproj.AssemblyReference.cache
 C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.Identity\bin\Release\net6.0\keys\is-signing-key-4B51E9BE2B2558FA917DBCD13011BB1D.json
 C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.Identity\obj\Release\net6.0\refint\Planerve.App.Identity.dll
+C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.Identity\bin\Release\net6.0\Microsoft.Extensions.Logging.Abstractions.dll

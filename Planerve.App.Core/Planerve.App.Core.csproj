@@ -23,7 +23,10 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Features\ApplicationData\Commands\GiveAccess\" />
+      <Folder Include="Features\ApplicationData\Commands\CopyApplication\" />
+      <Folder Include="Features\ApplicationData\Commands\ArchiveApplication\" />
+      <Folder Include="Features\ApplicationData\Commands\ImportApplication\" />
+      <Folder Include="Features\ApplicationData\Commands\RemoveApplication\" />
       <Folder Include="Features\ApplicationData\Commands\RemoveAccess" />
     </ItemGroup>
 

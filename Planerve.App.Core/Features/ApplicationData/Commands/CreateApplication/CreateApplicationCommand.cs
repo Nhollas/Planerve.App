@@ -14,5 +14,5 @@ public class CreateApplicationCommand : IRequest<Guid>
     public int ApplicationType { get; set; }
     public DateTime Created { get; set; }
     public Address Address { get; set; }
-    public List<AuthorisedUsers> AuthorisedUsers { get; set; }
+    public List<AuthorisedUser> AuthorisedUsers { get; set; }
 }

@@ -46,6 +46,5 @@ public class PlanerveDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-
     }
 }

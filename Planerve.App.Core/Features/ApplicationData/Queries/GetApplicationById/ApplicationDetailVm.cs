@@ -15,7 +15,7 @@ public class ApplicationDetailVm
     public DateTime Created { get; set; }
     public DateTime LastUpdated { get; set; }
     public Address Address { get; set; }
-    public List<AuthorisedUsers> AuthorisedUsers { get; set; }
+    public List<AuthorisedUser> AuthorisedUsers { get; set; }
     public Checklist ChecklistData { get; set; }
     public Form FormData { get; set; }
 }

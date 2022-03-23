@@ -1,12 +1,12 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Planerve.API.Utility;
+using Planerve.App.Core.Features.ApplicationData.Commands.CreateAccessToken;
 using Planerve.App.Core.Features.ApplicationData.Commands.CreateApplication;
 using Planerve.App.Core.Features.ApplicationData.Commands.DeleteApplication;
 using Planerve.App.Core.Features.ApplicationData.Queries.DownloadApplicationById;
 using Planerve.App.Core.Features.ApplicationData.Queries.GetApplicationById;
 using Planerve.App.Core.Features.ApplicationData.Queries.GetApplicationList;
-using System.Security.Claims;
 
 namespace Planerve.App.API.Controllers;
 
@@ -67,5 +67,13 @@ public class ApplicationController : Controller
         var downloadDto = await _mediator.Send(applicationToDownload);
 
         return File(downloadDto.Data.Result, downloadDto.ContentType, downloadDto.ApplicationExportFileName);
+    }
+
+    [HttpPost("CreateAccessToken")]
+    public async Task<ActionResult<string>> CreateAccessToken([FromBody] CreateAccessTokenCommand createAccessTokenCommand)
+    {
+        var accessToken = await _mediator.Send(createAccessTokenCommand);
+
+        return Ok(accessToken);
     }
 }
