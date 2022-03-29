@@ -4,6 +4,7 @@ using Planerve.API.Utility;
 using Planerve.App.Core.Features.ApplicationData.Commands.CreateAccessToken;
 using Planerve.App.Core.Features.ApplicationData.Commands.CreateApplication;
 using Planerve.App.Core.Features.ApplicationData.Commands.DeleteApplication;
+using Planerve.App.Core.Features.ApplicationData.Commands.ImportApplication;
 using Planerve.App.Core.Features.ApplicationData.Queries.DownloadApplicationById;
 using Planerve.App.Core.Features.ApplicationData.Queries.GetApplicationById;
 using Planerve.App.Core.Features.ApplicationData.Queries.GetApplicationList;
@@ -75,5 +76,13 @@ public class ApplicationController : Controller
         var accessToken = await _mediator.Send(createAccessTokenCommand);
 
         return Ok(accessToken);
+    }
+
+    [HttpPut("ImportApplication")]
+    public async Task<ActionResult<Guid>> ImportApplication([FromBody] ImportApplicationCommand importApplicationCommand)
+    {
+        var applicationId = await _mediator.Send(importApplicationCommand);
+
+        return Ok(applicationId);
     }
 }

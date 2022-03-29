@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Planerve.App.API.Services;
 using Planerve.App.Core;
+using Planerve.App.Core.Contracts.Authorization.Handlers;
 using Planerve.App.Core.Contracts.Identity;
 using Planerve.App.Core.Contracts.Persistence;
 using Planerve.App.Identity;
@@ -21,6 +23,9 @@ builder.Services.AddDbContext<PlanerveDbContext>(options =>
 
 builder.Services.AddScoped<ILoggedInUserService, LoggedInUserService>();
 builder.Services.AddScoped<IPostcodeService, PostcodeService>();
+
+builder.Services.AddScoped<IAuthorizationHandler, ApplicationAuthorizationHandler>();
+
 
 
 builder.Services.AddAuthentication(options =>
@@ -90,6 +95,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseAuthentication();
+
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

@@ -1,19 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Text.Json.Serialization;
 
 namespace Planerve.App.Domain.Entities.ApplicationEntities
 {
     public class AuthorisedUser
     {
-        [ForeignKey("ApplicationData")]
-        [JsonIgnore]
         public Guid Id { get; set; }
-
-        [JsonIgnore]
-        public Application ApplicationData { get; set; }
-
+        public Guid ApplicationId { get; set; }
         public string UserId { get; set; }
+        public string TokenUsed { get; set; }
+        public DateTime ImportedDate { get; set; }
+        public DateTime ExpiryDate { get; set; }
+        public bool IsValid { get; set; }
     }
 }

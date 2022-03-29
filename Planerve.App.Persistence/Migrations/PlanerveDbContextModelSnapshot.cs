@@ -40,6 +40,9 @@ namespace Planerve.App.Persistence.Migrations
                     b.Property<bool>("IsExpired")
                         .HasColumnType("bit");
 
+                    b.Property<bool>("IsValid")
+                        .HasColumnType("bit");
+
                     b.Property<DateTime>("LastAccessedDate")
                         .HasColumnType("datetime2");
 
@@ -50,6 +53,9 @@ namespace Planerve.App.Persistence.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("TokenAccessLevel")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TokenUses")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -131,12 +137,33 @@ namespace Planerve.App.Persistence.Migrations
             modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.AuthorisedUser", b =>
                 {
                     b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("AccessLevel")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("ApplicationId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("ExpiryDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("ImportedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsValid")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("TokenUsed")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ApplicationId");
 
                     b.ToTable("AuthorisedUser");
                 });
@@ -395,13 +422,11 @@ namespace Planerve.App.Persistence.Migrations
 
             modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.AuthorisedUser", b =>
                 {
-                    b.HasOne("Planerve.App.Domain.Entities.ApplicationEntities.Application", "ApplicationData")
+                    b.HasOne("Planerve.App.Domain.Entities.ApplicationEntities.Application", null)
                         .WithMany("AuthorisedUsers")
-                        .HasForeignKey("Id")
+                        .HasForeignKey("ApplicationId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("ApplicationData");
                 });
 
             modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.Checklist", b =>

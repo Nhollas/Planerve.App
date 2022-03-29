@@ -1,9 +1,9 @@
-﻿using AutoMapper;
-using MediatR;
+﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
+using Planerve.App.Core.Contracts.Authorization;
 using Planerve.App.Core.Contracts.Identity;
 using Planerve.App.Core.Contracts.Persistence;
 using Planerve.App.Core.Contracts.Specification.ApplicationData;
-using Planerve.App.Core.Exceptions;
 using Planerve.App.Domain.Entities.ApplicationEntities;
 using System.Linq;
 using System.Threading;
@@ -15,36 +15,33 @@ public class DeleteApplicationCommandHandler : IRequestHandler<DeleteApplication
 {
     private readonly IAsyncRepository<Application> _repository;
     private readonly ILoggedInUserService _loggedInUserService;
+    private readonly IAuthorizationService _authorizationService;
 
-    public DeleteApplicationCommandHandler(IAsyncRepository<Application> repository, ILoggedInUserService loggedInUserService)
+    public DeleteApplicationCommandHandler(IAsyncRepository<Application> repository, ILoggedInUserService loggedInUserService, IAuthorizationService authorizationService)
     {
         _repository = repository;
         _loggedInUserService = loggedInUserService;
+        _authorizationService = authorizationService;
     }
 
     public async Task<Unit> Handle(DeleteApplicationCommand request, CancellationToken cancellationToken)
     {
         // Grab userId from API user service.
+        var user = _loggedInUserService.GetUser;
         var userId = _loggedInUserService.UserId;
 
-        // Get application by id and check that current user is the owner.
         var specification = new GetApplicationByIdSpecification(request.Id, userId);
 
         var applicationToDelete = _repository.FindWithSpecificationPattern(specification);
 
-        if (!applicationToDelete.Any())
-        {
-            throw new NotFoundException(nameof(Application), request.Id);
-        }
-
         var selectedApplication = applicationToDelete.First();
 
-        if (!selectedApplication.AuthorisedUsers.Any(x => x.UserId == userId))
-        {
-            throw new NotAuthorisedException(nameof(Application), userId);
-        }
+        var result = await _authorizationService.AuthorizeAsync(user, selectedApplication, ApplicationPolicies.DeleteApplication.Requirements);
 
-        await _repository.DeleteAsync(selectedApplication);
+        if (result.Succeeded)
+        {
+            await _repository.DeleteAsync(selectedApplication);
+        }
 
         return Unit.Value;
     }

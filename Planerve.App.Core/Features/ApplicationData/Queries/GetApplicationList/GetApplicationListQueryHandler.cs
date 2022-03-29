@@ -48,3 +48,5 @@ namespace Planerve.App.Core.Features.ApplicationData.Queries.GetApplicationList
         }
     }
 }
+
+// TODO: use tokenRepository to get all tokens that are valid , then use this to grap the applications they have acess to. (This should speed up the search as linq will know what entities it needs to get.

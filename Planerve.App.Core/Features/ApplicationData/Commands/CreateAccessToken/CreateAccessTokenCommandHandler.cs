@@ -67,12 +67,13 @@ public class CreateAccessTokenCommandHandler : IRequestHandler<CreateAccessToken
         {
             Id = new Guid(),
             Token = accessToken,
-            OwnerId = userId,
+            TokenHolderId = userId,
             ApplicationId = request.ApplicationId,
-            TokenAccessLevel = request.TokenAccessLevel,
             ExpiryDate = request.TokenLifetime,
-            CreationDate = DateTime.UtcNow,
-            IsExpired = false
+            CreatedDate = DateTime.UtcNow,
+            IsExpired = false,
+            IsValid = true,
+            TokenUses = request.TokenUses
         };
 
         selectedApplication.AccessTokens.Add(accessTokenData);
@@ -128,7 +129,5 @@ public class CreateAccessTokenCommandHandler : IRequestHandler<CreateAccessToken
             return Task.FromResult(true);
         }
         return Task.FromResult(false);
-
-
     }
 }

@@ -26,6 +26,7 @@ namespace Planerve.App.Core.Features.ApplicationData.Commands.UpdateApplication
 
         public async Task<Unit> Handle(UpdateApplicationCommand request, CancellationToken cancellationToken)
         {
+
             // Grab userId from API user service.
             var userId = _loggedInUserService.UserId;
 

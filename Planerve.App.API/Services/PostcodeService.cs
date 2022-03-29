@@ -1,12 +1,10 @@
 ﻿using Planerve.App.Core.Contracts.Persistence;
-using Planerve.App.Domain.Entities.ApplicationEntities;
-using System.Text.Json;
 
 namespace Planerve.App.API.Services
 {
     public class PostcodeService : IPostcodeService
     {
-        public async Task<AddressDto> ValidatePostcode(string postcode)
+        public async Task<string> ValidatePostcode(string postcode)
         {
             var client = new HttpClient
             {
@@ -21,13 +19,7 @@ namespace Planerve.App.API.Services
             {
                 var response = await request.Content.ReadAsStringAsync();
 
-                var postcodeData = JsonSerializer.Deserialize<AddressDto>(response,
-                    new JsonSerializerOptions()
-                    {
-                        PropertyNamingPolicy = JsonNamingPolicy.CamelCase
-                    });
-
-                return postcodeData;
+                return response;
             }
             return null;
         }

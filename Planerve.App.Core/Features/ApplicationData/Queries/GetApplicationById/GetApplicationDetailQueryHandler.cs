@@ -53,3 +53,5 @@ public class GetApplicationDetailQueryHandler : IRequestHandler<GetApplicationDe
         return Task.FromResult(applicationDetailDto);
     }
 }
+
+// TODO: use tokenRepository to get all tokens that are valid , then cross match this with what application they are trying to get.

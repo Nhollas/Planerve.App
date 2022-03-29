@@ -5,6 +5,7 @@ using Planerve.App.Core.Contracts.Persistence;
 using Planerve.App.Core.Exceptions;
 using Planerve.App.Domain.Entities.ApplicationEntities;
 using System;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -34,11 +35,20 @@ public class CreateApplicationCommandHandler : IRequestHandler<CreateApplication
         var userId = _loggedInUserService.UserId;
 
         // Grab application address from API address service
-        var addressInfo = await _postcodeService.ValidatePostcode(request.Address.Postcode);
+        var locationData = await _postcodeService.ValidatePostcode(request.Address.Postcode);
 
-        if (addressInfo == null) throw new NotFoundException(nameof(AddressDto), $"The postcode {request.Address.Postcode} is not valid.");
+        if (locationData is null)
+        {
+            throw new NotFoundException(nameof(PostcodeDataDto), $"The postcode {request.Address.Postcode} is not valid.");
+        }
 
-        request.Address.LocalAuthority = addressInfo.result.nuts;
+        var postcodeData = JsonSerializer.Deserialize<PostcodeDataDto>(locationData,
+        new JsonSerializerOptions()
+        {
+            PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+        });
+
+        request.Address.LocalAuthority = postcodeData.result.nuts;
         request.OwnerId = userId;
 
         var modifiedRequest = GenerateDefaultData(request).Result;
@@ -62,7 +72,6 @@ public class CreateApplicationCommandHandler : IRequestHandler<CreateApplication
 
         model.Created = DateTime.Now;
         model.VersionNumber = "V1";
-        model.AuthorisedUsers[0].UserId = model.OwnerId;
 
         model.ApplicationReference = appReference.Result;
 

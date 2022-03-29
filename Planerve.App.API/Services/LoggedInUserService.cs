@@ -8,8 +8,11 @@ namespace Planerve.App.API.Services
         public LoggedInUserService(IHttpContextAccessor httpContextAccessor)
         {
             UserId = httpContextAccessor.HttpContext?.User?.FindFirstValue(ClaimTypes.NameIdentifier);
+            GetUser = httpContextAccessor.HttpContext.User;
         }
 
         public string UserId { get; }
+
+        public ClaimsPrincipal GetUser { get; }
     }
 }
