@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using Planerve.API.Middleware;
 using Planerve.App.API.Services;
 using Planerve.App.Core;
 using Planerve.App.Core.Contracts.Authorization.Handlers;
@@ -95,7 +96,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseAuthentication();
-
+app.UseCustomExceptionHandler();
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

@@ -24,11 +24,10 @@
 
     <ItemGroup>
       <Folder Include="Features\ApplicationData\Commands\CopyApplication\" />
-      <Folder Include="Features\ApplicationData\Commands\ArchiveApplication\" />
-      <Folder Include="Features\ApplicationData\Commands\RemoveApplication\" />
       <Folder Include="Features\ApplicationData\Commands\RemoveAccess" />
-      <Folder Include="Features\FileData\" />
-      <Folder Include="Features\PaymentData\" />
+      <Folder Include="Features\File\" />
+      <Folder Include="Features\Teams\" />
+      <Folder Include="Features\Payment\" />
     </ItemGroup>
 
 </Project>

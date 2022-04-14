@@ -6,7 +6,7 @@ namespace Planerve.App.Core.Exceptions
     {
 
         public NotAuthorisedException(string name, object userId)
-            : base($"({userId}) is not authorised to view this item.")
+            : base($"({userId}) is not authorised to view this resource.")
         {
         }
     }

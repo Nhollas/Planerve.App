@@ -46,6 +46,11 @@ namespace Planerve.API.Middleware
                     break;
                 case NotFoundException notFoundException:
                     httpStatusCode = HttpStatusCode.NotFound;
+                    result = notFoundException.Message;
+                    break;
+                case NotAuthorisedException notAuthorisedException:
+                    httpStatusCode = HttpStatusCode.Unauthorized;
+                    result = notAuthorisedException.Message;
                     break;
                 case Exception ex:
                     httpStatusCode = HttpStatusCode.BadRequest;

@@ -5,14 +5,29 @@ namespace Planerve.App.API.Services
 {
     public class LoggedInUserService : ILoggedInUserService
     {
+        private readonly IHttpContextAccessor _httpContextAccessor;
         public LoggedInUserService(IHttpContextAccessor httpContextAccessor)
         {
-            UserId = httpContextAccessor.HttpContext?.User?.FindFirstValue(ClaimTypes.NameIdentifier);
-            GetUser = httpContextAccessor.HttpContext.User;
+            _httpContextAccessor = httpContextAccessor;
         }
 
-        public string UserId { get; }
+        public Task<string> UserId ()
+        {
+            var userId = _httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-        public ClaimsPrincipal GetUser { get; }
+            return Task.FromResult(userId);
+        }
+
+        public Task<ClaimsPrincipal> GetUser ()
+        {
+            var user = _httpContextAccessor.HttpContext.User;
+
+            return Task.FromResult(user);
+        }
+
+        public async Task<string> UsernameOrEmail()
+        {
+
+        }
     }
 }

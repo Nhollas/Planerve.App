@@ -3,7 +3,6 @@ using MediatR;
 using Planerve.App.Core.Contracts.Identity;
 using Planerve.App.Core.Contracts.Persistence;
 using Planerve.App.Core.Contracts.Specification.ApplicationData;
-using Planerve.App.Core.Exceptions;
 using Planerve.App.Domain.Entities.ApplicationEntities;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Planerve.App.Core.Features.ApplicationData.Queries.GetApplicationList
 {
-    public class GetApplicationListQueryHandler : IRequestHandler<GetApplicationListQuery, List<Application>>
+    public class GetApplicationListQueryHandler : IRequestHandler<GetApplicationListQuery, List<ApplicationListVm>>
     {
         private readonly IAsyncRepository<Application> _repository;
         private readonly IMapper _mapper;
@@ -26,11 +25,11 @@ namespace Planerve.App.Core.Features.ApplicationData.Queries.GetApplicationList
         }
 
         // Get all users applications, method will specifiy the query, null check and finally map and return the list.
-        public Task<List<Application>> Handle(GetApplicationListQuery request,
+        public async Task<List<ApplicationListVm>> Handle(GetApplicationListQuery request,
             CancellationToken cancellationToken)
         {
             // Grab userId from API user service.
-            var userId = _loggedInUserService.UserId;
+            var userId = await _loggedInUserService.UserId();
 
             // Get any applications that have the same ownerId as current logged in user.
             var specification = new GetApplicationListSpecification(userId);
@@ -39,14 +38,12 @@ namespace Planerve.App.Core.Features.ApplicationData.Queries.GetApplicationList
 
             if (!applicationList.Any())
             {
-                throw new NotFoundException(nameof(Application), request);
+                return null;
             }
 
-            var applicationListDto = _mapper.Map<List<Application>>(applicationList);
+            var applicationListDto = _mapper.Map<List<ApplicationListVm>>(applicationList);
 
-            return Task.FromResult(applicationListDto);
+            return applicationListDto;
         }
     }
 }
-
-// TODO: use tokenRepository to get all tokens that are valid , then use this to grap the applications they have acess to. (This should speed up the search as linq will know what entities it needs to get.

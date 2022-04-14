@@ -1,6 +1,4 @@
-﻿#pragma warning disable IDE1006 // Naming Styles
-
-namespace Planerve.App.Core.Features.ApplicationData.Commands.CreateApplication
+﻿namespace Planerve.App.Core.Features.ApplicationData.Commands.CreateApplication
 {
     public class PostcodeDataDto
     {
@@ -35,5 +33,3 @@ namespace Planerve.App.Core.Features.ApplicationData.Commands.CreateApplication
 
     }
 }
-
-#pragma warning restore IDE1006 // Naming Styles

@@ -15,13 +15,14 @@ namespace Planerve.App.API.Services
 
             var request = await client.GetAsync(apiUrl);
 
-            if (request.IsSuccessStatusCode)
+            if (!request.IsSuccessStatusCode)
             {
-                var response = await request.Content.ReadAsStringAsync();
-
-                return response;
+                return null;
             }
-            return null;
+
+            var response = await request.Content.ReadAsStringAsync();
+
+            return response;
         }
     }
 }

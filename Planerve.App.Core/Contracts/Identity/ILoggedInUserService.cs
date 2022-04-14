@@ -1,11 +1,14 @@
 ﻿using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace Planerve.App.Core.Contracts.Identity
 {
     public interface ILoggedInUserService
     {
-        public string UserId { get; }
+        public Task<string> UserId();
 
-        public ClaimsPrincipal GetUser { get; }
+        public Task<ClaimsPrincipal> GetUser();
+
+        public Task<bool> UsernameOrEmail();
     }
 }

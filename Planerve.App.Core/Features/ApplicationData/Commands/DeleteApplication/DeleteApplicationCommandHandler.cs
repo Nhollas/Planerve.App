@@ -4,6 +4,7 @@ using Planerve.App.Core.Contracts.Authorization;
 using Planerve.App.Core.Contracts.Identity;
 using Planerve.App.Core.Contracts.Persistence;
 using Planerve.App.Core.Contracts.Specification.ApplicationData;
+using Planerve.App.Core.Exceptions;
 using Planerve.App.Domain.Entities.ApplicationEntities;
 using System.Linq;
 using System.Threading;
@@ -27,8 +28,8 @@ public class DeleteApplicationCommandHandler : IRequestHandler<DeleteApplication
     public async Task<Unit> Handle(DeleteApplicationCommand request, CancellationToken cancellationToken)
     {
         // Grab userId from API user service.
-        var user = _loggedInUserService.GetUser;
-        var userId = _loggedInUserService.UserId;
+        var user = _loggedInUserService.GetUser().Result;
+        var userId = _loggedInUserService.UserId().Result;
 
         var specification = new GetApplicationByIdSpecification(request.Id, userId);
 
@@ -38,11 +39,12 @@ public class DeleteApplicationCommandHandler : IRequestHandler<DeleteApplication
 
         var result = await _authorizationService.AuthorizeAsync(user, selectedApplication, ApplicationPolicies.DeleteApplication.Requirements);
 
-        if (result.Succeeded)
+        if (!result.Succeeded)
         {
-            await _repository.DeleteAsync(selectedApplication);
+            throw new NotAuthorisedException(nameof(Application), userId);
         }
 
+        await _repository.DeleteAsync(selectedApplication);
         return Unit.Value;
     }
 }

@@ -324,9 +324,6 @@
             "projectReferences": {
               "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Core\\Planerve.App.Core.csproj": {
                 "projectPath": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Core\\Planerve.App.Core.csproj"
-              },
-              "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Persistence\\Planerve.App.Persistence.csproj": {
-                "projectPath": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Persistence\\Planerve.App.Persistence.csproj"
               }
             }
           }
@@ -428,6 +425,9 @@
             "projectReferences": {
               "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Core\\Planerve.App.Core.csproj": {
                 "projectPath": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Core\\Planerve.App.Core.csproj"
+              },
+              "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\Planerve.App.Identity.csproj": {
+                "projectPath": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\Planerve.App.Identity.csproj"
               }
             }
           }

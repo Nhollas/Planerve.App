@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using Kevsoft.PDFtk;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
+using Planerve.App.Core.Contracts.Authorization;
 using Planerve.App.Core.Contracts.Identity;
 using Planerve.App.Core.Contracts.Persistence;
 using Planerve.App.Core.Contracts.Specification.ApplicationData;
@@ -21,19 +23,22 @@ public class GetApplicationDownloadQueryHandler : IRequestHandler<GetApplication
     private readonly IPDFtk _pdFtk;
     private readonly IMapper _mapper;
     private readonly ILoggedInUserService _loggedInUserService;
+    private readonly IAuthorizationService _authorizationService;
 
-    public GetApplicationDownloadQueryHandler(IPDFtk pdFtk, IMapper mapper, IAsyncRepository<Application> repository, ILoggedInUserService loggedInUserService)
+    public GetApplicationDownloadQueryHandler(IPDFtk pdFtk, IMapper mapper, IAsyncRepository<Application> repository, ILoggedInUserService loggedInUserService, IAuthorizationService authorizationService)
     {
         _pdFtk = pdFtk;
         _mapper = mapper;
         _repository = repository;
         _loggedInUserService = loggedInUserService;
+        _authorizationService = authorizationService;
     }
 
     public async Task<DownloadExportFileVm> Handle(GetApplicationDownloadQuery request, CancellationToken cancellationToken)
     {
         // Grab userId from API user service.
-        var userId = _loggedInUserService.UserId;
+        var userId = await _loggedInUserService.UserId();
+        var user = await _loggedInUserService.GetUser();
 
         // Get application by id and check that current user is the owner.
         var specification = new GetApplicationByIdSpecification(request.Id, userId);
@@ -47,7 +52,9 @@ public class GetApplicationDownloadQueryHandler : IRequestHandler<GetApplication
 
         var selectedApplication = applicationEntity.First();
 
-        if (!selectedApplication.AuthorisedUsers.Any(x => x.UserId == userId))
+        var result = await _authorizationService.AuthorizeAsync(user, selectedApplication, ApplicationPolicies.ReadApplication.Requirements);
+
+        if (!result.Succeeded)
         {
             throw new NotAuthorisedException(nameof(Application), userId);
         }

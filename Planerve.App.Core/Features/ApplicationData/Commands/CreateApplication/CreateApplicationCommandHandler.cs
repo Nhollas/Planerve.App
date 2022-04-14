@@ -17,65 +17,75 @@ public class CreateApplicationCommandHandler : IRequestHandler<CreateApplication
     private readonly IPostcodeService _postcodeService;
     private readonly IMapper _mapper;
     private readonly ILoggedInUserService _loggedInUserService;
-    private readonly IApplicationDataRepository _applicationDataRepository;
 
 
-    public CreateApplicationCommandHandler(IMapper mapper, IAsyncRepository<Application> repository, ILoggedInUserService loggedInUserService, IApplicationDataRepository applicationDataRepository, IPostcodeService postcodeService)
+    public CreateApplicationCommandHandler(IMapper mapper, IAsyncRepository<Application> repository, ILoggedInUserService loggedInUserService, IPostcodeService postcodeService)
     {
         _mapper = mapper;
         _repository = repository;
         _loggedInUserService = loggedInUserService;
-        _applicationDataRepository = applicationDataRepository;
         _postcodeService = postcodeService;
     }
 
     public async Task<Guid> Handle(CreateApplicationCommand request, CancellationToken cancellationToken)
     {
+        var validator = new CreateApplicationCommandValidator();
+        var validationResult = await validator.ValidateAsync(request, cancellationToken);
+
+        if (validationResult.Errors.Count > 0)
+            throw new ValidationException(validationResult);
+
+        var modifiedRequest = await GenerateDefaultData(request);
+
+        var application = await _repository.AddAsync(modifiedRequest);
+
+        return application.Id;
+    }
+
+    private async Task<Application> GenerateDefaultData(CreateApplicationCommand request)
+    {
         // Grab userId from API user service.
-        var userId = _loggedInUserService.UserId;
+        var userId = _loggedInUserService.UserId().Result;
 
         // Grab application address from API address service
-        var locationData = await _postcodeService.ValidatePostcode(request.Address.Postcode);
+        var postCodeData = await _postcodeService.ValidatePostcode(request.Postcode);
 
-        if (locationData is null)
+        if (postCodeData is null)
         {
-            throw new NotFoundException(nameof(PostcodeDataDto), $"The postcode {request.Address.Postcode} is not valid.");
+            throw new NotFoundException(nameof(PostcodeDataDto), $"The postcode {request.Postcode} is not valid.");
         }
 
-        var postcodeData = JsonSerializer.Deserialize<PostcodeDataDto>(locationData,
+        var postcodeData = JsonSerializer.Deserialize<PostcodeDataDto>(postCodeData,
         new JsonSerializerOptions()
         {
             PropertyNamingPolicy = JsonNamingPolicy.CamelCase
         });
 
-        request.Address.LocalAuthority = postcodeData.result.nuts;
-        request.OwnerId = userId;
+        var addressData = _mapper.Map<Address>(postcodeData.result);
 
-        var modifiedRequest = GenerateDefaultData(request).Result;
+        addressData.AddressLineOne = request.AddressLineOne;
+        addressData.AddressLineTwo = request.AddressLineTwo;
+        addressData.AddressLineThree = request.AddressLineThree;
 
-        var validator = new CreateApplicationCommandValidator(_applicationDataRepository);
-        var validationResult = await validator.ValidateAsync(modifiedRequest, cancellationToken);
+        // Create mock application.
+        Application applicationToCreate = new();
 
-        if (validationResult.Errors.Count > 0)
-            throw new ValidationException(validationResult);
+        switch (request.ApplicationType)
+        {
+            case 1:
 
-        var application = _mapper.Map<Application>(modifiedRequest);
+                break;
+        }
 
-        application = await _repository.AddAsync(application);
+        applicationToCreate.ApplicationType = request.ApplicationType;
+        applicationToCreate.ApplicationName = request.ApplicationName;
+        applicationToCreate.AddressData = addressData;
+        applicationToCreate.VersionNumber = "V1";
+        applicationToCreate.OwnerId = userId;
 
-        return application.Id;
-    }
+        applicationToCreate.ApplicationReference = await GenerateAppReference();
 
-    private static Task<CreateApplicationCommand> GenerateDefaultData(CreateApplicationCommand model)
-    {
-        var appReference = GenerateAppReference();
-
-        model.Created = DateTime.Now;
-        model.VersionNumber = "V1";
-
-        model.ApplicationReference = appReference.Result;
-
-        return Task.FromResult(model);
+        return applicationToCreate;
     }
 
     private static Task<string> GenerateAppReference()

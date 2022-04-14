@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Builder;
-
-namespace Planerve.API.Middleware
+﻿namespace Planerve.API.Middleware
 {
     public static class MiddlewareExtensions
     {

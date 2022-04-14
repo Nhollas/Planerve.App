@@ -9,7 +9,6 @@ namespace Planerve.App.Core.Contracts.Authorization
     {
         public static ApplicationAuthorizationRequirement CreateApplicationRequirement = new() { Name = "CreateApplication" };
         public static ApplicationAuthorizationRequirement ReadApplicationRequirement = new() { Name = "ReadApplication" };
-        public static ApplicationAuthorizationRequirement UpdateApplicationRequirement = new() { Name = "UpdateApplication" };
         public static ApplicationAuthorizationRequirement DeleteApplicationRequirement = new() { Name = "DeleteApplication" };
         public static ApplicationAuthorizationRequirement ShareApplicationRequirement = new() { Name = "ShareApplication" };
         public static ApplicationAuthorizationRequirement CopyApplicationRequirement = new() { Name = "CopyApplication" };
@@ -27,9 +26,6 @@ namespace Planerve.App.Core.Contracts.Authorization
                .Build();
         public static AuthorizationPolicy ReadApplication = new AuthorizationPolicyBuilder()
                 .AddRequirements(ApplicationOperations.ReadApplicationRequirement)
-                .Build();
-        public static AuthorizationPolicy UpdateApplication = new AuthorizationPolicyBuilder()
-                .AddRequirements(ApplicationOperations.UpdateApplicationRequirement)
                 .Build();
         public static AuthorizationPolicy DeleteApplication = new AuthorizationPolicyBuilder()
                 .AddRequirements(ApplicationOperations.DeleteApplicationRequirement)

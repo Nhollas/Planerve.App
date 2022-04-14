@@ -15,48 +15,47 @@ namespace Planerve.App.Core.Contracts.Authorization.Handlers
             _loggedInUserService = loggedInUserService;
         }
 
-        protected override Task HandleRequirementAsync(AuthorizationHandlerContext context,
-                                                    ApplicationAuthorizationRequirement requirement,
-                                                    Application resource)
+        protected override async Task HandleRequirementAsync(
+            AuthorizationHandlerContext context,
+            ApplicationAuthorizationRequirement requirement,
+            Application resource)
         {
-            var userId = _loggedInUserService.UserId;
+            var userId = await _loggedInUserService.UserId();
+            var isAuthorisedUser = resource.AuthorisedUsers.Where(x => x.UserId == userId && x.IsValid == true).FirstOrDefault();
 
+            // Everything that is not on the 
             if (userId == resource.OwnerId)
             {
                 context.Succeed(requirement);
-                return Task.CompletedTask;
+                return;
             }
 
-            bool isAuthorisedUser = resource.AuthorisedUsers.Any(x => x.UserId == userId && x.IsValid == true);
-
-            if (isAuthorisedUser == false)  
-                return Task.FromResult(false);
+            if (isAuthorisedUser is null)
+            {
+                context.Fail();
+                return;
+            }
 
             if (requirement == ApplicationOperations.CreateApplicationRequirement)
             {
                 if (userId != null)
                     context.Succeed(requirement);
-
-                return Task.FromResult(false);
-
+                    return;
             }
             else if (requirement == ApplicationOperations.ReadApplicationRequirement)
             {
-                if (isAuthorisedUser)
+                if (isAuthorisedUser.ReadApplication)
                     context.Succeed(requirement);
+                    return;
             }
-            else if (requirement == ApplicationOperations.DeleteApplicationRequirement)
+            else if (requirement == ApplicationOperations.CopyApplicationRequirement)
             {
-                // can only be deleted by Owner, which is covered at the top of the method
-                // noop
+                if (isAuthorisedUser.CopyApplication)
+                    context.Succeed(requirement);
+                    return;
             }
-            else if (requirement == ApplicationOperations.ShareApplicationRequirement)
-            {
-                // can only be shared by Owner, which is covered at the top of the method
-                // noop
-            }
-
-            return Task.FromResult(false);
+            context.Fail();
+            return;
         }
     }
 }

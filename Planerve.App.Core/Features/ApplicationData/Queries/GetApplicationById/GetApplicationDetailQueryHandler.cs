@@ -1,13 +1,14 @@
-﻿using System.Threading;
-using System.Threading.Tasks;
-using Planerve.App.Core.Contracts.Persistence;
-using AutoMapper;
+﻿using AutoMapper;
 using MediatR;
-using Planerve.App.Core.Exceptions;
-using Planerve.App.Domain.Entities.ApplicationEntities;
-using Planerve.App.Core.Contracts.Specification.ApplicationData;
-using System.Linq;
+using Microsoft.AspNetCore.Authorization;
+using Planerve.App.Core.Contracts.Authorization;
 using Planerve.App.Core.Contracts.Identity;
+using Planerve.App.Core.Contracts.Persistence;
+using Planerve.App.Core.Contracts.Specification.ApplicationData;
+using Planerve.App.Core.Exceptions;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Planerve.App.Core.Features.ApplicationData.Queries.GetApplicationById;
 
@@ -16,20 +17,23 @@ public class GetApplicationDetailQueryHandler : IRequestHandler<GetApplicationDe
     private readonly IAsyncRepository<Application> _repository;
     private readonly IMapper _mapper;
     private readonly ILoggedInUserService _loggedInUserService;
+    private readonly IAuthorizationService _authorizationService;
 
-    public GetApplicationDetailQueryHandler(IMapper mapper, IAsyncRepository<Application> repository, ILoggedInUserService loggedInUserService)
+    public GetApplicationDetailQueryHandler(IMapper mapper, IAsyncRepository<Application> repository, ILoggedInUserService loggedInUserService, IAuthorizationService authorizationService)
     {
         _mapper = mapper;
         _repository = repository;
         _loggedInUserService = loggedInUserService;
+        _authorizationService = authorizationService;
     }
 
     // Get an application by Id,  method will specifiy the query, null and authorise check and finally map and return the item.
-    public Task<ApplicationDetailVm> Handle(GetApplicationDetailQuery request,
+    public async Task<ApplicationDetailVm> Handle(GetApplicationDetailQuery request,
         CancellationToken cancellationToken)
     {
         // Grab userId from API user service.
-        var userId = _loggedInUserService.UserId;
+        var userId = await _loggedInUserService.UserId();
+        var user = await _loggedInUserService.GetUser();
 
         // Get application by id and check that current user is the owner.
         var specification = new GetApplicationByIdSpecification(request.Id, userId);
@@ -43,15 +47,17 @@ public class GetApplicationDetailQueryHandler : IRequestHandler<GetApplicationDe
 
         var selectedApplication = applicationEntity.First();
 
-        if (!selectedApplication.AuthorisedUsers.Any(x => x.UserId == userId))
+        var result = await _authorizationService.AuthorizeAsync(user, selectedApplication, ApplicationPolicies.ReadApplication.Requirements);
+
+        if (!result.Succeeded)
         {
             throw new NotAuthorisedException(nameof(Application), userId);
         }
 
         var applicationDetailDto = _mapper.Map<ApplicationDetailVm>(applicationEntity.First());
 
-        return Task.FromResult(applicationDetailDto);
+        return applicationDetailDto;
+
+
     }
 }
-
-// TODO: use tokenRepository to get all tokens that are valid , then cross match this with what application they are trying to get.

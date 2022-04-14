@@ -29,6 +29,5 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Planerve.App.Core\Planerve.App.Core.csproj" />
-    <ProjectReference Include="..\Planerve.App.Persistence\Planerve.App.Persistence.csproj" />
   </ItemGroup>
 </Project>

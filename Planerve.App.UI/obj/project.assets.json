@@ -4425,7 +4425,6 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.3",
           "Microsoft.EntityFrameworkCore.Sqlite": "6.0.3",
           "Planerve.App.Core": "1.0.0",
-          "Planerve.App.Persistence": "1.0.0",
           "Serilog.AspNetCore": "5.0.0"
         },
         "compile": {
@@ -4446,7 +4445,8 @@
           "Microsoft.EntityFrameworkCore": "6.0.3",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.3",
           "Microsoft.Extensions.Options.ConfigurationExtensions": "6.0.0",
-          "Planerve.App.Core": "1.0.0"
+          "Planerve.App.Core": "1.0.0",
+          "Planerve.App.Identity": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Planerve.App.Persistence.dll": {}

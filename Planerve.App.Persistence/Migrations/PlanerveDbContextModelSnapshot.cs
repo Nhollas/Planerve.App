@@ -31,8 +31,20 @@ namespace Planerve.App.Persistence.Migrations
                     b.Property<Guid>("ApplicationId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("CreationDate")
+                    b.Property<bool>("CopyApplication")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("CreateForm")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<bool>("DownloadForm")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("EditForm")
+                        .HasColumnType("bit");
 
                     b.Property<DateTime>("ExpiryDate")
                         .HasColumnType("datetime2");
@@ -43,17 +55,14 @@ namespace Planerve.App.Persistence.Migrations
                     b.Property<bool>("IsValid")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime>("LastAccessedDate")
-                        .HasColumnType("datetime2");
+                    b.Property<bool>("ReadApplication")
+                        .HasColumnType("bit");
 
-                    b.Property<string>("OwnerId")
+                    b.Property<bool>("ReadForm")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("TokenRef")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Token")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("TokenAccessLevel")
-                        .HasColumnType("int");
 
                     b.Property<int>("TokenUses")
                         .HasColumnType("int");
@@ -79,10 +88,76 @@ namespace Planerve.App.Persistence.Migrations
                     b.Property<string>("AddressLineTwo")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("LocalAuthority")
+                    b.Property<string>("admin_county")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("administrative_county");
+
+                    b.Property<string>("admin_district")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("administrative_district");
+
+                    b.Property<string>("admin_ward")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("administrative_ward");
+
+                    b.Property<string>("ccg")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Postcode")
+                    b.Property<string>("ced")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("country")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("eastings")
+                        .HasColumnType("int");
+
+                    b.Property<string>("european_electoral_region")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("incode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<float>("latitude")
+                        .HasColumnType("real");
+
+                    b.Property<float>("longitude")
+                        .HasColumnType("real");
+
+                    b.Property<string>("lsoa")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("msoa")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("nhs_ha")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("northings")
+                        .HasColumnType("int");
+
+                    b.Property<string>("nuts")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("outcode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("parish")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("parliamentary_constituency")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("postcode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("primary_care_trust")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("quality")
+                        .HasColumnType("int");
+
+                    b.Property<string>("region")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -105,9 +180,6 @@ namespace Planerve.App.Persistence.Migrations
                     b.Property<int>("ApplicationType")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("Created")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("CreatedBy")
                         .HasColumnType("nvarchar(max)");
 
@@ -118,9 +190,6 @@ namespace Planerve.App.Persistence.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("LastModifiedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("LastUpdated")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("OwnerId")
@@ -140,22 +209,40 @@ namespace Planerve.App.Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("AccessLevel")
-                        .HasColumnType("int");
-
                     b.Property<Guid>("ApplicationId")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("CopyApplication")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("CreateForm")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("DownloadForm")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("EditForm")
+                        .HasColumnType("bit");
 
                     b.Property<DateTime>("ExpiryDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("ImportedDate")
-                        .HasColumnType("datetime2");
+                    b.Property<bool>("IsExpired")
+                        .HasColumnType("bit");
 
                     b.Property<bool>("IsValid")
                         .HasColumnType("bit");
 
-                    b.Property<string>("TokenUsed")
+                    b.Property<bool>("ReadApplication")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("ReadForm")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("TokenRef")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserId")
@@ -412,7 +499,7 @@ namespace Planerve.App.Persistence.Migrations
             modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.Address", b =>
                 {
                     b.HasOne("Planerve.App.Domain.Entities.ApplicationEntities.Application", "ApplicationData")
-                        .WithOne("Address")
+                        .WithOne("AddressData")
                         .HasForeignKey("Planerve.App.Domain.Entities.ApplicationEntities.Address", "Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -477,7 +564,7 @@ namespace Planerve.App.Persistence.Migrations
                 {
                     b.Navigation("AccessTokens");
 
-                    b.Navigation("Address");
+                    b.Navigation("AddressData");
 
                     b.Navigation("AuthorisedUsers");
 
