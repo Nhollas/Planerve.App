@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      maxWidth: {
+        'mobile' : '',
+      },
       fontFamily: {
         link: ["Raleway", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],

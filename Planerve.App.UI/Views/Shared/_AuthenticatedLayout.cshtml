@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PlanerveApp - @ViewBag.Title</title>
     <link rel="stylesheet" href="/css/output.css"/>
+    <link rel="stylesheet" href="/css/site.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -15,15 +16,6 @@
             <section class="h-24 flex items-center max-w-6xl w-full">
                 <image src="/design/PlanerveAppLogo.svg" class="h-10 mr-auto"></image>
                 <ul class="flex self-end h-24 items-center gap-8">
-                    <li>
-                        <a class="font-semibold text-lg">Dashboard</a>
-                    </li>
-                    <li>
-                        <a class="font-semibold text-lg">Guides</a>
-                    </li>
-                    <li>
-                        <a class="font-semibold text-lg">Account</a>
-                    </li>
                 </ul>        
             </section>
         </nav>
@@ -36,6 +28,6 @@
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+@await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

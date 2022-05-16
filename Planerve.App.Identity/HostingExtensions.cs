@@ -14,7 +14,7 @@ internal static class HostingExtensions
     {
         builder.Services.AddRazorPages();
 
-        var connectionString = "Server=localhost;Database=Planerve.Identity;Trusted_Connection=True;";
+        var connectionString = "Server=localhost;Database=PlanerveIdentity;Trusted_Connection=True;";
 
         builder.Services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(connectionString));

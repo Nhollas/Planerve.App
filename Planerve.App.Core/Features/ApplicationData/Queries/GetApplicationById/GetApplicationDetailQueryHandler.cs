@@ -9,6 +9,7 @@ using Planerve.App.Core.Exceptions;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Planerve.App.Domain.Entities.ApplicationEntities;
 
 namespace Planerve.App.Core.Features.ApplicationData.Queries.GetApplicationById;
 

@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "Hash": "9loR/KG02fuZdtFu2xb5sSCPRDGjxwB3RtuzXU5nkfo=",
+  "Hash": "2eI1h8w6tIzZsiw/Uc0BIyDodA+Szlw9Qx4lS9LLkkU=",
   "Source": "Planerve.App.UI",
   "BasePath": "_content/Planerve.App.UI",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\Planerve.App.Identity.csproj",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\Planerve.App.Identity.csproj",
       "Version": 2,
       "Source": "Planerve.App.Identity",
       "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
@@ -22,24 +22,24 @@
     {
       "Name": "Planerve.App.Identity\\wwwroot",
       "Source": "Planerve.App.Identity",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
       "BasePath": "_content/Planerve.App.Identity",
       "Pattern": "**"
     },
     {
       "Name": "Planerve.App.UI\\wwwroot",
       "Source": "Planerve.App.UI",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.UI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\wwwroot\\",
       "BasePath": "_content/Planerve.App.UI",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\css\\site.css",
       "SourceId": "Planerve.App.Identity",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
       "BasePath": "_content/Planerve.App.Identity",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -53,10 +53,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\css\\site.min.css",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\css\\site.min.css",
       "SourceId": "Planerve.App.Identity",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
       "BasePath": "_content/Planerve.App.Identity",
       "RelativePath": "css/site.min.css",
       "AssetKind": "All",
@@ -70,10 +70,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.min.css"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\css\\site.scss",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\css\\site.scss",
       "SourceId": "Planerve.App.Identity",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
       "BasePath": "_content/Planerve.App.Identity",
       "RelativePath": "css/site.scss",
       "AssetKind": "All",
@@ -87,10 +87,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.scss"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\duende-logo.svg",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\duende-logo.svg",
       "SourceId": "Planerve.App.Identity",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
       "BasePath": "_content/Planerve.App.Identity",
       "RelativePath": "duende-logo.svg",
       "AssetKind": "All",
@@ -104,10 +104,10 @@
       "OriginalItemSpec": "wwwroot\\duende-logo.svg"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\favicon.ico",
       "SourceId": "Planerve.App.Identity",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
       "BasePath": "_content/Planerve.App.Identity",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -121,10 +121,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\js\\signin-redirect.js",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\js\\signin-redirect.js",
       "SourceId": "Planerve.App.Identity",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
       "BasePath": "_content/Planerve.App.Identity",
       "RelativePath": "js/signin-redirect.js",
       "AssetKind": "All",
@@ -138,10 +138,10 @@
       "OriginalItemSpec": "wwwroot\\js\\signin-redirect.js"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\js\\signout-redirect.js",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\js\\signout-redirect.js",
       "SourceId": "Planerve.App.Identity",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
       "BasePath": "_content/Planerve.App.Identity",
       "RelativePath": "js/signout-redirect.js",
       "AssetKind": "All",
@@ -155,10 +155,10 @@
       "OriginalItemSpec": "wwwroot\\js\\signout-redirect.js"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "SourceId": "Planerve.App.Identity",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
       "BasePath": "_content/Planerve.App.Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css",
       "AssetKind": "All",
@@ -172,10 +172,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "SourceId": "Planerve.App.Identity",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
       "BasePath": "_content/Planerve.App.Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css.map",
       "AssetKind": "All",
@@ -189,10 +189,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "SourceId": "Planerve.App.Identity",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
       "BasePath": "_content/Planerve.App.Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css",
       "AssetKind": "All",
@@ -206,10 +206,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "SourceId": "Planerve.App.Identity",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
       "BasePath": "_content/Planerve.App.Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -223,10 +223,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "SourceId": "Planerve.App.Identity",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
       "BasePath": "_content/Planerve.App.Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css",
       "AssetKind": "All",
@@ -240,10 +240,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "SourceId": "Planerve.App.Identity",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
       "BasePath": "_content/Planerve.App.Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "AssetKind": "All",
@@ -257,10 +257,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "SourceId": "Planerve.App.Identity",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
       "BasePath": "_content/Planerve.App.Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "AssetKind": "All",
@@ -274,10 +274,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "SourceId": "Planerve.App.Identity",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
       "BasePath": "_content/Planerve.App.Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
@@ -291,10 +291,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "SourceId": "Planerve.App.Identity",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
       "BasePath": "_content/Planerve.App.Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css",
       "AssetKind": "All",
@@ -308,10 +308,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "SourceId": "Planerve.App.Identity",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
       "BasePath": "_content/Planerve.App.Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
@@ -325,10 +325,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "SourceId": "Planerve.App.Identity",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
       "BasePath": "_content/Planerve.App.Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
@@ -342,10 +342,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "SourceId": "Planerve.App.Identity",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
       "BasePath": "_content/Planerve.App.Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
@@ -359,10 +359,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "SourceId": "Planerve.App.Identity",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
       "BasePath": "_content/Planerve.App.Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js",
       "AssetKind": "All",
@@ -376,10 +376,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "SourceId": "Planerve.App.Identity",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
       "BasePath": "_content/Planerve.App.Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
@@ -393,10 +393,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "SourceId": "Planerve.App.Identity",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
       "BasePath": "_content/Planerve.App.Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -410,10 +410,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "SourceId": "Planerve.App.Identity",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
       "BasePath": "_content/Planerve.App.Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
@@ -427,10 +427,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "SourceId": "Planerve.App.Identity",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
       "BasePath": "_content/Planerve.App.Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js",
       "AssetKind": "All",
@@ -444,10 +444,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "SourceId": "Planerve.App.Identity",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
       "BasePath": "_content/Planerve.App.Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js.map",
       "AssetKind": "All",
@@ -461,10 +461,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "SourceId": "Planerve.App.Identity",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
       "BasePath": "_content/Planerve.App.Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js",
       "AssetKind": "All",
@@ -478,10 +478,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "SourceId": "Planerve.App.Identity",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
       "BasePath": "_content/Planerve.App.Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js.map",
       "AssetKind": "All",
@@ -495,10 +495,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap\\LICENSE",
       "SourceId": "Planerve.App.Identity",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
       "BasePath": "_content/Planerve.App.Identity",
       "RelativePath": "lib/bootstrap/LICENSE",
       "AssetKind": "All",
@@ -512,10 +512,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap\\README.md",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap\\README.md",
       "SourceId": "Planerve.App.Identity",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
       "BasePath": "_content/Planerve.App.Identity",
       "RelativePath": "lib/bootstrap/README.md",
       "AssetKind": "All",
@@ -529,10 +529,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\README.md"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap4-glyphicons\\css\\bootstrap-glyphicons.css",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap4-glyphicons\\css\\bootstrap-glyphicons.css",
       "SourceId": "Planerve.App.Identity",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
       "BasePath": "_content/Planerve.App.Identity",
       "RelativePath": "lib/bootstrap4-glyphicons/css/bootstrap-glyphicons.css",
       "AssetKind": "All",
@@ -546,10 +546,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap4-glyphicons\\css\\bootstrap-glyphicons.css"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap4-glyphicons\\css\\bootstrap-glyphicons.min.css",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap4-glyphicons\\css\\bootstrap-glyphicons.min.css",
       "SourceId": "Planerve.App.Identity",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
       "BasePath": "_content/Planerve.App.Identity",
       "RelativePath": "lib/bootstrap4-glyphicons/css/bootstrap-glyphicons.min.css",
       "AssetKind": "All",
@@ -563,10 +563,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap4-glyphicons\\css\\bootstrap-glyphicons.min.css"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap4-glyphicons\\fonts\\glyphicons\\glyphicons-halflings-regular.eot",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap4-glyphicons\\fonts\\glyphicons\\glyphicons-halflings-regular.eot",
       "SourceId": "Planerve.App.Identity",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
       "BasePath": "_content/Planerve.App.Identity",
       "RelativePath": "lib/bootstrap4-glyphicons/fonts/glyphicons/glyphicons-halflings-regular.eot",
       "AssetKind": "All",
@@ -580,10 +580,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap4-glyphicons\\fonts\\glyphicons\\glyphicons-halflings-regular.eot"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap4-glyphicons\\fonts\\glyphicons\\glyphicons-halflings-regular.svg",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap4-glyphicons\\fonts\\glyphicons\\glyphicons-halflings-regular.svg",
       "SourceId": "Planerve.App.Identity",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
       "BasePath": "_content/Planerve.App.Identity",
       "RelativePath": "lib/bootstrap4-glyphicons/fonts/glyphicons/glyphicons-halflings-regular.svg",
       "AssetKind": "All",
@@ -597,10 +597,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap4-glyphicons\\fonts\\glyphicons\\glyphicons-halflings-regular.svg"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap4-glyphicons\\fonts\\glyphicons\\glyphicons-halflings-regular.ttf",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap4-glyphicons\\fonts\\glyphicons\\glyphicons-halflings-regular.ttf",
       "SourceId": "Planerve.App.Identity",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
       "BasePath": "_content/Planerve.App.Identity",
       "RelativePath": "lib/bootstrap4-glyphicons/fonts/glyphicons/glyphicons-halflings-regular.ttf",
       "AssetKind": "All",
@@ -614,10 +614,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap4-glyphicons\\fonts\\glyphicons\\glyphicons-halflings-regular.ttf"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap4-glyphicons\\fonts\\glyphicons\\glyphicons-halflings-regular.woff",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap4-glyphicons\\fonts\\glyphicons\\glyphicons-halflings-regular.woff",
       "SourceId": "Planerve.App.Identity",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
       "BasePath": "_content/Planerve.App.Identity",
       "RelativePath": "lib/bootstrap4-glyphicons/fonts/glyphicons/glyphicons-halflings-regular.woff",
       "AssetKind": "All",
@@ -631,10 +631,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap4-glyphicons\\fonts\\glyphicons\\glyphicons-halflings-regular.woff"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap4-glyphicons\\fonts\\glyphicons\\glyphicons-halflings-regular.woff2",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap4-glyphicons\\fonts\\glyphicons\\glyphicons-halflings-regular.woff2",
       "SourceId": "Planerve.App.Identity",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
       "BasePath": "_content/Planerve.App.Identity",
       "RelativePath": "lib/bootstrap4-glyphicons/fonts/glyphicons/glyphicons-halflings-regular.woff2",
       "AssetKind": "All",
@@ -648,10 +648,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap4-glyphicons\\fonts\\glyphicons\\glyphicons-halflings-regular.woff2"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap4-glyphicons\\LICENSE",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap4-glyphicons\\LICENSE",
       "SourceId": "Planerve.App.Identity",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
       "BasePath": "_content/Planerve.App.Identity",
       "RelativePath": "lib/bootstrap4-glyphicons/LICENSE",
       "AssetKind": "All",
@@ -665,10 +665,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap4-glyphicons\\LICENSE"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap4-glyphicons\\maps\\glyphicons-fontawesome.css",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap4-glyphicons\\maps\\glyphicons-fontawesome.css",
       "SourceId": "Planerve.App.Identity",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
       "BasePath": "_content/Planerve.App.Identity",
       "RelativePath": "lib/bootstrap4-glyphicons/maps/glyphicons-fontawesome.css",
       "AssetKind": "All",
@@ -682,10 +682,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap4-glyphicons\\maps\\glyphicons-fontawesome.css"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap4-glyphicons\\maps\\glyphicons-fontawesome.less",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap4-glyphicons\\maps\\glyphicons-fontawesome.less",
       "SourceId": "Planerve.App.Identity",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
       "BasePath": "_content/Planerve.App.Identity",
       "RelativePath": "lib/bootstrap4-glyphicons/maps/glyphicons-fontawesome.less",
       "AssetKind": "All",
@@ -699,10 +699,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap4-glyphicons\\maps\\glyphicons-fontawesome.less"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap4-glyphicons\\maps\\glyphicons-fontawesome.min.css",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\bootstrap4-glyphicons\\maps\\glyphicons-fontawesome.min.css",
       "SourceId": "Planerve.App.Identity",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
       "BasePath": "_content/Planerve.App.Identity",
       "RelativePath": "lib/bootstrap4-glyphicons/maps/glyphicons-fontawesome.min.css",
       "AssetKind": "All",
@@ -716,10 +716,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap4-glyphicons\\maps\\glyphicons-fontawesome.min.css"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "Planerve.App.Identity",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
       "BasePath": "_content/Planerve.App.Identity",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -733,10 +733,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "Planerve.App.Identity",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
       "BasePath": "_content/Planerve.App.Identity",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -750,10 +750,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "Planerve.App.Identity",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
       "BasePath": "_content/Planerve.App.Identity",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -767,10 +767,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\jquery\\dist\\jquery.slim.js",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\jquery\\dist\\jquery.slim.js",
       "SourceId": "Planerve.App.Identity",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
       "BasePath": "_content/Planerve.App.Identity",
       "RelativePath": "lib/jquery/dist/jquery.slim.js",
       "AssetKind": "All",
@@ -784,10 +784,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.slim.js"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\jquery\\dist\\jquery.slim.min.js",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\jquery\\dist\\jquery.slim.min.js",
       "SourceId": "Planerve.App.Identity",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
       "BasePath": "_content/Planerve.App.Identity",
       "RelativePath": "lib/jquery/dist/jquery.slim.min.js",
       "AssetKind": "All",
@@ -801,10 +801,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.slim.min.js"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\jquery\\dist\\jquery.slim.min.map",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\jquery\\dist\\jquery.slim.min.map",
       "SourceId": "Planerve.App.Identity",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
       "BasePath": "_content/Planerve.App.Identity",
       "RelativePath": "lib/jquery/dist/jquery.slim.min.map",
       "AssetKind": "All",
@@ -818,10 +818,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.slim.min.map"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "Planerve.App.Identity",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
       "BasePath": "_content/Planerve.App.Identity",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",
@@ -835,10 +835,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\jquery\\README.md",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\lib\\jquery\\README.md",
       "SourceId": "Planerve.App.Identity",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\wwwroot\\",
       "BasePath": "_content/Planerve.App.Identity",
       "RelativePath": "lib/jquery/README.md",
       "AssetKind": "All",
@@ -852,10 +852,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\README.md"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.UI\\wwwroot\\css\\input.css",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\wwwroot\\css\\input.css",
       "SourceId": "Planerve.App.UI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.UI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\wwwroot\\",
       "BasePath": "_content/Planerve.App.UI",
       "RelativePath": "css/input.css",
       "AssetKind": "All",
@@ -869,10 +869,10 @@
       "OriginalItemSpec": "wwwroot\\css\\input.css"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.UI\\wwwroot\\css\\output.css",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\wwwroot\\css\\output.css",
       "SourceId": "Planerve.App.UI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.UI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\wwwroot\\",
       "BasePath": "_content/Planerve.App.UI",
       "RelativePath": "css/output.css",
       "AssetKind": "All",
@@ -886,10 +886,27 @@
       "OriginalItemSpec": "wwwroot\\css\\output.css"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.UI\\wwwroot\\design\\IconPurple.svg",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\wwwroot\\css\\site.css",
       "SourceId": "Planerve.App.UI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.UI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\wwwroot\\",
+      "BasePath": "_content/Planerve.App.UI",
+      "RelativePath": "css/site.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\wwwroot\\design\\IconPurple.svg",
+      "SourceId": "Planerve.App.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\wwwroot\\",
       "BasePath": "_content/Planerve.App.UI",
       "RelativePath": "design/IconPurple.svg",
       "AssetKind": "All",
@@ -903,10 +920,10 @@
       "OriginalItemSpec": "wwwroot\\design\\IconPurple.svg"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.UI\\wwwroot\\design\\layered-peaks-haikei.svg",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\wwwroot\\design\\layered-peaks-haikei.svg",
       "SourceId": "Planerve.App.UI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.UI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\wwwroot\\",
       "BasePath": "_content/Planerve.App.UI",
       "RelativePath": "design/layered-peaks-haikei.svg",
       "AssetKind": "All",
@@ -920,10 +937,10 @@
       "OriginalItemSpec": "wwwroot\\design\\layered-peaks-haikei.svg"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.UI\\wwwroot\\design\\logoMain.svg",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\wwwroot\\design\\logoMain.svg",
       "SourceId": "Planerve.App.UI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.UI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\wwwroot\\",
       "BasePath": "_content/Planerve.App.UI",
       "RelativePath": "design/logoMain.svg",
       "AssetKind": "All",
@@ -937,10 +954,10 @@
       "OriginalItemSpec": "wwwroot\\design\\logoMain.svg"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.UI\\wwwroot\\design\\PlanerveAppLogo.svg",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\wwwroot\\design\\PlanerveAppLogo.svg",
       "SourceId": "Planerve.App.UI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.UI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\wwwroot\\",
       "BasePath": "_content/Planerve.App.UI",
       "RelativePath": "design/PlanerveAppLogo.svg",
       "AssetKind": "All",
@@ -954,10 +971,10 @@
       "OriginalItemSpec": "wwwroot\\design\\PlanerveAppLogo.svg"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.UI\\wwwroot\\design\\PlanerveLogo.svg",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\wwwroot\\design\\PlanerveLogo.svg",
       "SourceId": "Planerve.App.UI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.UI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\wwwroot\\",
       "BasePath": "_content/Planerve.App.UI",
       "RelativePath": "design/PlanerveLogo.svg",
       "AssetKind": "All",
@@ -971,10 +988,10 @@
       "OriginalItemSpec": "wwwroot\\design\\PlanerveLogo.svg"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.UI\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\wwwroot\\favicon.ico",
       "SourceId": "Planerve.App.UI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.UI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\wwwroot\\",
       "BasePath": "_content/Planerve.App.UI",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -988,10 +1005,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.UI\\wwwroot\\js\\site.js",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\wwwroot\\js\\site.js",
       "SourceId": "Planerve.App.UI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.UI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\wwwroot\\",
       "BasePath": "_content/Planerve.App.UI",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -1005,10 +1022,10 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.UI\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "Planerve.App.UI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.UI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\wwwroot\\",
       "BasePath": "_content/Planerve.App.UI",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -1022,10 +1039,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.UI\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "Planerve.App.UI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.UI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\wwwroot\\",
       "BasePath": "_content/Planerve.App.UI",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -1039,10 +1056,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.UI\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "Planerve.App.UI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.UI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\wwwroot\\",
       "BasePath": "_content/Planerve.App.UI",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -1056,10 +1073,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.UI\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "Planerve.App.UI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.UI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\wwwroot\\",
       "BasePath": "_content/Planerve.App.UI",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",
@@ -1073,10 +1090,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.UI\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "Planerve.App.UI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.UI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\wwwroot\\",
       "BasePath": "_content/Planerve.App.UI",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -1090,10 +1107,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.UI\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "Planerve.App.UI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.UI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\wwwroot\\",
       "BasePath": "_content/Planerve.App.UI",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -1107,10 +1124,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.UI\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "Planerve.App.UI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.UI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\wwwroot\\",
       "BasePath": "_content/Planerve.App.UI",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -1124,10 +1141,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.UI\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "Planerve.App.UI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.UI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\wwwroot\\",
       "BasePath": "_content/Planerve.App.UI",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -1141,10 +1158,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.UI\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "Planerve.App.UI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.UI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\wwwroot\\",
       "BasePath": "_content/Planerve.App.UI",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -1158,10 +1175,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.UI\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "Planerve.App.UI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.UI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\wwwroot\\",
       "BasePath": "_content/Planerve.App.UI",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -1175,10 +1192,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.UI\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "Planerve.App.UI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.UI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\wwwroot\\",
       "BasePath": "_content/Planerve.App.UI",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -1192,10 +1209,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.UI\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "Planerve.App.UI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.UI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\wwwroot\\",
       "BasePath": "_content/Planerve.App.UI",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",

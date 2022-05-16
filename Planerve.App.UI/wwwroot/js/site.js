@@ -1,4 +1,8 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+const buttons = document.querySelectorAll(".filter__toggle");
 
-// Write your JavaScript code.
+buttons.forEach(button => {
+    button.addEventListener('click', function handleClick(event) {
+        const slide = document.querySelector(".filter__tab");
+        slide.classList.toggle("active");
+    });
+});

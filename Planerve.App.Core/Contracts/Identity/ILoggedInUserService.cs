@@ -8,7 +8,5 @@ namespace Planerve.App.Core.Contracts.Identity
         public Task<string> UserId();
 
         public Task<ClaimsPrincipal> GetUser();
-
-        public Task<bool> UsernameOrEmail();
     }
 }

@@ -8,14 +8,15 @@
         <PackageReference Include="AutoMapper" Version="11.0.1" />
         <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
         <PackageReference Include="DinkToPdf" Version="1.0.8" />
-        <PackageReference Include="FluentValidation" Version="10.4.0" />
-        <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="10.4.0" />
-        <PackageReference Include="Kevsoft.PDFtk" Version="0.0.51" />
+        <PackageReference Include="FluentValidation" Version="11.0.0" />
+        <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.0.0" />
+        <PackageReference Include="Kevsoft.PDFtk" Version="0.0.56" />
         <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
-        <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
+        <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.8" />
+        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.4" />
         <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.1" />
         <PackageReference Include="System.Net.Http" Version="4.3.4" />
-        <PackageReference Include="System.Text.Json" Version="6.0.2" />
+        <PackageReference Include="System.Text.Json" Version="6.0.3" />
     </ItemGroup>
 
     <ItemGroup>
@@ -23,11 +24,27 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Features\ApplicationData\Commands\CopyApplication\" />
-      <Folder Include="Features\ApplicationData\Commands\RemoveAccess" />
-      <Folder Include="Features\File\" />
-      <Folder Include="Features\Teams\" />
-      <Folder Include="Features\Payment\" />
+      <Compile Remove="Features\Teams\**" />
+      <Compile Remove="Features\Payment\**" />
+      <Compile Remove="Features\File\**" />
+      <Compile Remove="Features\ApplicationData\Commands\CopyApplication\**" />
+      <Compile Remove="Features\ApplicationData\Commands\RemoveAccess\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="Features\Teams\**" />
+      <EmbeddedResource Remove="Features\Payment\**" />
+      <EmbeddedResource Remove="Features\File\**" />
+      <EmbeddedResource Remove="Features\ApplicationData\Commands\CopyApplication\**" />
+      <EmbeddedResource Remove="Features\ApplicationData\Commands\RemoveAccess\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Features\Teams\**" />
+      <None Remove="Features\Payment\**" />
+      <None Remove="Features\File\**" />
+      <None Remove="Features\ApplicationData\Commands\CopyApplication\**" />
+      <None Remove="Features\ApplicationData\Commands\RemoveAccess\**" />
     </ItemGroup>
 
 </Project>

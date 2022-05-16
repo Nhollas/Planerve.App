@@ -1,6 +1,4 @@
-﻿using System.Net.Http;
-
-namespace Planerve.App.UI.Services.Base
+﻿namespace Planerve.App.UI.Services.Base
 {
     public partial class Client : IClient
     {

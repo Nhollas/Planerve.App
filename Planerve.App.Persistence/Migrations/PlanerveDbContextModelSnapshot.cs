@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Planerve.App.Persistence;
+using Planerve.App.Persistence.Contexts;
 
 #nullable disable
 
@@ -17,62 +17,10 @@ namespace Planerve.App.Persistence.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.3")
+                .HasAnnotation("ProductVersion", "6.0.4")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
-
-            modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.AccessToken", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("ApplicationId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool>("CopyApplication")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("CreateForm")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("DownloadForm")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("EditForm")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime>("ExpiryDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsExpired")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsValid")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("ReadApplication")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("ReadForm")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("TokenRef")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("TokenUses")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ApplicationId");
-
-                    b.ToTable("AccessToken");
-                });
 
             modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.Address", b =>
                 {
@@ -215,12 +163,6 @@ namespace Planerve.App.Persistence.Migrations
                     b.Property<bool>("CopyApplication")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("CreateForm")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
                     b.Property<bool>("DownloadForm")
                         .HasColumnType("bit");
 
@@ -229,9 +171,6 @@ namespace Planerve.App.Persistence.Migrations
 
                     b.Property<DateTime>("ExpiryDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsExpired")
-                        .HasColumnType("bit");
 
                     b.Property<bool>("IsValid")
                         .HasColumnType("bit");
@@ -242,7 +181,7 @@ namespace Planerve.App.Persistence.Migrations
                     b.Property<bool>("ReadForm")
                         .HasColumnType("bit");
 
-                    b.Property<string>("TokenRef")
+                    b.Property<string>("Role")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserId")
@@ -292,94 +231,37 @@ namespace Planerve.App.Persistence.Migrations
                     b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("OneTextEight")
+                    b.Property<string>("AddressOne")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("OneTextEleven")
+                    b.Property<string>("AddressThree")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("OneTextFithteen")
+                    b.Property<string>("AddressTwo")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("OneTextFive")
+                    b.Property<string>("BuildingSuffix")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("OneTextFour")
+                    b.Property<string>("EastingValue")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("OneTextFourteen")
+                    b.Property<string>("NorthingValue")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("OneTextNine")
+                    b.Property<string>("Postcode")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("OneTextOne")
+                    b.Property<string>("PropertyName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("OneTextSeven")
+                    b.Property<string>("PropertyNumber")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("OneTextSix")
+                    b.Property<string>("SiteDescription")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("OneTextTen")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("OneTextThirteen")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("OneTextThree")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("OneTextTwelve")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("OneTextTwo")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TwoTextEight")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TwoTextEleven")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TwoTextFithteen")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TwoTextFive")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TwoTextFour")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TwoTextFourteen")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TwoTextNine")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TwoTextOne")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TwoTextSeven")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TwoTextSix")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TwoTextTen")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TwoTextThirteen")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TwoTextThree")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TwoTextTwelve")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TwoTextTwo")
+                    b.Property<string>("Town")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -392,108 +274,42 @@ namespace Planerve.App.Persistence.Migrations
                     b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("OneTextEight")
+                    b.Property<string>("AddressOne")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("OneTextEleven")
+                    b.Property<string>("AddressThree")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("OneTextFithteen")
+                    b.Property<string>("AddressTwo")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("OneTextFive")
+                    b.Property<string>("BuildingSuffix")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("OneTextFour")
+                    b.Property<string>("EastingValue")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("OneTextFourteen")
+                    b.Property<string>("NorthingValue")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("OneTextNine")
+                    b.Property<string>("Postcode")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("OneTextOne")
+                    b.Property<string>("PropertyName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("OneTextSeven")
+                    b.Property<string>("PropertyNumber")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("OneTextSix")
+                    b.Property<string>("SiteDescription")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("OneTextTen")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("OneTextThirteen")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("OneTextThree")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("OneTextTwelve")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("OneTextTwo")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TwoTextEight")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TwoTextEleven")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TwoTextFithteen")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TwoTextFive")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TwoTextFour")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TwoTextFourteen")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TwoTextNine")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TwoTextOne")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TwoTextSeven")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TwoTextSix")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TwoTextTen")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TwoTextThirteen")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TwoTextThree")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TwoTextTwelve")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TwoTextTwo")
+                    b.Property<string>("Town")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.ToTable("FormTypeTwo");
-                });
-
-            modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.AccessToken", b =>
-                {
-                    b.HasOne("Planerve.App.Domain.Entities.ApplicationEntities.Application", null)
-                        .WithMany("AccessTokens")
-                        .HasForeignKey("ApplicationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.Address", b =>
@@ -562,8 +378,6 @@ namespace Planerve.App.Persistence.Migrations
 
             modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.Application", b =>
                 {
-                    b.Navigation("AccessTokens");
-
                     b.Navigation("AddressData");
 
                     b.Navigation("AuthorisedUsers");

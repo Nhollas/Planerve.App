@@ -10,6 +10,7 @@ using Planerve.App.Core.Contracts.Identity;
 using Planerve.App.Core.Contracts.Persistence;
 using Planerve.App.Identity;
 using Planerve.App.Persistence;
+using Planerve.App.Persistence.Contexts;
 
 var builder = WebApplication.CreateBuilder(args);
 var config = builder.Configuration;
@@ -21,6 +22,9 @@ builder.Services.AddIdentityServices();
 
 builder.Services.AddDbContext<PlanerveDbContext>(options =>
        options.UseSqlServer(builder.Configuration.GetConnectionString("PlanerveConnectionString")));
+
+builder.Services.AddDbContext<PlanerveIdentityDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("PlanerveIdentityConnectionString")));
 
 builder.Services.AddScoped<ILoggedInUserService, LoggedInUserService>();
 builder.Services.AddScoped<IPostcodeService, PostcodeService>();

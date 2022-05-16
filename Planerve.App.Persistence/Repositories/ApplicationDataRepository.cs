@@ -4,6 +4,7 @@ using Planerve.App.Domain.Entities.ApplicationEntities;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
+using Planerve.App.Persistence.Contexts;
 
 namespace Planerve.App.Persistence.Repositories
 {

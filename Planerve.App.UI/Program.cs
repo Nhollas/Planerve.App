@@ -10,6 +10,11 @@ builder.Services.AddControllersWithViews();
 // Basic Planerve.App.UI Services
 builder.Services.AddClientServices();
 
+builder.Services.AddSingleton(new HttpClient
+{
+    BaseAddress = new Uri("https://localhost:6001")
+});
+
 builder.Services.AddHttpClient<IClient, Client>(client =>
 {
     client.BaseAddress = new Uri("https://localhost:6001");

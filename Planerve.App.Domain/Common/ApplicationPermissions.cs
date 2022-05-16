@@ -7,7 +7,6 @@
         public bool CopyApplication { get; set; }
 
         // Form Access
-        public bool CreateForm { get; set; }
         public bool ReadForm { get; set; }
         public bool EditForm { get; set; }
         public bool DownloadForm { get; set; }

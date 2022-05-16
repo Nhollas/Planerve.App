@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Planerve.App.Core.Features.ApplicationData.Commands.CreateAccessToken;
 using Planerve.App.Core.Features.ApplicationData.Commands.CreateApplication;
 using Planerve.App.Core.Features.ApplicationData.Queries.GetApplicationById;
 using Planerve.App.Core.Features.ApplicationData.Queries.GetApplicationList;
@@ -16,13 +15,11 @@ public class MappingProfile : Profile
     public MappingProfile()
     {
 
-        // Appllication Data Maps
+        // Application Data Maps
         CreateMap<Application, CreateApplicationCommand>().ReverseMap();
         CreateMap<Application, ApplicationDetailVm>().ReverseMap();
         CreateMap<Application, ApplicationListVm>().ReverseMap();
         CreateMap<Address, Result>().ReverseMap();
-        CreateMap<AccessToken, AuthorisedUser>().ReverseMap();
-        CreateMap<AccessToken, CreateAccessTokenCommand>().ReverseMap();
 
         // Form Data Maps
         CreateMap<Form, FormCompletedVm>().ReverseMap();

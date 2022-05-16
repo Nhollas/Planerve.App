@@ -1,0 +1,23 @@
+﻿@using Planerve.App.UI.ViewModels.ApplicationVMs
+@model List<ApplicationListViewModel>
+
+<div id="dashboardData" class="w-full grid grid-cols-1 lg:grid-cols-2 gap-5">
+    @foreach (var item in Model)
+    {
+        <div class="flex flex-col max-w-lg">
+            <div class="bg-gray-50 border-[1px] border-gray-300 flex flex-col gap-3 justify-center px-5 w-full py-5 relative">
+                <div class="flex flex-row">
+                    <h2 class="text-lg text-blue-600 underline font-semibold cursor-pointer">@item.ApplicationName</h2>
+                    <h2 class="text-lg font-semibold ml-auto uppercase">DRAFT</h2>
+                </div>
+                <p>@item.AddressData.AddressLineOne</p>
+                <p>@item.AddressData.Admin_district</p>
+                <p>@item.CreatedDate</p>
+            </div>
+            <div class="flex flex-row w-full bg-[#001534] px-5 py-3">
+                <p class="text-white text-sm">Ref: @item.ApplicationReference</p>
+                <p class="text-white text-sm ml-auto">Version: @item.VersionNumber</p>
+            </div>
+        </div>
+    }
+</div>

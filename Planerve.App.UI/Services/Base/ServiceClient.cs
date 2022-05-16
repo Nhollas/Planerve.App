@@ -4,8 +4,6 @@
 // </auto-generated>
 //----------------------
 
-#nullable enable
-
 #pragma warning disable 108 // Disable "CS0108 '{derivedDto}.ToJson()' hides inherited member '{dtoBase}.ToJson()'. Use the new keyword if hiding was intended."
 #pragma warning disable 114 // Disable "CS0114 '{derivedDto}.RaisePropertyChanged(String)' hides inherited member 'dtoBase.RaisePropertyChanged(String)'. To make the current member override that implementation, add the override keyword. Otherwise add the new keyword."
 #pragma warning disable 472 // Disable "CS0472 The result of the expression is always 'false' since a value of type 'Int32' is never equal to 'null' of type 'Int32?'
@@ -24,12 +22,12 @@ namespace Planerve.App.UI.Services.Base
     {
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<RegistrationResponse> RegisterAsync(RegistrationRequest? body);
+        System.Threading.Tasks.Task<RegistrationResponse> RegisterAsync(RegistrationRequest body);
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<RegistrationResponse> RegisterAsync(RegistrationRequest? body, System.Threading.CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<RegistrationResponse> RegisterAsync(RegistrationRequest body, System.Threading.CancellationToken cancellationToken);
 
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
@@ -42,37 +40,57 @@ namespace Planerve.App.UI.Services.Base
 
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ApplicationListVm>> GetApplicationListAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ApplicationListVm>> ListAsync();
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ApplicationListVm>> GetApplicationListAsync(System.Threading.CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ApplicationListVm>> ListAsync(System.Threading.CancellationToken cancellationToken);
 
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<System.Guid> CreateAsync(CreateApplicationCommand? body);
+        System.Threading.Tasks.Task<System.Guid> CreateAsync(CreateApplicationCommand body);
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<System.Guid> CreateAsync(CreateApplicationCommand? body, System.Threading.CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<System.Guid> CreateAsync(CreateApplicationCommand body, System.Threading.CancellationToken cancellationToken);
 
-        /// <returns>Success</returns>
+        /// <returns>No Content</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
         System.Threading.Tasks.Task DeleteAsync(System.Guid id);
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-        /// <returns>Success</returns>
+        /// <returns>No Content</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
         System.Threading.Tasks.Task DeleteAsync(System.Guid id, System.Threading.CancellationToken cancellationToken);
 
+        /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<FileResponse> DownloadAsync(System.Guid id);
+        System.Threading.Tasks.Task<FormCompletedVm> GetFormByIdAsync(System.Guid id);
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<FileResponse> DownloadAsync(System.Guid id, System.Threading.CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<FormCompletedVm> GetFormByIdAsync(System.Guid id, System.Threading.CancellationToken cancellationToken);
+
+        /// <returns>No Content</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        System.Threading.Tasks.Task CompleteFormAsync(CompleteFormCommand body);
+
+        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        /// <returns>No Content</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        System.Threading.Tasks.Task CompleteFormAsync(CompleteFormCommand body, System.Threading.CancellationToken cancellationToken);
+
+        /// <returns>No Content</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        System.Threading.Tasks.Task UpdateFormAsync(UpdateFormCommand body);
+
+        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        /// <returns>No Content</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        System.Threading.Tasks.Task UpdateFormAsync(UpdateFormCommand body, System.Threading.CancellationToken cancellationToken);
 
     }
 
@@ -105,7 +123,7 @@ namespace Planerve.App.UI.Services.Base
 
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<RegistrationResponse> RegisterAsync(RegistrationRequest? body)
+        public virtual System.Threading.Tasks.Task<RegistrationResponse> RegisterAsync(RegistrationRequest body)
         {
             return RegisterAsync(body, System.Threading.CancellationToken.None);
         }
@@ -113,7 +131,7 @@ namespace Planerve.App.UI.Services.Base
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<RegistrationResponse> RegisterAsync(RegistrationRequest? body, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<RegistrationResponse> RegisterAsync(RegistrationRequest body, System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append("api/Account/register");
@@ -264,18 +282,18 @@ namespace Planerve.App.UI.Services.Base
 
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ApplicationListVm>> GetApplicationListAsync()
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ApplicationListVm>> ListAsync()
         {
-            return GetApplicationListAsync(System.Threading.CancellationToken.None);
+            return ListAsync(System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ApplicationListVm>> GetApplicationListAsync(System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ApplicationListVm>> ListAsync(System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append("api/Application");
+            urlBuilder_.Append("api/Application/List");
 
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -342,7 +360,7 @@ namespace Planerve.App.UI.Services.Base
 
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<System.Guid> CreateAsync(CreateApplicationCommand? body)
+        public virtual System.Threading.Tasks.Task<System.Guid> CreateAsync(CreateApplicationCommand body)
         {
             return CreateAsync(body, System.Threading.CancellationToken.None);
         }
@@ -350,7 +368,7 @@ namespace Planerve.App.UI.Services.Base
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<System.Guid> CreateAsync(CreateApplicationCommand? body, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<System.Guid> CreateAsync(CreateApplicationCommand body, System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append("api/Application/Create");
@@ -417,7 +435,7 @@ namespace Planerve.App.UI.Services.Base
             }
         }
 
-        /// <returns>Success</returns>
+        /// <returns>No Content</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task DeleteAsync(System.Guid id)
         {
@@ -425,7 +443,7 @@ namespace Planerve.App.UI.Services.Base
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-        /// <returns>Success</returns>
+        /// <returns>No Content</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task DeleteAsync(System.Guid id, System.Threading.CancellationToken cancellationToken)
         {
@@ -503,21 +521,23 @@ namespace Planerve.App.UI.Services.Base
             }
         }
 
+        /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<FileResponse> DownloadAsync(System.Guid id)
+        public virtual System.Threading.Tasks.Task<FormCompletedVm> GetFormByIdAsync(System.Guid id)
         {
-            return DownloadAsync(id, System.Threading.CancellationToken.None);
+            return GetFormByIdAsync(id, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<FileResponse> DownloadAsync(System.Guid id, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<FormCompletedVm> GetFormByIdAsync(System.Guid id, System.Threading.CancellationToken cancellationToken)
         {
             if (id == null)
                 throw new System.ArgumentNullException("id");
 
             var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append("api/Application/Download/{id}");
+            urlBuilder_.Append("api/Form/{id}");
             urlBuilder_.Replace("{id}", System.Uri.EscapeDataString(ConvertToString(id, System.Globalization.CultureInfo.InvariantCulture)));
 
             var client_ = _httpClient;
@@ -527,7 +547,7 @@ namespace Planerve.App.UI.Services.Base
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
                 {
                     request_.Method = new System.Net.Http.HttpMethod("GET");
-                    request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/pdf"));
+                    request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("text/plain"));
 
                     PrepareRequest(client_, request_, urlBuilder_);
 
@@ -550,17 +570,193 @@ namespace Planerve.App.UI.Services.Base
                         ProcessResponse(client_, response_);
 
                         var status_ = (int)response_.StatusCode;
-                        if (status_ == 200 || status_ == 206)
+                        if (status_ == 200)
                         {
-                            var responseStream_ = response_.Content == null ? System.IO.Stream.Null : await response_.Content.ReadAsStreamAsync().ConfigureAwait(false);
-                            var fileResponse_ = new FileResponse(status_, headers_, responseStream_, null, response_);
-                            disposeClient_ = false; disposeResponse_ = false; // response and client are disposed by FileResponse
-                            return fileResponse_;
+                            var objectResponse_ = await ReadObjectResponseAsync<FormCompletedVm>(response_, headers_, cancellationToken).ConfigureAwait(false);
+                            if (objectResponse_.Object == null)
+                            {
+                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                            }
+                            return objectResponse_.Object;
                         }
                         else
                         {
-                            var responseData_ = response_.Content == null ? null : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
-                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                            var objectResponse_ = await ReadObjectResponseAsync<ProblemDetails>(response_, headers_, cancellationToken).ConfigureAwait(false);
+                            if (objectResponse_.Object == null)
+                            {
+                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                            }
+                            throw new ApiException<ProblemDetails>("Error", status_, objectResponse_.Text, headers_, objectResponse_.Object, null);
+                        }
+                    }
+                    finally
+                    {
+                        if (disposeResponse_)
+                            response_.Dispose();
+                    }
+                }
+            }
+            finally
+            {
+                if (disposeClient_)
+                    client_.Dispose();
+            }
+        }
+
+        /// <returns>No Content</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual System.Threading.Tasks.Task CompleteFormAsync(CompleteFormCommand body)
+        {
+            return CompleteFormAsync(body, System.Threading.CancellationToken.None);
+        }
+
+        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        /// <returns>No Content</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual async System.Threading.Tasks.Task CompleteFormAsync(CompleteFormCommand body, System.Threading.CancellationToken cancellationToken)
+        {
+            var urlBuilder_ = new System.Text.StringBuilder();
+            urlBuilder_.Append("api/Form/CompleteForm");
+
+            var client_ = _httpClient;
+            var disposeClient_ = false;
+            try
+            {
+                using (var request_ = new System.Net.Http.HttpRequestMessage())
+                {
+                    var content_ = new System.Net.Http.StringContent(System.Text.Json.JsonSerializer.Serialize(body, _settings.Value));
+                    content_.Headers.ContentType = System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json");
+                    request_.Content = content_;
+                    request_.Method = new System.Net.Http.HttpMethod("PUT");
+
+                    PrepareRequest(client_, request_, urlBuilder_);
+
+                    var url_ = urlBuilder_.ToString();
+                    request_.RequestUri = new System.Uri(url_, System.UriKind.RelativeOrAbsolute);
+
+                    PrepareRequest(client_, request_, url_);
+
+                    var response_ = await client_.SendAsync(request_, System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
+                    var disposeResponse_ = true;
+                    try
+                    {
+                        var headers_ = System.Linq.Enumerable.ToDictionary(response_.Headers, h_ => h_.Key, h_ => h_.Value);
+                        if (response_.Content != null && response_.Content.Headers != null)
+                        {
+                            foreach (var item_ in response_.Content.Headers)
+                                headers_[item_.Key] = item_.Value;
+                        }
+
+                        ProcessResponse(client_, response_);
+
+                        var status_ = (int)response_.StatusCode;
+                        if (status_ == 204)
+                        {
+                            return;
+                        }
+                        else
+                        if (status_ == 404)
+                        {
+                            var objectResponse_ = await ReadObjectResponseAsync<ProblemDetails>(response_, headers_, cancellationToken).ConfigureAwait(false);
+                            if (objectResponse_.Object == null)
+                            {
+                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                            }
+                            throw new ApiException<ProblemDetails>("Not Found", status_, objectResponse_.Text, headers_, objectResponse_.Object, null);
+                        }
+                        else
+                        {
+                            var objectResponse_ = await ReadObjectResponseAsync<ProblemDetails>(response_, headers_, cancellationToken).ConfigureAwait(false);
+                            if (objectResponse_.Object == null)
+                            {
+                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                            }
+                            throw new ApiException<ProblemDetails>("Error", status_, objectResponse_.Text, headers_, objectResponse_.Object, null);
+                        }
+                    }
+                    finally
+                    {
+                        if (disposeResponse_)
+                            response_.Dispose();
+                    }
+                }
+            }
+            finally
+            {
+                if (disposeClient_)
+                    client_.Dispose();
+            }
+        }
+
+        /// <returns>No Content</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual System.Threading.Tasks.Task UpdateFormAsync(UpdateFormCommand body)
+        {
+            return UpdateFormAsync(body, System.Threading.CancellationToken.None);
+        }
+
+        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        /// <returns>No Content</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual async System.Threading.Tasks.Task UpdateFormAsync(UpdateFormCommand body, System.Threading.CancellationToken cancellationToken)
+        {
+            var urlBuilder_ = new System.Text.StringBuilder();
+            urlBuilder_.Append("api/Form");
+
+            var client_ = _httpClient;
+            var disposeClient_ = false;
+            try
+            {
+                using (var request_ = new System.Net.Http.HttpRequestMessage())
+                {
+                    var content_ = new System.Net.Http.StringContent(System.Text.Json.JsonSerializer.Serialize(body, _settings.Value));
+                    content_.Headers.ContentType = System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json");
+                    request_.Content = content_;
+                    request_.Method = new System.Net.Http.HttpMethod("PUT");
+
+                    PrepareRequest(client_, request_, urlBuilder_);
+
+                    var url_ = urlBuilder_.ToString();
+                    request_.RequestUri = new System.Uri(url_, System.UriKind.RelativeOrAbsolute);
+
+                    PrepareRequest(client_, request_, url_);
+
+                    var response_ = await client_.SendAsync(request_, System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
+                    var disposeResponse_ = true;
+                    try
+                    {
+                        var headers_ = System.Linq.Enumerable.ToDictionary(response_.Headers, h_ => h_.Key, h_ => h_.Value);
+                        if (response_.Content != null && response_.Content.Headers != null)
+                        {
+                            foreach (var item_ in response_.Content.Headers)
+                                headers_[item_.Key] = item_.Value;
+                        }
+
+                        ProcessResponse(client_, response_);
+
+                        var status_ = (int)response_.StatusCode;
+                        if (status_ == 204)
+                        {
+                            return;
+                        }
+                        else
+                        if (status_ == 404)
+                        {
+                            var objectResponse_ = await ReadObjectResponseAsync<ProblemDetails>(response_, headers_, cancellationToken).ConfigureAwait(false);
+                            if (objectResponse_.Object == null)
+                            {
+                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                            }
+                            throw new ApiException<ProblemDetails>("Not Found", status_, objectResponse_.Text, headers_, objectResponse_.Object, null);
+                        }
+                        else
+                        {
+                            var objectResponse_ = await ReadObjectResponseAsync<ProblemDetails>(response_, headers_, cancellationToken).ConfigureAwait(false);
+                            if (objectResponse_.Object == null)
+                            {
+                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                            }
+                            throw new ApiException<ProblemDetails>("Error", status_, objectResponse_.Text, headers_, objectResponse_.Object, null);
                         }
                     }
                     finally
@@ -596,7 +792,7 @@ namespace Planerve.App.UI.Services.Base
         {
             if (response == null || response.Content == null)
             {
-                return new ObjectResponseResult<T>(default(T)!, string.Empty);
+                return new ObjectResponseResult<T>(default(T), string.Empty);
             }
 
             if (ReadResponseAsString)
@@ -605,7 +801,7 @@ namespace Planerve.App.UI.Services.Base
                 try
                 {
                     var typedBody = System.Text.Json.JsonSerializer.Deserialize<T>(responseText, JsonSerializerSettings);
-                    return new ObjectResponseResult<T>(typedBody!, responseText);
+                    return new ObjectResponseResult<T>(typedBody, responseText);
                 }
                 catch (System.Text.Json.JsonException exception)
                 {
@@ -620,7 +816,7 @@ namespace Planerve.App.UI.Services.Base
                     using (var responseStream = await response.Content.ReadAsStreamAsync().ConfigureAwait(false))
                     {
                         var typedBody = await System.Text.Json.JsonSerializer.DeserializeAsync<T>(responseStream, JsonSerializerSettings, cancellationToken).ConfigureAwait(false);
-                        return new ObjectResponseResult<T>(typedBody!, string.Empty);
+                        return new ObjectResponseResult<T>(typedBody, string.Empty);
                     }
                 }
                 catch (System.Text.Json.JsonException exception)
@@ -631,7 +827,7 @@ namespace Planerve.App.UI.Services.Base
             }
         }
 
-        private string ConvertToString(object? value, System.Globalization.CultureInfo cultureInfo)
+        private string ConvertToString(object value, System.Globalization.CultureInfo cultureInfo)
         {
             if (value == null)
             {
@@ -678,56 +874,125 @@ namespace Planerve.App.UI.Services.Base
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class Address
+    {
+
+        [System.Text.Json.Serialization.JsonPropertyName("addressLineOne")]
+        public string AddressLineOne { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("addressLineTwo")]
+        public string AddressLineTwo { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("addressLineThree")]
+        public string AddressLineThree { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("postcode")]
+        public string Postcode { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("quality")]
+        public int Quality { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("eastings")]
+        public int Eastings { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("northings")]
+        public int Northings { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("country")]
+        public string Country { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("nhs_ha")]
+        public string Nhs_ha { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("longitude")]
+        public float Longitude { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("latitude")]
+        public float Latitude { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("european_electoral_region")]
+        public string European_electoral_region { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("primary_care_trust")]
+        public string Primary_care_trust { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("region")]
+        public string Region { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("lsoa")]
+        public string Lsoa { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("msoa")]
+        public string Msoa { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("incode")]
+        public string Incode { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("outcode")]
+        public string Outcode { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("parliamentary_constituency")]
+        public string Parliamentary_constituency { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("admin_district")]
+        public string Admin_district { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("parish")]
+        public string Parish { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("admin_county")]
+        public string Admin_county { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("admin_ward")]
+        public string Admin_ward { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("ced")]
+        public string Ced { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("ccg")]
+        public string Ccg { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("nuts")]
+        public string Nuts { get; set; }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
     public partial class ApplicationDetailVm
     {
 
         [System.Text.Json.Serialization.JsonPropertyName("id")]
-        public System.Guid Id { get; set; } = default!;
+        public System.Guid Id { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("applicationReference")]
-        public string? ApplicationReference { get; set; } = default!;
+        public string ApplicationReference { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("applicationName")]
-        public string? ApplicationName { get; set; } = default!;
+        public string ApplicationName { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("ownerId")]
-        public string? OwnerId { get; set; } = default!;
+        public string OwnerId { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("versionNumber")]
-        public string? VersionNumber { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("addressLineOne")]
-        public string? AddressLineOne { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("addressLineTwo")]
-        public string? AddressLineTwo { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("addressLineThree")]
-        public string? AddressLineThree { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("fullAddress")]
-        public string? FullAddress { get; set; } = default!;
+        public string VersionNumber { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("applicationType")]
-        public int ApplicationType { get; set; } = default!;
+        public int ApplicationType { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("postcode")]
-        public string? Postcode { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("createdDate")]
+        public System.DateTime CreatedDate { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("localAuthority")]
-        public string? LocalAuthority { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("lastModifiedDate")]
+        public System.DateTime LastModifiedDate { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("created")]
-        public System.DateTime Created { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("addressData")]
+        public Address AddressData { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("lastUpdated")]
-        public System.DateTime LastUpdated { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("checklistData")]
+        public Checklist ChecklistData { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("formTypeOne")]
-        public FormTypeOne FormTypeOne { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("formTypeTwo")]
-        public FormTypeTwo FormTypeTwo { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("formData")]
+        public Form FormData { get; set; }
 
     }
 
@@ -736,46 +1001,70 @@ namespace Planerve.App.UI.Services.Base
     {
 
         [System.Text.Json.Serialization.JsonPropertyName("id")]
-        public System.Guid Id { get; set; } = default!;
+        public System.Guid Id { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("applicationReference")]
-        public string? ApplicationReference { get; set; } = default!;
+        public string ApplicationReference { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("applicationName")]
-        public string? ApplicationName { get; set; } = default!;
+        public string ApplicationName { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("ownerId")]
-        public string? OwnerId { get; set; } = default!;
+        public string OwnerId { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("versionNumber")]
-        public string? VersionNumber { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("addressLineOne")]
-        public string? AddressLineOne { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("addressLineTwo")]
-        public string? AddressLineTwo { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("addressLineThree")]
-        public string? AddressLineThree { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("fullAddress")]
-        public string? FullAddress { get; set; } = default!;
+        public string VersionNumber { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("applicationType")]
-        public int ApplicationType { get; set; } = default!;
+        public int ApplicationType { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("postcode")]
-        public string? Postcode { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("createdDate")]
+        public System.DateTime CreatedDate { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("localAuthority")]
-        public string? LocalAuthority { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("lastModifiedDate")]
+        public System.DateTime LastModifiedDate { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("created")]
-        public System.DateTime Created { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("addressData")]
+        public Address AddressData { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("lastUpdated")]
-        public System.DateTime LastUpdated { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("checklistData")]
+        public Checklist ChecklistData { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("formData")]
+        public Form FormData { get; set; }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class Checklist
+    {
+
+        [System.Text.Json.Serialization.JsonPropertyName("formSections")]
+        public bool FormSections { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("plansAndDocs")]
+        public bool PlansAndDocs { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("calculatedFee")]
+        public bool CalculatedFee { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("submittedToLocalAuthority")]
+        public bool SubmittedToLocalAuthority { get; set; }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class CompleteFormCommand
+    {
+
+        [System.Text.Json.Serialization.JsonPropertyName("id")]
+        public System.Guid Id { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("formTypeOneData")]
+        public FormTypeOne FormTypeOneData { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("formTypeTwoData")]
+        public FormTypeTwo FormTypeTwoData { get; set; }
 
     }
 
@@ -783,41 +1072,44 @@ namespace Planerve.App.UI.Services.Base
     public partial class CreateApplicationCommand
     {
 
-        [System.Text.Json.Serialization.JsonPropertyName("applicationReference")]
-        public string? ApplicationReference { get; set; } = default!;
-
         [System.Text.Json.Serialization.JsonPropertyName("applicationName")]
-        public string? ApplicationName { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("ownerId")]
-        public string? OwnerId { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("versionNumber")]
-        public string? VersionNumber { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("addressLineOne")]
-        public string? AddressLineOne { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("addressLineTwo")]
-        public string? AddressLineTwo { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("addressLineThree")]
-        public string? AddressLineThree { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("fullAddress")]
-        public string? FullAddress { get; set; } = default!;
+        public string ApplicationName { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("applicationType")]
-        public int ApplicationType { get; set; } = default!;
+        public int ApplicationType { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("addressLineOne")]
+        public string AddressLineOne { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("addressLineTwo")]
+        public string AddressLineTwo { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("addressLineThree")]
+        public string AddressLineThree { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("postcode")]
-        public string? Postcode { get; set; } = default!;
+        public string Postcode { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("localAuthority")]
-        public string? LocalAuthority { get; set; } = default!;
+    }
 
-        [System.Text.Json.Serialization.JsonPropertyName("created")]
-        public System.DateTime Created { get; set; } = default!;
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class Form
+    {
+
+        [System.Text.Json.Serialization.JsonPropertyName("formTypeOneData")]
+        public FormTypeOne FormTypeOneData { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("formTypeTwoData")]
+        public FormTypeTwo FormTypeTwoData { get; set; }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class FormCompletedVm
+    {
+
+        [System.Text.Json.Serialization.JsonPropertyName("isCompleted")]
+        public bool IsCompleted { get; set; }
 
     }
 
@@ -826,97 +1118,40 @@ namespace Planerve.App.UI.Services.Base
     {
 
         [System.Text.Json.Serialization.JsonPropertyName("id")]
-        public System.Guid Id { get; set; } = default!;
+        public System.Guid Id { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextOne")]
-        public string? OneTextOne { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("propertyNumber")]
+        public string PropertyNumber { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextTwo")]
-        public string? OneTextTwo { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("buildingSuffix")]
+        public string BuildingSuffix { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextThree")]
-        public string? OneTextThree { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("propertyName")]
+        public string PropertyName { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextFour")]
-        public string? OneTextFour { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("addressOne")]
+        public string AddressOne { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextFive")]
-        public string? OneTextFive { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("addressTwo")]
+        public string AddressTwo { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextSix")]
-        public string? OneTextSix { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("addressThree")]
+        public string AddressThree { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextSeven")]
-        public string? OneTextSeven { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("town")]
+        public string Town { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextEight")]
-        public string? OneTextEight { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("postcode")]
+        public string Postcode { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextNine")]
-        public string? OneTextNine { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("eastingValue")]
+        public string EastingValue { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextTen")]
-        public string? OneTextTen { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("northingValue")]
+        public string NorthingValue { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextEleven")]
-        public string? OneTextEleven { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextTwelve")]
-        public string? OneTextTwelve { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextThirteen")]
-        public string? OneTextThirteen { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextFourteen")]
-        public string? OneTextFourteen { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextFithteen")]
-        public string? OneTextFithteen { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextOne")]
-        public string? TwoTextOne { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextTwo")]
-        public string? TwoTextTwo { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextThree")]
-        public string? TwoTextThree { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextFour")]
-        public string? TwoTextFour { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextFive")]
-        public string? TwoTextFive { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextSix")]
-        public string? TwoTextSix { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextSeven")]
-        public string? TwoTextSeven { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextEight")]
-        public string? TwoTextEight { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextNine")]
-        public string? TwoTextNine { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextTen")]
-        public string? TwoTextTen { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextEleven")]
-        public string? TwoTextEleven { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextTwelve")]
-        public string? TwoTextTwelve { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextThirteen")]
-        public string? TwoTextThirteen { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextFourteen")]
-        public string? TwoTextFourteen { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextFithteen")]
-        public string? TwoTextFithteen { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("siteDescription")]
+        public string SiteDescription { get; set; }
 
     }
 
@@ -925,97 +1160,40 @@ namespace Planerve.App.UI.Services.Base
     {
 
         [System.Text.Json.Serialization.JsonPropertyName("id")]
-        public System.Guid Id { get; set; } = default!;
+        public System.Guid Id { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextOne")]
-        public string? OneTextOne { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("propertyNumber")]
+        public string PropertyNumber { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextTwo")]
-        public string? OneTextTwo { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("buildingSuffix")]
+        public string BuildingSuffix { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextThree")]
-        public string? OneTextThree { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("propertyName")]
+        public string PropertyName { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextFour")]
-        public string? OneTextFour { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("addressOne")]
+        public string AddressOne { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextFive")]
-        public string? OneTextFive { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("addressTwo")]
+        public string AddressTwo { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextSix")]
-        public string? OneTextSix { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("addressThree")]
+        public string AddressThree { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextSeven")]
-        public string? OneTextSeven { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("town")]
+        public string Town { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextEight")]
-        public string? OneTextEight { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("postcode")]
+        public string Postcode { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextNine")]
-        public string? OneTextNine { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("eastingValue")]
+        public string EastingValue { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextTen")]
-        public string? OneTextTen { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("northingValue")]
+        public string NorthingValue { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextEleven")]
-        public string? OneTextEleven { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextTwelve")]
-        public string? OneTextTwelve { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextThirteen")]
-        public string? OneTextThirteen { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextFourteen")]
-        public string? OneTextFourteen { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("oneTextFithteen")]
-        public string? OneTextFithteen { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextOne")]
-        public string? TwoTextOne { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextTwo")]
-        public string? TwoTextTwo { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextThree")]
-        public string? TwoTextThree { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextFour")]
-        public string? TwoTextFour { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextFive")]
-        public string? TwoTextFive { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextSix")]
-        public string? TwoTextSix { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextSeven")]
-        public string? TwoTextSeven { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextEight")]
-        public string? TwoTextEight { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextNine")]
-        public string? TwoTextNine { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextTen")]
-        public string? TwoTextTen { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextEleven")]
-        public string? TwoTextEleven { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextTwelve")]
-        public string? TwoTextTwelve { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextThirteen")]
-        public string? TwoTextThirteen { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextFourteen")]
-        public string? TwoTextFourteen { get; set; } = default!;
-
-        [System.Text.Json.Serialization.JsonPropertyName("twoTextFithteen")]
-        public string? TwoTextFithteen { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonPropertyName("siteDescription")]
+        public string SiteDescription { get; set; }
 
     }
 
@@ -1024,19 +1202,19 @@ namespace Planerve.App.UI.Services.Base
     {
 
         [System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string? Type { get; set; } = default!;
+        public string Type { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("title")]
-        public string? Title { get; set; } = default!;
+        public string Title { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public int? Status { get; set; } = default!;
+        public int? Status { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("detail")]
-        public string? Detail { get; set; } = default!;
+        public string Detail { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("instance")]
-        public string? Instance { get; set; } = default!;
+        public string Instance { get; set; }
 
         private System.Collections.Generic.IDictionary<string, object> _additionalProperties = new System.Collections.Generic.Dictionary<string, object>();
 
@@ -1055,17 +1233,17 @@ namespace Planerve.App.UI.Services.Base
 
         [System.Text.Json.Serialization.JsonPropertyName("email")]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string Email { get; set; } = default!;
+        public string Email { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("userName")]
         [System.ComponentModel.DataAnnotations.Required]
         [System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength = 6)]
-        public string UserName { get; set; } = default!;
+        public string UserName { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("password")]
         [System.ComponentModel.DataAnnotations.Required]
         [System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength = 6)]
-        public string Password { get; set; } = default!;
+        public string Password { get; set; }
 
     }
 
@@ -1074,45 +1252,25 @@ namespace Planerve.App.UI.Services.Base
     {
 
         [System.Text.Json.Serialization.JsonPropertyName("userId")]
-        public string? UserId { get; set; } = default!;
+        public string UserId { get; set; }
 
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class FileResponse : System.IDisposable
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class UpdateFormCommand
     {
-        private System.IDisposable? _client;
-        private System.IDisposable? _response;
 
-        public int StatusCode { get; private set; }
+        [System.Text.Json.Serialization.JsonPropertyName("id")]
+        public System.Guid Id { get; set; }
 
-        public System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> Headers { get; private set; }
+        [System.Text.Json.Serialization.JsonPropertyName("formTypeOneData")]
+        public FormTypeOne FormTypeOneData { get; set; }
 
-        public System.IO.Stream Stream { get; private set; }
+        [System.Text.Json.Serialization.JsonPropertyName("formTypeTwoData")]
+        public FormTypeTwo FormTypeTwoData { get; set; }
 
-        public bool IsPartial
-        {
-            get { return StatusCode == 206; }
-        }
-
-        public FileResponse(int statusCode, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, System.IO.Stream stream, System.IDisposable? client, System.IDisposable? response)
-        {
-            StatusCode = statusCode;
-            Headers = headers;
-            Stream = stream;
-            _client = client;
-            _response = response;
-        }
-
-        public void Dispose()
-        {
-            Stream.Dispose();
-            if (_response != null)
-                _response.Dispose();
-            if (_client != null)
-                _client.Dispose();
-        }
     }
+
 
 
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
@@ -1120,11 +1278,11 @@ namespace Planerve.App.UI.Services.Base
     {
         public int StatusCode { get; private set; }
 
-        public string? Response { get; private set; }
+        public string Response { get; private set; }
 
         public System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> Headers { get; private set; }
 
-        public ApiException(string message, int statusCode, string? response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, System.Exception? innerException)
+        public ApiException(string message, int statusCode, string response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, System.Exception innerException)
             : base(message + "\n\nStatus: " + statusCode + "\nResponse: \n" + ((response == null) ? "(null)" : response.Substring(0, response.Length >= 512 ? 512 : response.Length)), innerException)
         {
             StatusCode = statusCode;
@@ -1143,7 +1301,7 @@ namespace Planerve.App.UI.Services.Base
     {
         public TResult Result { get; private set; }
 
-        public ApiException(string message, int statusCode, string? response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, TResult result, System.Exception? innerException)
+        public ApiException(string message, int statusCode, string response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, TResult result, System.Exception innerException)
             : base(message, statusCode, response, headers, innerException)
         {
             Result = result;

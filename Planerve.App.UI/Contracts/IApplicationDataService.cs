@@ -7,6 +7,5 @@ public interface IApplicationDataService
 {
     Task<ApiResponse<Guid>> CreateApplication(ApplicationDetailViewModel applicationDetailViewModel);
     Task<ApplicationDetailViewModel> GetApplicationById(Guid id);
-    Task<FileResponse> DownloadApplication(Guid id);
     Task<List<ApplicationListViewModel>> GetApplicationList();
 }

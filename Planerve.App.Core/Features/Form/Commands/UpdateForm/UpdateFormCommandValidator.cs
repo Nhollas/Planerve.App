@@ -7,7 +7,7 @@ namespace Planerve.App.Core.Features.FormData.Commands.UpdateForm
     {
         public UpdateFormOneCommandValidator()
         {
-            RuleFor(e => e.OneTextOne)
+            RuleFor(e => e.Postcode)
                 .NotEmpty().WithMessage("{PropertyName} is required.")
                 .NotNull();
         }
@@ -17,7 +17,7 @@ namespace Planerve.App.Core.Features.FormData.Commands.UpdateForm
     {
         public UpdateFormTwoCommandValidator()
         {
-            RuleFor(e => e.OneTextOne)
+            RuleFor(e => e.Postcode)
                 .NotEmpty().WithMessage("{PropertyName} is required.")
                 .NotNull();
         }

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.UI\\Planerve.App.UI.csproj": {}
+    "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\Planerve.App.UI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Core\\Planerve.App.Core.csproj": {
+    "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Core\\Planerve.App.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Core\\Planerve.App.Core.csproj",
+        "projectUniqueName": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Core\\Planerve.App.Core.csproj",
         "projectName": "Planerve.App.Core",
-        "projectPath": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Core\\Planerve.App.Core.csproj",
-        "packagesPath": "C:\\Users\\nicho\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Core\\obj\\",
+        "projectPath": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Core\\Planerve.App.Core.csproj",
+        "packagesPath": "C:\\Users\\Nhollas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\nicho\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Nhollas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Domain\\Planerve.App.Domain.csproj": {
-                "projectPath": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Domain\\Planerve.App.Domain.csproj"
+              "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Domain\\Planerve.App.Domain.csproj": {
+                "projectPath": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Domain\\Planerve.App.Domain.csproj"
               }
             }
           }
@@ -58,15 +58,15 @@
             },
             "FluentValidation": {
               "target": "Package",
-              "version": "[10.4.0, )"
+              "version": "[11.0.0, )"
             },
             "FluentValidation.DependencyInjectionExtensions": {
               "target": "Package",
-              "version": "[10.4.0, )"
+              "version": "[11.0.0, )"
             },
             "Kevsoft.PDFtk": {
               "target": "Package",
-              "version": "[0.0.51, )"
+              "version": "[0.0.56, )"
             },
             "MediatR.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
@@ -74,7 +74,11 @@
             },
             "Microsoft.AspNet.WebApi.Client": {
               "target": "Package",
-              "version": "[5.2.7, )"
+              "version": "[5.2.8, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.4, )"
             },
             "Microsoft.Extensions.Logging.Abstractions": {
               "target": "Package",
@@ -86,7 +90,7 @@
             },
             "System.Text.Json": {
               "target": "Package",
-              "version": "[6.0.2, )"
+              "version": "[6.0.3, )"
             }
           },
           "imports": [
@@ -104,21 +108,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Domain\\Planerve.App.Domain.csproj": {
+    "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Domain\\Planerve.App.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Domain\\Planerve.App.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Domain\\Planerve.App.Domain.csproj",
         "projectName": "Planerve.App.Domain",
-        "projectPath": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Domain\\Planerve.App.Domain.csproj",
-        "packagesPath": "C:\\Users\\nicho\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Domain\\obj\\",
+        "projectPath": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Domain\\Planerve.App.Domain.csproj",
+        "packagesPath": "C:\\Users\\Nhollas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\nicho\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Nhollas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -154,7 +158,7 @@
             },
             "Microsoft.EntityFrameworkCore.Abstractions": {
               "target": "Package",
-              "version": "[6.0.3, )"
+              "version": "[6.0.4, )"
             }
           },
           "imports": [
@@ -172,21 +176,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\Planerve.App.Identity.csproj": {
+    "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\Planerve.App.Identity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\Planerve.App.Identity.csproj",
+        "projectUniqueName": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\Planerve.App.Identity.csproj",
         "projectName": "Planerve.App.Identity",
-        "projectPath": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\Planerve.App.Identity.csproj",
-        "packagesPath": "C:\\Users\\nicho\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\obj\\",
+        "projectPath": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\Planerve.App.Identity.csproj",
+        "packagesPath": "C:\\Users\\Nhollas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\nicho\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Nhollas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -200,8 +204,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Core\\Planerve.App.Core.csproj": {
-                "projectPath": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Core\\Planerve.App.Core.csproj"
+              "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Core\\Planerve.App.Core.csproj": {
+                "projectPath": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Core\\Planerve.App.Core.csproj"
               }
             }
           }
@@ -222,33 +226,33 @@
             },
             "Microsoft.AspNetCore.Authentication.Google": {
               "target": "Package",
-              "version": "[6.0.3, )"
+              "version": "[6.0.4, )"
             },
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.0.3, )"
+              "version": "[6.0.4, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.0.3, )"
+              "version": "[6.0.4, )"
             },
             "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
-              "version": "[6.0.3, )"
+              "version": "[6.0.4, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[6.0.3, )"
+              "version": "[6.0.4, )"
             },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
-              "version": "[6.0.3, )"
+              "version": "[6.0.4, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.3, )"
+              "version": "[6.0.4, )"
             },
             "Serilog.AspNetCore": {
               "target": "Package",
@@ -273,21 +277,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Persistence\\Planerve.App.Persistence.csproj": {
+    "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Persistence\\Planerve.App.Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Persistence\\Planerve.App.Persistence.csproj",
+        "projectUniqueName": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Persistence\\Planerve.App.Persistence.csproj",
         "projectName": "Planerve.App.Persistence",
-        "projectPath": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Persistence\\Planerve.App.Persistence.csproj",
-        "packagesPath": "C:\\Users\\nicho\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Persistence\\obj\\",
+        "projectPath": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Persistence\\Planerve.App.Persistence.csproj",
+        "packagesPath": "C:\\Users\\Nhollas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\nicho\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Nhollas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -301,11 +305,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Core\\Planerve.App.Core.csproj": {
-                "projectPath": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Core\\Planerve.App.Core.csproj"
+              "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Core\\Planerve.App.Core.csproj": {
+                "projectPath": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Core\\Planerve.App.Core.csproj"
               },
-              "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\Planerve.App.Identity.csproj": {
-                "projectPath": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\Planerve.App.Identity.csproj"
+              "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\Planerve.App.Identity.csproj": {
+                "projectPath": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\Planerve.App.Identity.csproj"
               }
             }
           }
@@ -322,21 +326,19 @@
           "dependencies": {
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.0.3, )"
+              "version": "[6.0.4, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.0.3, )"
+              "version": "[6.0.4, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[6.0.3, )"
+              "version": "[6.0.4, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.3, )"
+              "version": "[6.0.4, )"
             },
             "Microsoft.Extensions.Options.ConfigurationExtensions": {
               "target": "Package",
@@ -358,21 +360,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.UI\\Planerve.App.UI.csproj": {
+    "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\Planerve.App.UI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.UI\\Planerve.App.UI.csproj",
+        "projectUniqueName": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\Planerve.App.UI.csproj",
         "projectName": "Planerve.App.UI",
-        "projectPath": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.UI\\Planerve.App.UI.csproj",
-        "packagesPath": "C:\\Users\\nicho\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.UI\\obj\\",
+        "projectPath": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\Planerve.App.UI.csproj",
+        "packagesPath": "C:\\Users\\Nhollas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\nicho\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Nhollas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -386,17 +388,17 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Core\\Planerve.App.Core.csproj": {
-                "projectPath": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Core\\Planerve.App.Core.csproj"
+              "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Core\\Planerve.App.Core.csproj": {
+                "projectPath": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Core\\Planerve.App.Core.csproj"
               },
-              "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Domain\\Planerve.App.Domain.csproj": {
-                "projectPath": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Domain\\Planerve.App.Domain.csproj"
+              "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Domain\\Planerve.App.Domain.csproj": {
+                "projectPath": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Domain\\Planerve.App.Domain.csproj"
               },
-              "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\Planerve.App.Identity.csproj": {
-                "projectPath": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Identity\\Planerve.App.Identity.csproj"
+              "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\Planerve.App.Identity.csproj": {
+                "projectPath": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Identity\\Planerve.App.Identity.csproj"
               },
-              "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Persistence\\Planerve.App.Persistence.csproj": {
-                "projectPath": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.Persistence\\Planerve.App.Persistence.csproj"
+              "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Persistence\\Planerve.App.Persistence.csproj": {
+                "projectPath": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Persistence\\Planerve.App.Persistence.csproj"
               }
             }
           }
@@ -417,15 +419,15 @@
             },
             "Microsoft.AspNetCore.Authentication.OpenIdConnect": {
               "target": "Package",
-              "version": "[6.0.3, )"
+              "version": "[6.0.4, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[6.0.2, )"
+              "version": "[6.0.3, )"
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
-              "version": "[6.16.0, )"
+              "version": "[6.17.0, )"
             }
           },
           "imports": [
@@ -446,7 +448,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

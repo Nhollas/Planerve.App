@@ -12,7 +12,7 @@ namespace Planerve.App.Identity
         public static IServiceCollection AddIdentityServices(this IServiceCollection services)
         {
 
-            var connectionString = "Server=localhost;Database=Planerve.Identity;Trusted_Connection=True;";
+            var connectionString = "Server=localhost;Database=PlanerveIdentity;Trusted_Connection=True;";
 
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
 

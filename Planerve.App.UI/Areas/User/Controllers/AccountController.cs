@@ -1,7 +1,11 @@
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 using Planerve.App.UI.Contracts;
 using Planerve.App.UI.ViewModels.AccountVMs;
+using System.IdentityModel.Tokens.Jwt;
+using System.Text;
 
 namespace Planerve.App.UI.Areas.User.Controllers;
 
@@ -46,4 +50,14 @@ public class AccountController : Controller
     {
         return SignOut("Cookies", "oidc");
     }
+
+    [HttpGet]
+    public async Task<string> AccessToken()
+    {
+        var accessToken = await HttpContext.GetTokenAsync("access_token");
+
+        return accessToken;
+    }
+
+
 }

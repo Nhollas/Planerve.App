@@ -23,7 +23,7 @@ public class ApplicationDataService : BaseDataService, IApplicationDataService
 
     public async Task<List<ApplicationListViewModel>> GetApplicationList()
     {
-        var applicationList = await _client.GetApplicationListAsync();
+        var applicationList = await _client.ListAsync();
         var mappedList = _mapper.Map<ICollection<ApplicationListViewModel>>(applicationList);
         return mappedList.ToList();
     }
@@ -40,12 +40,5 @@ public class ApplicationDataService : BaseDataService, IApplicationDataService
         {
             return ConvertApiExceptions<Guid>(ex);
         }
-    }
-
-    public async Task<FileResponse> DownloadApplication(Guid id)
-    {
-        var download = await _client.DownloadAsync(id);
-
-        return download;
     }
 }

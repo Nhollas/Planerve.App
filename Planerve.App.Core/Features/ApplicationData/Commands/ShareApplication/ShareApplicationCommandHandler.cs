@@ -1,5 +1,5 @@
-﻿using MediatR;
-using Microsoft.AspNetCore.Authorization;
+﻿using System;
+using MediatR;
 using Planerve.App.Core.Contracts.Identity;
 using Planerve.App.Core.Contracts.Persistence;
 using Planerve.App.Core.Contracts.Specification.ApplicationData;
@@ -15,12 +15,13 @@ namespace Planerve.App.Core.Features.ApplicationData.Commands.ShareApplication
     {
         private readonly IAsyncRepository<Application> _repository;
         private readonly ILoggedInUserService _loggedInUserService;
-        private readonly IAuthorizationService _authorizationService;
+        private readonly IUserDataRepository _userDataRepository;
 
-        public ShareApplicationCommandHandler(IAsyncRepository<Application> repository, ILoggedInUserService loggedInUserService, IAuthorizationService authorizationService)
+        public ShareApplicationCommandHandler(IAsyncRepository<Application> repository, ILoggedInUserService loggedInUserService, IUserDataRepository userDataRepository)
         {
             _repository = repository;
             _loggedInUserService = loggedInUserService;
+            _userDataRepository = userDataRepository;
         }
 
 
@@ -39,9 +40,29 @@ namespace Planerve.App.Core.Features.ApplicationData.Commands.ShareApplication
                 throw new NotAuthorisedException(nameof(Application), userId);
             }
 
+            var matches = await _userDataRepository.GetUserByEmailOrName(request.UsernameOrEmail);
 
+            var selectedMatch = matches.First();
+            
+            // TODO: Let recipient know they have been given access to application via email.
 
+            AuthorisedUser blankUser = new()
+            {
+                UserId = selectedMatch.Id,
+                Role = "Contributor",
+                IsValid = true,
+                ExpiryDate = DateTime.Now.AddDays(30),
+                ApplicationId = request.ApplicationId,
+                ReadApplication = true,
+                ReadForm = true,
+                CopyApplication = false,
+                EditForm = true,
+                DownloadForm = true
+            };
 
+            selectedApplication.AuthorisedUsers.Add(blankUser);
+
+            await _repository.UpdateAsync(selectedApplication);
 
             return Unit.Value;
         }

@@ -11,8 +11,6 @@ namespace Planerve.App.UI.Profiles
 
             // ApplicationDetailViewModel = View, CreateApplicationCommand = Dto
             CreateMap<ApplicationDetailViewModel, CreateApplicationCommand>().ReverseMap();
-            CreateMap<Domain.Entities.FormEntities.FormTypeOne, FormTypeOne>().ReverseMap();
-            CreateMap<Domain.Entities.FormEntities.FormTypeTwo, FormTypeTwo>().ReverseMap();
 
             CreateMap<ApplicationDetailVm, ApplicationDetailViewModel>().ReverseMap();
             CreateMap<ApplicationListVm, ApplicationListViewModel>().ReverseMap();

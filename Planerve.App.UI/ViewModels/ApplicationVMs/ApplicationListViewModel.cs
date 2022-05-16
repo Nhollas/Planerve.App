@@ -1,24 +1,19 @@
 ﻿using Planerve.App.UI.Services.Base;
 
-namespace Planerve.App.UI.ViewModels.ApplicationVMs
+namespace Planerve.App.UI.ViewModels.ApplicationVMs;
+
+public class ApplicationListViewModel
 {
-    public class ApplicationListViewModel
-    {
-        public Guid Id { get; set; }
-        public string ApplicationReference { get; set; }
-        public string ApplicationName { get; set; }
-        public string OwnerId { get; set; }
-        public string VersionNumber { get; set; }
-        public string AddressLineOne { get; set; }
-        public string AddressLineTwo { get; set; }
-        public string AddressLineThree { get; set; }
-        public string FullAddress { get; set; }
-        public int ApplicationType { get; set; }
-        public string Postcode { get; set; }
-        public string LocalAuthority { get; set; }
-        public DateTime Created { get; set; }
-        public DateTime LastUpdated { get; set; }
-        public FormTypeOne FormTypeOne { get; set; }
-        public FormTypeTwo FormTypeTwo { get; set; }
-    }
+    public Guid Id { get; set; }
+    public string ApplicationReference { get; set; }
+    public string ApplicationName { get; set; }
+    public string OwnerId { get; set; }
+    public string VersionNumber { get; set; }
+    public int ApplicationType { get; set; }
+    public DateTime CreatedDate { get; set; }
+    public DateTime LastModifiedDate { get; set; }
+    public Address AddressData { get; set; }
+    public Checklist ChecklistData { get; set; }
+    public Form FormData { get; set; }
 }
+

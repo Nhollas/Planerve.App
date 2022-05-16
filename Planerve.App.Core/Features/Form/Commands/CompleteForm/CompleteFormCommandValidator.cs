@@ -7,7 +7,7 @@ public class CompleteFormOneCommandValidator : AbstractValidator<FormTypeOne>
 {
     public CompleteFormOneCommandValidator()
     {
-        RuleFor(e => e.OneTextOne)
+        RuleFor(e => e.Postcode)
             .NotEmpty().WithMessage("{PropertyName} is required.")
             .NotNull();
     }
@@ -17,7 +17,7 @@ public class CompleteFormTwoCommandValidator : AbstractValidator<FormTypeTwo>
 {
     public CompleteFormTwoCommandValidator()
     {
-        RuleFor(e => e.OneTextOne)
+        RuleFor(e => e.Postcode)
             .NotEmpty().WithMessage("{PropertyName} is required.")
             .NotNull();
     }
