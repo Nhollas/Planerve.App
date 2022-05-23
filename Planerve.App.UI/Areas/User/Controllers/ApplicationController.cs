@@ -23,16 +23,17 @@ public class ApplicationController : Controller
     [HttpGet]
     public async Task<IActionResult> Dashboard()
     {
-
         var applications = await _applicationService.GetApplicationList();
 
-        var removeDuplicateLocalAuthorities = applications.Select(x => x.AddressData.Admin_district).Distinct().ToList();
+        // Select List Data
+
+        var removeDuplicateLocalAuthorities = applications.Select(x => x.Address.Admin_district).Distinct().ToList();
+        var removeDuplicateApplicationTypes = applications.Select(x => x.ApplicationType).DistinctBy(x => x.Value).ToList();
+
+        // Select Lists..
 
         var localAuthorities = removeDuplicateLocalAuthorities.Select(x => new SelectListItem { Text = x, Value = x }).ToList();
-
-        var removeDuplicateApplicationTypes = applications.Select(x => x.ApplicationType).Distinct().ToList();
-
-        var applicationTypes = removeDuplicateApplicationTypes.Select(x => new SelectListItem { Text = x.ToString(), Value = x.ToString() }).ToList();
+        var applicationTypes = removeDuplicateApplicationTypes.Select(x => new SelectListItem { Text = x.Name, Value = x.Value.ToString()}).ToList();
 
         var viewModel = new ApplicationDashboardViewModel()
         {
@@ -44,11 +45,16 @@ public class ApplicationController : Controller
         return View(viewModel);
     }
 
-
     [HttpPost]
     public PartialViewResult DashboardFilter(ApplicationFilterModel model)
     {
         var filter = new ApplicationFilter(_applicationService);
+
+        if (model.ToDate != null)
+            model.ToDate.Value.AddDays(1);
+
+        if (model.FromDate != null)
+            model.FromDate.Value.AddDays(-1);
 
         var viewModel = filter.FilterApplication(model).ToList();
 
@@ -60,6 +66,19 @@ public class ApplicationController : Controller
         }
 
         return PartialView("_DashboardFilterPartial", viewModel);
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> View(Guid Id)
+    {
+        var application = await _applicationService.GetApplicationById(Id);
+
+        if (application == null)
+        {
+            return NotFound();
+        }
+
+        return View(application);
     }
 
 

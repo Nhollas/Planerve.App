@@ -11,13 +11,13 @@
 
         public class ApplicationType
         {
-            public int Id { get; set; }
+            public int Value { get; set; }
             public string Name { get; set; }
         }
 
         public class LocalPlanningAuthority
         {
-            public int Id { get; set; }
+            public int Value { get; set; }
             public string Name { get; set; }
         }
 

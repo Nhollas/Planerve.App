@@ -14,7 +14,7 @@ public class MappingProfile : Profile
 {
     public MappingProfile()
     {
-
+        CreateMap<ApplicationType, ApplicationTypeHelper.ApplicationType>().ReverseMap();
         // Application Data Maps
         CreateMap<Application, CreateApplicationCommand>().ReverseMap();
         CreateMap<Application, ApplicationDetailVm>().ReverseMap();

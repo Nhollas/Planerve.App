@@ -8,9 +8,10 @@ public class GetApplicationListSpecification : BaseSpecification<Application>
     // Get any applications that this user owns or any application this user has a valid access token.
     public GetApplicationListSpecification(string userId) : base(x => x.OwnerId == userId || x.AuthorisedUsers.Any(x => x.UserId == userId && x.IsValid == true))
     {
-        AddInclude(x => x.AddressData);
-        AddInclude(x => x.ChecklistData);
+        AddInclude(x => x.Address);
+        AddInclude(x => x.Checklist);
         AddInclude(x => x.AuthorisedUsers);
+        AddInclude(x => x.ApplicationType);
         AddOrderByDescending(x => x.CreatedDate);
     }
 }

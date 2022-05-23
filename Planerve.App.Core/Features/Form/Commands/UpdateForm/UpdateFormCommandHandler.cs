@@ -46,7 +46,7 @@ namespace Planerve.App.Core.Features.FormData.Commands.UpdateForm
                 throw new NotAuthorisedException(nameof(Application), userId);
             }
 
-            switch (selectedApplication.ApplicationType)
+            switch (selectedApplication.ApplicationType.Value)
             {
                 case 1:
                     var validatorOne = new UpdateFormOneCommandValidator();
@@ -67,9 +67,9 @@ namespace Planerve.App.Core.Features.FormData.Commands.UpdateForm
             }
 
             Form mockData = new Form();
-            selectedApplication.FormData = mockData;
+            selectedApplication.Form = mockData;
 
-            _mapper.Map(request, selectedApplication.FormData, typeof(UpdateFormCommand), typeof(Form));
+            _mapper.Map(request, selectedApplication.Form, typeof(UpdateFormCommand), typeof(Form));
 
             await _repository.UpdateAsync(selectedApplication);
 

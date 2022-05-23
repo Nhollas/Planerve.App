@@ -10,10 +10,10 @@ public class ApplicationDetailVm
     public string ApplicationName { get; set; }
     public string OwnerId { get; set; }
     public string VersionNumber { get; set; }
-    public int ApplicationType { get; set; }
     public DateTime CreatedDate { get; set; }
     public DateTime LastModifiedDate { get; set; }
-    public Address AddressData { get; set; }
-    public Checklist ChecklistData { get; set; }
-    public Form FormData { get; set; }
+    public ApplicationType ApplicationType { get; set; }
+    public Address Address { get; set; }
+    public Checklist Checklist { get; set; }
+    public Form Form { get; set; }
 }

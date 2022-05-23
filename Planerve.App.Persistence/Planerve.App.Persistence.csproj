@@ -17,5 +17,9 @@
 	<ItemGroup>
 		<ProjectReference Include="..\Planerve.App.Core\Planerve.App.Core.csproj" />
 		<ProjectReference Include="..\Planerve.App.Identity\Planerve.App.Identity.csproj" />
+	</ItemGroup>		
+	
+	<ItemGroup>
+	  <Folder Include="Migrations\" />
 	</ItemGroup>
 </Project>

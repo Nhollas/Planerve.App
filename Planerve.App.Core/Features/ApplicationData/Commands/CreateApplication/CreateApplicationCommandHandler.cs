@@ -67,23 +67,20 @@ public class CreateApplicationCommandHandler : IRequestHandler<CreateApplication
         addressData.AddressLineTwo = request.AddressLineTwo;
         addressData.AddressLineThree = request.AddressLineThree;
 
+        ApplicationTypeHelper applicationTypeHelper = new();
+
+        var applicationTypeInfo = applicationTypeHelper.GetTypeInfo(request.ApplicationType);
+
         // Create mock application.
-        Application applicationToCreate = new();
-
-        switch (request.ApplicationType)
+        Application applicationToCreate = new()
         {
-            case 1:
-
-                break;
-        }
-
-        applicationToCreate.ApplicationType = request.ApplicationType;
-        applicationToCreate.ApplicationName = request.ApplicationName;
-        applicationToCreate.AddressData = addressData;
-        applicationToCreate.VersionNumber = "V1";
-        applicationToCreate.OwnerId = userId;
-
-        applicationToCreate.ApplicationReference = await GenerateAppReference();
+            ApplicationType = _mapper.Map<ApplicationType>(applicationTypeInfo),
+            ApplicationName = request.ApplicationName,
+            Address = addressData,
+            VersionNumber = "V1",
+            OwnerId = userId,
+            ApplicationReference = await GenerateAppReference()
+        };
 
         return applicationToCreate;
     }

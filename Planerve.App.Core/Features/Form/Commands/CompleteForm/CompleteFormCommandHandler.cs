@@ -46,7 +46,7 @@ public class CompleteFormCommandHandler : IRequestHandler<CompleteFormCommand>
             throw new NotAuthorisedException(nameof(Application), userId);
         }
 
-        switch (selectedApplication.ApplicationType)
+        switch (selectedApplication.ApplicationType.Value)
         {
             case 1:
                 var validatorOne = new CompleteFormOneCommandValidator();
@@ -54,7 +54,7 @@ public class CompleteFormCommandHandler : IRequestHandler<CompleteFormCommand>
 
                 if (validationResultOne.Errors.Count > 0)
                     throw new ValidationException(validationResultOne);
-                selectedApplication.ChecklistData.FormSections = true;
+                selectedApplication.Checklist.FormSections = true;
 
                 break;
             case 2:
@@ -63,7 +63,7 @@ public class CompleteFormCommandHandler : IRequestHandler<CompleteFormCommand>
 
                 if (validationResultTwo.Errors.Count > 0)
                     throw new ValidationException(validationResultTwo);
-                selectedApplication.ChecklistData.FormSections = true;
+                selectedApplication.Checklist.FormSections = true;
 
                 break;
         }

@@ -10,6 +10,22 @@ namespace Planerve.App.Persistence.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "ApplicationType",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Value = table.Column<int>(type: "int", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Group = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ApplicationCategory = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ApplicationType", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Application",
                 columns: table => new
                 {
@@ -18,7 +34,7 @@ namespace Planerve.App.Persistence.Migrations
                     ApplicationName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     OwnerId = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     VersionNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ApplicationType = table.Column<int>(type: "int", nullable: false),
+                    ApplicationTypeId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     LastModifiedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -27,6 +43,11 @@ namespace Planerve.App.Persistence.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Application", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Application_ApplicationType_ApplicationTypeId",
+                        column: x => x.ApplicationTypeId,
+                        principalTable: "ApplicationType",
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -194,6 +215,11 @@ namespace Planerve.App.Persistence.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_Application_ApplicationTypeId",
+                table: "Application",
+                column: "ApplicationTypeId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_AuthorisedUser_ApplicationId",
                 table: "AuthorisedUser",
                 column: "ApplicationId");
@@ -221,6 +247,9 @@ namespace Planerve.App.Persistence.Migrations
 
             migrationBuilder.DropTable(
                 name: "Application");
+
+            migrationBuilder.DropTable(
+                name: "ApplicationType");
         }
     }
 }

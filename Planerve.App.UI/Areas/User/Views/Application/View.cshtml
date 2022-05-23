@@ -1,0 +1,58 @@
+﻿@using Planerve.App.UI.ViewModels.ApplicationVMs
+@model ApplicationDetailViewModel
+
+@{
+    Layout = "_AuthenticatedLayout";
+    ViewBag.Title = @Model.ApplicationReference;
+}
+
+<div class="flex flex-col w-full justify-center items-center mt-12">
+    <div class="w-full max-w-5xl gap-8 flex flex-row md:min-h-[75vh] relative justify-center">
+        <div class="bg-[#FEFFFF] w-full p-8 relative flex flex-col gap-y-8 max-w-lg lg:max-w-5xl">
+            <section class="flex flex-col gap-2 w-full max-w-5xl">
+                    <h2 class="text-base text-purple-700 font-bold uppercase">
+                        Application
+                    </h2>
+                    <div class="flex flex-row">
+                        <h1 class="text-4xl font-poppins font-semibold">@Model.ApplicationReference</h1>
+                        <button class="bg-gray-50 border-[1px] border-gray-300 font-poppins font-semibold w-max px-6 py-2 rounded-lg ml-auto">
+                            Actions
+                        </button>
+                    </div>
+            </section>
+            <section class="flex flex-col w-full gap-4">
+                <p class="text-xl font-poppins">@Model.ApplicationName</p>
+                <div class="flex flex-row">
+                    <p class="text-base font-poppins">@Model.ApplicationType.Name</p>
+                    <p class="text-base font-poppins ml-auto">@Model.Created.ToShortDateString()</p>
+                </div>
+            </section>
+            <div class="flex flex-col">
+                <section class="flex flex-col w-full bg-gray-50 border-[1px] border-gray-300 p-2 h-12">
+                    <div class="bg-green-300 w-16 h-full rounded-lg border-[1px] border-green-500"></div>
+                </section>
+            </div>
+            <section class="flex flex-col gap-4 w-full bg-gray-50 border-[1px] border-gray-300 p-5 max-w-lg">
+                <h2 class="text-base font-medium font-poppins">Application Questions</h2>
+                <p class="text-sm">1 / 24 Form Sections Complete</p>
+                <button type="submit" class="border-[1px] border-blue-500 bg-blue-300 h-10 px-4 text-gray-900 font-medium font-poppins mx-16">Continue</button>
+            </section>
+            <section class="flex flex-col gap-4 w-full bg-gray-50 border-[1px] border-gray-300 p-5 max-w-lg">
+                <h2 class="text-base font-medium font-poppins">Add Plans & Documents</h2>
+                <p class="text-sm">0 / 3 Requirements Met</p>
+                <p class="text-sm">5 Plans or Documents Currently Added</p>
+                <button type="submit" class="border-[1px] border-orange-500 bg-orange-300 h-10 px-4 text-gray-900 font-medium font-poppins mx-16">Continue</button>
+            </section>
+            <section class="flex flex-col gap-4 w-full bg-gray-50 border-[1px] border-gray-300 p-5 max-w-lg">
+                <h2 class="text-base font-medium font-poppins">Calculate Fee</h2>
+                <p class="text-sm">Calculate your planning application fee. Note we do not charge a service fee for the services used.</p>
+                <button type="submit" class="border-[1px] border-red-500 bg-red-300 h-10 px-4 text-gray-900 font-medium font-poppins mx-16">Calculate Fee</button>
+            </section>
+            <section class="flex flex-col gap-4 w-full bg-gray-50 border-[1px] border-gray-300 p-5 max-w-lg">
+                <h2 class="text-base font-medium font-poppins">Submit Application</h2>
+                <p class="text-sm">This application cannot be submitted until all outstanding tasks have been complete.</p>
+                <button disabled type="submit" class="border-[1px] border-gray-500 bg-gray-300 h-10 px-4 text-gray-900 font-medium font-poppins mx-16">Declare and Submit</button>
+            </section>
+        </div>
+    </div>
+</div>

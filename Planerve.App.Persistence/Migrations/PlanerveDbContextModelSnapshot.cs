@@ -125,8 +125,8 @@ namespace Planerve.App.Persistence.Migrations
                     b.Property<string>("ApplicationReference")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ApplicationType")
-                        .HasColumnType("int");
+                    b.Property<Guid?>("ApplicationTypeId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("CreatedBy")
                         .HasColumnType("nvarchar(max)");
@@ -148,7 +148,35 @@ namespace Planerve.App.Persistence.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ApplicationTypeId");
+
                     b.ToTable("Application");
+                });
+
+            modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.ApplicationType", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("ApplicationCategory")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Group")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Value")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ApplicationType");
                 });
 
             modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.AuthorisedUser", b =>
@@ -315,12 +343,21 @@ namespace Planerve.App.Persistence.Migrations
             modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.Address", b =>
                 {
                     b.HasOne("Planerve.App.Domain.Entities.ApplicationEntities.Application", "ApplicationData")
-                        .WithOne("AddressData")
+                        .WithOne("Address")
                         .HasForeignKey("Planerve.App.Domain.Entities.ApplicationEntities.Address", "Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("ApplicationData");
+                });
+
+            modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.Application", b =>
+                {
+                    b.HasOne("Planerve.App.Domain.Entities.ApplicationEntities.ApplicationType", "ApplicationType")
+                        .WithMany()
+                        .HasForeignKey("ApplicationTypeId");
+
+                    b.Navigation("ApplicationType");
                 });
 
             modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.AuthorisedUser", b =>
@@ -335,7 +372,7 @@ namespace Planerve.App.Persistence.Migrations
             modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.Checklist", b =>
                 {
                     b.HasOne("Planerve.App.Domain.Entities.ApplicationEntities.Application", "ApplicationData")
-                        .WithOne("ChecklistData")
+                        .WithOne("Checklist")
                         .HasForeignKey("Planerve.App.Domain.Entities.ApplicationEntities.Checklist", "Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -346,7 +383,7 @@ namespace Planerve.App.Persistence.Migrations
             modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.Form", b =>
                 {
                     b.HasOne("Planerve.App.Domain.Entities.ApplicationEntities.Application", "ApplicationData")
-                        .WithOne("FormData")
+                        .WithOne("Form")
                         .HasForeignKey("Planerve.App.Domain.Entities.ApplicationEntities.Form", "Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -378,13 +415,13 @@ namespace Planerve.App.Persistence.Migrations
 
             modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.Application", b =>
                 {
-                    b.Navigation("AddressData");
+                    b.Navigation("Address");
 
                     b.Navigation("AuthorisedUsers");
 
-                    b.Navigation("ChecklistData");
+                    b.Navigation("Checklist");
 
-                    b.Navigation("FormData");
+                    b.Navigation("Form");
                 });
 
             modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.Form", b =>

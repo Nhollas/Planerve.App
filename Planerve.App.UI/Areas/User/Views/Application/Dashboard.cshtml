@@ -8,34 +8,36 @@
 
 <div class="flex flex-col w-full justify-center items-center mt-12">
     <div class="w-full max-w-5xl gap-8 flex flex-row md:min-h-[75vh] relative justify-center">
-        <aside class="filter__tab bg-[#FEFFFF] w-full mx-8 fixed p-8 flex flex-col gap-8 z-50 translate-x-full max-w-lg overflow-hidden transition-all duration-300 opacity-0">
-            <form id="filterForm">
+        <aside class="filter__tab bg-[#FEFFFF] w-full mx-8 fixed p-8 flex flex-col z-50 translate-x-full max-w-lg overflow-hidden transition-all duration-300 opacity-0">
+            <form id="filterForm" class="flex flex-col gap-8">
                 <div class="flex flex-row">
                     <h1 class="text-xl font-medium font-poppins">Filter Applications</h1>
-                    <button class="filter__toggle border-[1px] border-red-400 bg-red-300 h-10 -ml-2 px-4 text-gray-900 font-medium font-poppins ml-auto">Close</button>
+                    <button type="button" class="filter__toggle border-[1px] border-red-400 bg-red-300 h-10 -ml-2 px-4 text-gray-900 font-medium font-poppins ml-auto">Close</button>
                 </div>
                 <div class="flex flex-col gap-4">
-                    <h2 class="text-base font-medium font-poppins">Application Status</h2> 
+                    <h2 class="text-base font-medium font-poppins">Application Status</h2>
+                    <input id="versionNumber" class="border-[1px] border-gray-300 h-10 w-full px-5" type="text"/>
                 </div>
                 <div class="flex flex-col gap-4">
                     <h2 class="text-base font-medium font-poppins">Application Type</h2>
-                    <button type="button" class="border-[1px] border-indigo-400 bg-blue-300 font-poppins font-medium w-max px-7 py-2">
-                        Choose Application Type
-                    </button>
+                    <select id="applicationTypes" class="w-full px-4 py-2 bg-gray-50 border-[1px] border-gray-300 font-poppins" multiple asp-items="@Model.ApplicationTypes"></select>
                 </div>
                 <div class="flex flex-col gap-4">
                     <h2 class="text-base font-medium font-poppins">Local Planning Authority</h2>
                     <select id="localAuthorities" class="w-full px-4 py-2 bg-gray-50 border-[1px] border-gray-300 font-poppins" multiple asp-items="@Model.LocalAuthorities"></select>
-                    <select id="applicationTypes" class="w-full px-4 py-2 bg-gray-50 border-[1px] border-gray-300 font-poppins" multiple asp-items="@Model.ApplicationTypes"></select>
                 </div>
-                <div class="flex flex-col gap-6">
+                <section class="flex flex-col gap-4">
                     <h2 class="text-base font-medium font-poppins">Date Range</h2>
-                    <label for="fromDate" class="-mb-2 text-base font-base font-poppins">From</label>
-                    <input id="fromDate" type="date" class="w-full px-4 py-2 bg-gray-50 border-[1px] border-gray-300" />
-                    <label for="toDate" class="-mb-2 text-base font-base font-poppins">To</label>
-                    <input id="toDate" type="date" class="w-full px-4 py-2 bg-gray-50 border-[1px] border-gray-300" />
-                </div>
-                <button type="submit" id="filterData" class="border-[1px] border-purple-400 bg-purple-300 h-10 px-4 text-gray-900 font-medium font-poppins mx-16">Apply Filters</button>
+                    <div class="flex flex-col gap-4">
+                        <label for="fromDate" class="-mb-2 text-base font-base font-poppins">From</label>
+                        <input id="fromDate" type="date" class="w-full px-4 py-2 bg-gray-50 border-[1px] border-gray-300" />
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <label for="toDate" class="-mb-2 text-base font-base font-poppins">To</label>
+                        <input id="toDate" type="date" class="w-full px-4 py-2 bg-gray-50 border-[1px] border-gray-300" />
+                    </div>
+                </section>
+                <button type="submit" class="filterData border-[1px] border-purple-400 bg-purple-300 h-10 px-4 text-gray-900 font-medium font-poppins mx-16">Apply Filters</button>
             </form>
         </aside>
         <div class="bg-[#FEFFFF] w-full p-8 relative flex flex-col gap-y-8 max-w-lg lg:max-w-5xl">
@@ -48,8 +50,8 @@
             <div class="flex flex-col w-full gap-y-3">
                 <label class="text-lg">Search for an Application</label>
                 <p class="h-10 flex">
-                    <input class="border-[1px] border-gray-300 h-10 w-full px-5" type="text"/>
-                    <button class="border-[1px] border-purple-400 bg-purple-300 h-10 -ml-2 px-4 text-gray-900 font-medium font-poppins">Search</button>
+                    <input id="searchQuery" class="border-[1px] border-gray-300 h-10 w-full px-5" type="text"/>
+                    <button type="submit" class="filterData border-[1px] border-purple-400 bg-purple-300 h-10 -ml-2 px-4 text-gray-900 font-medium font-poppins">Search</button>
                 </p>
             </div>
             <section class="flex flex-row w-full">
@@ -72,31 +74,30 @@
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 
 <script>
-    $("#filterData").click(function (e) {
-        e.preventDefault();
+    $(".filterData").click(function (e) {
 
         var localAuths = new Array();
         var appTypes = new Array();
 
         $("#localAuthorities :selected").each(function () {
             var item = {
-                "Id": $(this).val(),
-                "Name": $(this).text()
+                Value: $(this).val(),
+                Name: $(this).text()
             }
             localAuths.push(item);
         });
 
         $("#applicationTypes :selected").each(function () {
             var item = {
-                "Id": $(this).val(),
-                "Name": $(this).text()
+                Value: $(this).val(),
+                Name: $(this).text()
             }
             appTypes.push(item);
         });
 
         var model = {
-            SearchQuery: "Test",
-            VersionNumber: "V1",
+            SearchQuery: $("#searchQuery").val(),
+            VersionNumber: $("#versionNumber").val(),
             ApplicationTypes: appTypes,
             LocalPlanningAuthorities: localAuths,
             FromDate: $("#fromDate").val(),
@@ -105,15 +106,13 @@
 
         $.ajax({
             type: "POST",
-            url: "/User/Application/DashboardFilter", 
+            url: "/User/Application/DashboardFilter",
             data: model,
             success: function (result) {
                 $("#filteredData").empty();
                 $("#filteredData").html(result);
-            },
-            error: function () {
-                console.log('Failed');
             }
         });
+        e.preventDefault();
     });
 </script>

@@ -45,12 +45,12 @@ public class GetFormDetailQueryHandler : IRequestHandler<GetFormDetailQuery, For
             throw new NotAuthorisedException(nameof(Form), userId);
         }
 
-        if (selectedApplication.FormData is null)
+        if (selectedApplication.Form is null)
         {
             throw new NotFoundException("This application has no form data", request.Id);
         }
 
-        var formDetailDto = _mapper.Map<FormDetailVm>(selectedApplication.FormData);
+        var formDetailDto = _mapper.Map<FormDetailVm>(selectedApplication.Form);
 
         formDetailDto.ApplicationType = selectedApplication.ApplicationType;
 
