@@ -11,9 +11,6 @@
         public bool EditForm { get; set; }
         public bool DownloadForm { get; set; }
 
-        // File Access
-
         // TODO: Create File Access Permissions
-
     }
 }

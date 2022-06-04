@@ -1,0 +1,100 @@
+﻿@using Planerve.App.UI.ViewModels.ApplicationVMs
+@model ApplicationCreateViewModel
+
+@{
+    Layout = "_AuthenticatedLayout";
+    ViewBag.Title = "Create Application";
+}
+
+<div class="flex flex-col w-full justify-center items-center mt-12">
+    <div class="w-full max-w-5xl gap-8 flex flex-row md:min-h-[75vh] relative justify-center">
+        <div class="bg-[#FEFFFF] w-full p-8 relative flex flex-col gap-y-8 max-w-lg lg:max-w-5xl">
+            <section class="flex flex-col gap-2 w-full max-w-5xl">
+                <h2 class="text-base text-purple-700 font-bold uppercase">
+                    Application
+                </h2>
+                <div class="flex flex-row">
+                    <h1 class="text-4xl font-poppins font-semibold">Create</h1>
+                </div>
+                <form asp-action="Create" asp-controller="Application" method="post" class="flex flex-col gap-8 mt-8 relative">
+                    <section value="1" class="form-section active flex flex-col gap-8">
+                        <div class="flex flex-col gap-4">
+                            <label asp-for="ApplicationName" class="-mb-2 text-base font-base font-poppins"></label>
+                            <input asp-for="ApplicationName" class="w-full px-4 py-2 bg-gray-50 border-[1px] border-gray-300" />
+                        </div>
+                        <button type="button" class="next border-[1px] border-purple-400 bg-purple-300 h-10 px-4 text-gray-900 font-medium font-poppins mx-16">Continue</button>
+                    </section>
+                    <section value="2" class="form-section flex flex-col gap-8">
+                        <div class="flex flex-col gap-4">
+                            <label asp-for="Postcode" class="-mb-2 text-base font-base font-poppins"></label>
+                            <input asp-for="Postcode" class="w-full px-4 py-2 bg-gray-50 border-[1px] border-gray-300" />
+                        </div>
+                        <div class="flex flex-row gap-2 relative">
+                            <button type="button" class="previous border-[1px] border-blue-400 bg-blue-300 h-10 px-4 text-gray-900 font-medium font-poppins">Previous</button>
+                            <button type="button" class="next border-[1px] border-purple-400 bg-purple-300 h-10 px-4 text-gray-900 font-medium font-poppins ml-auto w-full max-w-sm">Find Address</button>
+                        </div>
+                    </section>
+                    <section value="3" class="form-section flex flex-col gap-8">
+                        <div class="flex flex-col gap-4">
+                            <label asp-for="AddressLineOne" class="-mb-2 text-base font-base font-poppins"></label>
+                            <input asp-for="AddressLineOne" class="w-full px-4 py-2 bg-gray-50 border-[1px] border-gray-300" />
+                        </div>
+                        <div class="flex flex-row gap-2 relative">
+                            <button type="button" class="previous border-[1px] border-blue-400 bg-blue-300 h-10 px-4 text-gray-900 font-medium font-poppins">Previous</button>
+                            <button type="button" class="next border-[1px] border-purple-400 bg-purple-300 h-10 px-4 text-gray-900 font-medium font-poppins ml-auto w-full max-w-sm">Continue</button>
+                        </div>
+                    </section>
+                    <section value="4" class="form-section flex flex-col gap-8">
+                        <h2 class="text-2xl font-poppins font-medium">Check Information</h2>
+                        <div class="flex flex-col w-full bg-gray-50 border-[1px] border-gray-300 p-6 gap-4">
+                            <h2 class="font-poppins font-medium">Application Name</h2>
+                            <p>Name Entered:</p>
+                            <p>Test</p>
+                            <button type="button" class="border-[1px] border-purple-400 bg-purple-300 h-10 px-4 text-gray-900 font-medium font-poppins ml-auto w-full max-w-sm">Change</button>
+                        </div>
+                        <div class="flex flex-col w-full bg-gray-50 border-[1px] border-gray-300 p-6 gap-4">
+                            <h2 class="font-poppins font-medium">Site Location</h2>
+                            <p>Address Entered:</p>
+                            <p>Test</p>
+                            <button type="button" class="border-[1px] border-purple-400 bg-purple-300 h-10 px-4 text-gray-900 font-medium font-poppins ml-auto w-full max-w-sm">Change</button>
+                        </div>
+                        <div class="flex flex-col w-full bg-gray-50 border-[1px] border-gray-300 p-6 gap-4">
+                            <h2 class="font-poppins font-medium">Application Type</h2>
+                            <p>Application Type Selected:</p>
+                            <p>Test</p>
+                            <button type="button" class="border-[1px] border-purple-400 bg-purple-300 h-10 px-4 text-gray-900 font-medium font-poppins ml-auto w-full max-w-sm">Change</button>
+                        </div>
+                        <button type="button" class="border-[1px] border-blue-400 bg-blue-300 h-10 px-4 text-gray-900 font-medium font-poppins mx-16">Create Application</button>
+                    </section>
+                </form>
+            </section>
+        </div>
+    </div>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+<script>
+
+var validate_section = $(this)
+var previous_section = $(this).parent().prev();
+var current_section = $(this).parent();
+var next_section = $(this).parent().next();
+    
+$(".next").click(function() {
+    current_section = $(this).closest('section');
+    next_section = $(this).closest('section').next();
+        
+    current_section.removeClass("active");
+    next_section.addClass("active");
+});
+    
+$(".previous").click(function() {
+    previous_section = $(this).closest('fieldset').prev();
+    current_section = $(this).closest('fieldset');
+        
+    current_section.removeClass("active");
+    previous_section.addClass("active");
+});
+
+</script>

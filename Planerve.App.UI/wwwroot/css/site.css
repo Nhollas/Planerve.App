@@ -1,4 +1,16 @@
+﻿*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 .active {
     opacity: 100%;
     transform: translateX(0%);
 }
+
+select {
+    outline: none;
+    appearance: none;
+}
+

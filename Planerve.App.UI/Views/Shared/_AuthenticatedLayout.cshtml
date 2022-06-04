@@ -10,17 +10,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-[#001534]">
-    <header class="h-24 bg-white">
+<body class="bg-[#001534] min-h-screen relative">
+    <header class="h-24 bg-main-white sm:bg-blue-500 md:bg-red-500 lg:bg-purple-500 xl:bg-green-500 2xl:bg-orange-500 z-20">
         <nav class="h-full px-6 w-full flex justify-center">
             <section class="h-24 flex items-center max-w-6xl w-full">
-                <image src="/design/PlanerveAppLogo.svg" class="h-10 mr-auto"></image>
-                <ul class="flex self-end h-24 items-center gap-8">
-                </ul>        
+                <image src="/design/PlanerveAppLogo.svg" class="h-10 mr-auto"></image>   
             </section>
         </nav>
     </header>
-    <main>
+    <main class="main mt-12">
         @RenderBody()
     </main>
     <footer>

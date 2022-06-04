@@ -27,24 +27,28 @@
       <Compile Remove="Features\Teams\**" />
       <Compile Remove="Features\Payment\**" />
       <Compile Remove="Features\File\**" />
-      <Compile Remove="Features\ApplicationData\Commands\CopyApplication\**" />
-      <Compile Remove="Features\ApplicationData\Commands\RemoveAccess\**" />
+      <Compile Remove="Features\ApplicationFeatures\Commands\RemoveAccess\**" />
     </ItemGroup>
 
     <ItemGroup>
       <EmbeddedResource Remove="Features\Teams\**" />
       <EmbeddedResource Remove="Features\Payment\**" />
       <EmbeddedResource Remove="Features\File\**" />
-      <EmbeddedResource Remove="Features\ApplicationData\Commands\CopyApplication\**" />
-      <EmbeddedResource Remove="Features\ApplicationData\Commands\RemoveAccess\**" />
+      <EmbeddedResource Remove="Features\ApplicationFeatures\Commands\RemoveAccess\**" />
     </ItemGroup>
 
     <ItemGroup>
       <None Remove="Features\Teams\**" />
       <None Remove="Features\Payment\**" />
       <None Remove="Features\File\**" />
-      <None Remove="Features\ApplicationData\Commands\CopyApplication\**" />
-      <None Remove="Features\ApplicationData\Commands\RemoveAccess\**" />
+      <None Remove="Features\ApplicationFeatures\Commands\RemoveAccess\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Contracts\Specification\FormData\" />
+      <Folder Include="Features\ApplicationFeatures\Commands\CopyApplication\" />
+      <Folder Include="Features\ApplicationFeatures\Commands\ArchiveApplication\" />
+      <Folder Include="Features\FormFeatures\Commands\" />
     </ItemGroup>
 
 </Project>

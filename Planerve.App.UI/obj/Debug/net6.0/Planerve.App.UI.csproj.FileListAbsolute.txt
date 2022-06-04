@@ -334,3 +334,10 @@ C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.UI\obj\Debug\net6.0\
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.UI\obj\Debug\net6.0\Planerve.App.UI.genruntimeconfig.cache
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.UI\obj\Debug\net6.0\ref\Planerve.App.UI.dll
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.UI\bin\Debug\net6.0\keys\is-signing-key-ABFD77B167CEF720F82E35FA0FAF0D73.json
+C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.UI\bin\Debug\net6.0\System.Web.Mvc.dll
+C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.UI\bin\Debug\net6.0\System.Web.Razor.dll
+C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.UI\bin\Debug\net6.0\System.Web.Helpers.dll
+C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.UI\bin\Debug\net6.0\System.Web.WebPages.Deployment.dll
+C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.UI\bin\Debug\net6.0\System.Web.WebPages.Razor.dll
+C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.UI\bin\Debug\net6.0\System.Web.WebPages.dll
+C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.UI\bin\Debug\net6.0\Microsoft.Web.Infrastructure.dll

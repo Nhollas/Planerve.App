@@ -9,15 +9,10 @@ public class ApplicationDetailViewModel
     public string ApplicationName { get; set; }
     public string OwnerId { get; set; }
     public string VersionNumber { get; set; }
-    public string AddressLineOne { get; set; }
-    public string AddressLineTwo { get; set; }
-    public string AddressLineThree { get; set; }
-    public string FullAddress { get; set; }
-    public string Postcode { get; set; }
-    public string LocalAuthority { get; set; }
-    public DateTime Created { get; set; }
-    public DateTime LastUpdated { get; set; }
+    public DateTime CreatedDate { get; set; }
+    public DateTime LastModifiedDate { get; set; }
     public ApplicationType ApplicationType { get; set; }
-    public FormTypeOne FormTypeOne { get; set; }
-    public FormTypeTwo FormTypeTwo { get; set; }
+    public Address Address { get; set; }
+    public Checklist Checklist { get; set; }
+    public Form Form { get; set; }
 }

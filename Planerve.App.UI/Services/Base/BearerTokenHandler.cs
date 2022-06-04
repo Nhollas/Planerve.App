@@ -44,7 +44,7 @@ namespace Planerve.App.UI.Services.Base
             var expiresAtAsDateTimeOffset =
                 DateTimeOffset.Parse(expiresAt, CultureInfo.InvariantCulture);
 
-            if ((expiresAtAsDateTimeOffset.AddSeconds(-60)).ToUniversalTime() > DateTime.UtcNow)
+            if ((expiresAtAsDateTimeOffset.AddSeconds(-10)).ToUniversalTime() > DateTime.UtcNow)
             {
                 // no need to refresh, return the access token
                 return await _httpContextAccessor

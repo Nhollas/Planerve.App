@@ -6,13 +6,10 @@
 
     <ItemGroup>
     <PackageReference Include="AutoMapper" Version="11.0.1" />
+    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.9" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="6.0.4" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.3" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.17.0" />
-    </ItemGroup>
-
-    <ItemGroup>
-    <Folder Include="wwwroot\css\" />
     </ItemGroup>
 
     <ItemGroup>

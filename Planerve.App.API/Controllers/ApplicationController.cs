@@ -1,10 +1,9 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Planerve.API.Utility;
-using Planerve.App.Core.Features.ApplicationData.Commands.CreateApplication;
-using Planerve.App.Core.Features.ApplicationData.Commands.DeleteApplication;
-using Planerve.App.Core.Features.ApplicationData.Queries.GetApplicationById;
-using Planerve.App.Core.Features.ApplicationData.Queries.GetApplicationList;
+using Planerve.App.Core.Features.ApplicationFeatures.Commands.CreateApplication;
+using Planerve.App.Core.Features.ApplicationFeatures.Commands.DeleteApplication;
+using Planerve.App.Core.Features.ApplicationFeatures.Queries.GetApplicationById;
+using Planerve.App.Core.Features.ApplicationFeatures.Queries.GetApplicationList;
 
 namespace Planerve.App.API.Controllers;
 

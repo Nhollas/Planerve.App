@@ -24,7 +24,7 @@
                 <p class="text-xl font-poppins">@Model.ApplicationName</p>
                 <div class="flex flex-row">
                     <p class="text-base font-poppins">@Model.ApplicationType.Name</p>
-                    <p class="text-base font-poppins ml-auto">@Model.Created.ToShortDateString()</p>
+                    <p class="text-base font-poppins ml-auto">@Model.CreatedDate.ToShortDateString()</p>
                 </div>
             </section>
             <div class="flex flex-col">
@@ -34,13 +34,13 @@
             </div>
             <section class="flex flex-col gap-4 w-full bg-gray-50 border-[1px] border-gray-300 p-5 max-w-lg">
                 <h2 class="text-base font-medium font-poppins">Application Questions</h2>
-                <p class="text-sm">1 / 24 Form Sections Complete</p>
+                <p class="text-sm">@Model.Checklist.FormInfo.CompletedSectionCount / @Model.Checklist.FormInfo.TotalSectionCount Form Sections Complete</p>
                 <button type="submit" class="border-[1px] border-blue-500 bg-blue-300 h-10 px-4 text-gray-900 font-medium font-poppins mx-16">Continue</button>
             </section>
             <section class="flex flex-col gap-4 w-full bg-gray-50 border-[1px] border-gray-300 p-5 max-w-lg">
                 <h2 class="text-base font-medium font-poppins">Add Plans & Documents</h2>
-                <p class="text-sm">0 / 3 Requirements Met</p>
-                <p class="text-sm">5 Plans or Documents Currently Added</p>
+                <p class="text-sm">@Model.Checklist.PlansAndDocument.CompletedRequirementsCount / @Model.Checklist.PlansAndDocument.TotalRequirementCount Requirements Met</p>
+                <p class="text-sm">@Model.Checklist.PlansAndDocument.DocumentCount Plans or Documents Currently Added</p>
                 <button type="submit" class="border-[1px] border-orange-500 bg-orange-300 h-10 px-4 text-gray-900 font-medium font-poppins mx-16">Continue</button>
             </section>
             <section class="flex flex-col gap-4 w-full bg-gray-50 border-[1px] border-gray-300 p-5 max-w-lg">

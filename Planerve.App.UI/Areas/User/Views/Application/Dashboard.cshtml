@@ -6,80 +6,127 @@
     ViewBag.Title = "Dashboard";
 }
 
-<div class="flex flex-col w-full justify-center items-center mt-12">
-    <div class="w-full max-w-5xl gap-8 flex flex-row md:min-h-[75vh] relative justify-center">
-        <aside class="filter__tab bg-[#FEFFFF] w-full mx-8 fixed p-8 flex flex-col z-50 translate-x-full max-w-lg overflow-hidden transition-all duration-300 opacity-0">
-            <form id="filterForm" class="flex flex-col gap-8">
-                <div class="flex flex-row">
-                    <h1 class="text-xl font-medium font-poppins">Filter Applications</h1>
-                    <button type="button" class="filter__toggle border-[1px] border-red-400 bg-red-300 h-10 -ml-2 px-4 text-gray-900 font-medium font-poppins ml-auto">Close</button>
+<div class="flex flex-col w-full items-center relative h-full">
+    <div class="w-full gap-8 flex flex-row justify-center relative overflow-hidden md:px-8">
+        <div class="bg-main-white w-full p-8 flex flex-col gap-y-8 lg:max-w-5xl order-2">
+            <section class="flex flex-col gap-2 w-full max-w-5xl">
+                    <h2 class="text-lg font-poppins font-bold text-purple-700 uppercase">
+                        Application
+                    </h2>
+                    <h1 class="text-4xl font-semibold">@ViewBag.Title</h1>
+            </section>
+            <div class="flex flex-col w-full gap-y-3">
+                <label class="text-lg">Search for an Application</label>
+                <p class="h-10 flex max-w-md">
+                    <input id="searchQuery" class="border-1 border-gray-300 h-10 w-full px-5" type="text"/>
+                    <button type="submit" class="filterData border-1 border-purple-400 bg-purple-300 h-10 -ml-2 px-4 text-gray-900 font-medium font-poppins">Search</button>
+                </p>
+            </div>
+            <section class="flex flex-row w-full">
+                <button class="filter__toggle bg-gray-50 border-1 border-gray-300 font-poppins font-semibold w-max px-6 py-2 rounded-lg xl:hidden">
+                    Filters
+                </button>
+
+                <a asp-action="Create" asp-controller="Application" asp-area="User" class="border-1 border-indigo-400 bg-blue-300 font-poppins font-medium w-max px-7 py-2 ml-auto cursor-pointer">
+                    Create An Application
+                </a>
+            </section>
+
+            <div id="filteredData">
+                <partial name="_DashboardFilterPartial" model="@Model.ApplicationList" />
+            </div>
+        </div>
+        <aside class="filter__tab bg-main-white inset-0 absolute w-full flex justify-center translate-x-full xl:translate-x-0 opacity-0 xl:opacity-100 xl:relative xl:order-1 xl:max-w-sm">
+            <form id="filterForm" class="flex flex-col gap-8 w-full p-8 max-w-md xl:m-w-none">
+                <div class="flex flex-row w-full">
+                    <h1 class="text-xl font-medium font-poppins w-max">Filter Applications</h1>
+                    <button type="button" class="filter__toggle border-1 border-red-400 bg-red-300 h-10 px-4 text-gray-900 font-medium font-poppins ml-auto xl:hidden">Close</button>
                 </div>
                 <div class="flex flex-col gap-4">
                     <h2 class="text-base font-medium font-poppins">Application Status</h2>
-                    <input id="versionNumber" class="border-[1px] border-gray-300 h-10 w-full px-5" type="text"/>
+                    <input id="versionNumber" class="border-1 border-gray-300 h-10 w-full px-5" type="text"/>
                 </div>
                 <div class="flex flex-col gap-4">
-                    <h2 class="text-base font-medium font-poppins">Application Type</h2>
-                    <select id="applicationTypes" class="w-full px-4 py-2 bg-gray-50 border-[1px] border-gray-300 font-poppins" multiple asp-items="@Model.ApplicationTypes"></select>
+                    <h2 class="text-base font-medium font-poppins">Application Types</h2>
+                    <ul class="ApplicationTypeSelect flex flex-col gap-2 border-1 border-gray-300 p-2">
+                        @foreach (var item in Model.ApplicationTypes)
+                        {
+                            <li class="ApplicationTypeInput border-1 border-gray-300 font-poppins px-3 py-1 rounded-full w-max cursor-pointer" value="@item.Value">@item.Text</li>
+                        }
+                    </ul>
                 </div>
                 <div class="flex flex-col gap-4">
-                    <h2 class="text-base font-medium font-poppins">Local Planning Authority</h2>
-                    <select id="localAuthorities" class="w-full px-4 py-2 bg-gray-50 border-[1px] border-gray-300 font-poppins" multiple asp-items="@Model.LocalAuthorities"></select>
+                    <h2 class="text-base font-medium font-poppins">Local Planning Authorities</h2>
+                    <ul class="LocalAuthoritySelect flex flex-col gap-2 border-1 border-gray-300 p-2">
+                        @foreach (var item in Model.LocalAuthorities)
+                        {
+                            <li class="LocalAuthorityInput border-1 border-gray-300 font-poppins px-3 py-1 rounded-full w-max cursor-pointer select-none" value="@item.Value">@item.Text</li>
+                        }
+                    </ul>
                 </div>
                 <section class="flex flex-col gap-4">
                     <h2 class="text-base font-medium font-poppins">Date Range</h2>
                     <div class="flex flex-col gap-4">
                         <label for="fromDate" class="-mb-2 text-base font-base font-poppins">From</label>
-                        <input id="fromDate" type="date" class="w-full px-4 py-2 bg-gray-50 border-[1px] border-gray-300" />
+                        <input id="fromDate" type="date" class="w-full px-4 py-2 bg-gray-50 border-1 border-gray-300" />
                     </div>
                     <div class="flex flex-col gap-4">
                         <label for="toDate" class="-mb-2 text-base font-base font-poppins">To</label>
-                        <input id="toDate" type="date" class="w-full px-4 py-2 bg-gray-50 border-[1px] border-gray-300" />
+                        <input id="toDate" type="date" class="w-full px-4 py-2 bg-gray-50 border-1 border-gray-300" />
                     </div>
                 </section>
-                <button type="submit" class="filterData border-[1px] border-purple-400 bg-purple-300 h-10 px-4 text-gray-900 font-medium font-poppins mx-16">Apply Filters</button>
+                <button type="submit" class="filterData border-1 border-purple-400 bg-purple-300 h-10 px-4 text-gray-900 font-medium font-poppins mx-16">Apply Filters</button>
             </form>
         </aside>
-        <div class="bg-[#FEFFFF] w-full p-8 relative flex flex-col gap-y-8 max-w-lg lg:max-w-5xl">
-            <section class="flex flex-col gap-2 w-full max-w-5xl">
-                    <h2 class="text-base text-purple-700 font-bold uppercase">
-                        Application
-                    </h2>
-                    <h1 class="text-4xl font-poppins font-semibold">@ViewBag.Title</h1>
-            </section>
-            <div class="flex flex-col w-full gap-y-3">
-                <label class="text-lg">Search for an Application</label>
-                <p class="h-10 flex">
-                    <input id="searchQuery" class="border-[1px] border-gray-300 h-10 w-full px-5" type="text"/>
-                    <button type="submit" class="filterData border-[1px] border-purple-400 bg-purple-300 h-10 -ml-2 px-4 text-gray-900 font-medium font-poppins">Search</button>
-                </p>
-            </div>
-            <section class="flex flex-row w-full">
-                <button class="filter__toggle bg-gray-50 border-[1px] border-gray-300 font-poppins font-semibold w-max px-6 py-2 rounded-lg">
-                    Filters
-                </button>
-
-                <button class="border-[1px] border-indigo-400 bg-blue-300 font-poppins font-medium w-max px-7 py-2 ml-auto">
-                    Create An Application
-                </button>
-            </section>
-
-            <div id="filteredData">
-                <partial name="_DashboardFilterPartial" model="@Model.ApplicationList" />
-            </div> 
-        </div>
     </div>
 </div>
 
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 
 <script>
+    const buttons = document.querySelectorAll(".filter__toggle");
+
+    buttons.forEach(button => {
+        button.addEventListener('click', function handleClick(event) {
+            const slide = document.querySelector(".filter__tab");
+            slide.classList.toggle("active");
+        });
+    });
+
+
+    const localAuthorityInputs = document.querySelectorAll(".LocalAuthorityInput");
+
+    localAuthorityInputs.forEach(button => {
+        button.addEventListener('click', function handleClick(event) {
+            console.log("sus");
+            if (button.classList.contains("selected")) {
+                button.classList.remove("selected");
+                return
+            }
+            button.classList.add("selected");
+        });
+    });
+
+    const applicationTypeInputs = document.querySelectorAll(".ApplicationTypeInput");
+
+    applicationTypeInputs.forEach(button => {
+        button.addEventListener('click', function handleClick(event) {
+            console.log("sus");
+            if (button.classList.contains("selected")) {
+                button.classList.remove("selected");
+                return
+            }
+            button.classList.add("selected");
+        });
+    });
+
+
     $(".filterData").click(function (e) {
 
         var localAuths = new Array();
         var appTypes = new Array();
 
-        $("#localAuthorities :selected").each(function () {
+        $(".LocalAuthoritySelect").children(".selected").each(function () {
             var item = {
                 Value: $(this).val(),
                 Name: $(this).text()
@@ -87,7 +134,7 @@
             localAuths.push(item);
         });
 
-        $("#applicationTypes :selected").each(function () {
+        $(".ApplicationTypeSelect").children(".selected").each(function () {
             var item = {
                 Value: $(this).val(),
                 Name: $(this).text()

@@ -1,6 +1,6 @@
 ﻿using Planerve.App.Domain.Common;
 using System;
-using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Planerve.App.Domain.Entities.ApplicationEntities;
 
@@ -11,9 +11,6 @@ public class Application : AuditableEntity
     public string ApplicationName { get; set; }
     public string OwnerId { get; set; }
     public string VersionNumber { get; set; }
-    public ICollection<AuthorisedUser> AuthorisedUsers { get; set; }
-    public ApplicationType ApplicationType { get; set; }
-    public Address Address { get; set; }
-    public Checklist Checklist { get; set; }
-    public Form Form { get; set; }
+    [ForeignKey("Id")]
+    public ApplicationData Data { get; set; }
 }

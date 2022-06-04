@@ -33,7 +33,7 @@ public class ApplicationController : Controller
         // Select Lists..
 
         var localAuthorities = removeDuplicateLocalAuthorities.Select(x => new SelectListItem { Text = x, Value = x }).ToList();
-        var applicationTypes = removeDuplicateApplicationTypes.Select(x => new SelectListItem { Text = x.Name, Value = x.Value.ToString()}).ToList();
+        var applicationTypes = removeDuplicateApplicationTypes.Select(x => new SelectListItem { Text = x.Name, Value = x.Value.ToString() }).ToList();
 
         var viewModel = new ApplicationDashboardViewModel()
         {
@@ -41,6 +41,9 @@ public class ApplicationController : Controller
             LocalAuthorities = localAuthorities,
             ApplicationTypes = applicationTypes
         };
+
+        // Initialise lists.
+        viewModel.OnGet();
 
         return View(viewModel);
     }
@@ -79,6 +82,15 @@ public class ApplicationController : Controller
         }
 
         return View(application);
+    }
+
+    public IActionResult Create()
+    {
+        var viewModel = new ApplicationCreateViewModel();
+
+        viewModel.OnGet();
+
+        return View(viewModel);
     }
 
 

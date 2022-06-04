@@ -23,7 +23,6 @@ public class PlanerveDbContext : DbContext
     }
 
     public DbSet<Application> Application { get; set; }
-    public DbSet<Form> FormData { get; set; }
 
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
     {
@@ -46,5 +45,16 @@ public class PlanerveDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<ApplicationDocument>()
+            .OwnsMany(t => t.DocumentRequirements);
+
+        modelBuilder.Entity<ApplicationType>()
+            .OwnsOne(t => t.Category)
+            .Property(t => t.Name)
+            .IsRequired();
+
+        modelBuilder.Entity<ApplicationForm>()
+            .OwnsMany(t => t.FormSections)
+            .OwnsMany(t => t.FormFields);
     }
 }
