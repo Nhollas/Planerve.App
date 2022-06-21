@@ -21,6 +21,7 @@ namespace Planerve.App.Core.Contracts.Authorization.Handlers
             Application resource)
         {
             var userId = await _loggedInUserService.UserId();
+
             var isAuthorisedUser = resource.Data.Users.Where(x => x.UserId == userId && x.IsValid == true).FirstOrDefault();
 
             // Everything that is not on the 

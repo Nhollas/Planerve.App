@@ -10,7 +10,6 @@ public class GetApplicationByIdSpecification : BaseSpecification<Application>
     public GetApplicationByIdSpecification(Guid Id, string userId) : base(x => x.OwnerId == userId && x.Id == Id || x.Data.Users.Any(x => x.UserId == userId && x.IsValid == true) && x.Id == Id)
     {
         AddInclude(x => x.Data);
-        AddInclude(x => x.Data.Form);
         AddInclude(x => x.Data.Progress);
         AddInclude(x => x.Data.Users);
         AddInclude(x => x.Data.Type);

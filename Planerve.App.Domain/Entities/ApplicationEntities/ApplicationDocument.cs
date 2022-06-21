@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace Planerve.App.Domain.Entities.ApplicationEntities
 {
@@ -9,6 +10,7 @@ namespace Planerve.App.Domain.Entities.ApplicationEntities
         [ForeignKey("ApplicationData")]
         [Column("ApplicationId")]
         public Guid Id { get; set; }
+        [JsonIgnore]
         public ApplicationData ApplicationData { get; set; }
 
         public int DocumentCount { get; set; }

@@ -18,7 +18,6 @@ public static class ClientServiceRegistration
         services.AddScoped<IApplicationDataService, ApplicationDataService>();
         services.AddAutoMapper(Assembly.GetExecutingAssembly());
         services.AddScoped(typeof(IAsyncRepository<>), typeof(BaseRepository<>));
-        services.AddScoped<IApplicationDataRepository, ApplicationDataRepository>();
         services.AddDbContext<PlanerveDbContext>(options =>
         {
             options.UseSqlServer("ApplicationPortalConnectionString");

@@ -5,6 +5,7 @@ using Planerve.App.Core.Contracts.Persistence;
 using Planerve.App.Core.Contracts.Specification.ApplicationData;
 using Planerve.App.Core.Exceptions;
 using Planerve.App.Domain.Entities.ApplicationEntities;
+using System;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -33,20 +34,6 @@ public class GetFormDetailQueryHandler : IRequestHandler<GetFormDetailQuery, For
 
         var applicationEntity = _repository.FindWithSpecificationPattern(specification);
 
-        if (!applicationEntity.Any())
-        {
-            throw new NotFoundException(nameof(ApplicationForm), request.Id);
-        }
-
-        var selectedApplication = applicationEntity.First();
-
-        if (selectedApplication.Data.Form is null)
-        {
-            throw new NotFoundException("This application has no form data", request.Id);
-        }
-
-        var formDetailDto = _mapper.Map<FormDetailVm>(selectedApplication.Data.Form);
-
-        return formDetailDto;
+        throw new NotImplementedException();
     }
 }

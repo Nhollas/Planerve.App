@@ -28,10 +28,10 @@ namespace Planerve.App.UI.ViewHelpers
                     queriedApplications = queriedApplications.Where(x => x.VersionNumber == applicationFilterModel.VersionNumber);
 
                 if (applicationFilterModel.LocalPlanningAuthorities != null)
-                    queriedApplications = queriedApplications.Where(x => applicationFilterModel.LocalPlanningAuthorities.Select(x => x.Name).Contains(x.Address.Admin_district));
+                    queriedApplications = queriedApplications.Where(x => applicationFilterModel.LocalPlanningAuthorities.Select(x => x.Name).Contains(x.Data.Address.Admin_district));
 
                 if (applicationFilterModel.ApplicationTypes != null)
-                    queriedApplications = queriedApplications.Where(x => applicationFilterModel.ApplicationTypes.Select(x => x.Value).Contains(x.ApplicationType.Value));
+                    queriedApplications = queriedApplications.Where(x => applicationFilterModel.ApplicationTypes.Select(x => x.Value).Contains(x.Data.Type.Value));
 
                 if (applicationFilterModel.FromDate != null && applicationFilterModel.ToDate != null)
                     queriedApplications = queriedApplications.Where(x => x.CreatedDate >= applicationFilterModel.FromDate && x.CreatedDate <= applicationFilterModel.ToDate);

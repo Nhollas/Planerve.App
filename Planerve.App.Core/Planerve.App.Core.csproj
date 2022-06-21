@@ -8,15 +8,15 @@
         <PackageReference Include="AutoMapper" Version="11.0.1" />
         <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
         <PackageReference Include="DinkToPdf" Version="1.0.8" />
-        <PackageReference Include="FluentValidation" Version="11.0.0" />
-        <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.0.0" />
+        <PackageReference Include="FluentValidation" Version="11.0.2" />
+        <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.0.2" />
         <PackageReference Include="Kevsoft.PDFtk" Version="0.0.56" />
         <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
-        <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.8" />
-        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.4" />
+        <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.9" />
+        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.5" />
         <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.1" />
         <PackageReference Include="System.Net.Http" Version="4.3.4" />
-        <PackageReference Include="System.Text.Json" Version="6.0.3" />
+        <PackageReference Include="System.Text.Json" Version="6.0.4" />
     </ItemGroup>
 
     <ItemGroup>
@@ -45,7 +45,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Contracts\Specification\FormData\" />
       <Folder Include="Features\ApplicationFeatures\Commands\CopyApplication\" />
       <Folder Include="Features\ApplicationFeatures\Commands\ArchiveApplication\" />
       <Folder Include="Features\FormFeatures\Commands\" />

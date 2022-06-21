@@ -13,14 +13,14 @@ namespace Planerve.App.API.Services
 
         public Task<string> UserId ()
         {
-            var userId = _httpContextAccessor.HttpContext?.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            string userId = _httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
 
             return Task.FromResult(userId);
         }
 
         public Task<ClaimsPrincipal> GetUser ()
         {
-            var user = _httpContextAccessor.HttpContext?.User;
+            var user = _httpContextAccessor.HttpContext.User;
 
             return Task.FromResult(user);
         }

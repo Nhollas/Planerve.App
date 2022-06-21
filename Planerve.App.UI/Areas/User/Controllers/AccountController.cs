@@ -1,11 +1,8 @@
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.IdentityModel.Tokens;
 using Planerve.App.UI.Contracts;
 using Planerve.App.UI.ViewModels.AccountVMs;
-using System.IdentityModel.Tokens.Jwt;
-using System.Text;
 
 namespace Planerve.App.UI.Areas.User.Controllers;
 
@@ -38,7 +35,7 @@ public class AccountController : Controller
 
         var registerResponse = await _authenticationService.Register(model.Username, model.Email, model.Password, model.ConfirmPassword);
 
-        if (registerResponse == true)
+        if (registerResponse)
         {
             return RedirectToRoute(new { area = "User", controller = "Application", action = "Dashboard" });
         }

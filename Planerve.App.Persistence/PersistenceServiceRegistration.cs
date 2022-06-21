@@ -6,11 +6,10 @@ namespace Planerve.App.Persistence;
 
 public static class PersistenceServiceRegistration
 {
-    public static IServiceCollection AddPersistenceServices(this IServiceCollection services)
+    public static IServiceCollection AddPersistenceServices(
+        this IServiceCollection services)
     {
         services.AddScoped(typeof(IAsyncRepository<>), typeof(BaseRepository<>));
-
-        services.AddScoped<IApplicationDataRepository, ApplicationDataRepository>();
         services.AddScoped<IUserDataRepository, UserDataRepository>();
 
         return services;

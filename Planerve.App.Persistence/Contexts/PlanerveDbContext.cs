@@ -2,6 +2,7 @@
 using Planerve.App.Core.Contracts.Identity;
 using Planerve.App.Domain.Common;
 using Planerve.App.Domain.Entities.ApplicationEntities;
+using Planerve.App.Domain.Entities.FormEntities;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
@@ -23,6 +24,26 @@ public class PlanerveDbContext : DbContext
     }
 
     public DbSet<Application> Application { get; set; }
+    public DbSet<FormTypeA> FormTypeA { get; set; }
+    public DbSet<FormTypeB> FormTypeB { get; set; }
+    public DbSet<FormTypeC> FormTypeC { get; set; }
+    public DbSet<FormTypeD> FormTypeD { get; set; }
+    public DbSet<FormTypeE> FormTypeE { get; set; }
+    public DbSet<FormTypeF> FormTypeF { get; set; }
+    public DbSet<FormTypeG> FormTypeG { get; set; }
+    public DbSet<FormTypeH> FormTypeH { get; set; }
+    public DbSet<FormTypeI> FormTypeI { get; set; }
+    public DbSet<FormTypeJ> FormTypeJ { get; set; }
+    public DbSet<FormTypeK> FormTypeK { get; set; }
+    public DbSet<FormTypeL> FormTypeL { get; set; }
+    public DbSet<FormTypeM> FormTypeM { get; set; }
+    public DbSet<FormTypeN> FormTypeN { get; set; }
+    public DbSet<FormTypeO> FormTypeO { get; set; }
+    public DbSet<FormTypeP> FormTypeP { get; set; }
+    public DbSet<FormTypeQ> FormTypeQ { get; set; }
+    public DbSet<FormTypeR> FormTypeR { get; set; }
+    public DbSet<FormTypeS> FormTypeS { get; set; }
+    public DbSet<FormTypeT> FormTypeT { get; set; }
 
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
     {
@@ -32,7 +53,6 @@ public class PlanerveDbContext : DbContext
             {
                 case EntityState.Added:
                     entry.Entity.CreatedDate = DateTime.Now;
-                    entry.Entity.CreatedBy = _loggedInUserService.UserId().Result;
                     break;
                 case EntityState.Modified:
                     entry.Entity.LastModifiedDate = DateTime.Now;
@@ -47,14 +67,5 @@ public class PlanerveDbContext : DbContext
     {
         modelBuilder.Entity<ApplicationDocument>()
             .OwnsMany(t => t.DocumentRequirements);
-
-        modelBuilder.Entity<ApplicationType>()
-            .OwnsOne(t => t.Category)
-            .Property(t => t.Name)
-            .IsRequired();
-
-        modelBuilder.Entity<ApplicationForm>()
-            .OwnsMany(t => t.FormSections)
-            .OwnsMany(t => t.FormFields);
     }
 }

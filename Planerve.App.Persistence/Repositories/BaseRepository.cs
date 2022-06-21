@@ -8,7 +8,7 @@ using Planerve.App.Persistence.Contexts;
 
 namespace Planerve.App.Persistence.Repositories;
 
-public class BaseRepository<T> : IAsyncRepository<T> where T : class
+public class BaseRepository<TEntity> : IAsyncRepository<TEntity> where TEntity : class
 {
     protected readonly PlanerveDbContext _dbContext;
 
@@ -17,38 +17,38 @@ public class BaseRepository<T> : IAsyncRepository<T> where T : class
         _dbContext = dbContext;
     }
 
-    public virtual async Task<T> GetByIdAsync(Guid id)
+    public virtual async Task<TEntity> GetByIdAsync(Guid id)
     {
-        return await _dbContext.Set<T>().FindAsync(id);
+        return await _dbContext.Set<TEntity>().FindAsync(id);
     }
 
-    public async Task<IReadOnlyList<T>> ListAllAsync()
+    public async Task<IReadOnlyList<TEntity>> ListAllAsync()
     {
-        return await _dbContext.Set<T>().ToListAsync();
+        return await _dbContext.Set<TEntity>().ToListAsync();
     }
 
-    public async Task<T> AddAsync(T entity)
+    public async Task<TEntity> AddAsync(TEntity entity)
     {
-        await _dbContext.Set<T>().AddAsync(entity);
+        await _dbContext.Set<TEntity>().AddAsync(entity);
         await _dbContext.SaveChangesAsync();
 
         return entity;
     }
 
-    public async Task DeleteAsync(T entity)
+    public async Task DeleteAsync(TEntity entity)
     {
-        _dbContext.Set<T>().Remove(entity);
+        _dbContext.Set<TEntity>().Remove(entity);
         await _dbContext.SaveChangesAsync();
     }
 
-    public async Task UpdateAsync(T entity)
+    public async Task UpdateAsync(TEntity entity)
     {
         _dbContext.Entry(entity);
         await _dbContext.SaveChangesAsync();
     }
 
-    public IEnumerable<T> FindWithSpecificationPattern(ISpecification<T> specification = null)
+    public IEnumerable<TEntity> FindWithSpecificationPattern(ISpecification<TEntity> specification = null)
     {
-        return SpecificationEvaluator<T>.GetQuery(_dbContext.Set<T>().AsQueryable(), specification);
+        return SpecificationEvaluator<TEntity>.GetQuery(_dbContext.Set<TEntity>().AsQueryable(), specification);
     }
 }

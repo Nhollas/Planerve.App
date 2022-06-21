@@ -10,7 +10,8 @@ namespace Planerve.App.Core.Features.ApplicationFeatures.Commands.CreateApplicat
             public string Name { get; set; }
             public string Group { get; set; }
             public string Description { get; set; }
-            public ApplicationCategory Category { get; set; }
+            public string CategoryName { get; set; }
+            public string CategoryDescription { get; set; }
         }
 
         public class ApplicationCategory
@@ -36,7 +37,7 @@ namespace Planerve.App.Core.Features.ApplicationFeatures.Commands.CreateApplicat
                         Value = 2,
                         Name = "Householder planning & demolition in a conservation area",
                         Group = "Householder planning & prior approval",
-                        Description = "An application for an alteration to an existing house within a conservation area that involves substantial demolition.Types of alterations could be extensions, conservatories, loft conversions or outbuildings. This does not include flats."
+                        Description = "An application for an alteration to an existing house within a conservation area that involves substantial demolition. Types of alterations could be extensions, conservatories, loft conversions or outbuildings. This does not include flats."
                     }
                 },
                 {
@@ -45,7 +46,7 @@ namespace Planerve.App.Core.Features.ApplicationFeatures.Commands.CreateApplicat
                         Value = 3,
                         Name = "Householder planning & listed building consent",
                         Group = "Householder planning & prior approval",
-                        Description = "An application for an alteration to an existing house within a conservation area that involves substantial demolition.Types of alterations could be extensions, conservatories, loft conversions or outbuildings. This does not include flats."
+                        Description = "An application for alterations, extensions, or demolition to a existing house that is a listed building. Types of alterations could be extensions, conservatories, loft conversions or outbuildings. This does not include flats."
                     }
                 },
                 {
@@ -218,7 +219,8 @@ namespace Planerve.App.Core.Features.ApplicationFeatures.Commands.CreateApplicat
 
             applicationCategories.TryGetValue(applicationCategory, out var categoryInfo);
 
-            typeInfo.Category = categoryInfo;
+            typeInfo.CategoryName = categoryInfo.Name;
+            typeInfo.CategoryDescription = categoryInfo.Description;
 
             return typeInfo;
         }

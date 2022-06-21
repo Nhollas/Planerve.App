@@ -20,8 +20,5 @@ public class UserDataRepository : IUserDataRepository
         var matches = _dbContext.Users.Where(e => e.NormalizedEmail == query || e.UserName == query);
 
         return Task.FromResult(matches);
-    }
-    
-    
-    
+    }    
 }

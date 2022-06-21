@@ -19,7 +19,7 @@ namespace Planerve.App.UI.Services
         {
             var client = _httpClientFactory.CreateClient("UnauthorisedAPI");
 
-            RegistrationRequest registrationRequest = new RegistrationRequest() { Email = email, UserName = userName, Password = password };
+            RegistrationRequest registrationRequest = new() { Email = email, UserName = userName, Password = password };
 
             var content_ = new StringContent(JsonSerializer.Serialize(registrationRequest));
             content_.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json");
@@ -33,9 +33,9 @@ namespace Planerve.App.UI.Services
 
             var response_ = await client.SendAsync(request_, HttpCompletionOption.ResponseHeadersRead).ConfigureAwait(false);
 
-            var boda = await response_.Content.ReadAsStringAsync();
+            var body = await response_.Content.ReadAsStringAsync();
 
-            var data = JsonSerializer.Deserialize<RegistrationResponse>(boda,
+            var data = JsonSerializer.Deserialize<RegistrationResponse>(body,
             new JsonSerializerOptions
             {
                 PropertyNamingPolicy = JsonNamingPolicy.CamelCase

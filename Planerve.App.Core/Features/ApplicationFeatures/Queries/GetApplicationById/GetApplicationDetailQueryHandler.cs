@@ -55,7 +55,7 @@ namespace Planerve.App.Core.Features.ApplicationFeatures.Queries.GetApplicationB
                 throw new NotAuthorisedException(nameof(Application), userId);
             }
 
-            var applicationDetailDto = _mapper.Map<ApplicationDetailVm>(applicationEntity.First());
+            var applicationDetailDto = _mapper.Map<ApplicationDetailVm>(selectedApplication);
 
             return applicationDetailDto;
 

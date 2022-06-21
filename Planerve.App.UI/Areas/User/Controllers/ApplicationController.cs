@@ -27,8 +27,8 @@ public class ApplicationController : Controller
 
         // Select List Data
 
-        var removeDuplicateLocalAuthorities = applications.Select(x => x.Address.Admin_district).Distinct().ToList();
-        var removeDuplicateApplicationTypes = applications.Select(x => x.ApplicationType).DistinctBy(x => x.Value).ToList();
+        var removeDuplicateLocalAuthorities = applications.Select(x => x.Data.Address.Admin_district).Distinct().ToList();
+        var removeDuplicateApplicationTypes = applications.Select(x => x.Data.Type).DistinctBy(x => x.Value).ToList();
 
         // Select Lists..
 

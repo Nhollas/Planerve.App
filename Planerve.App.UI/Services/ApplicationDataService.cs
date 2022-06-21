@@ -41,4 +41,11 @@ public class ApplicationDataService : BaseDataService, IApplicationDataService
             return ConvertApiExceptions<Guid>(ex);
         }
     }
+
+    public async Task<FormDetailViewModel> GetFormById(Guid id)
+    {
+        var selectedForm = await _client.GetFormByIdAsync(id);
+        var mappedForm = _mapper.Map<FormDetailViewModel>(selectedForm);
+        return mappedForm;
+    }
 }

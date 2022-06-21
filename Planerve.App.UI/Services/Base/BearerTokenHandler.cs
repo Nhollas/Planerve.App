@@ -20,7 +20,6 @@ namespace Planerve.App.UI.Services.Base
                  throw new ArgumentNullException(nameof(httpClientFactory));
         }
 
-
         protected override async Task<HttpResponseMessage> SendAsync(
             HttpRequestMessage request,
             CancellationToken cancellationToken)

@@ -17,11 +17,6 @@ C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.Persistence\o
 C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.Persistence\obj\Release\net6.0\Planerve.App.Persistence.pdb
 C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.Persistence\obj\Release\net6.0\Planerve.App.Persistence.genruntimeconfig.cache
 C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.Persistence\obj\Release\net6.0\refint\Planerve.App.Persistence.dll
-C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Persistence\obj\Release\net6.0\Planerve.App.Persistence.csproj.AssemblyReference.cache
-C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Persistence\obj\Release\net6.0\Planerve.App.Persistence.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Persistence\obj\Release\net6.0\Planerve.App.Persistence.AssemblyInfoInputs.cache
-C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Persistence\obj\Release\net6.0\Planerve.App.Persistence.AssemblyInfo.cs
-C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Persistence\obj\Release\net6.0\Planerve.App.Persistence.csproj.CoreCompileInputs.cache
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Persistence\bin\Release\net6.0\Planerve.App.Identity.deps.json
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Persistence\bin\Release\net6.0\Planerve.App.Identity.runtimeconfig.json
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Persistence\bin\Release\net6.0\appsettings.json
@@ -39,6 +34,11 @@ C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Persistence\bin\Rele
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Persistence\bin\Release\net6.0\Planerve.App.Core.pdb
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Persistence\bin\Release\net6.0\Planerve.App.Identity.pdb
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Persistence\bin\Release\net6.0\Planerve.App.Domain.pdb
+C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Persistence\obj\Release\net6.0\Planerve.App.Persistence.csproj.AssemblyReference.cache
+C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Persistence\obj\Release\net6.0\Planerve.App.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Persistence\obj\Release\net6.0\Planerve.App.Persistence.AssemblyInfoInputs.cache
+C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Persistence\obj\Release\net6.0\Planerve.App.Persistence.AssemblyInfo.cs
+C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Persistence\obj\Release\net6.0\Planerve.App.Persistence.csproj.CoreCompileInputs.cache
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Persistence\obj\Release\net6.0\Planerve.App.Persistence.csproj.CopyComplete
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Persistence\obj\Release\net6.0\Planerve.App.Persistence.dll
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Persistence\obj\Release\net6.0\refint\Planerve.App.Persistence.dll

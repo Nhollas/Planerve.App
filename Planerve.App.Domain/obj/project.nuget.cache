@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ClX7hdvAOvG7ZtHh82CG6UPK2zOt78x96Y5pvyIzByM7knEE6C6pWSxqGGKNinhsodwGtM/2Z+KRToGCHJWPpQ==",
+  "dgSpecHash": "EY19DE6CIJFq7CRl9RbQCIfZbQOfv2dM4O19hXwhb65Sj0gulfsHx5H7h/+oCiibvYfYwWH4mLzwYYUGzXxA9Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Domain\\Planerve.App.Domain.csproj",
   "expectedPackageFiles": [
@@ -51,7 +51,7 @@
     "C:\\Users\\Nhollas\\.nuget\\packages\\microsoft.codeanalysis.razor\\2.2.0\\microsoft.codeanalysis.razor.2.2.0.nupkg.sha512",
     "C:\\Users\\Nhollas\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Nhollas\\.nuget\\packages\\microsoft.dotnet.platformabstractions\\2.1.0\\microsoft.dotnet.platformabstractions.2.1.0.nupkg.sha512",
-    "C:\\Users\\Nhollas\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.4\\microsoft.entityframeworkcore.abstractions.6.0.4.nupkg.sha512",
+    "C:\\Users\\Nhollas\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.5\\microsoft.entityframeworkcore.abstractions.6.0.5.nupkg.sha512",
     "C:\\Users\\Nhollas\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\2.2.0\\microsoft.extensions.caching.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Nhollas\\.nuget\\packages\\microsoft.extensions.caching.memory\\2.2.0\\microsoft.extensions.caching.memory.2.2.0.nupkg.sha512",
     "C:\\Users\\Nhollas\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\2.2.0\\microsoft.extensions.configuration.abstractions.2.2.0.nupkg.sha512",

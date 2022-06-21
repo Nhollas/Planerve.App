@@ -9,7 +9,6 @@ public class GetApplicationListSpecification : BaseSpecification<Application>
     public GetApplicationListSpecification(string userId) : base(x => x.OwnerId == userId || x.Data.Users.Any(x => x.UserId == userId && x.IsValid == true))
     {
         AddInclude(x => x.Data);
-        AddInclude(x => x.Data.Form);
         AddInclude(x => x.Data.Progress);
         AddInclude(x => x.Data.Users);
         AddInclude(x => x.Data.Type);

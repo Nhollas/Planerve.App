@@ -29,7 +29,7 @@ public static class Config
 
                 AllowedGrantTypes = GrantTypes.Code,
                 AllowOfflineAccess = true,
-                AccessTokenLifetime = 20,
+                AccessTokenLifetime = 60 * 60,
                     
                 // where to redirect to after login
                 RedirectUris = { "https://localhost:5001/signin-oidc" },

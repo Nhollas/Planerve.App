@@ -5,12 +5,12 @@ using System.Threading.Tasks;
 
 namespace Planerve.App.Core.Contracts.Persistence;
 
-public interface IAsyncRepository<T> where T : class
+public interface IAsyncRepository<TEntity> where TEntity : class
 {
-    Task<T> GetByIdAsync(Guid id);
-    Task<IReadOnlyList<T>> ListAllAsync();
-    Task<T> AddAsync(T entity);
-    Task DeleteAsync(T entity);
-    Task UpdateAsync(T entity);
-    IEnumerable<T> FindWithSpecificationPattern(ISpecification<T> specification = null);
+    Task<TEntity> GetByIdAsync(Guid id);
+    Task<IReadOnlyList<TEntity>> ListAllAsync();
+    Task<TEntity> AddAsync(TEntity entity);
+    Task DeleteAsync(TEntity entity);
+    Task UpdateAsync(TEntity entity);
+    IEnumerable<TEntity> FindWithSpecificationPattern(ISpecification<TEntity> specification = null);
 }

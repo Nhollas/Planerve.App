@@ -67,30 +67,12 @@ namespace Planerve.App.UI.Services.Base
 
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<FormCompletedVm> GetFormByIdAsync(System.Guid id);
+        System.Threading.Tasks.Task<FormDetailVm> GetFormByIdAsync(System.Guid id);
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<FormCompletedVm> GetFormByIdAsync(System.Guid id, System.Threading.CancellationToken cancellationToken);
-
-        /// <returns>No Content</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task CompleteFormAsync(CompleteFormCommand body);
-
-        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-        /// <returns>No Content</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task CompleteFormAsync(CompleteFormCommand body, System.Threading.CancellationToken cancellationToken);
-
-        /// <returns>No Content</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task UpdateFormAsync(UpdateFormCommand body);
-
-        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-        /// <returns>No Content</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task UpdateFormAsync(UpdateFormCommand body, System.Threading.CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<FormDetailVm> GetFormByIdAsync(System.Guid id, System.Threading.CancellationToken cancellationToken);
 
     }
 
@@ -523,7 +505,7 @@ namespace Planerve.App.UI.Services.Base
 
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<FormCompletedVm> GetFormByIdAsync(System.Guid id)
+        public virtual System.Threading.Tasks.Task<FormDetailVm> GetFormByIdAsync(System.Guid id)
         {
             return GetFormByIdAsync(id, System.Threading.CancellationToken.None);
         }
@@ -531,7 +513,7 @@ namespace Planerve.App.UI.Services.Base
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<FormCompletedVm> GetFormByIdAsync(System.Guid id, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<FormDetailVm> GetFormByIdAsync(System.Guid id, System.Threading.CancellationToken cancellationToken)
         {
             if (id == null)
                 throw new System.ArgumentNullException("id");
@@ -572,182 +554,12 @@ namespace Planerve.App.UI.Services.Base
                         var status_ = (int)response_.StatusCode;
                         if (status_ == 200)
                         {
-                            var objectResponse_ = await ReadObjectResponseAsync<FormCompletedVm>(response_, headers_, cancellationToken).ConfigureAwait(false);
+                            var objectResponse_ = await ReadObjectResponseAsync<FormDetailVm>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
                                 throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
-                        }
-                        else
-                        {
-                            var objectResponse_ = await ReadObjectResponseAsync<ProblemDetails>(response_, headers_, cancellationToken).ConfigureAwait(false);
-                            if (objectResponse_.Object == null)
-                            {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
-                            }
-                            throw new ApiException<ProblemDetails>("Error", status_, objectResponse_.Text, headers_, objectResponse_.Object, null);
-                        }
-                    }
-                    finally
-                    {
-                        if (disposeResponse_)
-                            response_.Dispose();
-                    }
-                }
-            }
-            finally
-            {
-                if (disposeClient_)
-                    client_.Dispose();
-            }
-        }
-
-        /// <returns>No Content</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task CompleteFormAsync(CompleteFormCommand body)
-        {
-            return CompleteFormAsync(body, System.Threading.CancellationToken.None);
-        }
-
-        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-        /// <returns>No Content</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task CompleteFormAsync(CompleteFormCommand body, System.Threading.CancellationToken cancellationToken)
-        {
-            var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append("api/Form/CompleteForm");
-
-            var client_ = _httpClient;
-            var disposeClient_ = false;
-            try
-            {
-                using (var request_ = new System.Net.Http.HttpRequestMessage())
-                {
-                    var content_ = new System.Net.Http.StringContent(System.Text.Json.JsonSerializer.Serialize(body, _settings.Value));
-                    content_.Headers.ContentType = System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json");
-                    request_.Content = content_;
-                    request_.Method = new System.Net.Http.HttpMethod("PUT");
-
-                    PrepareRequest(client_, request_, urlBuilder_);
-
-                    var url_ = urlBuilder_.ToString();
-                    request_.RequestUri = new System.Uri(url_, System.UriKind.RelativeOrAbsolute);
-
-                    PrepareRequest(client_, request_, url_);
-
-                    var response_ = await client_.SendAsync(request_, System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
-                    var disposeResponse_ = true;
-                    try
-                    {
-                        var headers_ = System.Linq.Enumerable.ToDictionary(response_.Headers, h_ => h_.Key, h_ => h_.Value);
-                        if (response_.Content != null && response_.Content.Headers != null)
-                        {
-                            foreach (var item_ in response_.Content.Headers)
-                                headers_[item_.Key] = item_.Value;
-                        }
-
-                        ProcessResponse(client_, response_);
-
-                        var status_ = (int)response_.StatusCode;
-                        if (status_ == 204)
-                        {
-                            return;
-                        }
-                        else
-                        if (status_ == 404)
-                        {
-                            var objectResponse_ = await ReadObjectResponseAsync<ProblemDetails>(response_, headers_, cancellationToken).ConfigureAwait(false);
-                            if (objectResponse_.Object == null)
-                            {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
-                            }
-                            throw new ApiException<ProblemDetails>("Not Found", status_, objectResponse_.Text, headers_, objectResponse_.Object, null);
-                        }
-                        else
-                        {
-                            var objectResponse_ = await ReadObjectResponseAsync<ProblemDetails>(response_, headers_, cancellationToken).ConfigureAwait(false);
-                            if (objectResponse_.Object == null)
-                            {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
-                            }
-                            throw new ApiException<ProblemDetails>("Error", status_, objectResponse_.Text, headers_, objectResponse_.Object, null);
-                        }
-                    }
-                    finally
-                    {
-                        if (disposeResponse_)
-                            response_.Dispose();
-                    }
-                }
-            }
-            finally
-            {
-                if (disposeClient_)
-                    client_.Dispose();
-            }
-        }
-
-        /// <returns>No Content</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task UpdateFormAsync(UpdateFormCommand body)
-        {
-            return UpdateFormAsync(body, System.Threading.CancellationToken.None);
-        }
-
-        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-        /// <returns>No Content</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task UpdateFormAsync(UpdateFormCommand body, System.Threading.CancellationToken cancellationToken)
-        {
-            var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append("api/Form");
-
-            var client_ = _httpClient;
-            var disposeClient_ = false;
-            try
-            {
-                using (var request_ = new System.Net.Http.HttpRequestMessage())
-                {
-                    var content_ = new System.Net.Http.StringContent(System.Text.Json.JsonSerializer.Serialize(body, _settings.Value));
-                    content_.Headers.ContentType = System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json");
-                    request_.Content = content_;
-                    request_.Method = new System.Net.Http.HttpMethod("PUT");
-
-                    PrepareRequest(client_, request_, urlBuilder_);
-
-                    var url_ = urlBuilder_.ToString();
-                    request_.RequestUri = new System.Uri(url_, System.UriKind.RelativeOrAbsolute);
-
-                    PrepareRequest(client_, request_, url_);
-
-                    var response_ = await client_.SendAsync(request_, System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
-                    var disposeResponse_ = true;
-                    try
-                    {
-                        var headers_ = System.Linq.Enumerable.ToDictionary(response_.Headers, h_ => h_.Key, h_ => h_.Value);
-                        if (response_.Content != null && response_.Content.Headers != null)
-                        {
-                            foreach (var item_ in response_.Content.Headers)
-                                headers_[item_.Key] = item_.Value;
-                        }
-
-                        ProcessResponse(client_, response_);
-
-                        var status_ = (int)response_.StatusCode;
-                        if (status_ == 204)
-                        {
-                            return;
-                        }
-                        else
-                        if (status_ == 404)
-                        {
-                            var objectResponse_ = await ReadObjectResponseAsync<ProblemDetails>(response_, headers_, cancellationToken).ConfigureAwait(false);
-                            if (objectResponse_.Object == null)
-                            {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
-                            }
-                            throw new ApiException<ProblemDetails>("Not Found", status_, objectResponse_.Text, headers_, objectResponse_.Object, null);
                         }
                         else
                         {
@@ -874,8 +686,253 @@ namespace Planerve.App.UI.Services.Base
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Address
+    public partial class ProblemDetails
     {
+
+        [System.Text.Json.Serialization.JsonPropertyName("type")]
+        public string Type { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("title")]
+        public string Title { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("status")]
+        public int? Status { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("detail")]
+        public string Detail { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("instance")]
+        public string Instance { get; set; }
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties = new System.Collections.Generic.Dictionary<string, object>();
+
+        [System.Text.Json.Serialization.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties; }
+            set { _additionalProperties = value; }
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class CreateApplicationCommand
+    {
+
+        [System.Text.Json.Serialization.JsonPropertyName("applicationName")]
+        public string ApplicationName { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("applicationType")]
+        public int ApplicationType { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("applicationCategory")]
+        public int ApplicationCategory { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("addressLineOne")]
+        public string AddressLineOne { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("addressLineTwo")]
+        public string AddressLineTwo { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("addressLineThree")]
+        public string AddressLineThree { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("postcode")]
+        public string Postcode { get; set; }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApplicationDataDto
+    {
+
+        [System.Text.Json.Serialization.JsonPropertyName("id")]
+        public System.Guid Id { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("type")]
+        public ApplicationType Type { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("address")]
+        public ApplicationAddress Address { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("form")]
+        public ApplicationForm Form { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("document")]
+        public ApplicationDocument Document { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("progress")]
+        public ApplicationProgress Progress { get; set; }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApplicationDetailVm
+    {
+
+        [System.Text.Json.Serialization.JsonPropertyName("id")]
+        public System.Guid Id { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("applicationReference")]
+        public string ApplicationReference { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("applicationName")]
+        public string ApplicationName { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("ownerId")]
+        public string OwnerId { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("versionNumber")]
+        public string VersionNumber { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("data")]
+        public ApplicationDataDto Data { get; set; }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApplicationListVm
+    {
+
+        [System.Text.Json.Serialization.JsonPropertyName("id")]
+        public System.Guid Id { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("applicationReference")]
+        public string ApplicationReference { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("applicationName")]
+        public string ApplicationName { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("ownerId")]
+        public string OwnerId { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("versionNumber")]
+        public string VersionNumber { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("data")]
+        public ApplicationDataDto Data { get; set; }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class FormDetailVm
+    {
+
+        [System.Text.Json.Serialization.JsonPropertyName("id")]
+        public System.Guid Id { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("formTitle")]
+        public string FormTitle { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("formSectionsComplete")]
+        public bool FormSectionsComplete { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("totalSectionCount")]
+        public int TotalSectionCount { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("completedSectionCount")]
+        public int CompletedSectionCount { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("formSections")]
+        public System.Collections.Generic.ICollection<FormDetailVm_FormSection> FormSections { get; set; }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class FormDetailVm_FormField
+    {
+
+        [System.Text.Json.Serialization.JsonPropertyName("fieldTarget")]
+        public string FieldTarget { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("name")]
+        public string Name { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("label")]
+        public string Label { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("fieldType")]
+        public string FieldType { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("className")]
+        public string ClassName { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("text")]
+        public string Text { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("validationAttributes")]
+        public string ValidationAttributes { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("options")]
+        public System.Collections.Generic.ICollection<FormDetailVm_Option> Options { get; set; }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class FormDetailVm_FormSection
+    {
+
+        [System.Text.Json.Serialization.JsonPropertyName("sectionName")]
+        public string SectionName { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("formFields")]
+        public System.Collections.Generic.ICollection<FormDetailVm_FormField> FormFields { get; set; }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class FormDetailVm_Option
+    {
+
+        [System.Text.Json.Serialization.JsonPropertyName("value")]
+        public int Value { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("className")]
+        public string ClassName { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("label")]
+        public string Label { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("optionName")]
+        public string OptionName { get; set; }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class RegistrationRequest
+    {
+
+        [System.Text.Json.Serialization.JsonPropertyName("email")]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string Email { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("userName")]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength = 6)]
+        public string UserName { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("password")]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength = 6)]
+        public string Password { get; set; }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class RegistrationResponse
+    {
+
+        [System.Text.Json.Serialization.JsonPropertyName("userId")]
+        public string UserId { get; set; }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApplicationAddress
+    {
+
+        [System.Text.Json.Serialization.JsonPropertyName("id")]
+        public System.Guid Id { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("addressLineOne")]
         public string AddressLineOne { get; set; }
@@ -958,86 +1015,155 @@ namespace Planerve.App.UI.Services.Base
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class ApplicationDetailVm
+    public partial class ApplicationDocument
     {
 
         [System.Text.Json.Serialization.JsonPropertyName("id")]
         public System.Guid Id { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("applicationReference")]
-        public string ApplicationReference { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("documentCount")]
+        public int DocumentCount { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("applicationName")]
-        public string ApplicationName { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("completedRequirementsCount")]
+        public int CompletedRequirementsCount { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("ownerId")]
-        public string OwnerId { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("totalRequirementCount")]
+        public int TotalRequirementCount { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("versionNumber")]
-        public string VersionNumber { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("createdDate")]
-        public System.DateTime CreatedDate { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("lastModifiedDate")]
-        public System.DateTime LastModifiedDate { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("applicationType")]
-        public ApplicationType ApplicationType { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("address")]
-        public Address Address { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("checklist")]
-        public Checklist Checklist { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("form")]
-        public Form Form { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("documentRequirements")]
+        public System.Collections.Generic.ICollection<ApplicationDocument_DocumentRequirement> DocumentRequirements { get; set; }
 
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class ApplicationListVm
+    public partial class ApplicationDocument_DocumentRequirement
+    {
+
+        [System.Text.Json.Serialization.JsonPropertyName("name")]
+        public string Name { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("description")]
+        public string Description { get; set; }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApplicationForm
     {
 
         [System.Text.Json.Serialization.JsonPropertyName("id")]
         public System.Guid Id { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("applicationReference")]
-        public string ApplicationReference { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("formTitle")]
+        public string FormTitle { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("applicationName")]
-        public string ApplicationName { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("formSectionsComplete")]
+        public bool FormSectionsComplete { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("ownerId")]
-        public string OwnerId { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("totalSectionCount")]
+        public int TotalSectionCount { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("versionNumber")]
-        public string VersionNumber { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("completedSectionCount")]
+        public int CompletedSectionCount { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("createdDate")]
-        public System.DateTime CreatedDate { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("formSections")]
+        public System.Collections.Generic.ICollection<ApplicationForm_FormSection> FormSections { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("lastModifiedDate")]
-        public System.DateTime LastModifiedDate { get; set; }
+    }
 
-        [System.Text.Json.Serialization.JsonPropertyName("applicationType")]
-        public ApplicationType ApplicationType { get; set; }
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApplicationForm_FormField
+    {
 
-        [System.Text.Json.Serialization.JsonPropertyName("address")]
-        public Address Address { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("fieldTarget")]
+        public string FieldTarget { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("checklist")]
-        public Checklist Checklist { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("name")]
+        public string Name { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("form")]
-        public Form Form { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("label")]
+        public string Label { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("fieldType")]
+        public string FieldType { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("className")]
+        public string ClassName { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("text")]
+        public string Text { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("validationAttributes")]
+        public string ValidationAttributes { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("options")]
+        public System.Collections.Generic.ICollection<ApplicationForm_Option> Options { get; set; }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApplicationForm_FormSection
+    {
+
+        [System.Text.Json.Serialization.JsonPropertyName("sectionName")]
+        public string SectionName { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("formFields")]
+        public System.Collections.Generic.ICollection<ApplicationForm_FormField> FormFields { get; set; }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApplicationForm_Option
+    {
+
+        [System.Text.Json.Serialization.JsonPropertyName("value")]
+        public int Value { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("className")]
+        public string ClassName { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("label")]
+        public string Label { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("optionName")]
+        public string OptionName { get; set; }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ApplicationProgress
+    {
+
+        [System.Text.Json.Serialization.JsonPropertyName("id")]
+        public System.Guid Id { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("applicationStatus")]
+        public string ApplicationStatus { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("progressPercentage")]
+        public int ProgressPercentage { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("formSectionsComplete")]
+        public bool FormSectionsComplete { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("plansAndDocsComplete")]
+        public bool PlansAndDocsComplete { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("calculatedFee")]
+        public bool CalculatedFee { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("submittedToLocalAuthority")]
+        public bool SubmittedToLocalAuthority { get; set; }
 
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
     public partial class ApplicationType
     {
+
+        [System.Text.Json.Serialization.JsonPropertyName("id")]
+        public System.Guid Id { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("value")]
         public int Value { get; set; }
@@ -1051,309 +1177,13 @@ namespace Planerve.App.UI.Services.Base
         [System.Text.Json.Serialization.JsonPropertyName("description")]
         public string Description { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("applicationCategory")]
-        public string ApplicationCategory { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("category")]
+        public ApplicationType_ApplicationCategory Category { get; set; }
 
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Checklist
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("formSectionsComplete")]
-        public bool FormSectionsComplete { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("formInfo")]
-        public FormInfo FormInfo { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("plansAndDocsComplete")]
-        public bool PlansAndDocsComplete { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("plansAndDocument")]
-        public PlansAndDocument PlansAndDocument { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("calculatedFee")]
-        public bool CalculatedFee { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("submittedToLocalAuthority")]
-        public bool SubmittedToLocalAuthority { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("applicationProgress")]
-        public int ApplicationProgress { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class CompleteFormCommand
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("id")]
-        public System.Guid Id { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("formTypeOneData")]
-        public FormTypeOne FormTypeOneData { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("formTypeTwoData")]
-        public FormTypeTwo FormTypeTwoData { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class CreateApplicationCommand
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("applicationName")]
-        public string ApplicationName { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("applicationType")]
-        public int ApplicationType { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("addressLineOne")]
-        public string AddressLineOne { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("addressLineTwo")]
-        public string AddressLineTwo { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("addressLineThree")]
-        public string AddressLineThree { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("postcode")]
-        public string Postcode { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Form
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("formSectionsComplete")]
-        public bool FormSectionsComplete { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("formDetail")]
-        public FormDetail FormDetail { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("formSections")]
-        public System.Collections.Generic.ICollection<FormSection> FormSections { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class FormCompletedVm
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("isCompleted")]
-        public bool IsCompleted { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class FormDetail
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("title")]
-        public string Title { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class FormField
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("fieldName")]
-        public string FieldName { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("fieldType")]
-        public string FieldType { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class FormInfo
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("totalSectionCount")]
-        public int TotalSectionCount { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("completedSectionCount")]
-        public int CompletedSectionCount { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class FormSection
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("sectionName")]
-        public string SectionName { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("formFields")]
-        public System.Collections.Generic.ICollection<FormField> FormFields { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class FormTypeOne
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("id")]
-        public System.Guid Id { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("propertyNumber")]
-        public string PropertyNumber { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("buildingSuffix")]
-        public string BuildingSuffix { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("propertyName")]
-        public string PropertyName { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("addressOne")]
-        public string AddressOne { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("addressTwo")]
-        public string AddressTwo { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("addressThree")]
-        public string AddressThree { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("town")]
-        public string Town { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("postcode")]
-        public string Postcode { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("eastingValue")]
-        public string EastingValue { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("northingValue")]
-        public string NorthingValue { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("siteDescription")]
-        public string SiteDescription { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class FormTypeTwo
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("id")]
-        public System.Guid Id { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("propertyNumber")]
-        public string PropertyNumber { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("buildingSuffix")]
-        public string BuildingSuffix { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("propertyName")]
-        public string PropertyName { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("addressOne")]
-        public string AddressOne { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("addressTwo")]
-        public string AddressTwo { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("addressThree")]
-        public string AddressThree { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("town")]
-        public string Town { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("postcode")]
-        public string Postcode { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("eastingValue")]
-        public string EastingValue { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("northingValue")]
-        public string NorthingValue { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("siteDescription")]
-        public string SiteDescription { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class PlansAndDocument
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("documentCount")]
-        public int DocumentCount { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("completedRequirementsCount")]
-        public int CompletedRequirementsCount { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("totalRequirementCount")]
-        public int TotalRequirementCount { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("requirements")]
-        public System.Collections.Generic.ICollection<Requirement> Requirements { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class ProblemDetails
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string Type { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("title")]
-        public string Title { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public int? Status { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("detail")]
-        public string Detail { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("instance")]
-        public string Instance { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties = new System.Collections.Generic.Dictionary<string, object>();
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties; }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class RegistrationRequest
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("email")]
-        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string Email { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("userName")]
-        [System.ComponentModel.DataAnnotations.Required]
-        [System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength = 6)]
-        public string UserName { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("password")]
-        [System.ComponentModel.DataAnnotations.Required]
-        [System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength = 6)]
-        public string Password { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class RegistrationResponse
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("userId")]
-        public string UserId { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class Requirement
+    public partial class ApplicationType_ApplicationCategory
     {
 
         [System.Text.Json.Serialization.JsonPropertyName("name")]
@@ -1361,21 +1191,6 @@ namespace Planerve.App.UI.Services.Base
 
         [System.Text.Json.Serialization.JsonPropertyName("description")]
         public string Description { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class UpdateFormCommand
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("id")]
-        public System.Guid Id { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("formTypeOneData")]
-        public FormTypeOne FormTypeOneData { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("formTypeTwoData")]
-        public FormTypeTwo FormTypeTwoData { get; set; }
 
     }
 

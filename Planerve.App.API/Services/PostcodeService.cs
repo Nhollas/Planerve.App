@@ -17,7 +17,7 @@ namespace Planerve.App.API.Services
 
             if (!request.IsSuccessStatusCode)
             {
-                return null;
+                return request.StatusCode.ToString();
             }
 
             var response = await request.Content.ReadAsStringAsync();
