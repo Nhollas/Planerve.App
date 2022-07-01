@@ -2,7 +2,7 @@
 
 namespace Planerve.App.Core.Features.ApplicationFeatures.Commands.CreateApplication.DataHelpers
 {
-    public class ApplicationDocumentHelper
+    public static class ApplicationDocumentHelper
     {
         public class ApplicationDocument
         {
@@ -17,7 +17,7 @@ namespace Planerve.App.Core.Features.ApplicationFeatures.Commands.CreateApplicat
             public string Description { get; set; }
         }
 
-        public ApplicationDocument GetDocumentInfo(int applicationType)
+        public static ApplicationDocument GetDocumentInfo(int applicationType)
         {
             var locationPlanRequirement = new DocumentRequirement()
             {
@@ -222,9 +222,6 @@ namespace Planerve.App.Core.Features.ApplicationFeatures.Commands.CreateApplicat
                         CompletedRequirementsCount = 0,
                         TotalRequirementCount = 0,
                         DocumentRequirements = new List<DocumentRequirement>()
-                        {
-
-                        }
                     }
                 },
                 { 14,
@@ -246,9 +243,6 @@ namespace Planerve.App.Core.Features.ApplicationFeatures.Commands.CreateApplicat
                         CompletedRequirementsCount = 0,
                         TotalRequirementCount = 0,
                         DocumentRequirements = new List<DocumentRequirement>()
-                        {
-
-                        }
                     }
                 },
                 { 16,

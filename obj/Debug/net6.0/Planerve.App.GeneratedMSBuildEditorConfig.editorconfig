@@ -8,265 +8,173 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Planerve.App
 build_property.RootNamespace = Planerve.App
-build_property.ProjectDir = C:\Users\nicho\Documents\Github Projects\Planerve.App\
+build_property.ProjectDir = C:\Users\Nhollas\Documents\GitHub\Planerve.App\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\nicho\Documents\Github Projects\Planerve.App
+build_property.MSBuildProjectDirectory = C:\Users\Nhollas\Documents\GitHub\Planerve.App
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.Identity/Pages/Account/AccessDenied.cshtml]
+[C:/Users/Nhollas/Documents/GitHub/Planerve.App/Planerve.App.Identity/Pages/Account/AccessDenied.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLklkZW50aXR5XFBhZ2VzXEFjY291bnRcQWNjZXNzRGVuaWVkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.Identity/Pages/Account/Login/Index.cshtml]
+[C:/Users/Nhollas/Documents/GitHub/Planerve.App/Planerve.App.Identity/Pages/Account/Login/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLklkZW50aXR5XFBhZ2VzXEFjY291bnRcTG9naW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.Identity/Pages/Account/Logout/Index.cshtml]
+[C:/Users/Nhollas/Documents/GitHub/Planerve.App/Planerve.App.Identity/Pages/Account/Logout/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLklkZW50aXR5XFBhZ2VzXEFjY291bnRcTG9nb3V0XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.Identity/Pages/Account/Logout/LoggedOut.cshtml]
+[C:/Users/Nhollas/Documents/GitHub/Planerve.App/Planerve.App.Identity/Pages/Account/Logout/LoggedOut.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLklkZW50aXR5XFBhZ2VzXEFjY291bnRcTG9nb3V0XExvZ2dlZE91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.Identity/Pages/Admin/ApiScopes/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLklkZW50aXR5XFBhZ2VzXEFkbWluXEFwaVNjb3Blc1xFZGl0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.Identity/Pages/Admin/ApiScopes/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLklkZW50aXR5XFBhZ2VzXEFkbWluXEFwaVNjb3Blc1xJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.Identity/Pages/Admin/ApiScopes/New.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLklkZW50aXR5XFBhZ2VzXEFkbWluXEFwaVNjb3Blc1xOZXcuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.Identity/Pages/Admin/Clients/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLklkZW50aXR5XFBhZ2VzXEFkbWluXENsaWVudHNcRWRpdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.Identity/Pages/Admin/Clients/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLklkZW50aXR5XFBhZ2VzXEFkbWluXENsaWVudHNcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.Identity/Pages/Admin/Clients/New.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLklkZW50aXR5XFBhZ2VzXEFkbWluXENsaWVudHNcTmV3LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.Identity/Pages/Admin/IdentityScopes/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLklkZW50aXR5XFBhZ2VzXEFkbWluXElkZW50aXR5U2NvcGVzXEVkaXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.Identity/Pages/Admin/IdentityScopes/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLklkZW50aXR5XFBhZ2VzXEFkbWluXElkZW50aXR5U2NvcGVzXEluZGV4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.Identity/Pages/Admin/IdentityScopes/New.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLklkZW50aXR5XFBhZ2VzXEFkbWluXElkZW50aXR5U2NvcGVzXE5ldy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.Identity/Pages/Admin/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLklkZW50aXR5XFBhZ2VzXEFkbWluXEluZGV4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.Identity/Pages/Ciba/All.cshtml]
+[C:/Users/Nhollas/Documents/GitHub/Planerve.App/Planerve.App.Identity/Pages/Ciba/All.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLklkZW50aXR5XFBhZ2VzXENpYmFcQWxsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.Identity/Pages/Ciba/Consent.cshtml]
+[C:/Users/Nhollas/Documents/GitHub/Planerve.App/Planerve.App.Identity/Pages/Ciba/Consent.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLklkZW50aXR5XFBhZ2VzXENpYmFcQ29uc2VudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.Identity/Pages/Ciba/Index.cshtml]
+[C:/Users/Nhollas/Documents/GitHub/Planerve.App/Planerve.App.Identity/Pages/Ciba/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLklkZW50aXR5XFBhZ2VzXENpYmFcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.Identity/Pages/Ciba/_ScopeListItem.cshtml]
+[C:/Users/Nhollas/Documents/GitHub/Planerve.App/Planerve.App.Identity/Pages/Ciba/_ScopeListItem.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLklkZW50aXR5XFBhZ2VzXENpYmFcX1Njb3BlTGlzdEl0ZW0uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.Identity/Pages/Consent/Index.cshtml]
+[C:/Users/Nhollas/Documents/GitHub/Planerve.App/Planerve.App.Identity/Pages/Consent/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLklkZW50aXR5XFBhZ2VzXENvbnNlbnRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.Identity/Pages/Consent/_ScopeListItem.cshtml]
+[C:/Users/Nhollas/Documents/GitHub/Planerve.App/Planerve.App.Identity/Pages/Consent/_ScopeListItem.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLklkZW50aXR5XFBhZ2VzXENvbnNlbnRcX1Njb3BlTGlzdEl0ZW0uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.Identity/Pages/Device/Index.cshtml]
+[C:/Users/Nhollas/Documents/GitHub/Planerve.App/Planerve.App.Identity/Pages/Device/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLklkZW50aXR5XFBhZ2VzXERldmljZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.Identity/Pages/Device/Success.cshtml]
+[C:/Users/Nhollas/Documents/GitHub/Planerve.App/Planerve.App.Identity/Pages/Device/Success.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLklkZW50aXR5XFBhZ2VzXERldmljZVxTdWNjZXNzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.Identity/Pages/Device/_ScopeListItem.cshtml]
+[C:/Users/Nhollas/Documents/GitHub/Planerve.App/Planerve.App.Identity/Pages/Device/_ScopeListItem.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLklkZW50aXR5XFBhZ2VzXERldmljZVxfU2NvcGVMaXN0SXRlbS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.Identity/Pages/Diagnostics/Index.cshtml]
+[C:/Users/Nhollas/Documents/GitHub/Planerve.App/Planerve.App.Identity/Pages/Diagnostics/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLklkZW50aXR5XFBhZ2VzXERpYWdub3N0aWNzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.Identity/Pages/ExternalLogin/Callback.cshtml]
+[C:/Users/Nhollas/Documents/GitHub/Planerve.App/Planerve.App.Identity/Pages/ExternalLogin/Callback.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLklkZW50aXR5XFBhZ2VzXEV4dGVybmFsTG9naW5cQ2FsbGJhY2suY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.Identity/Pages/ExternalLogin/Challenge.cshtml]
+[C:/Users/Nhollas/Documents/GitHub/Planerve.App/Planerve.App.Identity/Pages/ExternalLogin/Challenge.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLklkZW50aXR5XFBhZ2VzXEV4dGVybmFsTG9naW5cQ2hhbGxlbmdlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.Identity/Pages/Grants/Index.cshtml]
+[C:/Users/Nhollas/Documents/GitHub/Planerve.App/Planerve.App.Identity/Pages/Grants/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLklkZW50aXR5XFBhZ2VzXEdyYW50c1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.Identity/Pages/Home/Error/Index.cshtml]
+[C:/Users/Nhollas/Documents/GitHub/Planerve.App/Planerve.App.Identity/Pages/Home/Error/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLklkZW50aXR5XFBhZ2VzXEhvbWVcRXJyb3JcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.Identity/Pages/Index.cshtml]
+[C:/Users/Nhollas/Documents/GitHub/Planerve.App/Planerve.App.Identity/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLklkZW50aXR5XFBhZ2VzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.Identity/Pages/Redirect/Index.cshtml]
+[C:/Users/Nhollas/Documents/GitHub/Planerve.App/Planerve.App.Identity/Pages/Redirect/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLklkZW50aXR5XFBhZ2VzXFJlZGlyZWN0XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.Identity/Pages/Shared/_Layout.cshtml]
+[C:/Users/Nhollas/Documents/GitHub/Planerve.App/Planerve.App.Identity/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLklkZW50aXR5XFBhZ2VzXFNoYXJlZFxfTGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.Identity/Pages/Shared/_Nav.cshtml]
+[C:/Users/Nhollas/Documents/GitHub/Planerve.App/Planerve.App.Identity/Pages/Shared/_Nav.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLklkZW50aXR5XFBhZ2VzXFNoYXJlZFxfTmF2LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.Identity/Pages/Shared/_ValidationSummary.cshtml]
+[C:/Users/Nhollas/Documents/GitHub/Planerve.App/Planerve.App.Identity/Pages/Shared/_ValidationSummary.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLklkZW50aXR5XFBhZ2VzXFNoYXJlZFxfVmFsaWRhdGlvblN1bW1hcnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.Identity/Pages/_ViewImports.cshtml]
+[C:/Users/Nhollas/Documents/GitHub/Planerve.App/Planerve.App.Identity/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLklkZW50aXR5XFBhZ2VzXF9WaWV3SW1wb3J0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.Identity/Pages/_ViewStart.cshtml]
+[C:/Users/Nhollas/Documents/GitHub/Planerve.App/Planerve.App.Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLklkZW50aXR5XFBhZ2VzXF9WaWV3U3RhcnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.UI/Areas/Public/Views/Home/AboutUs.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLlVJXEFyZWFzXFB1YmxpY1xWaWV3c1xIb21lXEFib3V0VXMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.UI/Areas/Public/Views/Home/AccessDenied.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLlVJXEFyZWFzXFB1YmxpY1xWaWV3c1xIb21lXEFjY2Vzc0RlbmllZC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.UI/Areas/Public/Views/Home/Applications.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLlVJXEFyZWFzXFB1YmxpY1xWaWV3c1xIb21lXEFwcGxpY2F0aW9ucy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.UI/Areas/Public/Views/Home/Contact.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLlVJXEFyZWFzXFB1YmxpY1xWaWV3c1xIb21lXENvbnRhY3QuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.UI/Areas/Public/Views/Home/Index.cshtml]
+[C:/Users/Nhollas/Documents/GitHub/Planerve.App/Planerve.App.UI/Areas/Public/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLlVJXEFyZWFzXFB1YmxpY1xWaWV3c1xIb21lXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.UI/Areas/Public/Views/Home/Services.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLlVJXEFyZWFzXFB1YmxpY1xWaWV3c1xIb21lXFNlcnZpY2VzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.UI/Areas/Public/Views/_ViewImports.cshtml]
+[C:/Users/Nhollas/Documents/GitHub/Planerve.App/Planerve.App.UI/Areas/Public/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLlVJXEFyZWFzXFB1YmxpY1xWaWV3c1xfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.UI/Areas/Public/Views/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLlVJXEFyZWFzXFB1YmxpY1xWaWV3c1xfVmlld1N0YXJ0LmNzaHRtbA==
+[C:/Users/Nhollas/Documents/GitHub/Planerve.App/Planerve.App.UI/Areas/User/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLlVJXEFyZWFzXFVzZXJcVmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.UI/Areas/User/Views/Account/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLlVJXEFyZWFzXFVzZXJcVmlld3NcQWNjb3VudFxJbmRleC5jc2h0bWw=
+[C:/Users/Nhollas/Documents/GitHub/Planerve.App/Planerve.App.UI/Areas/User/Views/Application/AuthPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLlVJXEFyZWFzXFVzZXJcVmlld3NcQXBwbGljYXRpb25cQXV0aFBhZ2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.UI/Areas/User/Views/Account/Login.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLlVJXEFyZWFzXFVzZXJcVmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+[C:/Users/Nhollas/Documents/GitHub/Planerve.App/Planerve.App.UI/Areas/User/Views/Application/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLlVJXEFyZWFzXFVzZXJcVmlld3NcQXBwbGljYXRpb25cQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.UI/Areas/User/Views/Application/ApplicationCreated.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLlVJXEFyZWFzXFVzZXJcVmlld3NcQXBwbGljYXRpb25cQXBwbGljYXRpb25DcmVhdGVkLmNzaHRtbA==
+[C:/Users/Nhollas/Documents/GitHub/Planerve.App/Planerve.App.UI/Areas/User/Views/Application/Dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLlVJXEFyZWFzXFVzZXJcVmlld3NcQXBwbGljYXRpb25cRGFzaGJvYXJkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.UI/Areas/User/Views/Application/GetApplication.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLlVJXEFyZWFzXFVzZXJcVmlld3NcQXBwbGljYXRpb25cR2V0QXBwbGljYXRpb24uY3NodG1s
+[C:/Users/Nhollas/Documents/GitHub/Planerve.App/Planerve.App.UI/Areas/User/Views/Application/View.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLlVJXEFyZWFzXFVzZXJcVmlld3NcQXBwbGljYXRpb25cVmlldy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.UI/Areas/User/Views/Application/GetApplicationList.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLlVJXEFyZWFzXFVzZXJcVmlld3NcQXBwbGljYXRpb25cR2V0QXBwbGljYXRpb25MaXN0LmNzaHRtbA==
+[C:/Users/Nhollas/Documents/GitHub/Planerve.App/Planerve.App.UI/Areas/User/Views/Form/View.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLlVJXEFyZWFzXFVzZXJcVmlld3NcRm9ybVxWaWV3LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.UI/Areas/User/Views/Application/_TypeEightPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLlVJXEFyZWFzXFVzZXJcVmlld3NcQXBwbGljYXRpb25cX1R5cGVFaWdodFBhcnRpYWwuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.UI/Areas/User/Views/Application/_TypeFivePartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLlVJXEFyZWFzXFVzZXJcVmlld3NcQXBwbGljYXRpb25cX1R5cGVGaXZlUGFydGlhbC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.UI/Areas/User/Views/Application/_TypeFourPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLlVJXEFyZWFzXFVzZXJcVmlld3NcQXBwbGljYXRpb25cX1R5cGVGb3VyUGFydGlhbC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.UI/Areas/User/Views/Application/_TypeNinePartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLlVJXEFyZWFzXFVzZXJcVmlld3NcQXBwbGljYXRpb25cX1R5cGVOaW5lUGFydGlhbC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.UI/Areas/User/Views/Application/_TypeOnePartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLlVJXEFyZWFzXFVzZXJcVmlld3NcQXBwbGljYXRpb25cX1R5cGVPbmVQYXJ0aWFsLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.UI/Areas/User/Views/Application/_TypeSevenPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLlVJXEFyZWFzXFVzZXJcVmlld3NcQXBwbGljYXRpb25cX1R5cGVTZXZlblBhcnRpYWwuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.UI/Areas/User/Views/Application/_TypeSixPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLlVJXEFyZWFzXFVzZXJcVmlld3NcQXBwbGljYXRpb25cX1R5cGVTaXhQYXJ0aWFsLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.UI/Areas/User/Views/Application/_TypeTenPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLlVJXEFyZWFzXFVzZXJcVmlld3NcQXBwbGljYXRpb25cX1R5cGVUZW5QYXJ0aWFsLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.UI/Areas/User/Views/Application/_TypeThreePartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLlVJXEFyZWFzXFVzZXJcVmlld3NcQXBwbGljYXRpb25cX1R5cGVUaHJlZVBhcnRpYWwuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.UI/Areas/User/Views/Application/_TypeTwoPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLlVJXEFyZWFzXFVzZXJcVmlld3NcQXBwbGljYXRpb25cX1R5cGVUd29QYXJ0aWFsLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.UI/Areas/User/Views/_ViewImports.cshtml]
+[C:/Users/Nhollas/Documents/GitHub/Planerve.App/Planerve.App.UI/Areas/User/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLlVJXEFyZWFzXFVzZXJcVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.UI/Areas/User/Views/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLlVJXEFyZWFzXFVzZXJcVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+[C:/Users/Nhollas/Documents/GitHub/Planerve.App/Planerve.App.UI/Views/Shared/_AuthenticatedLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLlVJXFZpZXdzXFNoYXJlZFxfQXV0aGVudGljYXRlZExheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.UI/Views/Shared/_Layout.cshtml]
+[C:/Users/Nhollas/Documents/GitHub/Planerve.App/Planerve.App.UI/Views/Shared/_DashboardFilterPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLlVJXFZpZXdzXFNoYXJlZFxfRGFzaGJvYXJkRmlsdGVyUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nhollas/Documents/GitHub/Planerve.App/Planerve.App.UI/Views/Shared/_EmptyResourcePartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLlVJXFZpZXdzXFNoYXJlZFxfRW1wdHlSZXNvdXJjZVBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nhollas/Documents/GitHub/Planerve.App/Planerve.App.UI/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLlVJXFZpZXdzXFNoYXJlZFxfTGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.UI/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Nhollas/Documents/GitHub/Planerve.App/Planerve.App.UI/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLlVJXFZpZXdzXFNoYXJlZFxfVmFsaWRhdGlvblNjcmlwdHNQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.UI/Views/_ViewImports.cshtml]
+[C:/Users/Nhollas/Documents/GitHub/Planerve.App/Planerve.App.UI/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLlVJXFZpZXdzXF9WaWV3SW1wb3J0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicho/Documents/Github Projects/Planerve.App/Planerve.App.UI/Views/_ViewStart.cshtml]
+[C:/Users/Nhollas/Documents/GitHub/Planerve.App/Planerve.App.UI/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGxhbmVydmUuQXBwLlVJXFZpZXdzXF9WaWV3U3RhcnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

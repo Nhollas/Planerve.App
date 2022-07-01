@@ -13,7 +13,6 @@ namespace Planerve.App.UI.Areas.User.Controllers;
 [Authorize]
 public class ApplicationController : Controller
 {
-
     private readonly IApplicationDataService _applicationService;
     public ApplicationController(IApplicationDataService applicationService)
     {
@@ -41,8 +40,6 @@ public class ApplicationController : Controller
             LocalAuthorities = localAuthorities,
             ApplicationTypes = applicationTypes
         };
-
-        // Initialise lists.
         viewModel.OnGet();
 
         return View(viewModel);
@@ -53,15 +50,12 @@ public class ApplicationController : Controller
     {
         var filter = new ApplicationFilter(_applicationService);
 
-        if (model.ToDate != null)
-            model.ToDate.Value.AddDays(1);
-
-        if (model.FromDate != null)
-            model.FromDate.Value.AddDays(-1);
+        model.ToDate?.AddDays(1);
+        model.FromDate?.AddDays(-1);
 
         var viewModel = filter.FilterApplication(model).ToList();
 
-        if (!viewModel.Any())
+        if (viewModel.Count == 0)
         {
             ViewBag.Resource = "applications";
 
@@ -92,7 +86,6 @@ public class ApplicationController : Controller
 
         return View(viewModel);
     }
-
 
     public async Task<IActionResult> AuthPage()
     {

@@ -1,15 +1,15 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
-using Planerve.App.Core.Contracts.Authorization;
-using Planerve.App.Core.Contracts.Identity;
-using Planerve.App.Core.Contracts.Persistence;
-using Planerve.App.Core.Contracts.Specification.ApplicationData;
+using Planerve.App.Core.Authorization.Requirements;
+using Planerve.App.Core.Contracts.Persistence.Generic;
+using Planerve.App.Core.Contracts.Specification.ApplicationSpecifications;
 using Planerve.App.Core.Exceptions;
+using Planerve.App.Core.Services;
+using Planerve.App.Domain.Entities.ApplicationEntities;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Planerve.App.Domain.Entities.ApplicationEntities;
 
 namespace Planerve.App.Core.Features.ApplicationFeatures.Queries.GetApplicationById
 {
@@ -17,27 +17,25 @@ namespace Planerve.App.Core.Features.ApplicationFeatures.Queries.GetApplicationB
     {
         private readonly IAsyncRepository<Application> _repository;
         private readonly IMapper _mapper;
-        private readonly ILoggedInUserService _loggedInUserService;
+        private readonly IUserService _userService;
         private readonly IAuthorizationService _authorizationService;
+        private readonly string _userId;
 
-        public GetApplicationDetailQueryHandler(IMapper mapper, IAsyncRepository<Application> repository, ILoggedInUserService loggedInUserService, IAuthorizationService authorizationService)
+        public GetApplicationDetailQueryHandler(IMapper mapper, IAsyncRepository<Application> repository, IUserService userService, IAuthorizationService authorizationService)
         {
             _mapper = mapper;
             _repository = repository;
-            _loggedInUserService = loggedInUserService;
+            _userService = userService;
             _authorizationService = authorizationService;
+            _userId = _userService.UserId();
         }
 
-        // Get an application by Id,  method will specifiy the query, null and authorise check and finally map and return the item.
         public async Task<ApplicationDetailVm> Handle(GetApplicationDetailQuery request,
             CancellationToken cancellationToken)
         {
-            // Grab userId from API user service.
-            var userId = await _loggedInUserService.UserId();
-            var user = await _loggedInUserService.GetUser();
+            var user = await _userService.GetUser();
 
-            // Get application by id and check that current user is the owner.
-            var specification = new GetApplicationByIdSpecification(request.Id, userId);
+            var specification = new GetApplicationByIdSpecification(request.Id, _userId);
 
             var applicationEntity = _repository.FindWithSpecificationPattern(specification);
 
@@ -48,18 +46,16 @@ namespace Planerve.App.Core.Features.ApplicationFeatures.Queries.GetApplicationB
 
             var selectedApplication = applicationEntity.First();
 
-            var result = await _authorizationService.AuthorizeAsync(user, selectedApplication, ApplicationPolicies.ReadApplication.Requirements);
+            var result = await _authorizationService.AuthorizeAsync(user, selectedApplication.Users, ApplicationPolicies.ReadApplication);
 
             if (!result.Succeeded)
             {
-                throw new NotAuthorisedException(nameof(Application), userId);
+                throw new NotAuthorisedException(nameof(Application), _userId);
             }
 
             var applicationDetailDto = _mapper.Map<ApplicationDetailVm>(selectedApplication);
 
             return applicationDetailDto;
-
-
         }
     }
 }

@@ -1,9 +1,8 @@
-﻿using System.Reflection;
-using DinkToPdf;
-using DinkToPdf.Contracts;
-using Kevsoft.PDFtk;
-using MediatR;
+﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.DependencyInjection;
+using Planerve.App.Core.Authorization.Handlers;
+using System.Reflection;
 
 namespace Planerve.App.Core;
 
@@ -13,8 +12,8 @@ public static class ApplicationServiceRegistration
     {
         services.AddAutoMapper(Assembly.GetExecutingAssembly());
         services.AddMediatR(Assembly.GetExecutingAssembly());
-        services.AddSingleton<IPDFtk, PDFtk>();
-        services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
+        services.AddScoped<IAuthorizationHandler, ApplicationAuthorizationHandler>();
+        services.AddScoped<IAuthorizationHandler, FormAuthorizationHandler>();
 
         return services;
     }

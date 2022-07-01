@@ -24,10 +24,11 @@ namespace Planerve.App.UI.Services
             var content_ = new StringContent(JsonSerializer.Serialize(registrationRequest));
             content_.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json");
 
-            var request_ = new HttpRequestMessage();
-
-            request_.Method = HttpMethod.Post;
-            request_.Content = content_;
+            var request_ = new HttpRequestMessage
+            {
+                Method = HttpMethod.Post,
+                Content = content_
+            };
             request_.Headers.Accept.Add(MediaTypeWithQualityHeaderValue.Parse("text/plain"));
             request_.RequestUri = new Uri("https://localhost:6001/api/account/register");
 
@@ -41,13 +42,7 @@ namespace Planerve.App.UI.Services
                 PropertyNamingPolicy = JsonNamingPolicy.CamelCase
             });
 
-            if (data != null)
-            {
-                return true;
-            }
-
-
-            return false;
+            return data != null;
         }
     }
 }

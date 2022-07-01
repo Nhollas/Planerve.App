@@ -1,9 +1,12 @@
-﻿using System;
+﻿using AutoMapper;
 using MediatR;
-using Planerve.App.Core.Contracts.Identity;
+using Microsoft.AspNetCore.Authorization;
+using Planerve.App.Core.Authorization.Requirements;
 using Planerve.App.Core.Contracts.Persistence;
-using Planerve.App.Core.Contracts.Specification.ApplicationData;
+using Planerve.App.Core.Contracts.Specification.ApplicationSpecifications;
 using Planerve.App.Core.Exceptions;
+using Planerve.App.Core.Interfaces.Persistence.Generic;
+using Planerve.App.Core.Services;
 using Planerve.App.Domain.Entities.ApplicationEntities;
 using System.Linq;
 using System.Threading;
@@ -13,59 +16,59 @@ namespace Planerve.App.Core.Features.ApplicationFeatures.Commands.ShareApplicati
 {
     public class ShareApplicationCommandHandler : IRequestHandler<ShareApplicationCommand>
     {
-        private readonly IAsyncRepository<Application> _repository;
-        private readonly ILoggedInUserService _loggedInUserService;
-        private readonly IUserDataRepository _userDataRepository;
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly IUserService _userService;
+        private readonly IUserRepository _userDataRepository;
+        private readonly IAuthorizationService _authorizationService;
+        private readonly IMapper _mapper;
+        private readonly string _userId;
 
-        public ShareApplicationCommandHandler(IAsyncRepository<Application> repository, ILoggedInUserService loggedInUserService, IUserDataRepository userDataRepository)
+        public ShareApplicationCommandHandler(
+            IUnitOfWork unitOfWork,
+            IUserService userService,
+            IUserRepository userDataRepository,
+            IMapper mapper,
+            IAuthorizationService authorizationService)
         {
-            _repository = repository;
-            _loggedInUserService = loggedInUserService;
+            _unitOfWork = unitOfWork;
+            _userService = userService;
             _userDataRepository = userDataRepository;
+            _userId = _userService.UserId();
+            _mapper = mapper;
+            _authorizationService = authorizationService;
         }
-
 
         public async Task<Unit> Handle(ShareApplicationCommand request, CancellationToken cancellationToken)
         {
-            var userId = await _loggedInUserService.UserId();
+            var user = await _userService.GetUser();
 
-            var specification = new GetApplicationByIdSpecification(request.ApplicationId, userId);
+            var specification = new GetApplicationByIdSpecification(request.ApplicationId, _userId);
 
-            var application = _repository.FindWithSpecificationPattern(specification);
+            var application = _unitOfWork.ApplicationRepository.FindWithSpecificationPattern(specification);
 
             var selectedApplication = application.First();
 
-            if (selectedApplication.OwnerId != userId)
+            var authorisedResult = await _authorizationService.AuthorizeAsync(user, selectedApplication.Users, ApplicationPolicies.ShareApplication);
+
+            if (!authorisedResult.Succeeded)
             {
-                throw new NotAuthorisedException(nameof(Application), userId);
+                throw new NotAuthorisedException(nameof(Application), _userId);
             }
 
             var matches = await _userDataRepository.GetUserByEmailOrName(request.UsernameOrEmail);
 
-            var selectedMatch = matches.First();
-            
-            // TODO: Let recipient know they have been given access to application via email.
+            var queriedUser = matches.First();
 
-            ApplicationUser blankUser = new()
-            {
-                UserId = selectedMatch.Id,
-                AccessLevel = "Contributor",
-                IsValid = true,
-                ExpiryDate = DateTime.Now.AddDays(30),
-                Id = request.ApplicationId,
-                ReadApplication = true,
-                ReadForm = true,
-                CopyApplication = false,
-                EditForm = true,
-                DownloadForm = true
-            };
+            AuthorisedUser mockUser = _mapper.Map<AuthorisedUser>(request);
 
-            selectedApplication.Data.Users.Add(blankUser);
+            mockUser.IsValid = true;
+            mockUser.UserId = queriedUser.Id;
 
-            await _repository.UpdateAsync(selectedApplication);
+            selectedApplication.Users.AuthorisedUsers.Add(mockUser);
+
+            await _unitOfWork.ApplicationRepository.UpdateAsync(selectedApplication);
 
             return Unit.Value;
         }
-
     }
 }

@@ -1,7 +1,9 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Planerve.App.Core.Features.ApplicationFeatures.Commands.CopyApplication;
 using Planerve.App.Core.Features.ApplicationFeatures.Commands.CreateApplication;
 using Planerve.App.Core.Features.ApplicationFeatures.Commands.DeleteApplication;
+using Planerve.App.Core.Features.ApplicationFeatures.Commands.ShareApplication;
 using Planerve.App.Core.Features.ApplicationFeatures.Queries.GetApplicationById;
 using Planerve.App.Core.Features.ApplicationFeatures.Queries.GetApplicationList;
 
@@ -29,9 +31,9 @@ public class ApplicationController : Controller
     [HttpGet("List")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesDefaultResponseType]
-    public async Task<ActionResult<List<ApplicationListVm>>> GetAll()
+    public async Task<ActionResult<List<ApplicationListVm>>> ListAll()
     {
-        var applicationListToGet = new GetApplicationListQuery { };
+        var applicationListToGet = new GetApplicationListQuery();
 
         var dtos = await _mediator.Send(applicationListToGet);
         return Ok(dtos);
@@ -43,6 +45,25 @@ public class ApplicationController : Controller
         var id = await _mediator.Send(createAppDataCommand);
 
         return Ok(id);
+    }
+
+    [HttpPost("Copy")]
+    public async Task<ActionResult<Guid>> Copy([FromBody] CopyApplicationCommand copyAppDataCommand)
+    {
+        var id = await _mediator.Send(copyAppDataCommand);
+
+        return Ok(id);
+    }
+
+    [HttpPost("Share")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesDefaultResponseType]
+    public async Task<ActionResult<Guid>> Share([FromBody] ShareApplicationCommand shareAppDataCommand)
+    {
+        await _mediator.Send(shareAppDataCommand);
+
+        return NoContent();
     }
 
     [HttpDelete("Delete/{id:guid}")]

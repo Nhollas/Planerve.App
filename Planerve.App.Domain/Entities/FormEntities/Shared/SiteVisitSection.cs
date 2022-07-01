@@ -1,0 +1,11 @@
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Planerve.App.Domain.Entities.FormEntities.Shared
+{
+    public class SiteVisitSection
+    {
+        [Required]
+        public string Name { get; set; } = "Site Visit";
+    }
+}
+

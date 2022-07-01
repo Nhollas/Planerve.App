@@ -10,14 +10,11 @@ namespace Planerve.App.UI.Areas.User.Controllers;
 [AllowAnonymous]
 public class AccountController : Controller
 {
-    private readonly IHttpClientFactory _httpClientFactory;
     private readonly IAuthService _authenticationService;
 
-    public AccountController(IAuthService authenticationService, IHttpClientFactory httpClientFactory)
+    public AccountController(IAuthService authenticationService)
     {
         _authenticationService = authenticationService;
-        _httpClientFactory = httpClientFactory ??
-            throw new ArgumentNullException(nameof(httpClientFactory));
     }
 
     public IActionResult Register()
@@ -55,6 +52,4 @@ public class AccountController : Controller
 
         return accessToken;
     }
-
-
 }

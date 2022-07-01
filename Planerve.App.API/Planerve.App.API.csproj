@@ -11,9 +11,9 @@
         <PackageReference Include="DinkToPdf" Version="1.0.8" />
         <PackageReference Include="MediatR" Version="10.0.1" />
         <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.9" />
-        <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="6.0.5" />
-        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.5" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.5">
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="6.0.6" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.6" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.6">
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>
         <PackageReference Include="Serilog" Version="2.11.0" />
@@ -28,7 +28,12 @@
     <ItemGroup>
       <ProjectReference Include="..\Planerve.App.Core\Planerve.App.Core.csproj" />
       <ProjectReference Include="..\Planerve.App.Identity\Planerve.App.Identity.csproj" />
+      <ProjectReference Include="..\Planerve.App.Infrastructure\Planerve.App.Infrastructure.csproj" />
       <ProjectReference Include="..\Planerve.App.Persistence\Planerve.App.Persistence.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Filters\" />
     </ItemGroup>
 
 </Project>

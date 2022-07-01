@@ -69,28 +69,30 @@ namespace Planerve.App.UI.Services.Base
                 });
 
             // store the tokens             
-            var updatedTokens = new List<AuthenticationToken>();
-            updatedTokens.Add(new AuthenticationToken
+            var updatedTokens = new List<AuthenticationToken>
             {
-                Name = OpenIdConnectParameterNames.IdToken,
-                Value = refreshResponse.IdentityToken
-            });
-            updatedTokens.Add(new AuthenticationToken
-            {
-                Name = OpenIdConnectParameterNames.AccessToken,
-                Value = refreshResponse.AccessToken
-            });
-            updatedTokens.Add(new AuthenticationToken
-            {
-                Name = OpenIdConnectParameterNames.RefreshToken,
-                Value = refreshResponse.RefreshToken
-            });
-            updatedTokens.Add(new AuthenticationToken
-            {
-                Name = "expires_at",
-                Value = (DateTime.UtcNow + TimeSpan.FromSeconds(refreshResponse.ExpiresIn)).
+                new AuthenticationToken
+                {
+                    Name = OpenIdConnectParameterNames.IdToken,
+                    Value = refreshResponse.IdentityToken
+                },
+                new AuthenticationToken
+                {
+                    Name = OpenIdConnectParameterNames.AccessToken,
+                    Value = refreshResponse.AccessToken
+                },
+                new AuthenticationToken
+                {
+                    Name = OpenIdConnectParameterNames.RefreshToken,
+                    Value = refreshResponse.RefreshToken
+                },
+                new AuthenticationToken
+                {
+                    Name = "expires_at",
+                    Value = (DateTime.UtcNow + TimeSpan.FromSeconds(refreshResponse.ExpiresIn)).
                         ToString("o", CultureInfo.InvariantCulture)
-            });
+                }
+            };
 
             // get authenticate result, containing the current principal & 
             // properties

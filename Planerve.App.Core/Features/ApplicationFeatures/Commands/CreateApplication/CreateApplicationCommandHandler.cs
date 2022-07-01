@@ -1,14 +1,12 @@
 ﻿using AutoMapper;
 using MediatR;
-using Planerve.App.Core.Contracts.Identity;
-using Planerve.App.Core.Contracts.Persistence;
 using Planerve.App.Core.Exceptions;
 using Planerve.App.Core.Features.ApplicationFeatures.Commands.CreateApplication.DataHelpers;
-using Planerve.App.Core.Features.ApplicationFeatures.Dtos;
+using Planerve.App.Core.Interfaces.Persistence.Generic;
+using Planerve.App.Core.Services;
 using Planerve.App.Domain.Entities.ApplicationEntities;
 using Planerve.App.Domain.Entities.FormEntities;
 using System;
-using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -16,20 +14,20 @@ namespace Planerve.App.Core.Features.ApplicationFeatures.Commands.CreateApplicat
 {
     public class CreateApplicationCommandHandler : IRequestHandler<CreateApplicationCommand, Guid>
     {
-        private readonly IAsyncRepository<Application> _repository;
-        private readonly IFormRepositoryWrapper _formRepositoryWrapper;
-        private readonly IPostcodeService _postcodeService;
+        private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
-        private readonly ILoggedInUserService _loggedInUserService;
+        private readonly IUserService _userService;
+        private readonly string _userId;
 
-
-        public CreateApplicationCommandHandler(IMapper mapper, IAsyncRepository<Application> repository, ILoggedInUserService loggedInUserService, IPostcodeService postcodeService, IFormRepositoryWrapper formRepositoryWrapper)
+        public CreateApplicationCommandHandler(
+            IUnitOfWork unitOfWork,
+            IMapper mapper,
+            IUserService userService)
         {
+            _unitOfWork = unitOfWork;
             _mapper = mapper;
-            _repository = repository;;
-            _loggedInUserService = loggedInUserService;
-            _postcodeService = postcodeService;
-            _formRepositoryWrapper = formRepositoryWrapper;
+            _userService = userService;
+            _userId = _userService.UserId();
         }
 
         public async Task<Guid> Handle(CreateApplicationCommand request, CancellationToken cancellationToken)
@@ -41,7 +39,6 @@ namespace Planerve.App.Core.Features.ApplicationFeatures.Commands.CreateApplicat
                 throw new ValidationException(validationResult);
 
             Guid applicationId = await CreateApplication(request);
-
             await CreateForm(applicationId, request.ApplicationType);
 
             return applicationId;
@@ -49,52 +46,28 @@ namespace Planerve.App.Core.Features.ApplicationFeatures.Commands.CreateApplicat
 
         private async Task<Guid> CreateApplication(CreateApplicationCommand request)
         {
-            // Grab userId from API user service.
-            var userId = _loggedInUserService.UserId().Result;
+            var applicationTypeInfo = ApplicationTypeHelper.GetTypeInfo(request.ApplicationType, request.ApplicationCategory);
+            var applicationDocumentInfo = ApplicationDocumentHelper.GetDocumentInfo(request.ApplicationType);
 
-            // Grab application address from API address service
-            var addressData = await _postcodeService.ValidatePostcode(request.Postcode);
-
-            if (addressData is null)
-            {
-                throw new NotFoundException(nameof(PostcodeDataDto), $"The postcode {request.Postcode} is not valid.");
-            }
-
-            var postcodeData = JsonSerializer.Deserialize<PostcodeDataDto>(addressData,
-            new JsonSerializerOptions()
-            {
-                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
-            });
-
-            ApplicationTypeHelper applicationTypeHelper = new();
-            ApplicationDocumentHelper applicationDocumentHelper = new();
-            ApplicationFormHelper applicationFormHelper = new();
-
-            var applicationTypeInfo = applicationTypeHelper.GetTypeInfo(request.ApplicationType, request.ApplicationCategory);
-            var applicationDocumentInfo = applicationDocumentHelper.GetDocumentInfo(request.ApplicationType);
-            var applicationFormInfo = applicationFormHelper.GetFormInfo(request.ApplicationType);
-
-            // Create mock application.
             Application applicationToCreate = new()
             {
-                ApplicationReference = await GenerateApplicationReference(),
                 ApplicationName = request.ApplicationName,
-                OwnerId = userId,
+                ApplicationReference = GenerateApplicationReference(),
                 VersionNumber = "V1",
-                CreatedDate = DateTime.UtcNow,
-                Data = new ApplicationData()
+                Type = _mapper.Map<ApplicationType>(applicationTypeInfo),
+                Document = _mapper.Map<ApplicationDocument>(applicationDocumentInfo),
+                Progress = new ApplicationProgress()
                 {
-                    Type = _mapper.Map<ApplicationType>(applicationTypeInfo),
-                    Address = _mapper.Map<ApplicationAddress>(postcodeData.result),
-                    Document = _mapper.Map<ApplicationDocument>(applicationDocumentInfo),
-                    Progress = new ApplicationProgress()
-                    {
-                        ApplicationStatus = "DRAFT"
-                    }
+                    ApplicationStatus = "DRAFT",
+                    ProgressPercentage = 10
+                },
+                Users = new ApplicationUser()
+                {
+                    OwnerId = _userId,
                 }
             };
 
-            var createdApplication = await _repository.AddAsync(applicationToCreate);
+            Application createdApplication = await _unitOfWork.ApplicationRepository.AddAsync(applicationToCreate);
 
             return createdApplication.Id;
         }
@@ -106,234 +79,54 @@ namespace Planerve.App.Core.Features.ApplicationFeatures.Commands.CreateApplicat
                 case 1:
                     FormTypeA formTypeA = new()
                     {
-                        FormId = Guid.NewGuid(),
                         ApplicationId = applicationId,
-                        CreatedDate = DateTime.UtcNow,
-                        OwnerId = _loggedInUserService.UserId().Result
                     };
 
-                    await _formRepositoryWrapper.FormTypeA.AddAsync(formTypeA);
+                    await _unitOfWork.FormTypeARepository.AddAsync(formTypeA);
                     break;
                 case 2:
                     FormTypeB formTypeB = new()
                     {
-                        FormId = Guid.NewGuid(),
                         ApplicationId = applicationId,
-                        CreatedDate = DateTime.UtcNow,
-                        OwnerId = _loggedInUserService.UserId().Result
                     };
 
-                    await _formRepositoryWrapper.FormTypeB.AddAsync(formTypeB);
+                    await _unitOfWork.FormTypeBRepository.AddAsync(formTypeB);
                     break;
                 case 3:
                     FormTypeC formTypeC = new()
                     {
-                        FormId = Guid.NewGuid(),
                         ApplicationId = applicationId,
-                        CreatedDate = DateTime.UtcNow,
-                        OwnerId = _loggedInUserService.UserId().Result
                     };
 
-                    await _formRepositoryWrapper.FormTypeC.AddAsync(formTypeC);
+                    await _unitOfWork.FormTypeCRepository.AddAsync(formTypeC);
                     break;
                 case 4:
                     FormTypeD formTypeD = new()
                     {
-                        FormId = Guid.NewGuid(),
                         ApplicationId = applicationId,
-                        CreatedDate = DateTime.UtcNow,
-                        OwnerId = _loggedInUserService.UserId().Result
                     };
 
-                    await _formRepositoryWrapper.FormTypeD.AddAsync(formTypeD);
+                    await _unitOfWork.FormTypeDRepository.AddAsync(formTypeD);
                     break;
                 case 5:
                     FormTypeE formTypeE = new()
                     {
-                        FormId = Guid.NewGuid(),
                         ApplicationId = applicationId,
-                        CreatedDate = DateTime.UtcNow,
-                        OwnerId = _loggedInUserService.UserId().Result
                     };
 
-                    await _formRepositoryWrapper.FormTypeE.AddAsync(formTypeE);
-                    break;
-                case 6:
-                    FormTypeF formTypeF = new()
-                    {
-                        FormId = Guid.NewGuid(),
-                        ApplicationId = applicationId,
-                        CreatedDate = DateTime.UtcNow,
-                        OwnerId = _loggedInUserService.UserId().Result
-                    };
-
-                    await _formRepositoryWrapper.FormTypeF.AddAsync(formTypeF);
-                    break;
-                case 7:
-                    FormTypeG formTypeG = new()
-                    {
-                        FormId = Guid.NewGuid(),
-                        ApplicationId = applicationId,
-                        CreatedDate = DateTime.UtcNow,
-                        OwnerId = _loggedInUserService.UserId().Result
-                    };
-
-                    await _formRepositoryWrapper.FormTypeG.AddAsync(formTypeG);
-                    break;
-                case 8:
-                    FormTypeH formTypeH = new()
-                    {
-                        FormId = Guid.NewGuid(),
-                        ApplicationId = applicationId,
-                        CreatedDate = DateTime.UtcNow,
-                        OwnerId = _loggedInUserService.UserId().Result
-                    };
-
-                    await _formRepositoryWrapper.FormTypeH.AddAsync(formTypeH);
-                    break;
-                case 9:
-                    FormTypeI formTypeI = new()
-                    {
-                        FormId = Guid.NewGuid(),
-                        ApplicationId = applicationId,
-                        CreatedDate = DateTime.UtcNow,
-                        OwnerId = _loggedInUserService.UserId().Result
-                    };
-
-                    await _formRepositoryWrapper.FormTypeI.AddAsync(formTypeI);
-                    break;
-                case 10:
-                    FormTypeJ formTypeJ = new()
-                    {
-                        FormId = Guid.NewGuid(),
-                        ApplicationId = applicationId,
-                        CreatedDate = DateTime.UtcNow,
-                        OwnerId = _loggedInUserService.UserId().Result
-                    };
-
-                    await _formRepositoryWrapper.FormTypeJ.AddAsync(formTypeJ);
-                    break;
-                case 11:
-                    FormTypeK formTypeK = new()
-                    {
-                        FormId = Guid.NewGuid(),
-                        ApplicationId = applicationId,
-                        CreatedDate = DateTime.UtcNow,
-                        OwnerId = _loggedInUserService.UserId().Result
-                    };
-
-                    await _formRepositoryWrapper.FormTypeK.AddAsync(formTypeK);
-                    break;
-                case 12:
-                    FormTypeL formTypeL = new()
-                    {
-                        FormId = Guid.NewGuid(),
-                        ApplicationId = applicationId,
-                        CreatedDate = DateTime.UtcNow,
-                        OwnerId = _loggedInUserService.UserId().Result
-                    };
-
-                    await _formRepositoryWrapper.FormTypeL.AddAsync(formTypeL);
-                    break;
-                case 13:
-                    FormTypeM formTypeM = new()
-                    {
-                        FormId = Guid.NewGuid(),
-                        ApplicationId = applicationId,
-                        CreatedDate = DateTime.UtcNow,
-                        OwnerId = _loggedInUserService.UserId().Result
-                    };
-
-                    await _formRepositoryWrapper.FormTypeM.AddAsync(formTypeM);
-                    break;
-                case 14:
-                    FormTypeN formTypeN = new()
-                    {
-                        FormId = Guid.NewGuid(),
-                        ApplicationId = applicationId,
-                        CreatedDate = DateTime.UtcNow,
-                        OwnerId = _loggedInUserService.UserId().Result
-                    };
-
-                    await _formRepositoryWrapper.FormTypeN.AddAsync(formTypeN);
-                    break;
-                case 15:
-                    FormTypeO formTypeO = new()
-                    {
-                        FormId = Guid.NewGuid(),
-                        ApplicationId = applicationId,
-                        CreatedDate = DateTime.UtcNow,
-                        OwnerId = _loggedInUserService.UserId().Result
-                    };
-
-                    await _formRepositoryWrapper.FormTypeO.AddAsync(formTypeO);
-                    break;
-                case 16:
-                    FormTypeP formTypeP = new()
-                    {
-                        FormId = Guid.NewGuid(),
-                        ApplicationId = applicationId,
-                        CreatedDate = DateTime.UtcNow,
-                        OwnerId = _loggedInUserService.UserId().Result
-                    };
-
-                    await _formRepositoryWrapper.FormTypeP.AddAsync(formTypeP);
-                    break;
-                case 17:
-                    FormTypeQ formTypeQ = new()
-                    {
-                        FormId = Guid.NewGuid(),
-                        ApplicationId = applicationId,
-                        CreatedDate = DateTime.UtcNow,
-                        OwnerId = _loggedInUserService.UserId().Result
-                    };
-
-                    await _formRepositoryWrapper.FormTypeQ.AddAsync(formTypeQ);
-                    break;
-                case 18:
-                    FormTypeR formTypeR = new()
-                    {
-                        FormId = Guid.NewGuid(),
-                        ApplicationId = applicationId,
-                        CreatedDate = DateTime.UtcNow,
-                        OwnerId = _loggedInUserService.UserId().Result
-                    };
-
-                    await _formRepositoryWrapper.FormTypeR.AddAsync(formTypeR);
-                    break;
-                case 19:
-                    FormTypeS formTypeS = new()
-                    {
-                        FormId = Guid.NewGuid(),
-                        ApplicationId = applicationId,
-                        CreatedDate = DateTime.UtcNow,
-                        OwnerId = _loggedInUserService.UserId().Result
-                    };
-
-                    await _formRepositoryWrapper.FormTypeS.AddAsync(formTypeS);
-                    break;
-                case 20:
-                    FormTypeT formTypeT = new()
-                    {
-                        FormId = Guid.NewGuid(),
-                        ApplicationId = applicationId,
-                        CreatedDate = DateTime.UtcNow,
-                        OwnerId = _loggedInUserService.UserId().Result
-                    };
-
-                    await _formRepositoryWrapper.FormTypeT.AddAsync(formTypeT);
+                    await _unitOfWork.FormTypeERepository.AddAsync(formTypeE);
                     break;
             }
         }
 
-        static Task<string> GenerateApplicationReference()
+        private static string GenerateApplicationReference()
         {
             var r = new Random();
             var x = r.Next(0, 10000000);
             var s = x.ToString("0000000");
             var appReference = $"PP-{s}";
 
-            return Task.FromResult(appReference);
+            return appReference;
         }
     }
 }

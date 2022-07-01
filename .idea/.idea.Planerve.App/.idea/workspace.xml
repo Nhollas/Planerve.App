@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7b697566-2a44-478b-99fc-f41fafd166c2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Planerve.App/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Planerve.App/.idea/discord.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/Planerve.App/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/Planerve.App/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/Planerve.App/v17/.futdcache.v1" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/Planerve.App/v17/.futdcache.v1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/Planerve.App/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/Planerve.App/v17/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.API/Controllers/AccountController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.API/Controllers/AccountController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.API/Controllers/ApplicationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.API/Controllers/ApplicationController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.API/Controllers/FormController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.API/Controllers/FormController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.API/Middleware/ExceptionHandlerMiddleware.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.API/Middleware/ExceptionHandlerMiddleware.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.API/Planerve.App.API.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.API/Planerve.App.API.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.API/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.API/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.API/Services/LoggedInUserService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.API/Services/PostcodeService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.API/bin/Release/net6.0/Planerve.App.API.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.API/bin/Release/net6.0/Planerve.App.API.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.API/bin/Release/net6.0/Planerve.App.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.API/bin/Release/net6.0/Planerve.App.API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.API/bin/Release/net6.0/Planerve.App.API.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.API/bin/Release/net6.0/Planerve.App.API.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.API/bin/Release/net6.0/Planerve.App.API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.API/bin/Release/net6.0/Planerve.App.API.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.API/bin/Release/net6.0/Planerve.App.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.API/bin/Release/net6.0/Planerve.App.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.API/bin/Release/net6.0/Planerve.App.Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.API/bin/Release/net6.0/Planerve.App.Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.API/bin/Release/net6.0/Planerve.App.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.API/bin/Release/net6.0/Planerve.App.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.API/bin/Release/net6.0/Planerve.App.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.API/bin/Release/net6.0/Planerve.App.Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.API/bin/Release/net6.0/Planerve.App.Identity.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.API/bin/Release/net6.0/Planerve.App.Identity.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.API/bin/Release/net6.0/Planerve.App.Identity.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.API/bin/Release/net6.0/Planerve.App.Identity.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.API/bin/Release/net6.0/Planerve.App.Identity.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.API/bin/Release/net6.0/Planerve.App.Identity.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.API/bin/Release/net6.0/Planerve.App.Persistence.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.API/bin/Release/net6.0/Planerve.App.Persistence.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.API/bin/Release/net6.0/Planerve.App.Persistence.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.API/bin/Release/net6.0/Planerve.App.Persistence.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.API/obj/Debug/net6.0/Planerve.App.API.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.API/obj/Debug/net6.0/Planerve.App.API.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.API/obj/Debug/net6.0/Planerve.App.API.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.API/obj/Debug/net6.0/Planerve.App.API.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.API/obj/Debug/net6.0/Planerve.App.API.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.API/obj/Debug/net6.0/Planerve.App.API.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.API/obj/Debug/net6.0/Planerve.App.API.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.API/obj/Debug/net6.0/Planerve.App.API.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.API/obj/Debug/net6.0/Planerve.App.API.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.API/obj/Debug/net6.0/Planerve.App.API.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.API/obj/Debug/net6.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.API/obj/Debug/net6.0/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.API/obj/Debug/net6.0/project.razor.json" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.API/obj/Debug/net6.0/project.razor.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.API/obj/Planerve.App.API.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.API/obj/Planerve.App.API.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.API/obj/Planerve.App.API.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.API/obj/Planerve.App.API.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.API/obj/Release/net6.0/Planerve.App.API.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.API/obj/Release/net6.0/Planerve.App.API.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.API/obj/Release/net6.0/Planerve.App.API.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.API/obj/Release/net6.0/Planerve.App.API.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.API/obj/Release/net6.0/Planerve.App.API.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.API/obj/Release/net6.0/Planerve.App.API.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.API/obj/Release/net6.0/Planerve.App.API.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.API/obj/Release/net6.0/Planerve.App.API.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.API/obj/Release/net6.0/Planerve.App.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.API/obj/Release/net6.0/Planerve.App.API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.API/obj/Release/net6.0/Planerve.App.API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.API/obj/Release/net6.0/Planerve.App.API.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.API/obj/Release/net6.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.API/obj/Release/net6.0/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.API/obj/Release/net6.0/ref/Planerve.App.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.API/obj/Release/net6.0/ref/Planerve.App.API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.API/obj/Release/net6.0/refint/Planerve.App.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.API/obj/Release/net6.0/refint/Planerve.App.API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.API/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.API/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.API/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.API/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.API/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.API/obj/staticwebassets.pack.sentinel" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/ApplicationServiceRegistration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Core/ApplicationServiceRegistration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Contracts/Authorization/ApplicationAuthorizationRequirement.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Contracts/Authorization/Handlers/ApplicationAuthorizationHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Contracts/Identity/IAuthenticationService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Contracts/Identity/ILoggedInUserService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Contracts/Persistence/FormInterfaces/IFormTypeARepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Contracts/Persistence/FormInterfaces/IFormTypeBRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Contracts/Persistence/FormInterfaces/IFormTypeCRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Contracts/Persistence/FormInterfaces/IFormTypeDRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Contracts/Persistence/FormInterfaces/IFormTypeERepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Contracts/Persistence/FormInterfaces/IFormTypeFRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Contracts/Persistence/FormInterfaces/IFormTypeGRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Contracts/Persistence/FormInterfaces/IFormTypeHRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Contracts/Persistence/FormInterfaces/IFormTypeIRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Contracts/Persistence/FormInterfaces/IFormTypeJRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Contracts/Persistence/FormInterfaces/IFormTypeKRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Contracts/Persistence/FormInterfaces/IFormTypeLRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Contracts/Persistence/FormInterfaces/IFormTypeMRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Contracts/Persistence/FormInterfaces/IFormTypeNRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Contracts/Persistence/FormInterfaces/IFormTypeORepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Contracts/Persistence/FormInterfaces/IFormTypePRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Contracts/Persistence/FormInterfaces/IFormTypeQRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Contracts/Persistence/FormInterfaces/IFormTypeRRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Contracts/Persistence/FormInterfaces/IFormTypeSRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Contracts/Persistence/FormInterfaces/IFormTypeTRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Contracts/Persistence/IApplicationDataRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Contracts/Persistence/IAsyncRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Contracts/Persistence/IFormRepositoryWrapper.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Contracts/Persistence/IPostcodeService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Contracts/Persistence/IUserDataRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Contracts/Specification/ApplicationData/GetApplicationByIdSpecification.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Contracts/Specification/ApplicationData/GetApplicationListSpecification.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Contracts/Specification/BaseSpecification.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Contracts/Specification/ISpecification.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Exceptions/NotAuthorisedException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Core/Exceptions/NotAuthorisedException.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Features/ApplicationFeatures/Commands/CreateApplication/CreateApplicationCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Core/Features/ApplicationFeatures/Commands/CreateApplication/CreateApplicationCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Features/ApplicationFeatures/Commands/CreateApplication/CreateApplicationCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Core/Features/ApplicationFeatures/Commands/CreateApplication/CreateApplicationCommandHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Features/ApplicationFeatures/Commands/CreateApplication/CreateApplicationCommandValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Core/Features/ApplicationFeatures/Commands/CreateApplication/CreateApplicationCommandValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Features/ApplicationFeatures/Commands/CreateApplication/DataHelpers/ApplicationDocumentHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Core/Features/ApplicationFeatures/Commands/CreateApplication/DataHelpers/ApplicationDocumentHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Features/ApplicationFeatures/Commands/CreateApplication/DataHelpers/ApplicationFormHelper.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Features/ApplicationFeatures/Commands/CreateApplication/DataHelpers/ApplicationTypeHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Core/Features/ApplicationFeatures/Commands/CreateApplication/DataHelpers/ApplicationTypeHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Features/ApplicationFeatures/Commands/DeleteApplication/DeleteApplicationCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Core/Features/ApplicationFeatures/Commands/DeleteApplication/DeleteApplicationCommandHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Features/ApplicationFeatures/Commands/ShareApplication/ShareApplicationCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Core/Features/ApplicationFeatures/Commands/ShareApplication/ShareApplicationCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Features/ApplicationFeatures/Commands/ShareApplication/ShareApplicationCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Core/Features/ApplicationFeatures/Commands/ShareApplication/ShareApplicationCommandHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Features/ApplicationFeatures/Dtos/ApplicationDataDto.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Features/ApplicationFeatures/Dtos/PostcodeDataDto.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Features/ApplicationFeatures/Queries/GetApplicationById/ApplicationDetailVm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Core/Features/ApplicationFeatures/Queries/GetApplicationById/ApplicationDetailVm.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Features/ApplicationFeatures/Queries/GetApplicationById/GetApplicationDetailQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Core/Features/ApplicationFeatures/Queries/GetApplicationById/GetApplicationDetailQueryHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Features/ApplicationFeatures/Queries/GetApplicationList/ApplicationListVM.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Core/Features/ApplicationFeatures/Queries/GetApplicationList/ApplicationListVM.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Features/ApplicationFeatures/Queries/GetApplicationList/GetApplicationListQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Core/Features/ApplicationFeatures/Queries/GetApplicationList/GetApplicationListQueryHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Features/FormFeatures/Queries/GetFormById/FormDetailVm.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Features/FormFeatures/Queries/GetFormById/GetFormDetailQuery.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Features/FormFeatures/Queries/GetFormById/GetFormDetailQueryHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Models/Authentication/RegistrationRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Core/Models/Authentication/RegistrationRequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Planerve.App.Core.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Core/Planerve.App.Core.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/Profiles/MappingProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Core/Profiles/MappingProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/bin/Release/net6.0/Planerve.App.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Core/bin/Release/net6.0/Planerve.App.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/bin/Release/net6.0/Planerve.App.Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Core/bin/Release/net6.0/Planerve.App.Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/bin/Release/net6.0/Planerve.App.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Core/bin/Release/net6.0/Planerve.App.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/bin/Release/net6.0/Planerve.App.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Core/bin/Release/net6.0/Planerve.App.Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/obj/Debug/net6.0/Planerve.App.Core.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Core/obj/Debug/net6.0/Planerve.App.Core.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/obj/Debug/net6.0/Planerve.App.Core.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Core/obj/Debug/net6.0/Planerve.App.Core.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/obj/Debug/net6.0/Planerve.App.Core.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Core/obj/Debug/net6.0/Planerve.App.Core.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/obj/Debug/net6.0/Planerve.App.Core.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Core/obj/Debug/net6.0/Planerve.App.Core.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/obj/Planerve.App.Core.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Core/obj/Planerve.App.Core.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/obj/Planerve.App.Core.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Core/obj/Planerve.App.Core.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/obj/Release/net6.0/Planerve.App.Core.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Core/obj/Release/net6.0/Planerve.App.Core.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/obj/Release/net6.0/Planerve.App.Core.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Core/obj/Release/net6.0/Planerve.App.Core.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/obj/Release/net6.0/Planerve.App.Core.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Core/obj/Release/net6.0/Planerve.App.Core.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/obj/Release/net6.0/Planerve.App.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Core/obj/Release/net6.0/Planerve.App.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/obj/Release/net6.0/Planerve.App.Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Core/obj/Release/net6.0/Planerve.App.Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/obj/Release/net6.0/ref/Planerve.App.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Core/obj/Release/net6.0/ref/Planerve.App.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/obj/Release/net6.0/refint/Planerve.App.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Core/obj/Release/net6.0/refint/Planerve.App.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Core/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Core/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Core/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Domain/Common/ApplicationPermissions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Domain/Entities/ApplicationEntities/Application.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Domain/Entities/ApplicationEntities/Application.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Domain/Entities/ApplicationEntities/ApplicationAddress.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Domain/Entities/ApplicationEntities/ApplicationData.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Domain/Entities/ApplicationEntities/ApplicationDocument.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Domain/Entities/ApplicationEntities/ApplicationDocument.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Domain/Entities/ApplicationEntities/ApplicationProgress.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Domain/Entities/ApplicationEntities/ApplicationProgress.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Domain/Entities/ApplicationEntities/ApplicationType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Domain/Entities/ApplicationEntities/ApplicationType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Domain/Entities/ApplicationEntities/ApplicationUser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Domain/Entities/ApplicationEntities/ApplicationUser.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Domain/Entities/FormEntities/FormTypeA.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Domain/Entities/FormEntities/FormTypeA.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Domain/Entities/FormEntities/FormTypeB.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Domain/Entities/FormEntities/FormTypeB.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Domain/Entities/FormEntities/FormTypeC.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Domain/Entities/FormEntities/FormTypeC.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Domain/Entities/FormEntities/FormTypeD.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Domain/Entities/FormEntities/FormTypeD.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Domain/Entities/FormEntities/FormTypeE.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Domain/Entities/FormEntities/FormTypeE.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Domain/Entities/FormEntities/FormTypeF.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Domain/Entities/FormEntities/FormTypeF.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Domain/Entities/FormEntities/FormTypeG.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Domain/Entities/FormEntities/FormTypeG.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Domain/Entities/FormEntities/FormTypeH.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Domain/Entities/FormEntities/FormTypeH.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Domain/Entities/FormEntities/FormTypeI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Domain/Entities/FormEntities/FormTypeI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Domain/Entities/FormEntities/FormTypeJ.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Domain/Entities/FormEntities/FormTypeJ.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Domain/Entities/FormEntities/FormTypeK.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Domain/Entities/FormEntities/FormTypeK.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Domain/Entities/FormEntities/FormTypeL.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Domain/Entities/FormEntities/FormTypeL.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Domain/Entities/FormEntities/FormTypeM.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Domain/Entities/FormEntities/FormTypeM.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Domain/Entities/FormEntities/FormTypeN.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Domain/Entities/FormEntities/FormTypeN.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Domain/Entities/FormEntities/FormTypeO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Domain/Entities/FormEntities/FormTypeO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Domain/Entities/FormEntities/FormTypeP.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Domain/Entities/FormEntities/FormTypeP.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Domain/Entities/FormEntities/FormTypeQ.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Domain/Entities/FormEntities/FormTypeQ.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Domain/Entities/FormEntities/FormTypeR.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Domain/Entities/FormEntities/FormTypeR.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Domain/Entities/FormEntities/FormTypeS.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Domain/Entities/FormEntities/FormTypeS.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Domain/Entities/FormEntities/FormTypeT.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Domain/Entities/FormEntities/FormTypeT.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Domain/bin/Release/net6.0/Planerve.App.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Domain/bin/Release/net6.0/Planerve.App.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Domain/bin/Release/net6.0/Planerve.App.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Domain/bin/Release/net6.0/Planerve.App.Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Domain/obj/Debug/net6.0/Planerve.App.Domain.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Domain/obj/Debug/net6.0/Planerve.App.Domain.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Domain/obj/Debug/net6.0/Planerve.App.Domain.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Domain/obj/Debug/net6.0/Planerve.App.Domain.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Domain/obj/Debug/net6.0/Planerve.App.Domain.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Domain/obj/Debug/net6.0/Planerve.App.Domain.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Domain/obj/Debug/net6.0/Planerve.App.Domain.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Domain/obj/Debug/net6.0/Planerve.App.Domain.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Domain/obj/Planerve.App.Domain.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Domain/obj/Planerve.App.Domain.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Domain/obj/Planerve.App.Domain.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Domain/obj/Planerve.App.Domain.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Domain/obj/Release/net6.0/Planerve.App.Domain.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Domain/obj/Release/net6.0/Planerve.App.Domain.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Domain/obj/Release/net6.0/Planerve.App.Domain.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Domain/obj/Release/net6.0/Planerve.App.Domain.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Domain/obj/Release/net6.0/Planerve.App.Domain.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Domain/obj/Release/net6.0/Planerve.App.Domain.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Domain/obj/Release/net6.0/Planerve.App.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Domain/obj/Release/net6.0/Planerve.App.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Domain/obj/Release/net6.0/Planerve.App.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Domain/obj/Release/net6.0/Planerve.App.Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Domain/obj/Release/net6.0/ref/Planerve.App.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Domain/obj/Release/net6.0/ref/Planerve.App.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Domain/obj/Release/net6.0/refint/Planerve.App.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Domain/obj/Release/net6.0/refint/Planerve.App.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Domain/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Domain/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Domain/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Domain/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Identity/Config.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Identity/Config.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Identity/Data/Migrations/20220215201407_Users.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Identity/Data/Migrations/20220215201407_Users.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Identity/Data/Migrations/20220501212122_test.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Identity/Data/Migrations/20220501212122_test.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Identity/HostingExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Identity/HostingExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Identity/IdentityServiceExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Identity/IdentityServiceExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Identity/Models/ApplicationUser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Identity/Models/ApplicationUser.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Identity/Pages/Account/Login/Index.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Identity/Pages/Account/Login/Index.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Identity/Pages/Account/Login/InputModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Identity/Pages/Account/Login/InputModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Identity/Pages/Account/Login/LoginOptions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Identity/Pages/Account/Login/LoginOptions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Identity/Pages/Ciba/ConsentOptions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Identity/Pages/Ciba/ConsentOptions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Identity/Pages/Consent/ConsentOptions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Identity/Pages/Consent/ConsentOptions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Identity/Pages/Device/DeviceOptions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Identity/Pages/Device/DeviceOptions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Identity/Pages/Diagnostics/Index.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Identity/Pages/Diagnostics/Index.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Identity/Pages/Diagnostics/ViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Identity/Pages/Diagnostics/ViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Identity/Pages/Extensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Identity/Pages/Extensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Identity/Pages/ExternalLogin/Callback.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Identity/Pages/ExternalLogin/Callback.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Identity/Pages/ExternalLogin/Challenge.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Identity/Pages/ExternalLogin/Challenge.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Identity/Pages/Home/Error/Index.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Identity/Pages/Home/Error/Index.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Identity/Pages/Index.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Identity/Pages/Index.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Identity/Pages/SecurityHeadersAttribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Identity/Pages/SecurityHeadersAttribute.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Identity/SeedData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Identity/SeedData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Identity/bin/Release/net6.0/Planerve.App.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Identity/bin/Release/net6.0/Planerve.App.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Identity/bin/Release/net6.0/Planerve.App.Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Identity/bin/Release/net6.0/Planerve.App.Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Identity/bin/Release/net6.0/Planerve.App.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Identity/bin/Release/net6.0/Planerve.App.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Identity/bin/Release/net6.0/Planerve.App.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Identity/bin/Release/net6.0/Planerve.App.Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Identity/bin/Release/net6.0/Planerve.App.Identity.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Identity/bin/Release/net6.0/Planerve.App.Identity.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Identity/bin/Release/net6.0/Planerve.App.Identity.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Identity/bin/Release/net6.0/Planerve.App.Identity.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Identity/bin/Release/net6.0/Planerve.App.Identity.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Identity/bin/Release/net6.0/Planerve.App.Identity.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Identity/obj/Debug/net6.0/Planerve.App.Identity.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Identity/obj/Debug/net6.0/Planerve.App.Identity.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Identity/obj/Debug/net6.0/Planerve.App.Identity.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Identity/obj/Debug/net6.0/Planerve.App.Identity.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Identity/obj/Debug/net6.0/Planerve.App.Identity.RazorAssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Identity/obj/Debug/net6.0/Planerve.App.Identity.RazorAssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Identity/obj/Debug/net6.0/Planerve.App.Identity.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Identity/obj/Debug/net6.0/Planerve.App.Identity.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Identity/obj/Debug/net6.0/Planerve.App.Identity.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Identity/obj/Debug/net6.0/Planerve.App.Identity.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Identity/obj/Debug/net6.0/Planerve.App.Identity.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Identity/obj/Debug/net6.0/Planerve.App.Identity.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Identity/obj/Debug/net6.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Identity/obj/Debug/net6.0/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Identity/obj/Debug/net6.0/project.razor.json" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Identity/obj/Debug/net6.0/project.razor.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Identity/obj/Planerve.App.Identity.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Identity/obj/Planerve.App.Identity.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Identity/obj/Planerve.App.Identity.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Identity/obj/Planerve.App.Identity.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Identity/obj/Release/net6.0/Planerve.App.Identity.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Identity/obj/Release/net6.0/Planerve.App.Identity.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Identity/obj/Release/net6.0/Planerve.App.Identity.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Identity/obj/Release/net6.0/Planerve.App.Identity.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Identity/obj/Release/net6.0/Planerve.App.Identity.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Identity/obj/Release/net6.0/Planerve.App.Identity.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Identity/obj/Release/net6.0/Planerve.App.Identity.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Identity/obj/Release/net6.0/Planerve.App.Identity.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Identity/obj/Release/net6.0/Planerve.App.Identity.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Identity/obj/Release/net6.0/Planerve.App.Identity.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Identity/obj/Release/net6.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Identity/obj/Release/net6.0/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Identity/obj/Release/net6.0/ref/Planerve.App.Identity.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Identity/obj/Release/net6.0/ref/Planerve.App.Identity.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Identity/obj/Release/net6.0/refint/Planerve.App.Identity.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Identity/obj/Release/net6.0/refint/Planerve.App.Identity.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Identity/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Identity/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Identity/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Identity/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Identity/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Identity/obj/staticwebassets.pack.sentinel" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/Contexts/PlanerveDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Persistence/Contexts/PlanerveDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/Contexts/PlanerveIdentityDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Persistence/Contexts/PlanerveIdentityDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/Migrations/20220614215530_test.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/Migrations/20220614215530_test.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/Migrations/PlanerveDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Persistence/Migrations/PlanerveDbContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/PersistenceServiceRegistration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Persistence/PersistenceServiceRegistration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/Repositories/BaseRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/Repositories/FormRepositories/FormTypeARepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/Repositories/FormRepositories/FormTypeBRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/Repositories/FormRepositories/FormTypeCRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/Repositories/FormRepositories/FormTypeDRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/Repositories/FormRepositories/FormTypeERepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/Repositories/FormRepositories/FormTypeFRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/Repositories/FormRepositories/FormTypeGRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/Repositories/FormRepositories/FormTypeHRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/Repositories/FormRepositories/FormTypeIRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/Repositories/FormRepositories/FormTypeJRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/Repositories/FormRepositories/FormTypeKRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/Repositories/FormRepositories/FormTypeLRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/Repositories/FormRepositories/FormTypeMRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/Repositories/FormRepositories/FormTypeNRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/Repositories/FormRepositories/FormTypeORepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/Repositories/FormRepositories/FormTypePRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/Repositories/FormRepositories/FormTypeQRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/Repositories/FormRepositories/FormTypeRRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/Repositories/FormRepositories/FormTypeSRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/Repositories/FormRepositories/FormTypeTRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/Repositories/FormRepositoryWrapper.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/Repositories/SpecificationEvaluator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/Repositories/UserDataRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/bin/Release/net6.0/Planerve.App.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Persistence/bin/Release/net6.0/Planerve.App.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/bin/Release/net6.0/Planerve.App.Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Persistence/bin/Release/net6.0/Planerve.App.Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/bin/Release/net6.0/Planerve.App.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Persistence/bin/Release/net6.0/Planerve.App.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/bin/Release/net6.0/Planerve.App.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Persistence/bin/Release/net6.0/Planerve.App.Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/bin/Release/net6.0/Planerve.App.Identity.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Persistence/bin/Release/net6.0/Planerve.App.Identity.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/bin/Release/net6.0/Planerve.App.Identity.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Persistence/bin/Release/net6.0/Planerve.App.Identity.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/bin/Release/net6.0/Planerve.App.Identity.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Persistence/bin/Release/net6.0/Planerve.App.Identity.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/bin/Release/net6.0/Planerve.App.Persistence.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Persistence/bin/Release/net6.0/Planerve.App.Persistence.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/bin/Release/net6.0/Planerve.App.Persistence.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Persistence/bin/Release/net6.0/Planerve.App.Persistence.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/obj/Debug/net6.0/Planerve.App.Persistence.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Persistence/obj/Debug/net6.0/Planerve.App.Persistence.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/obj/Debug/net6.0/Planerve.App.Persistence.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Persistence/obj/Debug/net6.0/Planerve.App.Persistence.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/obj/Debug/net6.0/Planerve.App.Persistence.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Persistence/obj/Debug/net6.0/Planerve.App.Persistence.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/obj/Debug/net6.0/Planerve.App.Persistence.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Persistence/obj/Debug/net6.0/Planerve.App.Persistence.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/obj/Planerve.App.Persistence.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Persistence/obj/Planerve.App.Persistence.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/obj/Planerve.App.Persistence.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Persistence/obj/Planerve.App.Persistence.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/obj/Release/net6.0/Planerve.App.Persistence.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Persistence/obj/Release/net6.0/Planerve.App.Persistence.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/obj/Release/net6.0/Planerve.App.Persistence.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Persistence/obj/Release/net6.0/Planerve.App.Persistence.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/obj/Release/net6.0/Planerve.App.Persistence.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Persistence/obj/Release/net6.0/Planerve.App.Persistence.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/obj/Release/net6.0/Planerve.App.Persistence.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Persistence/obj/Release/net6.0/Planerve.App.Persistence.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/obj/Release/net6.0/Planerve.App.Persistence.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Persistence/obj/Release/net6.0/Planerve.App.Persistence.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/obj/Release/net6.0/ref/Planerve.App.Persistence.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Persistence/obj/Release/net6.0/ref/Planerve.App.Persistence.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/obj/Release/net6.0/refint/Planerve.App.Persistence.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Persistence/obj/Release/net6.0/refint/Planerve.App.Persistence.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Persistence/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.Persistence/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.Persistence/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.UI/Areas/Public/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.UI/Areas/Public/Controllers/HomeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.UI/Areas/User/Controllers/AccountController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.UI/Areas/User/Controllers/AccountController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.UI/Areas/User/Controllers/ApplicationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.UI/Areas/User/Controllers/ApplicationController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.UI/Areas/User/Controllers/FormController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.UI/Areas/User/Controllers/FormController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.UI/ClientServiceRegistration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.UI/ClientServiceRegistration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.UI/Models/ApplicationFilterModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.UI/Models/ApplicationFilterModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.UI/Profiles/Mappings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.UI/Profiles/Mappings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.UI/Services/AuthenticationService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.UI/Services/AuthenticationService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.UI/Services/Base/BearerTokenHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.UI/Services/Base/BearerTokenHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.UI/bin/Release/net6.0/Planerve.App.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.UI/bin/Release/net6.0/Planerve.App.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.UI/bin/Release/net6.0/Planerve.App.Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.UI/bin/Release/net6.0/Planerve.App.Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.UI/bin/Release/net6.0/Planerve.App.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.UI/bin/Release/net6.0/Planerve.App.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.UI/bin/Release/net6.0/Planerve.App.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.UI/bin/Release/net6.0/Planerve.App.Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.UI/bin/Release/net6.0/Planerve.App.Identity.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.UI/bin/Release/net6.0/Planerve.App.Identity.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.UI/bin/Release/net6.0/Planerve.App.Identity.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.UI/bin/Release/net6.0/Planerve.App.Identity.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.UI/bin/Release/net6.0/Planerve.App.Identity.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.UI/bin/Release/net6.0/Planerve.App.Identity.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.UI/bin/Release/net6.0/Planerve.App.Persistence.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.UI/bin/Release/net6.0/Planerve.App.Persistence.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.UI/bin/Release/net6.0/Planerve.App.Persistence.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.UI/bin/Release/net6.0/Planerve.App.Persistence.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.UI/bin/Release/net6.0/Planerve.App.UI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.UI/bin/Release/net6.0/Planerve.App.UI.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.UI/bin/Release/net6.0/Planerve.App.UI.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.UI/bin/Release/net6.0/Planerve.App.UI.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.UI/bin/Release/net6.0/Planerve.App.UI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.UI/bin/Release/net6.0/Planerve.App.UI.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.UI/obj/Debug/net6.0/Planerve.App.UI.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.UI/obj/Debug/net6.0/Planerve.App.UI.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.UI/obj/Debug/net6.0/Planerve.App.UI.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.UI/obj/Debug/net6.0/Planerve.App.UI.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.UI/obj/Debug/net6.0/Planerve.App.UI.RazorAssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.UI/obj/Debug/net6.0/Planerve.App.UI.RazorAssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.UI/obj/Debug/net6.0/Planerve.App.UI.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.UI/obj/Debug/net6.0/Planerve.App.UI.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.UI/obj/Debug/net6.0/Planerve.App.UI.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.UI/obj/Debug/net6.0/Planerve.App.UI.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.UI/obj/Debug/net6.0/Planerve.App.UI.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.UI/obj/Debug/net6.0/Planerve.App.UI.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.UI/obj/Debug/net6.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.UI/obj/Debug/net6.0/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.UI/obj/Debug/net6.0/project.razor.json" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.UI/obj/Debug/net6.0/project.razor.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.UI/obj/Planerve.App.UI.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.UI/obj/Planerve.App.UI.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.UI/obj/Planerve.App.UI.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.UI/obj/Planerve.App.UI.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.UI/obj/Release/net6.0/Planerve.App.UI.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.UI/obj/Release/net6.0/Planerve.App.UI.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.UI/obj/Release/net6.0/Planerve.App.UI.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.UI/obj/Release/net6.0/Planerve.App.UI.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.UI/obj/Release/net6.0/Planerve.App.UI.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.UI/obj/Release/net6.0/Planerve.App.UI.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.UI/obj/Release/net6.0/Planerve.App.UI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.UI/obj/Release/net6.0/Planerve.App.UI.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.UI/obj/Release/net6.0/Planerve.App.UI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.UI/obj/Release/net6.0/Planerve.App.UI.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.UI/obj/Release/net6.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.UI/obj/Release/net6.0/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.UI/obj/Release/net6.0/ref/Planerve.App.UI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.UI/obj/Release/net6.0/ref/Planerve.App.UI.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.UI/obj/Release/net6.0/refint/Planerve.App.UI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.UI/obj/Release/net6.0/refint/Planerve.App.UI.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.UI/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.UI/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.UI/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.UI/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.UI/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.UI/obj/staticwebassets.pack.sentinel" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Planerve.App.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Planerve.App.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Planerve.App.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Planerve.App.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Planerve.App.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Planerve.App.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Planerve.App.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Planerve.App.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Planerve.App.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Planerve.App.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Planerve.App.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Planerve.App.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Planerve.App.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Planerve.App.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.nuget.cache" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2BFonEgFin9i6u1S1arbp7Uz60p" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <created>1656511360248</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1656511360248</updated>
+      <workItem from="1656511367066" duration="27000" />
+    </task>
+    <servers />
+  </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>

@@ -1,39 +1,87 @@
 ﻿using AutoMapper;
 using MediatR;
-using Planerve.App.Core.Contracts.Identity;
-using Planerve.App.Core.Contracts.Persistence;
-using Planerve.App.Core.Contracts.Specification.ApplicationData;
+using Microsoft.AspNetCore.Authorization;
+using Planerve.App.Core.Authorization.Requirements;
 using Planerve.App.Core.Exceptions;
+using Planerve.App.Core.Interfaces.Persistence.Generic;
+using Planerve.App.Core.Services;
 using Planerve.App.Domain.Entities.ApplicationEntities;
-using System;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Planerve.App.Core.Features.FormFeatures.Queries.GetFormById;
-
-public class GetFormDetailQueryHandler : IRequestHandler<GetFormDetailQuery, FormDetailVm>
+namespace Planerve.App.Core.Features.FormFeatures.Queries.GetFormById
 {
-    private readonly IAsyncRepository<Application> _repository;
-    private readonly IMapper _mapper;
-    private readonly ILoggedInUserService _loggedInUserService;
-    public GetFormDetailQueryHandler(IMapper mapper, IAsyncRepository<Application> repository, ILoggedInUserService loggedInUserService)
+    public class GetFormDetailQueryHandler : IRequestHandler<GetFormDetailQuery, FormDetailVM>
     {
-        _mapper = mapper;
-        _repository = repository;
-        _loggedInUserService = loggedInUserService;
-    }
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly IMapper _mapper;
+        private readonly IAuthorizationService _authorizationService;
+        private readonly IUserService _userService;
 
-    public async Task<FormDetailVm> Handle(GetFormDetailQuery request,
-        CancellationToken cancellationToken)
-    {
-        // Grab userId from API user service.
-        var userId = await _loggedInUserService.UserId();
+        public GetFormDetailQueryHandler(
+            IUnitOfWork unitOfWork,
+            IMapper mapper,
+            IAuthorizationService authorizationService,
+            IUserService userService)
+        {
+            _unitOfWork = unitOfWork;
+            _mapper = mapper;
+            _authorizationService = authorizationService;
+            _userService = userService;
+        }
 
-        var specification = new GetApplicationByIdSpecification(request.Id, userId);
+        public async Task<FormDetailVM> Handle(GetFormDetailQuery request, CancellationToken cancellationToken)
+        {
+            var user = await _userService.GetUser();
 
-        var applicationEntity = _repository.FindWithSpecificationPattern(specification);
+            ApplicationUser authorisedUsers = await _unitOfWork.ApplicationUserRepository.GetByIdAsync(request.Id);
 
-        throw new NotImplementedException();
+            if (authorisedUsers == null)
+            {
+                throw new NotFoundException(nameof(ApplicationUser), request.Id);
+            }
+
+            var authorisedResult = await _authorizationService.AuthorizeAsync(user, authorisedUsers, FormPolicies.ReadForm);
+
+            if (!authorisedResult.Succeeded)
+            {
+                throw new NotAuthorisedException("sus", "sus");
+            }
+
+            object form = await GetForm(request);
+
+            if (form == null)
+            {
+                throw new NotFoundException(nameof(form), request.Id);
+            }
+
+            return new FormDetailVM { Data = form, Type = request.Type };
+        }
+
+        private async Task<object> GetForm(GetFormDetailQuery request)
+        {
+            object form;
+
+            switch (request.Type)
+            {
+                case 1:
+                    form = await _unitOfWork.FormTypeARepository.GetByIdAsync(request.Id);
+                    return form;
+                case 2:
+                    form = await _unitOfWork.FormTypeBRepository.GetByIdAsync(request.Id);
+                    return form;
+                case 3:
+                    form = await _unitOfWork.FormTypeCRepository.GetByIdAsync(request.Id);
+                    return form;
+                case 4:
+                    form = await _unitOfWork.FormTypeDRepository.GetByIdAsync(request.Id);
+                    return form;
+                case 5:
+                    form = await _unitOfWork.FormTypeERepository.GetByIdAsync(request.Id);
+                    return form;
+                default:
+                    return null;
+            }
+        }
     }
 }

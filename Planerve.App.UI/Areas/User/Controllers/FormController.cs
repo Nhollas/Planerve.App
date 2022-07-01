@@ -20,9 +20,11 @@ namespace Planerve.App.UI.Areas.User.Controllers
             var form = await _applicationService.GetFormById(Id);
 
             if (form == null)
-            if (form == null)
             {
-                return NotFound();
+                if (form == null)
+                {
+                    return NotFound();
+                }
             }
 
             return View(form);

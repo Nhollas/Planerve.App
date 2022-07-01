@@ -2,7 +2,7 @@ using System;
 
 namespace Planerve.App.Identity.Pages.Login;
 
-public class LoginOptions
+public static class LoginOptions
 {
     public static bool AllowLocalLogin = true;
     public static bool AllowRememberLogin = true;

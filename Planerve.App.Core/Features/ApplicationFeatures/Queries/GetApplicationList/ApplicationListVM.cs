@@ -8,8 +8,13 @@ namespace Planerve.App.Core.Features.ApplicationFeatures.Queries.GetApplicationL
         public Guid Id { get; set; }
         public string ApplicationReference { get; set; }
         public string ApplicationName { get; set; }
-        public string OwnerId { get; set; }
         public string VersionNumber { get; set; }
-        public ApplicationDataDto Data { get; set; }
+        public string CreatedBy { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public string LastModifiedBy { get; set; }
+        public DateTime LastModifiedDate { get; set; }
+        public ApplicationTypeDto Type { get; set; }
+        public ApplicationDocumentDto Document { get; set; }
+        public ApplicationProgressDto Progress { get; set; }
     }
 }

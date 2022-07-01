@@ -8,8 +8,6 @@ namespace Planerve.App.UI.Profiles
     {
         public Mappings()
         {
-
-            // ApplicationDetailViewModel = View, CreateApplicationCommand = Dto
             CreateMap<ApplicationDetailViewModel, CreateApplicationCommand>().ReverseMap();
 
             CreateMap<ApplicationDetailVm, ApplicationDetailViewModel>().ReverseMap();

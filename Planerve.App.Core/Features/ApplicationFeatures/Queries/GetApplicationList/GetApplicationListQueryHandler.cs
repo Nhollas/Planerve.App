@@ -1,11 +1,10 @@
 ﻿using AutoMapper;
 using MediatR;
-using Planerve.App.Core.Contracts.Identity;
-using Planerve.App.Core.Contracts.Persistence;
-using Planerve.App.Core.Contracts.Specification.ApplicationData;
+using Planerve.App.Core.Contracts.Persistence.Generic;
+using Planerve.App.Core.Contracts.Specification.ApplicationSpecifications;
+using Planerve.App.Core.Services;
 using Planerve.App.Domain.Entities.ApplicationEntities;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -15,35 +14,27 @@ namespace Planerve.App.Core.Features.ApplicationFeatures.Queries.GetApplicationL
     {
         private readonly IAsyncRepository<Application> _repository;
         private readonly IMapper _mapper;
-        private readonly ILoggedInUserService _loggedInUserService;
+        private readonly IUserService _userService;
+        private readonly string _userId;
 
-        public GetApplicationListQueryHandler(IMapper mapper, IAsyncRepository<Application> repository, ILoggedInUserService loggedInUserService)
+        public GetApplicationListQueryHandler(IMapper mapper, IAsyncRepository<Application> repository, IUserService userService)
         {
             _mapper = mapper;
             _repository = repository;
-            _loggedInUserService = loggedInUserService;
+            _userService = userService;
+            _userId = _userService.UserId();
         }
 
-        // Get all users applications, method will specifiy the query, null check and finally map and return the list.
-        public async Task<List<ApplicationListVm>> Handle(GetApplicationListQuery request,
+        public Task<List<ApplicationListVm>> Handle(GetApplicationListQuery request,
             CancellationToken cancellationToken)
         {
-            // Grab userId from API user service.
-            var userId = await _loggedInUserService.UserId();
-
-            // Get any applications that have the same ownerId as current logged in user.
-            var specification = new GetApplicationListSpecification(userId);
+            var specification = new GetApplicationListSpecification(_userId);
 
             var applicationList = _repository.FindWithSpecificationPattern(specification);
 
-            if (!applicationList.Any())
-            {
-                return null;
-            }
-
             var applicationListDto = _mapper.Map<List<ApplicationListVm>>(applicationList);
 
-            return applicationListDto;
+            return Task.FromResult(applicationListDto);
         }
     }
 }

@@ -162,7 +162,6 @@ C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.API\bin\Release\net6
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.API\bin\Release\net6.0\FluentValidation.DependencyInjectionExtensions.dll
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.API\bin\Release\net6.0\Humanizer.dll
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.API\bin\Release\net6.0\IdentityModel.dll
-C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.API\bin\Release\net6.0\Kevsoft.PDFtk.dll
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.API\bin\Release\net6.0\MediatR.dll
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.API\bin\Release\net6.0\MediatR.Contracts.dll
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.API\bin\Release\net6.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
@@ -279,3 +278,5 @@ C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.API\obj\Release\net6
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.API\obj\Release\net6.0\Planerve.App.API.pdb
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.API\obj\Release\net6.0\Planerve.App.API.genruntimeconfig.cache
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.API\obj\Release\net6.0\ref\Planerve.App.API.dll
+C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.API\bin\Release\net6.0\Planerve.App.Infrastructure.dll
+C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.API\bin\Release\net6.0\Planerve.App.Infrastructure.pdb

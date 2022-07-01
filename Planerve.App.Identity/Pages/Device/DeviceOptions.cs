@@ -4,7 +4,7 @@
 
 namespace Planerve.App.Identity.Pages.Device;
 
-public class DeviceOptions
+public static class DeviceOptions
 {
     public static bool EnableOfflineAccess = true;
     public static string OfflineAccessDisplayName = "Offline Access";

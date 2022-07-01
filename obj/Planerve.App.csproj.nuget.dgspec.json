@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.csproj": {}
+    "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.csproj": {
+    "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.csproj",
+        "projectUniqueName": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.csproj",
         "projectName": "Planerve.App",
-        "projectPath": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\Planerve.App.csproj",
-        "packagesPath": "C:\\Users\\nicho\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nicho\\Documents\\Github Projects\\Planerve.App\\obj\\",
+        "projectPath": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.csproj",
+        "packagesPath": "C:\\Users\\Nhollas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\nicho\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Nhollas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -91,7 +91,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

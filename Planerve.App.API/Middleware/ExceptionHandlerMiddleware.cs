@@ -2,7 +2,6 @@
 using System.Net;
 using Planerve.App.Core.Exceptions;
 
-
 namespace Planerve.API.Middleware
 {
     public class ExceptionHandlerMiddleware

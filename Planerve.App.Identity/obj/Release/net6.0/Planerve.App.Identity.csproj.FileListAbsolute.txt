@@ -139,7 +139,6 @@ C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Identity\bin\Release
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Identity\bin\Release\net6.0\Planerve.App.Identity.pdb
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Identity\bin\Release\net6.0\AutoMapper.dll
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Identity\bin\Release\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
-C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Identity\bin\Release\net6.0\DinkToPdf.dll
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Identity\bin\Release\net6.0\Duende.IdentityServer.dll
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Identity\bin\Release\net6.0\Duende.IdentityServer.AspNetIdentity.dll
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Identity\bin\Release\net6.0\Duende.IdentityServer.Storage.dll
@@ -147,7 +146,6 @@ C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Identity\bin\Release
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Identity\bin\Release\net6.0\FluentValidation.DependencyInjectionExtensions.dll
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Identity\bin\Release\net6.0\Humanizer.dll
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Identity\bin\Release\net6.0\IdentityModel.dll
-C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Identity\bin\Release\net6.0\Kevsoft.PDFtk.dll
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Identity\bin\Release\net6.0\MediatR.dll
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Identity\bin\Release\net6.0\MediatR.Contracts.dll
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Identity\bin\Release\net6.0\MediatR.Extensions.Microsoft.DependencyInjection.dll

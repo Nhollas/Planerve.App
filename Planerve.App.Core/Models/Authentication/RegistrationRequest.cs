@@ -4,7 +4,6 @@ namespace Planerve.App.Core.Models.Authentication;
 
 public class RegistrationRequest
 {
-
     [Required]
     [EmailAddress]
     public string Email { get; set; }

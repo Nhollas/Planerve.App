@@ -7,11 +7,11 @@ namespace Planerve.App.Domain.Entities.ApplicationEntities
 {
     public class ApplicationDocument
     {
-        [ForeignKey("ApplicationData")]
+        [ForeignKey("Application")]
         [Column("ApplicationId")]
         public Guid Id { get; set; }
         [JsonIgnore]
-        public ApplicationData ApplicationData { get; set; }
+        public Application Application { get; set; }
 
         public int DocumentCount { get; set; }
         public int CompletedRequirementsCount { get; set; }

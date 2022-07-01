@@ -6,11 +6,11 @@ namespace Planerve.App.Domain.Entities.ApplicationEntities
 {
     public class ApplicationProgress
     {
-        [ForeignKey("ApplicationData")]
+        [ForeignKey("Application")]
         [Column("ApplicationId")]
         public Guid Id { get; set; }
         [JsonIgnore]
-        public ApplicationData ApplicationData { get; set; }
+        public Application Application { get; set; }
 
         public string ApplicationStatus { get; set; }
         public int ProgressPercentage { get; set; }

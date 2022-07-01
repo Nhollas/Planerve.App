@@ -1,9 +1,11 @@
 ﻿using MediatR;
 using System;
 
-namespace Planerve.App.Core.Features.FormFeatures.Queries.GetFormById;
-
-public class GetFormDetailQuery : IRequest<FormDetailVm>
+namespace Planerve.App.Core.Features.FormFeatures.Queries.GetFormById
 {
-    public Guid Id { get; set; }
+    public class GetFormDetailQuery : IRequest<FormDetailVM>
+    {
+        public Guid Id { get; set; }
+        public int Type { get; set; }
+    }
 }
