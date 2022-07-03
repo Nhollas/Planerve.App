@@ -2,6 +2,11 @@
 {
     public class TreeAndHedgeSectionDto
     {
-        public string Name { get; set; }
+        public bool FallingTreesHedge { get; set; }
+        public string FallingTreeHedgeReference { get; set; }
+        public bool TreeHedgeRemoved { get; set; }
+        public string TreeHedgeRemovedReference { get; set; }
     }
 }
+
+

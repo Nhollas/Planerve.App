@@ -6,15 +6,13 @@
 
     <ItemGroup>
     <PackageReference Include="AutoMapper" Version="11.0.1" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="6.0.6" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.6" />
-    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.20.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.21.0" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\Planerve.App.Core\Planerve.App.Core.csproj" />
       <ProjectReference Include="..\Planerve.App.Domain\Planerve.App.Domain.csproj" />
-      <ProjectReference Include="..\Planerve.App.Identity\Planerve.App.Identity.csproj" />
       <ProjectReference Include="..\Planerve.App.Persistence\Planerve.App.Persistence.csproj" />
     </ItemGroup>
 

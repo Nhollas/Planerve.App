@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Planerve.App.Core.Features.ApplicationFeatures.Commands.CopyApplication;
 using Planerve.App.Core.Features.ApplicationFeatures.Commands.CreateApplication;
@@ -11,6 +12,7 @@ namespace Planerve.App.API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[Authorize]
 public class ApplicationController : Controller
 {
     private readonly IMediator _mediator;

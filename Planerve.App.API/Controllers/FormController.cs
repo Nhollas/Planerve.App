@@ -70,101 +70,11 @@ namespace Planerve.App.API.Controllers
             return NoContent();
         }
 
-        [HttpGet("Download/TypeA/{id:guid}")]
-        [ProducesDefaultResponseType]
-        [ProducesResponseType(StatusCodes.Status204NoContent)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult> Download([FromBody] UpdateFormTypeACommand command)
-        {
-            await _mediator.Send(command);
-            return NoContent();
-        }
-
-        [HttpGet("Download/TypeB/{id:guid}")]
-        [ProducesDefaultResponseType]
-        [ProducesResponseType(StatusCodes.Status204NoContent)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult> Download([FromBody] UpdateFormTypeBCommand command)
-        {
-            await _mediator.Send(command);
-            return NoContent();
-        }
-
-        [HttpGet("Download/TypeC/{id:guid}")]
-        [ProducesDefaultResponseType]
-        [ProducesResponseType(StatusCodes.Status204NoContent)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult> Download([FromBody] UpdateFormTypeCCommand command)
-        {
-            await _mediator.Send(command);
-            return NoContent();
-        }
-
-        [HttpGet("Download/TypeD/{id:guid}")]
-        [ProducesDefaultResponseType]
-        [ProducesResponseType(StatusCodes.Status204NoContent)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult> Download([FromBody] UpdateFormTypeDCommand command)
-        {
-            await _mediator.Send(command);
-            return NoContent();
-        }
-
-        [HttpGet("Download/TypeE/{id:guid}")]
+        [HttpGet("Download/{id:guid}")]
         [ProducesDefaultResponseType]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult> Download([FromBody] UpdateFormTypeECommand command)
-        {
-            await _mediator.Send(command);
-            return NoContent();
-        }
-
-        [HttpGet("Get/TypeA/{id:guid}")]
-        [ProducesDefaultResponseType]
-        [ProducesResponseType(StatusCodes.Status204NoContent)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult> GetById([FromBody] UpdateFormTypeACommand command)
-        {
-            await _mediator.Send(command);
-            return NoContent();
-        }
-
-        [HttpGet("Get/TypeB/{id:guid}")]
-        [ProducesDefaultResponseType]
-        [ProducesResponseType(StatusCodes.Status204NoContent)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult> GetById([FromBody] UpdateFormTypeBCommand command)
-        {
-            await _mediator.Send(command);
-            return NoContent();
-        }
-
-        [HttpGet("Get/TypeC/{id:guid}")]
-        [ProducesDefaultResponseType]
-        [ProducesResponseType(StatusCodes.Status204NoContent)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult> GetById([FromBody] UpdateFormTypeCCommand command)
-        {
-            await _mediator.Send(command);
-            return NoContent();
-        }
-
-        [HttpGet("Get/TypeD/{id:guid}")]
-        [ProducesDefaultResponseType]
-        [ProducesResponseType(StatusCodes.Status204NoContent)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult> GetById([FromBody] UpdateFormTypeDCommand command)
-        {
-            await _mediator.Send(command);
-            return NoContent();
-        }
-
-        [HttpGet("Get/TypeE/{id:guid}")]
-        [ProducesDefaultResponseType]
-        [ProducesResponseType(StatusCodes.Status204NoContent)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult> GetById([FromBody] UpdateFormTypeECommand command)
         {
             await _mediator.Send(command);
             return NoContent();

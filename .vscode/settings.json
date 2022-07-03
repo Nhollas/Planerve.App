@@ -1,9 +1,17 @@
 {
+    "rest-client.environmentVariables": {
+        "$shared":{},
+        "dev":{
+            "host": "https://localhost:6001"
+        },
+    },  
+
     "cSpell.words": [
         "Authorised",
         "Dtos",
         "dyanmic",
         "externallogin",
+        "Floorspace",
         "Mediat",
         "nosniff",
         "oidc",

@@ -2,6 +2,7 @@
 {
     public class ParkingSectionDto
     {
-        public string Name { get; set; }
+        public bool AffectingParking { get; set; }
+        public string ParkingDescription{ get; set; }
     }
 }

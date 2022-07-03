@@ -7,6 +7,10 @@ namespace Planerve.App.Core.Features.FormFeatures.Commands.UpdateFormTypeA
     public class UpdateFormTypeACommand : IRequest
     {
         public Guid Id { get; set; }
+        public string CreatedBy { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public string LastModifiedBy { get; set; }
+        public DateTime LastModifiedDate { get; set; }
         public ApplicantSectionDto ApplicantSection { get; set; }
         public AgentSectionDto AgentSection { get; set; }
         public ProposalSectionDto ProposalSection { get; set; }

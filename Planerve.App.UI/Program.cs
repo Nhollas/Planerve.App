@@ -1,62 +1,18 @@
 using Microsoft.Net.Http.Headers;
 using Planerve.App.UI;
 using Planerve.App.UI.Services.Base;
-using System.IdentityModel.Tokens.Jwt;
 
 var builder = WebApplication.CreateBuilder(args);
-JwtSecurityTokenHandler.DefaultMapInboundClaims = false;
 
 builder.Services.AddControllersWithViews();
 // Basic Planerve.App.UI Services
 builder.Services.AddClientServices();
-
-builder.Services.AddSingleton(new HttpClient
-{
-    BaseAddress = new Uri("https://localhost:6001")
-});
 
 builder.Services.AddHttpClient<IClient, Client>(client =>
 {
     client.BaseAddress = new Uri("https://localhost:6001");
     client.DefaultRequestHeaders.Clear();
     client.DefaultRequestHeaders.Add(HeaderNames.Accept, "application/json");
-}).AddHttpMessageHandler<BearerTokenHandler>();
-
-builder.Services.AddHttpClient("UnauthorisedAPI", client =>
-{
-    client.BaseAddress = new Uri("https://localhost:6001");
-    client.DefaultRequestHeaders.Clear();
-    client.DefaultRequestHeaders.Add(HeaderNames.Accept, "application/json");
-    client.DefaultRequestHeaders.Add(HeaderNames.Accept, "text/plain");
-});
-
-builder.Services.AddHttpClient("IDPClient", client =>
-{
-    client.BaseAddress = new Uri("https://localhost:7001");
-    client.DefaultRequestHeaders.Clear();
-    client.DefaultRequestHeaders.Add(HeaderNames.Accept, "application/json");
-});
-
-builder.Services.AddAuthentication(options =>
-{
-    options.DefaultScheme = "Cookies";
-    options.DefaultChallengeScheme = "oidc";
-})
-.AddCookie("Cookies")
-.AddOpenIdConnect("oidc", options =>
-{
-    options.Authority = "https://localhost:7001";
-
-    options.ClientId = "planerveappui";
-    options.ClientSecret = "secret";
-    options.ResponseType = "code";
-
-    options.SaveTokens = true;
-
-    options.Scope.Add("profile");
-    options.Scope.Add("planerveappapi");
-    options.Scope.Add("offline_access");
-    options.GetClaimsFromUserInfoEndpoint = true;
 });
 
 var app = builder.Build();

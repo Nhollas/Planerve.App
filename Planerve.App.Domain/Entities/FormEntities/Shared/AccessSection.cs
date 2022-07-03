@@ -1,10 +1,15 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace Planerve.App.Domain.Entities.FormEntities.Shared
 {
+    [Owned]
     public class AccessSection
     {
-        [Required]
-        public string Name { get; set; } = "Access";
+        public Guid Id { get; set; }
+        public bool NewVehicleAccess { get; set; }
+        public bool NewAlteredPedestrianAccess { get; set; }
+        public bool AffectingRightOfWay { get; set; }
+        public string DrawingReferenceNumbers { get; set; }
     }
 }

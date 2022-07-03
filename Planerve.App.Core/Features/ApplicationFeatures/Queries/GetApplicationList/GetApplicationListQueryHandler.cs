@@ -2,7 +2,7 @@
 using MediatR;
 using Planerve.App.Core.Contracts.Persistence.Generic;
 using Planerve.App.Core.Contracts.Specification.ApplicationSpecifications;
-using Planerve.App.Core.Services;
+using Planerve.App.Core.Interfaces.Services;
 using Planerve.App.Domain.Entities.ApplicationEntities;
 using System.Collections.Generic;
 using System.Threading;

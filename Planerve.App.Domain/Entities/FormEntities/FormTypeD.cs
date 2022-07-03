@@ -10,12 +10,14 @@ namespace Planerve.App.Domain.Entities.FormEntities
     {
         [Key]
         public Guid ApplicationId { get; set; }
+        public SiteSection SiteSection { get; set; }
         public ApplicantSection ApplicantSection { get; set; }
         public AgentSection AgentSection { get; set; }
-        public SiteSection SiteSection { get; set; }
+        public EligibilitySection EligibilitySection { get; set; }
+        //Description
+        //Non mat sought
+        public SiteVisitSection SiteVisitSection { get; set; }
         public AdviceSection AdviceSection { get; set; }
         public AuthorityMemberSection AuthorityMemberSection { get; set; }
-        public ProposalSection ProposalSection { get; set; }
-        public SiteVisitSection SiteVisitSection { get; set; }
     }
 }

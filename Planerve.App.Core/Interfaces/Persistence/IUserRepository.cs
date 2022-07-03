@@ -1,10 +1,11 @@
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity;
+using Planerve.App.Domain.Entities.AuthEntities;
 
 namespace Planerve.App.Core.Contracts.Persistence;
 
 public interface IUserRepository
 {
-    Task<IQueryable<IdentityUser>> GetUserByEmailOrName(string query);
+    public bool EmailExists(string email);
+    public bool UserExists(string username);
+    public ApplicationUser Register(ApplicationUser user);
+    public ApplicationUser GetUser(string username);
 }

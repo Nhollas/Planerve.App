@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Planerve.App.UI.Contracts;
+using Planerve.App.UI.Interfaces;
 
 namespace Planerve.App.UI.Areas.User.Controllers
 {

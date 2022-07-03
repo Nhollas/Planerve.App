@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Planerve.App.Core.Authorization.Requirements;
 using Planerve.App.Core.Exceptions;
 using Planerve.App.Core.Interfaces.Persistence.Generic;
-using Planerve.App.Core.Services;
+using Planerve.App.Core.Interfaces.Services;
 using Planerve.App.Domain.Entities.ApplicationEntities;
 using System.Threading;
 using System.Threading.Tasks;
@@ -34,11 +34,11 @@ namespace Planerve.App.Core.Features.FormFeatures.Queries.GetFormById
         {
             var user = await _userService.GetUser();
 
-            ApplicationUser authorisedUsers = await _unitOfWork.ApplicationUserRepository.GetByIdAsync(request.Id);
+            PermissionUser authorisedUsers = await _unitOfWork.ApplicationUserRepository.GetByIdAsync(request.Id);
 
             if (authorisedUsers == null)
             {
-                throw new NotFoundException(nameof(ApplicationUser), request.Id);
+                throw new NotFoundException(nameof(PermissionUser), request.Id);
             }
 
             var authorisedResult = await _authorizationService.AuthorizeAsync(user, authorisedUsers, FormPolicies.ReadForm);

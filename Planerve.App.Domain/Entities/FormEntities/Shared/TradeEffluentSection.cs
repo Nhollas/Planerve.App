@@ -1,10 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace Planerve.App.Domain.Entities.FormEntities.Shared
 {
+    [Owned]
     public class TradeEffluentSection
     {
-        [Required]
-        public string Name { get; set; }
+        public Guid Id { get; set; }
+        public bool DisposeTradeWaste { get; set; }
+        public bool TradeWasteDescription { get; set; }
     }
 }

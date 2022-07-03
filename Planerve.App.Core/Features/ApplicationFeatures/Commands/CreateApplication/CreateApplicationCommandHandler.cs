@@ -3,7 +3,7 @@ using MediatR;
 using Planerve.App.Core.Exceptions;
 using Planerve.App.Core.Features.ApplicationFeatures.Commands.CreateApplication.DataHelpers;
 using Planerve.App.Core.Interfaces.Persistence.Generic;
-using Planerve.App.Core.Services;
+using Planerve.App.Core.Interfaces.Services;
 using Planerve.App.Domain.Entities.ApplicationEntities;
 using Planerve.App.Domain.Entities.FormEntities;
 using System;
@@ -61,7 +61,7 @@ namespace Planerve.App.Core.Features.ApplicationFeatures.Commands.CreateApplicat
                     ApplicationStatus = "DRAFT",
                     ProgressPercentage = 10
                 },
-                Users = new ApplicationUser()
+                Users = new PermissionUser()
                 {
                     OwnerId = _userId,
                 }
@@ -79,7 +79,7 @@ namespace Planerve.App.Core.Features.ApplicationFeatures.Commands.CreateApplicat
                 case 1:
                     FormTypeA formTypeA = new()
                     {
-                        ApplicationId = applicationId,
+                        FormId = applicationId,
                     };
 
                     await _unitOfWork.FormTypeARepository.AddAsync(formTypeA);

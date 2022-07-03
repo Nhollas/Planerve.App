@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Planerve.App.UI.Contracts;
+using Planerve.App.UI.Interfaces;
 using Planerve.App.UI.Models;
 using Planerve.App.UI.ViewHelpers;
 using Planerve.App.UI.ViewModels.ApplicationVMs;

@@ -2,6 +2,7 @@
 {
     public class AuthorityMemberSectionDto
     {
-        public string Name { get; set; }
+        public bool IsRelated { get; set; }
+        public string RelatedInformation { get; set; }
     }
 }

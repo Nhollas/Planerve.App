@@ -1,10 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace Planerve.App.Domain.Entities.FormEntities.Shared
 {
+    [Owned]
     public class AuthorityMemberSection
     {
-        [Required]
-        public string Name { get; set; } = "Local Authority";
+        public Guid Id { get; set; }
+        public bool IsRelated { get; set; }
+        public string RelatedInformation { get; set; }
     }
 }

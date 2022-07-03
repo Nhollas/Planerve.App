@@ -1,4 +1,4 @@
-﻿using Planerve.App.UI.Contracts;
+﻿using Planerve.App.UI.Interfaces;
 using Planerve.App.UI.Models;
 using Planerve.App.UI.ViewModels.ApplicationVMs;
 

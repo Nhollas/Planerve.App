@@ -6,7 +6,7 @@ using Planerve.App.Core.Contracts.Persistence;
 using Planerve.App.Core.Contracts.Specification.ApplicationSpecifications;
 using Planerve.App.Core.Exceptions;
 using Planerve.App.Core.Interfaces.Persistence.Generic;
-using Planerve.App.Core.Services;
+using Planerve.App.Core.Interfaces.Services;
 using Planerve.App.Domain.Entities.ApplicationEntities;
 using System.Linq;
 using System.Threading;
@@ -55,14 +55,14 @@ namespace Planerve.App.Core.Features.ApplicationFeatures.Commands.ShareApplicati
                 throw new NotAuthorisedException(nameof(Application), _userId);
             }
 
-            var matches = await _userDataRepository.GetUserByEmailOrName(request.UsernameOrEmail);
+            // var matches = await _userDataRepository.GetUserByEmailOrName(request.UsernameOrEmail);
 
-            var queriedUser = matches.First();
+            // var queriedUser = matches.First();
 
             AuthorisedUser mockUser = _mapper.Map<AuthorisedUser>(request);
 
             mockUser.IsValid = true;
-            mockUser.UserId = queriedUser.Id;
+            // mockUser.UserId = queriedUser.Id;
 
             selectedApplication.Users.AuthorisedUsers.Add(mockUser);
 

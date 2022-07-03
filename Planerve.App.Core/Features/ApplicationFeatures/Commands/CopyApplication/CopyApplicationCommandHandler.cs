@@ -6,7 +6,7 @@ using Planerve.App.Core.Contracts.Specification.ApplicationSpecifications;
 using Planerve.App.Core.Exceptions;
 using Planerve.App.Core.Features.ApplicationFeatures.Commands.CreateApplication.DataHelpers;
 using Planerve.App.Core.Interfaces.Persistence.Generic;
-using Planerve.App.Core.Services;
+using Planerve.App.Core.Interfaces.Services;
 using Planerve.App.Domain.Entities.ApplicationEntities;
 using Planerve.App.Domain.Entities.FormEntities;
 using System;
@@ -83,7 +83,7 @@ namespace Planerve.App.Core.Features.ApplicationFeatures.Commands.CopyApplicatio
                     ApplicationStatus = "DRAFT",
                     ProgressPercentage = 10
                 },
-                Users = new ApplicationUser()
+                Users = new PermissionUser()
                 {
                     OwnerId = _userId,
                 }
@@ -113,7 +113,7 @@ namespace Planerve.App.Core.Features.ApplicationFeatures.Commands.CopyApplicatio
 
                     FormTypeA formTypeA = new()
                     {
-                        ApplicationId = id,
+                        FormId = id,
                         AgentSection = command.AgentDetails.Equals(true) ? formA.AgentSection : null,
                         ApplicantSection = command.ApplicantDetails.Equals(true) ? formA.ApplicantSection : null,
                         SiteSection = command.SiteDetails.Equals(true) ? formA.SiteSection : null,

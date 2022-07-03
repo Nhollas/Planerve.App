@@ -1,11 +1,18 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace Planerve.App.Domain.Entities.FormEntities.Shared
 {
+    [Owned]
     public class SiteVisitSection
     {
-        [Required]
-        public string Name { get; set; } = "Site Visit";
+        public Guid Id { get; set; }
+        public bool SiteVisible { get; set; }
+        public int AppointmentContactType { get; set; }
+        public string Title { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Phone { get; set; }
+        public string Email { get; set; }
     }
 }
-

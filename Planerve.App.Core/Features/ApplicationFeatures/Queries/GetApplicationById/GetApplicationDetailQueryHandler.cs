@@ -5,7 +5,7 @@ using Planerve.App.Core.Authorization.Requirements;
 using Planerve.App.Core.Contracts.Persistence.Generic;
 using Planerve.App.Core.Contracts.Specification.ApplicationSpecifications;
 using Planerve.App.Core.Exceptions;
-using Planerve.App.Core.Services;
+using Planerve.App.Core.Interfaces.Services;
 using Planerve.App.Domain.Entities.ApplicationEntities;
 using System.Linq;
 using System.Threading;

@@ -28,9 +28,8 @@ namespace Planerve.App.Domain.Entities.FormEntities
         public TradeEffluentSection TradeEffluentSection { get; set; }
         public EmploymentSection EmploymentSection { get; set; }
         public OpeningHoursSection OpeningHoursSection { get; set; }
-        public SiteAreaSection SiteAreaSection { get; set; }
         public IndustrialMachinerySection IndustrialMachinerySection { get; set; }
-        public HazardousSubstancesSection HazardousSubstancesSection { get; set; }
+        public HazardousSubstanceSection HazardousSubstanceSection { get; set; }
         public OwnershipCertificationSection OwnershipCertificationSection { get; set; }
         public SiteVisitSection SiteVisitSection { get; set; }
     }

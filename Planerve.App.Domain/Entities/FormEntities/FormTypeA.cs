@@ -9,7 +9,7 @@ namespace Planerve.App.Domain.Entities.FormEntities
     public class FormTypeA : AuditableEntity
     {
         [Key]
-        public Guid ApplicationId { get; set; }
+        public Guid FormId { get; set; }
         public ApplicantSection ApplicantSection { get; set; }
         public AgentSection AgentSection { get; set; }
         public ProposalSection ProposalSection { get; set; }

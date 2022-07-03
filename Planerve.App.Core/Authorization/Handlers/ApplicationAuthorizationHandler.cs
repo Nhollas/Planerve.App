@@ -1,13 +1,13 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Planerve.App.Core.Authorization.Requirements;
-using Planerve.App.Core.Services;
+using Planerve.App.Core.Interfaces.Services;
 using Planerve.App.Domain.Entities.ApplicationEntities;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace Planerve.App.Core.Authorization.Handlers;
 
-public class ApplicationAuthorizationHandler : AuthorizationHandler<ApplicationAuthorizationRequirement, ApplicationUser>
+public class ApplicationAuthorizationHandler : AuthorizationHandler<ApplicationAuthorizationRequirement, PermissionUser>
 {
     private readonly IUserService _userService;
     private readonly string _userId;
@@ -21,7 +21,7 @@ public class ApplicationAuthorizationHandler : AuthorizationHandler<ApplicationA
     protected override Task HandleRequirementAsync(
         AuthorizationHandlerContext context,
         ApplicationAuthorizationRequirement requirement,
-        ApplicationUser resource)
+        PermissionUser resource)
     {
         if (_userId == resource.OwnerId)
         {
