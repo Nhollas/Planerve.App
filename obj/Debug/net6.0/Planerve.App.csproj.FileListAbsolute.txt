@@ -1,9 +1,0 @@
-C:\Users\nicho\Documents\Github Projects\Planerve.App\obj\Debug\net6.0\Planerve.App.csproj.AssemblyReference.cache
-C:\Users\nicho\Documents\Github Projects\Planerve.App\obj\Debug\net6.0\Planerve.App.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\nicho\Documents\Github Projects\Planerve.App\obj\Debug\net6.0\Planerve.App.AssemblyInfoInputs.cache
-C:\Users\nicho\Documents\Github Projects\Planerve.App\obj\Debug\net6.0\Planerve.App.AssemblyInfo.cs
-C:\Users\nicho\Documents\Github Projects\Planerve.App\obj\Debug\net6.0\Planerve.App.csproj.CoreCompileInputs.cache
-C:\Users\nicho\Documents\Github Projects\Planerve.App\obj\Debug\net6.0\Planerve.App.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\nicho\Documents\Github Projects\Planerve.App\obj\Debug\net6.0\Planerve.App.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\nicho\Documents\Github Projects\Planerve.App\obj\Debug\net6.0\Planerve.App.RazorAssemblyInfo.cache
-C:\Users\nicho\Documents\Github Projects\Planerve.App\obj\Debug\net6.0\Planerve.App.RazorAssemblyInfo.cs

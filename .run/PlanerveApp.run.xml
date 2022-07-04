@@ -1,9 +1,0 @@
-<component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="PlanerveApp" type="CompoundRunConfigurationType">
-    <toRun name="Planerve.App.API" type="LaunchSettings" />
-    <toRun name="Planerve.App.Identity" type="LaunchSettings" />
-    <toRun name="Planerve.App.UI" type="LaunchSettings" />
-    <toRun name="Unnamed" type="ShConfigurationType" />
-    <method v="2" />
-  </configuration>
-</component>
