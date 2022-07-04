@@ -35,6 +35,13 @@ public class UserRepository : BaseRepository<ApplicationUser>, IUserRepository
         return result;
     }
 
+    public ApplicationUser QueriedUser(string query)
+    {
+        var result = _dbContext.Users.Where(e => e.UserName == query || e.Email == query).FirstOrDefault();
+
+        return result;
+    }
+
     public ApplicationUser GetUser(string username)
     {
         var result = _dbContext.Users.Where(x => x.UserName == username).FirstOrDefault();

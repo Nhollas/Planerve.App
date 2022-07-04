@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using MediatR;
+﻿using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Planerve.App.Core.Authorization.Requirements;
 using Planerve.App.Core.Exceptions;
@@ -14,18 +13,15 @@ namespace Planerve.App.Core.Features.FormFeatures.Queries.GetFormById
     public class GetFormDetailQueryHandler : IRequestHandler<GetFormDetailQuery, FormDetailVM>
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IMapper _mapper;
         private readonly IAuthorizationService _authorizationService;
         private readonly IUserService _userService;
 
         public GetFormDetailQueryHandler(
             IUnitOfWork unitOfWork,
-            IMapper mapper,
             IAuthorizationService authorizationService,
             IUserService userService)
         {
             _unitOfWork = unitOfWork;
-            _mapper = mapper;
             _authorizationService = authorizationService;
             _userService = userService;
         }
@@ -34,18 +30,14 @@ namespace Planerve.App.Core.Features.FormFeatures.Queries.GetFormById
         {
             var user = await _userService.GetUser();
 
-            PermissionUser authorisedUsers = await _unitOfWork.ApplicationUserRepository.GetByIdAsync(request.Id);
-
-            if (authorisedUsers == null)
-            {
-                throw new NotFoundException(nameof(PermissionUser), request.Id);
-            }
+            ApplicationPermission authorisedUsers = await _unitOfWork.ApplicationUserRepository.GetByIdAsync(request.Id);
 
             var authorisedResult = await _authorizationService.AuthorizeAsync(user, authorisedUsers, FormPolicies.ReadForm);
 
+            // If check fails this user doesn't have permissions to read this form, throw NotAuthorisedException.
             if (!authorisedResult.Succeeded)
             {
-                throw new NotAuthorisedException("sus", "sus");
+                throw new NotAuthorisedException(nameof(request.Id), user.Identity.Name);
             }
 
             object form = await GetForm(request);
@@ -55,9 +47,12 @@ namespace Planerve.App.Core.Features.FormFeatures.Queries.GetFormById
                 throw new NotFoundException(nameof(form), request.Id);
             }
 
+            // As the client will need to know how to deserialise the data, we pass the forms type in as well so it can be handled on the frontend.
             return new FormDetailVM { Data = form, Type = request.Type };
         }
 
+
+        // As object is a base entity it can be anything, while I don't like to uses switches it forms an easy implementation.
         private async Task<object> GetForm(GetFormDetailQuery request)
         {
             object form;

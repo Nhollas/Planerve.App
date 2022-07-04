@@ -37,23 +37,22 @@ namespace Planerve.App.Core.Features.ApplicationFeatures.Queries.GetApplicationB
 
             var specification = new GetApplicationByIdSpecification(request.Id, _userId);
 
-            var applicationEntity = _repository.FindWithSpecificationPattern(specification);
+            var applicationToGet = _repository.FindWithSpecificationPattern(specification).FirstOrDefault();
 
-            if (!applicationEntity.Any())
+            if (applicationToGet == null)
             {
                 throw new NotFoundException(nameof(Application), request.Id);
             }
 
-            var selectedApplication = applicationEntity.First();
+            var result = await _authorizationService.AuthorizeAsync(user, applicationToGet.Users, ApplicationPolicies.ReadApplication);
 
-            var result = await _authorizationService.AuthorizeAsync(user, selectedApplication.Users, ApplicationPolicies.ReadApplication);
-
+            // If check fails this user doesn't have permissions to read this application, throw NotAuthorisedException.
             if (!result.Succeeded)
             {
                 throw new NotAuthorisedException(nameof(Application), _userId);
             }
 
-            var applicationDetailDto = _mapper.Map<ApplicationDetailVm>(selectedApplication);
+            var applicationDetailDto = _mapper.Map<ApplicationDetailVm>(applicationToGet);
 
             return applicationDetailDto;
         }

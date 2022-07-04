@@ -20,6 +20,7 @@ namespace Planerve.App.API.Controllers
             _mediator = mediator;
         }
 
+        // TypeA
         [HttpPut("Update/TypeA/{id:guid}")]
         [ProducesDefaultResponseType]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
@@ -30,6 +31,7 @@ namespace Planerve.App.API.Controllers
             return NoContent();
         }
 
+        // TypeB
         [HttpPut("Update/TypeB/{id:guid}")]
         [ProducesDefaultResponseType]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
@@ -40,6 +42,7 @@ namespace Planerve.App.API.Controllers
             return NoContent();
         }
 
+        // TypeC
         [HttpPut("Update/TypeC/{id:guid}")]
         [ProducesDefaultResponseType]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
@@ -50,6 +53,7 @@ namespace Planerve.App.API.Controllers
             return NoContent();
         }
 
+        // TypeD
         [HttpPut("Update/TypeD/{id:guid}")]
         [ProducesDefaultResponseType]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
@@ -60,6 +64,7 @@ namespace Planerve.App.API.Controllers
             return NoContent();
         }
 
+        // TypeE
         [HttpPut("Update/TypeE/{id:guid}")]
         [ProducesDefaultResponseType]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
