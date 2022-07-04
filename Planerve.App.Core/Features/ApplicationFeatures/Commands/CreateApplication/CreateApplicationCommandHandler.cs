@@ -32,6 +32,7 @@ namespace Planerve.App.Core.Features.ApplicationFeatures.Commands.CreateApplicat
 
         public async Task<Guid> Handle(CreateApplicationCommand request, CancellationToken cancellationToken)
         {
+            // Validate command.
             var validator = new CreateApplicationCommandValidator();
             var validationResult = await validator.ValidateAsync(request, cancellationToken);
 
@@ -44,6 +45,10 @@ namespace Planerve.App.Core.Features.ApplicationFeatures.Commands.CreateApplicat
             return applicationId;
         }
 
+        /// <summary>
+        /// Based on the request command, static data will be pulled from the DataHelpers dictionary classes.
+        /// That data is mapped over via AutoMapper.
+        /// </summary>
         private async Task<Guid> CreateApplication(CreateApplicationCommand request)
         {
             var applicationTypeInfo = ApplicationTypeHelper.GetTypeInfo(request.ApplicationType, request.ApplicationCategory);
@@ -61,7 +66,7 @@ namespace Planerve.App.Core.Features.ApplicationFeatures.Commands.CreateApplicat
                     ApplicationStatus = "DRAFT",
                     ProgressPercentage = 10
                 },
-                Users = new PermissionUser()
+                Users = new ApplicationPermission()
                 {
                     OwnerId = _userId,
                 }
@@ -72,6 +77,8 @@ namespace Planerve.App.Core.Features.ApplicationFeatures.Commands.CreateApplicat
             return createdApplication.Id;
         }
 
+        // Based on the request command applicationType, we creating the respective form and it's unique Id is the same as the application.
+        // TODO: Find a free UK Address API so that entered info can be mapped onto the form.
         private async Task CreateForm(Guid applicationId, int formType)
         {
             switch (formType)
@@ -119,11 +126,12 @@ namespace Planerve.App.Core.Features.ApplicationFeatures.Commands.CreateApplicat
             }
         }
 
+        // TODO: While it's very unlikely, should perform a check to make sure this ref doesn't already exist.
         private static string GenerateApplicationReference()
         {
             var r = new Random();
-            var x = r.Next(0, 10000000);
-            var s = x.ToString("0000000");
+            var x = r.Next(0, 1000000000);
+            var s = x.ToString("000000000");
             var appReference = $"PP-{s}";
 
             return appReference;

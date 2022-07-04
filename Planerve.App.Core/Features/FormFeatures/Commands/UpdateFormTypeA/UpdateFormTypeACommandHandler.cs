@@ -32,26 +32,23 @@ public class UpdateFormTypeACommandHandler : IRequestHandler<UpdateFormTypeAComm
 
     public async Task<Unit> Handle(UpdateFormTypeACommand request, CancellationToken cancellationToken)
     {
+        // Validate command.
         var validator = new UpdateFormTypeACommandValidator();
         var validationResult = await validator.ValidateAsync(request, cancellationToken);
 
         if (validationResult.Errors.Count > 0)
             throw new ValidationException(validationResult);
 
-        var user = _userService.GetUser().Result;
+        var user = await _userService.GetUser();
 
-        PermissionUser authorisedUsers = await _unitOfWork.ApplicationUserRepository.GetByIdAsync(request.Id);
-
-        if (authorisedUsers == null)
-        {
-            throw new NotFoundException(nameof(FormTypeA), request.Id);
-        }
+        ApplicationPermission authorisedUsers = await _unitOfWork.ApplicationUserRepository.GetByIdAsync(request.Id);
 
         var authorisedResult = await _authorizationService.AuthorizeAsync(user, authorisedUsers, FormPolicies.UpdateForm);
 
+        // If check fails this user doesn't have permissions to update this form, throw NotAuthorisedException.
         if (!authorisedResult.Succeeded)
         {
-            throw new NotAuthorisedException("sus", "sus");
+            throw new NotAuthorisedException((nameof(FormTypeA)), user.Identity.Name);
         }
 
         await _unitOfWork.FormTypeARepository.UpdateAsync(_mapper.Map<FormTypeA>(request));

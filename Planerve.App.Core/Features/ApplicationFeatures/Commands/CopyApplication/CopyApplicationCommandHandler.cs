@@ -39,6 +39,7 @@ namespace Planerve.App.Core.Features.ApplicationFeatures.Commands.CopyApplicatio
 
         public async Task<Guid> Handle(CopyApplicationCommand request, CancellationToken cancellationToken)
         {
+            // Validate command.
             var validator = new CopyApplicationCommandValidator();
             var validationResult = await validator.ValidateAsync(request, cancellationToken);
 
@@ -49,23 +50,23 @@ namespace Planerve.App.Core.Features.ApplicationFeatures.Commands.CopyApplicatio
 
             var specification = new GetApplicationByIdSpecification(request.ApplicationId, _userId);
 
-            var application = _unitOfWork.ApplicationRepository.FindWithSpecificationPattern(specification);
+            var application = _unitOfWork.ApplicationRepository.FindWithSpecificationPattern(specification).FirstOrDefault();
 
-            var selectedApplication = application.First();
+            var authorisedResult = await _authorizationService.AuthorizeAsync(user, application.Users, ApplicationPolicies.CopyApplication);
 
-            var authorisedResult = await _authorizationService.AuthorizeAsync(user, selectedApplication.Users, ApplicationPolicies.CopyApplication);
-
+            // If check fails this user doesn't have permissions to copy this application, throw NotAuthorisedException.
             if (!authorisedResult.Succeeded)
             {
                 throw new NotAuthorisedException(nameof(Application), _userId);
             }
 
-            Guid newId = await CopyApplication(selectedApplication, request);
-            await CopyForm(selectedApplication.Type.Value, request, newId);
+            Guid newId = await CopyApplication(application, request);
+            await CopyForm(application.Type.Value, request, newId);
 
             return newId;
         }
 
+        // Copy application data that was passed in the parameter.
         private async Task<Guid> CopyApplication(Application application, CopyApplicationCommand command)
         {
             var applicationTypeInfo = ApplicationTypeHelper.GetTypeInfo(application.Type.Value, application.Type.CategoryValue);
@@ -83,7 +84,7 @@ namespace Planerve.App.Core.Features.ApplicationFeatures.Commands.CopyApplicatio
                     ApplicationStatus = "DRAFT",
                     ProgressPercentage = 10
                 },
-                Users = new PermissionUser()
+                Users = new ApplicationPermission()
                 {
                     OwnerId = _userId,
                 }
@@ -94,17 +95,23 @@ namespace Planerve.App.Core.Features.ApplicationFeatures.Commands.CopyApplicatio
             return copiedApplication.Id;
         }
 
+        // TODO: While it's very unlikely, should perform a check to make sure this ref doesn't already exist.
         private static string GenerateApplicationReference()
         {
             var r = new Random();
-            var x = r.Next(0, 10000000);
-            var s = x.ToString("0000000");
+            var x = r.Next(0, 1000000000);
+            var s = x.ToString("000000000");
             var appReference = $"PP-{s}";
 
             return appReference;
         }
 
-        private async Task<Unit> CopyForm(int formType, CopyApplicationCommand command, Guid id)
+        /// <summary>
+        /// We know that a form exists with the same Id as the application as that how it's created.
+        /// Based on what the user wants to copy over from the existing form will determine what gets pulled over.
+        /// As each form has it's own DbTable we will need to use UnitOfWork to call each repository based on it's type.
+        /// </summary>
+        private async Task<Unit> CopyForm(int formType, CopyApplicationCommand command, Guid newId)
         {
             switch (formType)
             {
@@ -113,7 +120,7 @@ namespace Planerve.App.Core.Features.ApplicationFeatures.Commands.CopyApplicatio
 
                     FormTypeA formTypeA = new()
                     {
-                        FormId = id,
+                        FormId = newId,
                         AgentSection = command.AgentDetails.Equals(true) ? formA.AgentSection : null,
                         ApplicantSection = command.ApplicantDetails.Equals(true) ? formA.ApplicantSection : null,
                         SiteSection = command.SiteDetails.Equals(true) ? formA.SiteSection : null,
@@ -126,7 +133,7 @@ namespace Planerve.App.Core.Features.ApplicationFeatures.Commands.CopyApplicatio
 
                     FormTypeB formTypeB = new()
                     {
-                        ApplicationId = id,
+                        ApplicationId = newId,
                         AgentSection = command.AgentDetails.Equals(true) ? formB.AgentSection : null,
                         ApplicantSection = command.ApplicantDetails.Equals(true) ? formB.ApplicantSection : null,
                         SiteSection = command.SiteDetails.Equals(true) ? formB.SiteSection : null,
@@ -139,7 +146,7 @@ namespace Planerve.App.Core.Features.ApplicationFeatures.Commands.CopyApplicatio
 
                     FormTypeC formTypeC = new()
                     {
-                        ApplicationId = id,
+                        ApplicationId = newId,
                         AgentSection = command.AgentDetails.Equals(true) ? formC.AgentSection : null,
                         ApplicantSection = command.ApplicantDetails.Equals(true) ? formC.ApplicantSection : null,
                         SiteSection = command.SiteDetails.Equals(true) ? formC.SiteSection : null,
@@ -152,7 +159,7 @@ namespace Planerve.App.Core.Features.ApplicationFeatures.Commands.CopyApplicatio
 
                     FormTypeD formTypeD = new()
                     {
-                        ApplicationId = id,
+                        ApplicationId = newId,
                         AgentSection = command.AgentDetails.Equals(true) ? formD.AgentSection : null,
                         ApplicantSection = command.ApplicantDetails.Equals(true) ? formD.ApplicantSection : null,
                         SiteSection = command.SiteDetails.Equals(true) ? formD.SiteSection : null,
@@ -165,7 +172,7 @@ namespace Planerve.App.Core.Features.ApplicationFeatures.Commands.CopyApplicatio
 
                     FormTypeE formTypeE = new()
                     {
-                        ApplicationId = id,
+                        ApplicationId = newId,
                         AgentSection = command.AgentDetails.Equals(true) ? formE.AgentSection : null,
                         ApplicantSection = command.ApplicantDetails.Equals(true) ? formE.ApplicantSection : null,
                         SiteSection = command.SiteDetails.Equals(true) ? formE.SiteSection : null,

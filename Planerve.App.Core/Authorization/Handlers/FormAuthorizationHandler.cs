@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Planerve.App.Core.Authorization.Handlers;
 
-public class FormAuthorizationHandler : AuthorizationHandler<FormAuthorizationRequirement, PermissionUser>
+public class FormAuthorizationHandler : AuthorizationHandler<FormAuthorizationRequirement, ApplicationPermission>
 {
     private readonly IUserService _userService;
     private readonly string _userId;
@@ -21,7 +21,7 @@ public class FormAuthorizationHandler : AuthorizationHandler<FormAuthorizationRe
     protected override Task HandleRequirementAsync(
         AuthorizationHandlerContext context,
         FormAuthorizationRequirement requirement,
-        PermissionUser resource)
+        ApplicationPermission resource)
     {
         if (_userId == resource.OwnerId)
         {
@@ -29,6 +29,7 @@ public class FormAuthorizationHandler : AuthorizationHandler<FormAuthorizationRe
             return Task.CompletedTask;
         }
 
+        // If no exisitng AuthorisedUsers exist, fail authorisation.
         if (resource.AuthorisedUsers == null)
         {
             context.Fail();
@@ -37,6 +38,7 @@ public class FormAuthorizationHandler : AuthorizationHandler<FormAuthorizationRe
 
         var userPermissions = resource.AuthorisedUsers.Where(x => x.UserId == _userId && x.IsValid).FirstOrDefault();
 
+        // If no exisitng userPermissions exist, fail authorisation.
         if (userPermissions == null)
         {
             context.Fail();

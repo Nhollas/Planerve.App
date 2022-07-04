@@ -51,6 +51,7 @@ public class AuthenticationService : IAuthenticationService
     {
         bool existingUser = _userRepository.EmailExists(request.Email);
 
+        // If an existing user already exists, send fake message.
         if (existingUser)
         {
             throw new Exception("Thank you for registering, an email has been sent to this account for confirmation");
