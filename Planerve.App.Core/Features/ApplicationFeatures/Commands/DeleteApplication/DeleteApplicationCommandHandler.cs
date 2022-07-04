@@ -33,17 +33,21 @@ namespace Planerve.App.Core.Features.ApplicationFeatures.Commands.DeleteApplicat
 
             var specification = new GetApplicationByIdSpecification(request.Id, _userId);
 
-            var applicationToDelete = _repository.FindWithSpecificationPattern(specification);
+            var applicationToDelete = _repository.FindWithSpecificationPattern(specification).FirstOrDefault();
 
-            var selectedApplication = applicationToDelete.First();
+            if (applicationToDelete == null)
+            {
+                throw new NotFoundException(nameof(Application), _userId);
+            }
 
-            var authorisedResult = await _authorizationService.AuthorizeAsync(user, selectedApplication.Users, ApplicationPolicies.DeleteApplication);
+            var authorisedResult = await _authorizationService.AuthorizeAsync(user, applicationToDelete.Users, ApplicationPolicies.DeleteApplication);
 
+            // If check fails this user doesn't have permissions to delete this application, throw NotAuthorisedException.
             if (!authorisedResult.Succeeded)
             {
                 throw new NotAuthorisedException(nameof(Application), _userId);
             }
-            await _repository.DeleteAsync(selectedApplication);
+            await _repository.DeleteAsync(applicationToDelete);
             
             return Unit.Value;
         }

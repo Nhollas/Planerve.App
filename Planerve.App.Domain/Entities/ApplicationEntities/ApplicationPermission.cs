@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 
 namespace Planerve.App.Domain.Entities.ApplicationEntities
 {
-    public class PermissionUser
+    public class ApplicationPermission
     {
         [ForeignKey("Application")]
         [Column("ApplicationId")]
@@ -15,7 +15,7 @@ namespace Planerve.App.Domain.Entities.ApplicationEntities
         public string OwnerId { get; set; }
         public ICollection<AuthorisedUser> AuthorisedUsers { get; set; }
     }
-    public class AuthorisedUser : ApplicationPermissions
+    public class AuthorisedUser : Permissions
     {
         public Guid Id { get; set; }
         public Guid ApplicationId { get; set; }
@@ -24,7 +24,7 @@ namespace Planerve.App.Domain.Entities.ApplicationEntities
         public DateTime ExpiryDate { get; set; }
     }
 
-    public class ApplicationPermissions
+    public class Permissions
     {
         public bool EditPermission { get; set; }
         public bool ReadApplication { get; set; }

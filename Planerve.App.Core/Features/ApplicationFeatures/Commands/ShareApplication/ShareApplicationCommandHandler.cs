@@ -44,29 +44,32 @@ namespace Planerve.App.Core.Features.ApplicationFeatures.Commands.ShareApplicati
 
             var specification = new GetApplicationByIdSpecification(request.ApplicationId, _userId);
 
-            var application = _unitOfWork.ApplicationRepository.FindWithSpecificationPattern(specification);
+            var applicationToShare = _unitOfWork.ApplicationRepository.FindWithSpecificationPattern(specification).FirstOrDefault();
 
-            var selectedApplication = application.First();
 
-            var authorisedResult = await _authorizationService.AuthorizeAsync(user, selectedApplication.Users, ApplicationPolicies.ShareApplication);
+            var authorisedResult = await _authorizationService.AuthorizeAsync(user, applicationToShare.Users, ApplicationPolicies.ShareApplication);
 
+            // If check fails this user doesn't have permissions to share this application, throw NotAuthorisedException.
             if (!authorisedResult.Succeeded)
             {
                 throw new NotAuthorisedException(nameof(Application), _userId);
             }
 
-            // var matches = await _userDataRepository.GetUserByEmailOrName(request.UsernameOrEmail);
+            var matchedUser = _userDataRepository.QueriedUser(request.UsernameOrEmail);
 
-            // var queriedUser = matches.First();
+            // If no user can be found with that email or username then throw NotFoundException.
+            if (matchedUser == null)
+            {
+                throw new NotFoundException(nameof(request.UsernameOrEmail), _userId);
+            }
 
             AuthorisedUser mockUser = _mapper.Map<AuthorisedUser>(request);
-
             mockUser.IsValid = true;
-            // mockUser.UserId = queriedUser.Id;
+            mockUser.UserId = matchedUser.Id;
 
-            selectedApplication.Users.AuthorisedUsers.Add(mockUser);
+            applicationToShare.Users.AuthorisedUsers.Add(mockUser);
 
-            await _unitOfWork.ApplicationRepository.UpdateAsync(selectedApplication);
+            await _unitOfWork.ApplicationRepository.UpdateAsync(applicationToShare);
 
             return Unit.Value;
         }

@@ -40,6 +40,7 @@ public class ApplicationController : Controller
             LocalAuthorities = localAuthorities,
             ApplicationTypes = applicationTypes
         };
+        // Initilise the SelectLits.
         viewModel.OnGet();
 
         return View(viewModel);
@@ -55,6 +56,7 @@ public class ApplicationController : Controller
 
         var viewModel = filter.FilterApplication(model).ToList();
 
+        // If no applications are present, return the Empty partial result.
         if (viewModel.Count == 0)
         {
             ViewBag.Resource = "applications";
@@ -85,16 +87,5 @@ public class ApplicationController : Controller
         viewModel.OnGet();
 
         return View(viewModel);
-    }
-
-    public async Task<IActionResult> AuthPage()
-    {
-        var response = await HttpContext.AuthenticateAsync();
-
-        var items = response.Properties.Items;
-
-        ViewBag.AuthProps = items;
-
-        return View();
     }
 }
