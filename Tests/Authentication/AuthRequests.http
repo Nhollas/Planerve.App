@@ -1,0 +1,14 @@
+POST {{host}}/api/authentication/login
+Content-Type: application/json
+{
+    "username": "Nhollas",
+    "password": "password"
+}
+
+POST {{host}}/api/authentication/register
+Content-Type: application/json
+{
+    "Email": "test@tests.com",
+    "Username": "Nhollas",
+    "Password": "password"
+}

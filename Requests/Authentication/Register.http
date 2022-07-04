@@ -1,8 +1,0 @@
-POST {{host}}/api/authentication/register
-Content-Type: application/json
-
-{
-    "Email": "test@tests.com",
-    "Username": "Nhollas",
-    "Password": "password"
-}
