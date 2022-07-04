@@ -26,17 +26,6 @@ namespace Planerve.App.Core.Features.FormFeatures.Commands.UpdateFormTypeA
             RuleFor(e => e.ProposalSection.StartDate)
                 .NotEmpty().WithMessage("{PropertyName} is required.")
                 .When(x => x.ProposalSection.HasStarted == true);
-            RuleFor(e => e.ProposalSection.StartDate)
-                .LessThan(x => x.CreatedDate)
-                .When(x => x.ProposalSection.HasStarted == true)
-                .WithMessage("{PropertyName} must be pre-application.");
-            RuleFor(e => e.ProposalSection.CompletionDate)
-                .NotEmpty().WithMessage("{PropertyName} is required.")
-                .When(x => x.ProposalSection.HasCompleted == true);
-            RuleFor(e => e.ProposalSection.CompletionDate)
-                .LessThan(x => x.CreatedDate)
-                .When(x => x.ProposalSection.HasCompleted == true)
-                .WithMessage("{PropertyName} must be pre-application.");
             RuleFor(e => e.MaterialSection.MaterialTypes)
                 .NotEmpty().WithMessage("Please provide a description of existing and proposed materials and finishes to be used externally (including type, colour and name for each material).")
                 .When(x => x.MaterialSection.MaterialsRequired == true);

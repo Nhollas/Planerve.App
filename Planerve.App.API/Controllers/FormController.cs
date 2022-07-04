@@ -5,6 +5,7 @@ using Planerve.App.Core.Features.FormFeatures.Commands.UpdateFormTypeB;
 using Planerve.App.Core.Features.FormFeatures.Commands.UpdateFormTypeC;
 using Planerve.App.Core.Features.FormFeatures.Commands.UpdateFormTypeD;
 using Planerve.App.Core.Features.FormFeatures.Commands.UpdateFormTypeE;
+using Planerve.App.Core.Features.FormFeatures.Queries.DownloadForm;
 using Planerve.App.Core.Features.FormFeatures.Queries.GetFormById;
 
 namespace Planerve.App.API.Controllers
@@ -79,10 +80,10 @@ namespace Planerve.App.API.Controllers
         [ProducesDefaultResponseType]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult> Download([FromBody] UpdateFormTypeECommand command)
+        public async Task<ActionResult> Download(Guid id)
         {
-            await _mediator.Send(command);
-            return NoContent();
+            var downloadQuery = new DownloadFormDetailQuery { Id = id };
+            return Ok(await _mediator.Send(downloadQuery));
         }
 
         [HttpGet("Get/{id:guid}")]

@@ -11763,11 +11763,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\Planerve.App.UI.csproj",
+      "projectUniqueName": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\Planerve.App.UI.csproj",
       "projectName": "Planerve.App.UI",
-      "projectPath": "c:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\Planerve.App.UI.csproj",
+      "projectPath": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\Planerve.App.UI.csproj",
       "packagesPath": "C:\\Users\\Nhollas\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\obj\\",
+      "outputPath": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.UI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Nhollas\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -11784,14 +11784,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "c:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Core\\Planerve.App.Core.csproj": {
-              "projectPath": "c:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Core\\Planerve.App.Core.csproj"
+            "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Core\\Planerve.App.Core.csproj": {
+              "projectPath": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Core\\Planerve.App.Core.csproj"
             },
-            "c:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Domain\\Planerve.App.Domain.csproj": {
-              "projectPath": "c:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Domain\\Planerve.App.Domain.csproj"
+            "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Domain\\Planerve.App.Domain.csproj": {
+              "projectPath": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Domain\\Planerve.App.Domain.csproj"
             },
-            "c:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Persistence\\Planerve.App.Persistence.csproj": {
-              "projectPath": "c:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Persistence\\Planerve.App.Persistence.csproj"
+            "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Persistence\\Planerve.App.Persistence.csproj": {
+              "projectPath": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Persistence\\Planerve.App.Persistence.csproj"
             }
           }
         }

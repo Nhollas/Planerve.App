@@ -72,7 +72,7 @@ public class AuthenticationService : IAuthenticationService
         RegistrationResponse response = new()
         {
             UserId = result.Id,
-            Email = result.UserName,
+            Email = result.Email,
             Username = result.UserName
         };
 
