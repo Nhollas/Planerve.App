@@ -1,10 +1,10 @@
 .config.nswag
-/obj
-/bin
-/.vscode
-/.vs
-/.run
-/.idea
-/.git
+obj/
+bin/
+.vscode/
+.vs/
+.run/
+.idea/
+.git/
 
 # Test
