@@ -55,15 +55,6 @@
                         }
                     </ul>
                 </div>
-                <div class="flex flex-col gap-4">
-                    <h2 class="text-base font-medium font-poppins">Local Planning Authorities</h2>
-                    <ul class="LocalAuthoritySelect flex flex-col gap-2 border-1 border-gray-300 p-2">
-                        @foreach (var item in Model.LocalAuthorities)
-                        {
-                            <li class="LocalAuthorityInput border-1 border-gray-300 font-poppins px-3 py-1 rounded-full w-max cursor-pointer select-none" value="@item.Value">@item.Text</li>
-                        }
-                    </ul>
-                </div>
                 <section class="flex flex-col gap-4">
                     <h2 class="text-base font-medium font-poppins">Date Range</h2>
                     <div class="flex flex-col gap-4">
@@ -93,20 +84,6 @@
         });
     });
 
-
-    const localAuthorityInputs = document.querySelectorAll(".LocalAuthorityInput");
-
-    localAuthorityInputs.forEach(button => {
-        button.addEventListener('click', function handleClick(event) {
-            console.log("sus");
-            if (button.classList.contains("selected")) {
-                button.classList.remove("selected");
-                return
-            }
-            button.classList.add("selected");
-        });
-    });
-
     const applicationTypeInputs = document.querySelectorAll(".ApplicationTypeInput");
 
     applicationTypeInputs.forEach(button => {
@@ -123,16 +100,7 @@
 
     $(".filterData").click(function (e) {
 
-        var localAuths = new Array();
         var appTypes = new Array();
-
-        $(".LocalAuthoritySelect").children(".selected").each(function () {
-            var item = {
-                Value: $(this).val(),
-                Name: $(this).text()
-            }
-            localAuths.push(item);
-        });
 
         $(".ApplicationTypeSelect").children(".selected").each(function () {
             var item = {
@@ -146,7 +114,6 @@
             SearchQuery: $("#searchQuery").val(),
             VersionNumber: $("#versionNumber").val(),
             ApplicationTypes: appTypes,
-            LocalPlanningAuthorities: localAuths,
             FromDate: $("#fromDate").val(),
             ToDate: $("#toDate").val()
         };

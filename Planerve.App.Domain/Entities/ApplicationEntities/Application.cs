@@ -9,10 +9,6 @@ public class Application : AuditableEntity
     public string ApplicationReference { get; set; }
     public string ApplicationName { get; set; }
     public string VersionNumber { get; set; }
-<<<<<<< Updated upstream
-    // Holds authorised users for application sharing.
-=======
->>>>>>> Stashed changes
     public ApplicationPermission Users { get; set; }
     public ApplicationType Type { get; set; }
     public ApplicationDocument Document { get; set; }

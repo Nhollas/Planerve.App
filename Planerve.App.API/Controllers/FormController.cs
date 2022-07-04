@@ -87,9 +87,8 @@ namespace Planerve.App.API.Controllers
         }
 
         [HttpGet("Get/{id:guid}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesDefaultResponseType]
-        [ProducesResponseType(StatusCodes.Status204NoContent)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult<FormDetailVM>> GetById(Guid id, int type)
         {
             var formQuery = new GetFormDetailQuery { Id = id, Type = type };

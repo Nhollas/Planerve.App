@@ -23,7 +23,7 @@
             <section class="flex flex-col w-full gap-4">
                 <p class="text-xl font-poppins">@Model.ApplicationName</p>
                 <div class="flex flex-row">
-                    <p class="text-base font-poppins">@Model.Data.Type.Name</p>
+                    <p class="text-base font-poppins">@Model.Type.Name</p>
                     <p class="text-base font-poppins ml-auto">@Model.CreatedDate.ToShortDateString()</p>
                 </div>
             </section>
@@ -34,13 +34,10 @@
             </div>
             <section class="flex flex-col gap-4 w-full bg-gray-50 border-[1px] border-gray-300 p-5 max-w-lg">
                 <h2 class="text-base font-medium font-poppins">Application Questions</h2>
-                <p class="text-sm">@Model.Data.Form.CompletedSectionCount / @Model.Data.Form.TotalSectionCount Form Sections Complete</p>
-                <a asp-action="View" asp-controller="Form" asp-route-id="@Model.Id" class="border-[1px] border-blue-500 bg-blue-300 h-10 px-4 text-gray-900 font-medium font-poppins mx-16">Continue</a>
+                <a asp-action="View" asp-controller="Form" asp-route-id="@Model.Id, @Model.Type.Value" class="border-[1px] border-blue-500 bg-blue-300 h-10 px-4 text-gray-900 font-medium font-poppins mx-16">Continue</a>
             </section>
             <section class="flex flex-col gap-4 w-full bg-gray-50 border-[1px] border-gray-300 p-5 max-w-lg">
                 <h2 class="text-base font-medium font-poppins">Add Plans & Documents</h2>
-                <p class="text-sm">@Model.Data.Document.CompletedRequirementsCount / @Model.Data.Document.TotalRequirementCount Requirements Met</p>
-                <p class="text-sm">@Model.Data.Document.DocumentCount Plans or Documents Currently Added</p>
                 <button type="submit" class="border-[1px] border-orange-500 bg-orange-300 h-10 px-4 text-gray-900 font-medium font-poppins mx-16">Continue</button>
             </section>
             <section class="flex flex-col gap-4 w-full bg-gray-50 border-[1px] border-gray-300 p-5 max-w-lg">

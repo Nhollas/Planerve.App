@@ -24,20 +24,13 @@ public class ApplicationController : Controller
     {
         var applications = await _applicationService.GetApplicationList();
 
-        // Select List Data
+        var removeDuplicateApplicationTypes = applications.Select(x => x.Type).DistinctBy(x => x.Value).ToList();
 
-        var removeDuplicateLocalAuthorities = applications.Select(x => x.Data.Address.Admin_district).Distinct().ToList();
-        var removeDuplicateApplicationTypes = applications.Select(x => x.Data.Type).DistinctBy(x => x.Value).ToList();
-
-        // Select Lists..
-
-        var localAuthorities = removeDuplicateLocalAuthorities.Select(x => new SelectListItem { Text = x, Value = x }).ToList();
         var applicationTypes = removeDuplicateApplicationTypes.Select(x => new SelectListItem { Text = x.Name, Value = x.Value.ToString() }).ToList();
 
         var viewModel = new ApplicationDashboardViewModel()
         {
             ApplicationList = applications,
-            LocalAuthorities = localAuthorities,
             ApplicationTypes = applicationTypes
         };
         // Initilise the SelectLits.

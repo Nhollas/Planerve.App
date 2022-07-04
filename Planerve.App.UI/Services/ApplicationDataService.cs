@@ -42,9 +42,9 @@ public class ApplicationDataService : BaseDataService, IApplicationDataService
         }
     }
 
-    public async Task<FormDetailViewModel> GetFormById(Guid id)
+    public async Task<FormDetailViewModel> GetFormById(Guid id, int type)
     {
-        var selectedForm = await _client.GetFormByIdAsync(id);
+        var selectedForm = await _client.Get2Async(id, type);
         var mappedForm = _mapper.Map<FormDetailViewModel>(selectedForm);
         return mappedForm;
     }

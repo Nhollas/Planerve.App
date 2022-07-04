@@ -15,16 +15,13 @@ namespace Planerve.App.UI.Areas.User.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> View(Guid Id)
+        public async Task<IActionResult> View(Guid Id, int type)
         {
-            var form = await _applicationService.GetFormById(Id);
+            var form = await _applicationService.GetFormById(Id, type);
 
             if (form == null)
             {
-                if (form == null)
-                {
-                    return NotFound();
-                }
+                return NotFound();
             }
 
             return View(form);

@@ -8,5 +8,5 @@ public interface IApplicationDataService
     Task<ApiResponse<Guid>> CreateApplication(ApplicationDetailViewModel applicationDetailViewModel);
     Task<ApplicationDetailViewModel> GetApplicationById(Guid id);
     Task<List<ApplicationListViewModel>> GetApplicationList();
-    Task<FormDetailViewModel> GetFormById(Guid id);
+    Task<FormDetailViewModel> GetFormById(Guid id, int type);
 }

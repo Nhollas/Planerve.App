@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Core\\Planerve.App.Core.csproj": {}
+    "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Core\\Planerve.App.Core.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Core\\Planerve.App.Core.csproj": {
+    "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Core\\Planerve.App.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Core\\Planerve.App.Core.csproj",
+        "projectUniqueName": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Core\\Planerve.App.Core.csproj",
         "projectName": "Planerve.App.Core",
-        "projectPath": "c:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Core\\Planerve.App.Core.csproj",
+        "projectPath": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Core\\Planerve.App.Core.csproj",
         "packagesPath": "C:\\Users\\Nhollas\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Core\\obj\\",
+        "outputPath": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Nhollas\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "c:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Domain\\Planerve.App.Domain.csproj": {
-                "projectPath": "c:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Domain\\Planerve.App.Domain.csproj"
+              "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Domain\\Planerve.App.Domain.csproj": {
+                "projectPath": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Domain\\Planerve.App.Domain.csproj"
               }
             }
           }
@@ -112,14 +112,14 @@
         }
       }
     },
-    "c:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Domain\\Planerve.App.Domain.csproj": {
+    "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Domain\\Planerve.App.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Domain\\Planerve.App.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Domain\\Planerve.App.Domain.csproj",
         "projectName": "Planerve.App.Domain",
-        "projectPath": "c:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Domain\\Planerve.App.Domain.csproj",
+        "projectPath": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Domain\\Planerve.App.Domain.csproj",
         "packagesPath": "C:\\Users\\Nhollas\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Domain\\obj\\",
+        "outputPath": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Nhollas\\AppData\\Roaming\\NuGet\\NuGet.Config",
