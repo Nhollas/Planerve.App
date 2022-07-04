@@ -1,0 +1,55 @@
+@id=""
+@token=""
+
+
+GET {{host}}/api/Application/Get/{{id}}
+Authorization: Bearer $token
+
+###
+
+GET {{host}}/api/Application/List
+Authorization: Bearer $token
+
+###
+
+DELETE {{host}}/api/Application/Delete/{{id}}
+Authorization: Bearer $token
+
+###
+
+
+POST {{host}}/api/Application/Copy/{{id}}
+Authorization: Bearer $token
+content-type: application/json
+
+{
+  "applicationId": {{id}},
+  "applicationName": "Test Application",
+  "applicantDetails": true,
+  "agentDetails": true,
+  "siteDetails": true
+}
+
+###
+
+POST {{host}}/api/Application/Share/{{id}}
+Authorization: Bearer $token
+content-type: application/json
+
+{
+  "applicationId": {{id}},
+  "usernameOrEmail": "Nhollas",
+  "editPermission": true,
+  "readApplication": true,
+  "deleteApplication": true,
+  "copyApplication": true,
+  "archiveApplication": true,
+  "shareApplication": true,
+  "readForm": true,
+  "updateForm": true,
+  "downloadForm": true,
+  "expiryDate": "2022-07-04T19:48:59.388Z"
+}
+
+###
+
