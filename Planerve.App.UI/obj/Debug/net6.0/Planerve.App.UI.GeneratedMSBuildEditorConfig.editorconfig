@@ -27,10 +27,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxWaWV3c1xBY2NvdW50XFJlZ2lzdGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Nhollas/Documents/GitHub/Planerve.App/Planerve.App.UI/Areas/User/Views/Application/AuthPage.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxWaWV3c1xBcHBsaWNhdGlvblxBdXRoUGFnZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [c:/Users/Nhollas/Documents/GitHub/Planerve.App/Planerve.App.UI/Areas/User/Views/Application/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxWaWV3c1xBcHBsaWNhdGlvblxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

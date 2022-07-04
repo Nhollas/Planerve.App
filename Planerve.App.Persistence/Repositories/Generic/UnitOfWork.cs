@@ -11,7 +11,7 @@ public class UnitOfWork : IUnitOfWork
     private readonly PlanerveDbContext _context;
 
     private IAsyncRepository<Application> _applicationRepository;
-    private IAsyncRepository<PermissionUser> _applicationUserRepository;
+    private IAsyncRepository<ApplicationPermission> _applicationUserRepository;
     private IAsyncRepository<FormTypeA> _formTypeARepository;
     private IAsyncRepository<FormTypeB> _formTypeBRepository;
     private IAsyncRepository<FormTypeC> _formTypeCRepository;
@@ -31,11 +31,11 @@ public class UnitOfWork : IUnitOfWork
         }
     }
 
-    public IAsyncRepository<PermissionUser> ApplicationUserRepository
+    public IAsyncRepository<ApplicationPermission> ApplicationUserRepository
     {
         get
         {
-            return _applicationUserRepository ??= new BaseRepository<PermissionUser>(_context);
+            return _applicationUserRepository ??= new BaseRepository<ApplicationPermission>(_context);
         }
     }
 

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fdgRfF3DEtFh/1MObVqK+dAD8zKzsEGSkB5Jz712S0uuZYDyneasLqZA31valfaQjlYIJ4Puj9auIsXLP51vqg==",
+  "dgSpecHash": "uKGUlmQgKLdzg/M59IWNCdxXIoQaKn6th+0vq75wLm0suyP886iV09sANiFRjad1ZrVr9NXkLpvhTDTzz7/BWQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Core\\Planerve.App.Core.csproj",
+  "projectFilePath": "c:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Core\\Planerve.App.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Nhollas\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\Nhollas\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",

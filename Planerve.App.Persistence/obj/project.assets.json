@@ -9354,11 +9354,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Persistence\\Planerve.App.Persistence.csproj",
+      "projectUniqueName": "c:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Persistence\\Planerve.App.Persistence.csproj",
       "projectName": "Planerve.App.Persistence",
-      "projectPath": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Persistence\\Planerve.App.Persistence.csproj",
+      "projectPath": "c:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Persistence\\Planerve.App.Persistence.csproj",
       "packagesPath": "C:\\Users\\Nhollas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Persistence\\obj\\",
+      "outputPath": "c:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Persistence\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Nhollas\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -9375,8 +9375,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Core\\Planerve.App.Core.csproj": {
-              "projectPath": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Core\\Planerve.App.Core.csproj"
+            "c:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Core\\Planerve.App.Core.csproj": {
+              "projectPath": "c:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Core\\Planerve.App.Core.csproj"
             }
           }
         }

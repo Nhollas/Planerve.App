@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "F9ndfjuzPdakP8WENayd+f6W6rv0ZMyBHGDDloJ1ivt6+maAnSKKb11WN0tbWrj6ctzzw7amm8m/yMxlCBJ9HA==",
+  "dgSpecHash": "UCI7vI322ZmW6wIAskfxIPZ+uEoy566wvRUlEtV9GrQJHk8oy664+GSBxHvXk1OweWMBTGHVx5Wl2a/1V82PlA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Domain\\Planerve.App.Domain.csproj",
+  "projectFilePath": "c:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Domain\\Planerve.App.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Nhollas\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",
     "C:\\Users\\Nhollas\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",

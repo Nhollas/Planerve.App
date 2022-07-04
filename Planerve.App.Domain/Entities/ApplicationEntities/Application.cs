@@ -9,7 +9,8 @@ public class Application : AuditableEntity
     public string ApplicationReference { get; set; }
     public string ApplicationName { get; set; }
     public string VersionNumber { get; set; }
-    public PermissionUser Users { get; set; }
+    // Holds authorised users for application sharing.
+    public ApplicationPermission Users { get; set; }
     public ApplicationType Type { get; set; }
     public ApplicationDocument Document { get; set; }
     public ApplicationProgress Progress { get; set; }

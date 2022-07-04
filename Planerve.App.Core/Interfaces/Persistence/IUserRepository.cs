@@ -8,4 +8,5 @@ public interface IUserRepository
     public bool UserExists(string username);
     public ApplicationUser Register(ApplicationUser user);
     public ApplicationUser GetUser(string username);
+    public ApplicationUser QueriedUser(string query);
 }

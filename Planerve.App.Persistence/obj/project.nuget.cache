@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "McNojg0OlSvd4bDbDuKzGB2yZzaEMPCS7hGKrmD6/gMAt+9BRTtQQRJcJXlqeQgx5jcXX5NpuNW2U6SxJhgflg==",
+  "dgSpecHash": "ISff2FOuxSPUSstyC+CR+Ai+oSswD20ytOHcagMITCysxXnGrYUa5I5pE5IA6KN07BTDKgWHD9rO6xRnxUxL+g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Persistence\\Planerve.App.Persistence.csproj",
+  "projectFilePath": "c:\\Users\\Nhollas\\Documents\\GitHub\\Planerve.App\\Planerve.App.Persistence\\Planerve.App.Persistence.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Nhollas\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\Nhollas\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",

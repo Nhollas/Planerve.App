@@ -1,0 +1,8 @@
+.config.nswag
+/obj
+/bin
+/.vscode
+/.vs
+/.run
+/.idea
+/.git

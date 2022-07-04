@@ -7,8 +7,5 @@ namespace Planerve.App.UI.Areas.User.Controllers;
 [AllowAnonymous]
 public class AccountController : Controller
 {
-    public IActionResult Logout()
-    {
-        return SignOut("Cookies", "oidc");
-    }
+    
 }

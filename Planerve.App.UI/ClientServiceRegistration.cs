@@ -1,5 +1,3 @@
-using Microsoft.EntityFrameworkCore;
-using Planerve.App.Persistence.Contexts;
 using Planerve.App.UI.Interfaces;
 using Planerve.App.UI.Services;
 using System.Reflection;
@@ -12,7 +10,6 @@ public static class ClientServiceRegistration
     {
         services.AddScoped<IApplicationDataService, ApplicationDataService>();
         services.AddAutoMapper(Assembly.GetExecutingAssembly());
-        services.AddDbContext<PlanerveDbContext>(options => options.UseSqlServer("ApplicationPortalConnectionString"));
         services.AddHttpContextAccessor();
 
         return services;

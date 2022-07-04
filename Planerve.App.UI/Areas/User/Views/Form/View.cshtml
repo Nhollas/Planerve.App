@@ -9,53 +9,7 @@
 <div class="flex flex-col w-full justify-center items-center mt-12">
     <div class="w-full max-w-5xl gap-8 flex flex-row md:min-h-[75vh] relative justify-center">
         <div class="bg-[#FEFFFF] w-full p-8 relative flex flex-col gap-y-8 max-w-lg lg:max-w-5xl">
-            <form method="post" asp-action="Update" asp-controller="Form">
-                @foreach (var formSection in Model.FormSections)
-                {
-                    <h1 class="text-xl">@formSection.SectionName</h1>
-                    <div class="flex flex-col gap-8">
-                        @foreach(var field in formSection.FormFields)
-                        {
-                            switch(field.FieldType)
-                            {
-                                case "Text":
-                                        <div class="flex flex-col gap-2">
-                                            <label class="@field.ClassName" for="@field.FieldTarget">@field.Label</label>
-                                            <input type="text" for="@field.FieldTarget" value="@field.Text" />
-                                        </div>
-                                    break;
-                                case "Title":
-                                        <h2 class="@field.ClassName">@field.Label</h2>
-                                    break;
-                                case "Paragraph":
-                                    <div class="flex flex-col gap-2">
-                                        <label class="@field.ClassName" for="@field.FieldTarget">@field.Label</label>
-                                        <textarea for="@field.FieldTarget" value="@field.Text"></textarea>
-                                    </div>
-                                    break;
-                                case "Email":
-                                    <div class="flex flex-col gap-2">
-                                        <label class="@field.ClassName" for="@field.FieldTarget">@field.Label</label>
-                                        <input type="email" for="@field.FieldTarget" value="@field.Text" />
-                                    </div>
-                                    break;
-                                case "Radio":
-                                    <div class="flex flex-col gap-2">
-                                        <p>@field.Label</p>
-                                        <div class="flex flex-row gap-4 items-center">
-                                            @foreach(var option in field.Options)
-                                            {
-                                                <label class="@option.ClassName" for="@option.OptionName">@option.Label</label>
-                                                <input type="radio" for="@field.FieldTarget" value="@option.Value" />
-                                            }
-                                        </div>
-                                    </div>
-                                    break;
-                            }       
-                        }
-                    </div>
-                }
-            </form>
+
         </div>
     </div>
 </div>
