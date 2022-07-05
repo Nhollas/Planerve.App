@@ -79,6 +79,8 @@ public class AuthenticationService : IAuthenticationService
         return Task.FromResult(response);
     }
 
+    // TODO: Sort Refresh token handler out.
+
     private string CreateToken(ApplicationUser user)
     {
         List<Claim> claims = new()
@@ -106,6 +108,8 @@ public class AuthenticationService : IAuthenticationService
 
     private static void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
     {
+        // TODO: Change this algo to another one like Argon2, bcrypt, scrypt, and PBKDF2
+
         using (var hmac = new HMACSHA512())
         {
             passwordSalt = hmac.Key;
@@ -115,6 +119,8 @@ public class AuthenticationService : IAuthenticationService
 
     private static bool VerifyPasswordHash(string password, byte[] passwordHash, byte[] passwordSalt)
     {
+        // TODO: Change this algo to another one like Argon2, bcrypt, scrypt, and PBKDF2
+
         using (var hmac = new HMACSHA512(passwordSalt))
         {
             var computedHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
