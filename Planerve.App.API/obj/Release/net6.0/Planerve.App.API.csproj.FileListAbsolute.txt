@@ -138,6 +138,12 @@ C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.API\bin\Relea
 C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.API\bin\Release\net6.0\keys\is-signing-key-4B51E9BE2B2558FA917DBCD13011BB1D.json
 C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.API\obj\Release\net6.0\refint\Planerve.App.API.dll
 C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.API\bin\Release\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.API\obj\Release\net6.0\Planerve.App.API.csproj.AssemblyReference.cache
+C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.API\obj\Release\net6.0\Planerve.App.API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.API\obj\Release\net6.0\Planerve.App.API.AssemblyInfoInputs.cache
+C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.API\obj\Release\net6.0\Planerve.App.API.AssemblyInfo.cs
+C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.API\obj\Release\net6.0\Planerve.App.API.csproj.CoreCompileInputs.cache
+C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.API\obj\Release\net6.0\Planerve.App.API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.API\bin\Release\net6.0\appsettings.Development.json
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.API\bin\Release\net6.0\appsettings.json
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.API\bin\Release\net6.0\Planerve.App.API.exe
@@ -225,13 +231,7 @@ C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.API\bin\Release\net6
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.API\bin\Release\net6.0\Planerve.App.Core.pdb
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.API\bin\Release\net6.0\Planerve.App.Persistence.pdb
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.API\bin\Release\net6.0\Planerve.App.Domain.pdb
-C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.API\obj\Release\net6.0\Planerve.App.API.csproj.AssemblyReference.cache
-C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.API\obj\Release\net6.0\Planerve.App.API.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.API\obj\Release\net6.0\Planerve.App.API.AssemblyInfoInputs.cache
-C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.API\obj\Release\net6.0\Planerve.App.API.AssemblyInfo.cs
-C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.API\obj\Release\net6.0\Planerve.App.API.csproj.CoreCompileInputs.cache
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.API\obj\Release\net6.0\Planerve.App.API.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.API\obj\Release\net6.0\Planerve.App.API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.API\obj\Release\net6.0\staticwebassets.build.json
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.API\obj\Release\net6.0\staticwebassets.development.json
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.API\obj\Release\net6.0\scopedcss\bundle\Planerve.App.API.styles.css

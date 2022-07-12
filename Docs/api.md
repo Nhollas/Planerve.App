@@ -1,5 +1,5 @@
 ### API
-*04-07-2022*
+*12-07-2022*
 
 - [API](#api)
   - [Authentication](#authentication)
@@ -24,15 +24,9 @@
       - Share Response
   - [Form](#form)
     - **GetById**
-      - GetById Request
       - GetById Response
-    - **UpdateTypeA**
-      - UpdateTypeA Request
-      - UpdateTypeA Response
-    - **UpdateTypeB**
-      - UpdateTypeB Request
-      - UpdateTypeB Response
-    - **etc.**
+    - **Update**
+      - Update Request
 
 <br></br>
 
@@ -270,11 +264,11 @@ POST /api/application/share
 #### Get
 
 ```js
-GET /api/form/get/{id}
+GET /api/form/get/{id}/type/{type}
 ```
 
 
-##### Get Response
+##### Get Response (Generic)
 
 ```js
 200 OK
@@ -282,6 +276,7 @@ GET /api/form/get/{id}
 
 ```json
 {
+  // Form Type 1
   "type": 1,
   "data": {
     "formId": "75956510-35b8-404a-9cb2-08da5df49c2d",
@@ -304,19 +299,78 @@ GET /api/form/get/{id}
   }
 }
 ```
-<br></br>
 
-#### UpdateTypeA
-
-```js
-PUT /api/form/update/typea/{id}
-```
-
-##### Update Request
 ```json
 {
-  "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-  "applicantSection": {
+  // Form Type 2
+  "type": 2,
+  "data": {
+    "formId": "39b5d019-7ef6-4e92-b5b9-08da64555718",
+    "siteSection": null,
+    "applicantSection": null,
+    "agentSection": null,
+    "proposalSection": null,
+    "existingUseSection": null,
+    "materialSection": null,
+    "accessSection": null,
+    "parkingSection": null,
+    "treeAndHedgeSection": null,
+    "floodRiskSection": null,
+    "biodiversitySection": null,
+    "foulSewageSection": null,
+    "wasteSection": null,
+    "tradeEffluentSection": null,
+    "residentialUnitsSection": null,
+    "floorSpaceSection": null,
+    "employmentSection": null,
+    "openingHoursSection": null,
+    "industrialMachinerySection": null,
+    "hazardousSubstanceSection": null,
+    "siteVisitSection": null,
+    "adviceSection": null,
+    "authorityMemberSection": null,
+    "ownershipCertificationSection": null,
+    "createdBy": "ee2c4d40-c075-4430-8004-02def8a51930",
+    "createdDate": "2022-07-12T22:24:55.2735756",
+    "lastModifiedBy": null,
+    "lastModifiedDate": null
+  }
+}
+```
+
+```json
+{
+  // Form Type 3
+  "type": 3,
+  "data": {
+    "formId": "1dde7eea-810f-4393-bb7d-08da6455f87a",
+    "siteSection": null,
+    "applicantSection": null,
+    "agentSection": null,
+    "conditionProposalSection": null,
+    "dischargeConditionSection": null,
+    "siteVisitSection": null,
+    "adviceSection": null,
+    "createdBy": "ee2c4d40-c075-4430-8004-02def8a51930",
+    "createdDate": "2022-07-12T22:29:23.2848893",
+    "lastModifiedBy": null,
+    "lastModifiedDate": null
+  }
+}
+```
+<br></br>
+
+#### Update
+
+```js
+PUT /api/form/update/{id}/section/{name}
+```
+
+##### Update Requests (Generic)
+```json
+  // Applicant Section
+  {
+    "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
     "title": "string",
     "firstName": "string",
     "lastName": "string",
@@ -331,8 +385,12 @@ PUT /api/form/update/typea/{id}
     "isAgent": true,
     "email": "string",
     "phone": "string"
-  },
-  "agentSection": {
+  }
+```
+```json
+  // Agent Section
+  {
+    "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
     "title": "string",
     "firstName": "string",
     "lastName": "string",
@@ -345,141 +403,19 @@ PUT /api/form/update/typea/{id}
     "postcode": "string",
     "email": "string",
     "phone": "string"
-  },
-  "proposalSection": {
+  }
+```
+```json
+  // Site Section
+  {
+    "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
     "description": "string",
     "hasStarted": true,
     "startDate": "2022-07-04T20:29:04.020Z",
     "hasCompleted": true,
     "completionDate": "2022-07-04T20:29:04.020Z"
-  },
-  "siteSection": {
-    "autoPopulated": true,
-    "houseNumber": "string",
-    "propertyName": "string",
-    "addressLineOne": "string",
-    "addressLineTwo": "string",
-    "addressLineThree": "string",
-    "town": "string",
-    "postcode": "string",
-    "easting": "string",
-    "northing": "string",
-    "description": "string"
-  },
-  "accessSection": {
-    "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-    "newVehicleAccess": true,
-    "newAlteredPedestrianAccess": true,
-    "affectingRightOfWay": true,
-    "drawingReferenceNumbers": "string"
-  },
-  "adviceSection": {
-    "adviceSought": true,
-    "contactTitle": "string",
-    "contactFirstName": "string",
-    "contactLastName": "string",
-    "referenceNumber": "string",
-    "date": "2022-07-04T20:29:04.020Z",
-    "adviceDescription": "string"
-  },
-  "treeAndHedgeSection": {
-    "fallingTreesHedge": true,
-    "fallingTreeHedgeReference": "string",
-    "treeHedgeRemoved": true,
-    "treeHedgeRemovedReference": "string"
-  },
-  "parkingSection": {
-    "affectingParking": true,
-    "parkingDescription": "string"
-  },
-  "authorityMemberSection": {
-    "isRelated": true,
-    "relatedInformation": "string"
-  },
-  "materialSection": {
-    "materialsRequired": true,
-    "materialTypes": [
-      {
-        "name": "string",
-        "existingMaterial": "string",
-        "proposedMaterial": "string"
-      }
-    ],
-    "additionalInformation": true,
-    "documentReference": "string"
-  },
-  "ownershipCertificationSection": {
-    "selectedCertificate": 0,
-    "soleOwner": true,
-    "isAgriculturalHolding": true,
-    "giveAppropriateNotice": true,
-    "giveSomeNotice": true,
-    "certificateA": {
-      "role": 0,
-      "title": "string",
-      "firstName": "string",
-      "lastName": "string",
-      "declarationDate": "2022-07-04T20:29:04.020Z",
-      "declarationMade": true
-    },
-    "certificateB": {
-      "certifies": true,
-      "role": 0,
-      "title": "string",
-      "firstName": "string",
-      "lastName": "string",
-      "declarationDate": "2022-07-04T20:29:04.020Z",
-      "declarationMade": true
-    },
-    "certificateC": {
-      "stepsTakenDescription": "string",
-      "publishedInPaper": "string",
-      "publishedDate": "2022-07-04T20:29:04.020Z",
-      "role": 0,
-      "title": "string",
-      "firstName": "string",
-      "lastName": "string",
-      "declarationDate": "2022-07-04T20:29:04.020Z",
-      "declarationMade": true
-    },
-    "certificateD": {
-      "stepsTaken": "string",
-      "publishedInPaper": "string",
-      "publishedDate": "2022-07-04T20:29:04.020Z",
-      "role": 0,
-      "title": "string",
-      "firstName": "string",
-      "lastName": "string",
-      "declarationDate": "2022-07-04T20:29:04.020Z",
-      "declarationMade": true
-    },
-    "persons": [
-      {
-        "certificateId": 0,
-        "name": "string",
-        "houseName": "string",
-        "houseNumber": "string",
-        "addressLineOne": "string",
-        "addressLineTwo": "string",
-        "addressLineThree": "string",
-        "town": "string",
-        "postcode": "string",
-        "noticeServed": "2022-07-04T20:29:04.020Z"
-      }
-    ]
-  },
-  "siteVisitSection": {
-    "siteVisible": true,
-    "appointmentContactType": 0,
-    "title": "string",
-    "firstName": "string",
-    "lastName": "string",
-    "phone": "string",
-    "email": "string"
   }
-}
 ```
-
 
 ##### Update Response
 
@@ -488,284 +424,3 @@ PUT /api/form/update/typea/{id}
 ```
 
 <br></br>
-
-#### UpdateTypeB
-
-```js
-PUT /api/form/update/typeb/{id}
-```
-
-##### Update Request
-```json
-{
-  "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-  "applicantSection": {
-    "title": "string",
-    "firstName": "string",
-    "lastName": "string",
-    "company": "string",
-    "copyFromSiteAddress": true,
-    "addressLineOne": "string",
-    "addressLineTwo": "string",
-    "addressLineThree": "string",
-    "town": "string",
-    "country": "string",
-    "postcode": "string",
-    "isAgent": true,
-    "email": "string",
-    "phone": "string"
-  },
-  "agentSection": {
-    "title": "string",
-    "firstName": "string",
-    "lastName": "string",
-    "company": "string",
-    "addressLineOne": "string",
-    "addressLineTwo": "string",
-    "addressLineThree": "string",
-    "town": "string",
-    "country": "string",
-    "postcode": "string",
-    "email": "string",
-    "phone": "string"
-  },
-  "proposalSection": {
-    "description": "string",
-    "hasStarted": true,
-    "startDate": "2022-07-04T20:34:08.773Z",
-    "hasCompleted": true,
-    "completionDate": "2022-07-04T20:34:08.773Z"
-  },
-  "siteSection": {
-    "autoPopulated": true,
-    "houseNumber": "string",
-    "propertyName": "string",
-    "addressLineOne": "string",
-    "addressLineTwo": "string",
-    "addressLineThree": "string",
-    "town": "string",
-    "postcode": "string",
-    "easting": "string",
-    "northing": "string",
-    "description": "string"
-  },
-  "adviceSection": {
-    "adviceSought": true,
-    "contactTitle": "string",
-    "contactFirstName": "string",
-    "contactLastName": "string",
-    "referenceNumber": "string",
-    "date": "2022-07-04T20:34:08.773Z",
-    "adviceDescription": "string"
-  },
-  "accessSection": {
-    "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-    "newVehicleAccess": true,
-    "newAlteredPedestrianAccess": true,
-    "affectingRightOfWay": true,
-    "drawingReferenceNumbers": "string"
-  },
-  "wasteSection": {
-    "storeCollectWaste": true,
-    "storeCollectWasteDetails": "string",
-    "storeCollectRecyclableWaste": true,
-    "storeCollectRecyclableWasteDetails": "string"
-  },
-  "authorityMemberSection": {
-    "isRelated": true,
-    "relatedInformation": "string"
-  },
-  "materialSection": {
-    "materialsRequired": true,
-    "materialTypes": [
-      {
-        "name": "string",
-        "existingMaterial": "string",
-        "proposedMaterial": "string"
-      }
-    ],
-    "additionalInformation": true,
-    "documentReference": "string"
-  },
-  "parkingSection": {
-    "affectingParking": true,
-    "parkingDescription": "string"
-  },
-  "foulSewageSection": {
-    "otherMethod": "string",
-    "connectingToExistingDrainage": true,
-    "documentReferences": "string",
-    "mainsSewer": true,
-    "septicTank": true,
-    "packageTreatmentPlant": true,
-    "cessPit": true,
-    "other": true,
-    "unknown": true
-  },
-  "floodRiskSection": {
-    "isFloodRisk": true,
-    "proximityOfWatercourse": true,
-    "increaseFloodRisk": true,
-    "sustainableDrainage": true,
-    "existingWaterCourse": true,
-    "soakaway": true,
-    "mainSewer": true,
-    "pondLake": true
-  },
-  "biodiversitySection": {
-    "protectedSpecies": 0,
-    "designatedSite": 0,
-    "featuresOfGeological": 0
-  },
-  "existingUseSection": {
-    "currentUseDescription": "string",
-    "isVacant": true,
-    "lastUseDescription": "string",
-    "useEnded": "2022-07-04T20:34:08.773Z",
-    "landToBeContaminated": true,
-    "partLandToBeContaminated": true,
-    "useSusceptibleToContamination": true
-  },
-  "treeAndHedgeSection": {
-    "fallingTreesHedge": true,
-    "fallingTreeHedgeReference": "string",
-    "treeHedgeRemoved": true,
-    "treeHedgeRemovedReference": "string"
-  },
-  "tradeEffluentSection": {
-    "disposeTradeWaste": true,
-    "tradeWasteDescription": true
-  },
-  "employmentSection": {
-    "isEmploymentChanged": true,
-    "existingFullTime": "string",
-    "existingPartTime": "string",
-    "existingTotalFullTimeEquivalent": "string",
-    "proposedFullTime": "string",
-    "proposedPartTime": "string",
-    "proposedTotalFullTimeEquivalent": "string"
-  },
-  "openingHoursSection": {
-    "isRelevant": true,
-    "useClasses": [
-      {
-        "type": 0,
-        "isKnown": true,
-        "mtoFStart": "2022-07-04T20:34:08.773Z",
-        "mtoFEnd": "2022-07-04T20:34:08.773Z",
-        "saturdayStart": "2022-07-04T20:34:08.773Z",
-        "saturdayEnd": "2022-07-04T20:34:08.773Z",
-        "specialStart": "2022-07-04T20:34:08.773Z",
-        "specialEnd": "2022-07-04T20:34:08.773Z"
-      }
-    ]
-  },
-  "industrialMachinerySection": {
-    "processesAndProducts": "string",
-    "doesInvolveIndustrialCommercial": true,
-    "isProposalWasteManagementDevelopment": true,
-    "wasteManagementDetails": [
-      {
-        "wasteManagementType": "string",
-        "totalVoidCapacityVolumeUnit": "string",
-        "maxAnnualOperationalThroughputVolumeUnit": "string",
-        "totalVoidCapacity": 0,
-        "maxAnnualOperationalThroughput": 0
-      }
-    ],
-    "wasteStreamDetails": [
-      {
-        "wasteStreamType": "string",
-        "maxAnnualOperationalThroughputVolumeUnit": "string",
-        "maxAnnualOperationalThroughput": 0
-      }
-    ]
-  },
-  "hazardousSubstanceSection": {
-    "involvesHazardousSubstances": true,
-    "substances": [
-      {
-        "name": "string",
-        "amount": 0
-      }
-    ]
-  },
-  "ownershipCertificationSection": {
-    "selectedCertificate": 0,
-    "soleOwner": true,
-    "isAgriculturalHolding": true,
-    "giveAppropriateNotice": true,
-    "giveSomeNotice": true,
-    "certificateA": {
-      "role": 0,
-      "title": "string",
-      "firstName": "string",
-      "lastName": "string",
-      "declarationDate": "2022-07-04T20:34:08.773Z",
-      "declarationMade": true
-    },
-    "certificateB": {
-      "certifies": true,
-      "role": 0,
-      "title": "string",
-      "firstName": "string",
-      "lastName": "string",
-      "declarationDate": "2022-07-04T20:34:08.773Z",
-      "declarationMade": true
-    },
-    "certificateC": {
-      "stepsTakenDescription": "string",
-      "publishedInPaper": "string",
-      "publishedDate": "2022-07-04T20:34:08.773Z",
-      "role": 0,
-      "title": "string",
-      "firstName": "string",
-      "lastName": "string",
-      "declarationDate": "2022-07-04T20:34:08.773Z",
-      "declarationMade": true
-    },
-    "certificateD": {
-      "stepsTaken": "string",
-      "publishedInPaper": "string",
-      "publishedDate": "2022-07-04T20:34:08.773Z",
-      "role": 0,
-      "title": "string",
-      "firstName": "string",
-      "lastName": "string",
-      "declarationDate": "2022-07-04T20:34:08.773Z",
-      "declarationMade": true
-    },
-    "persons": [
-      {
-        "certificateId": 0,
-        "name": "string",
-        "houseName": "string",
-        "houseNumber": "string",
-        "addressLineOne": "string",
-        "addressLineTwo": "string",
-        "addressLineThree": "string",
-        "town": "string",
-        "postcode": "string",
-        "noticeServed": "2022-07-04T20:34:08.773Z"
-      }
-    ]
-  },
-  "siteVisitSection": {
-    "siteVisible": true,
-    "appointmentContactType": 0,
-    "title": "string",
-    "firstName": "string",
-    "lastName": "string",
-    "phone": "string",
-    "email": "string"
-  }
-}
-```
-
-
-##### Update Response
-
-```js
-204 No Content
-```
-

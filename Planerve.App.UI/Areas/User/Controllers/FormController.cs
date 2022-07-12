@@ -14,17 +14,17 @@ namespace Planerve.App.UI.Areas.User.Controllers
             _applicationService = applicationService;
         }
 
-        [HttpGet]
-        public async Task<IActionResult> View(Guid Id, int type)
-        {
-            var form = await _applicationService.GetFormById(Id, type);
+        //[HttpGet]
+        //public async Task<IActionResult> View(Guid Id, int type)
+        //{
+        //    var form = await _applicationService.GetFormById(Id, type);
 
-            if (form == null)
-            {
-                return NotFound();
-            }
+        //    if (form == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            return View(form);
-        }
+        //    return View(form);
+        //}
     }
 }

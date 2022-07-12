@@ -2,8 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Planerve.App.Core.Contracts.Persistence;
-using Planerve.App.Core.Contracts.Persistence.Generic;
+using Planerve.App.Core.Interfaces.Persistence;
 using Planerve.App.Core.Interfaces.Persistence.Generic;
 using Planerve.App.Domain.Entities.AuthEntities;
 using Planerve.App.Persistence.Contexts;

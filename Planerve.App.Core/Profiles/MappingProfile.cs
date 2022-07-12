@@ -1,16 +1,13 @@
 ﻿using AutoMapper;
-using Planerve.App.Core.Features.ApplicationFeatures.Commands.CreateApplication;
-using Planerve.App.Core.Features.ApplicationFeatures.Commands.CreateApplication.DataHelpers;
+using Planerve.App.Core.Features.ApplicationFeatures.Commands.Create;
+using Planerve.App.Core.Features.ApplicationFeatures.Commands.Create.DataHelpers;
 using Planerve.App.Core.Features.ApplicationFeatures.Dtos;
 using Planerve.App.Core.Features.ApplicationFeatures.Queries.GetApplicationById;
 using Planerve.App.Core.Features.ApplicationFeatures.Queries.GetApplicationList;
-using Planerve.App.Core.Features.FormFeatures.Commands.UpdateFormTypeA;
-using Planerve.App.Core.Features.FormFeatures.Commands.UpdateFormTypeB;
-using Planerve.App.Core.Features.FormFeatures.Commands.UpdateFormTypeC;
-using Planerve.App.Core.Features.FormFeatures.Commands.UpdateFormTypeD;
-using Planerve.App.Core.Features.FormFeatures.Commands.UpdateFormTypeE;
+using Planerve.App.Core.Features.FormFeatures.Dtos.FormSections;
 using Planerve.App.Domain.Entities.ApplicationEntities;
 using Planerve.App.Domain.Entities.FormEntities;
+using Planerve.App.Domain.Entities.FormEntities.Shared;
 
 namespace Planerve.App.Core.Profiles;
 
@@ -32,12 +29,31 @@ public class MappingProfile : Profile
         CreateMap<ApplicationDocument.DocumentRequirement, DocumentRequirementDto>().ReverseMap();
         CreateMap<ApplicationProgress, ApplicationProgressDto>().ReverseMap();
 
-        // Form Data Maps
-        CreateMap<FormTypeA, UpdateFormTypeACommand>().ReverseMap();
-        CreateMap<FormTypeB, UpdateFormTypeBCommand>().ReverseMap();
-        CreateMap<FormTypeC, UpdateFormTypeCCommand>().ReverseMap();
-        CreateMap<FormTypeD, UpdateFormTypeDCommand>().ReverseMap();
-        CreateMap<FormTypeE, UpdateFormTypeECommand>().ReverseMap();
-
+        // Form Section Maps
+        CreateMap<AccessSection, AccessSectionDto>().ReverseMap();
+        CreateMap<AdviceSection, AdviceSectionDto>().ReverseMap();
+        CreateMap<AgentSection, AgentSectionDto>().ReverseMap();
+        CreateMap<ApplicantSection, ApplicantSectionDto>().ReverseMap();
+        CreateMap<AuthorityMemberSection, AuthorityMemberSectionDto>().ReverseMap();
+        CreateMap<BiodiversitySection, BiodiversitySectionDto>().ReverseMap();
+        CreateMap<ConditionProposalSection, ConditionProposalSectionDto>().ReverseMap();
+        CreateMap<DischargeConditionSection, DischargeConditionSectionDto>().ReverseMap();
+        CreateMap<EligibilitySection, EligibilitySectionDto>().ReverseMap();
+        CreateMap<EmploymentSection, EmploymentSectionDto>().ReverseMap();
+        CreateMap<ExistingUseSection, ExistingUseSectionDto>().ReverseMap();
+        CreateMap<FloodRiskSection, FloodRiskSectionDto>().ReverseMap();
+        CreateMap<FloorSpaceSection, FloorSpaceSectionDto>().ReverseMap();
+        CreateMap<FoulSewageSection, FoulSewageSectionDto>().ReverseMap();
+        CreateMap<HazardousSubstanceSection, HazardousSubstanceSectionDto>().ReverseMap();
+        CreateMap<IndustrialMachinerySection, IndustrialMachinerySectionDto>().ReverseMap();
+        CreateMap<MaterialSection, MaterialSectionDto>().ReverseMap();
+        CreateMap<NonMaterialProposalSection, NonMaterialProposalSectionDto>().ReverseMap();
+        CreateMap<NonMaterialSoughtSection, NonMaterialSoughtSectionDto>().ReverseMap();
+        CreateMap<OpeningHoursSection, OpeningHoursSectionDto>().ReverseMap();
+        CreateMap<OwnershipCertificationSection, OwnershipCertificationSectionDto>().ReverseMap();
+        CreateMap<ParkingSection, ParkingSectionDto>().ReverseMap();
+        CreateMap<ProposalSection, ProposalSectionDto>().ReverseMap();
+        CreateMap<ResidentialUnitsSection, ResidentialUnitsSectionDto>().ReverseMap();
+        CreateMap<SiteSection, SiteSectionDto>().ReverseMap();
     }
 }

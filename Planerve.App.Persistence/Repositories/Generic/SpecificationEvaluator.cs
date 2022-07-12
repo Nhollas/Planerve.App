@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Planerve.App.Core.Contracts.Specification;
+using Planerve.App.Core.Interfaces.Persistence.Generic;
 using System.Linq;
 
 namespace Planerve.App.Persistence.Repositories.Generic;

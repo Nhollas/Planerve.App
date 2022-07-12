@@ -1,4 +1,4 @@
-using Planerve.App.Core.Contracts.Persistence;
+using Planerve.App.Core.Interfaces.Persistence;
 using Planerve.App.Domain.Entities.AuthEntities;
 using Planerve.App.Persistence.Contexts;
 using Planerve.App.Persistence.Repositories.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace Planerve.App.Persistence.Repositories;
 
-public class UserRepository : BaseRepository<ApplicationUser>, IUserRepository 
+public class UserRepository : BaseRepository<ApplicationUser>, IUserRepository
 {
     public UserRepository(PlanerveDbContext repositoryContext)
     : base(repositoryContext)

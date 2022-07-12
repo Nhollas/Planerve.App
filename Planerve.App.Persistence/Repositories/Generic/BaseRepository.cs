@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Planerve.App.Core.Contracts.Persistence.Generic;
-using Planerve.App.Core.Contracts.Specification;
+using Planerve.App.Core.Interfaces.Persistence.Generic;
 using Planerve.App.Persistence.Contexts;
 using System;
 using System.Collections.Generic;
@@ -10,7 +9,7 @@ namespace Planerve.App.Persistence.Repositories.Generic;
 
 public class BaseRepository<T> : IAsyncRepository<T> where T : class
 {
-    protected readonly PlanerveDbContext _dbContext;
+    protected PlanerveDbContext _dbContext;
 
     public BaseRepository(PlanerveDbContext dbContext)
     {

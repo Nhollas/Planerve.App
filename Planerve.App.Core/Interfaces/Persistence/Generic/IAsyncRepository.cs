@@ -1,9 +1,8 @@
-﻿using Planerve.App.Core.Contracts.Specification;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Planerve.App.Core.Contracts.Persistence.Generic;
+namespace Planerve.App.Core.Interfaces.Persistence.Generic;
 
 public interface IAsyncRepository<T> where T : class
 {

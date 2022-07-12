@@ -1,10 +1,10 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Planerve.App.Core.Features.ApplicationFeatures.Commands.CopyApplication;
-using Planerve.App.Core.Features.ApplicationFeatures.Commands.CreateApplication;
-using Planerve.App.Core.Features.ApplicationFeatures.Commands.DeleteApplication;
-using Planerve.App.Core.Features.ApplicationFeatures.Commands.ShareApplication;
+using Planerve.App.Core.Features.ApplicationFeatures.Commands.Copy;
+using Planerve.App.Core.Features.ApplicationFeatures.Commands.Create;
+using Planerve.App.Core.Features.ApplicationFeatures.Commands.Delete;
+using Planerve.App.Core.Features.ApplicationFeatures.Commands.Share;
 using Planerve.App.Core.Features.ApplicationFeatures.Queries.GetApplicationById;
 using Planerve.App.Core.Features.ApplicationFeatures.Queries.GetApplicationList;
 

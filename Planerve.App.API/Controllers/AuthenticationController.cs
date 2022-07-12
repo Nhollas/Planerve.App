@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Planerve.App.Core.Interfaces.Services.Authentication;
+using Planerve.App.Core.Interfaces.Services;
 using Planerve.App.Core.Models.Authentication;
 
 namespace Planerve.App.API.Controllers

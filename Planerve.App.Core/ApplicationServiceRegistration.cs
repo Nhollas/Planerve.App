@@ -5,7 +5,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Planerve.App.Core.Authorization.Handlers;
 using Planerve.App.Core.Interfaces.Services;
-using Planerve.App.Core.Interfaces.Services.Authentication;
 using Planerve.App.Core.Services;
 using System.Reflection;
 
@@ -20,6 +19,8 @@ public static class ApplicationServiceRegistration
         services.AddScoped<IAuthorizationHandler, ApplicationAuthorizationHandler>();
         services.AddScoped<IAuthorizationHandler, FormAuthorizationHandler>();
         services.AddScoped<IUserService, UserService>();
+        services.AddScoped<IFormSectionServiceProvider, FormSectionServiceProvider>();
+        services.AddScoped(typeof(IFormSectionService<,>), typeof(FormSectionService<,>));
         services.AddScoped<IDateTimeService, DateTimeService>();
         services.AddScoped<IAuthenticationService, AuthenticationService>();
         services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();

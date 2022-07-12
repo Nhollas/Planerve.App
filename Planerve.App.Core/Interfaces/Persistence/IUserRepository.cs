@@ -1,6 +1,6 @@
 using Planerve.App.Domain.Entities.AuthEntities;
 
-namespace Planerve.App.Core.Contracts.Persistence;
+namespace Planerve.App.Core.Interfaces.Persistence;
 
 public interface IUserRepository
 {

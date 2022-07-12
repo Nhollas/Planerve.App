@@ -13,16 +13,16 @@ C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.Core\obj\Rele
 C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.Core\obj\Release\net6.0\ref\Planerve.App.Core.dll
 C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.Core\obj\Release\net6.0\Planerve.App.Core.pdb
 C:\Users\nicho\Documents\Github Projects\Planerve.App\Planerve.App.Core\obj\Release\net6.0\refint\Planerve.App.Core.dll
-C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Core\bin\Release\net6.0\Planerve.App.Core.deps.json
-C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Core\bin\Release\net6.0\Planerve.App.Core.dll
-C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Core\bin\Release\net6.0\Planerve.App.Core.pdb
-C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Core\bin\Release\net6.0\Planerve.App.Domain.dll
-C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Core\bin\Release\net6.0\Planerve.App.Domain.pdb
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Core\obj\Release\net6.0\Planerve.App.Core.csproj.AssemblyReference.cache
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Core\obj\Release\net6.0\Planerve.App.Core.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Core\obj\Release\net6.0\Planerve.App.Core.AssemblyInfoInputs.cache
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Core\obj\Release\net6.0\Planerve.App.Core.AssemblyInfo.cs
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Core\obj\Release\net6.0\Planerve.App.Core.csproj.CoreCompileInputs.cache
+C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Core\bin\Release\net6.0\Planerve.App.Core.deps.json
+C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Core\bin\Release\net6.0\Planerve.App.Core.dll
+C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Core\bin\Release\net6.0\Planerve.App.Core.pdb
+C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Core\bin\Release\net6.0\Planerve.App.Domain.dll
+C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Core\bin\Release\net6.0\Planerve.App.Domain.pdb
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Core\obj\Release\net6.0\Planerve.App.Core.csproj.CopyComplete
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Core\obj\Release\net6.0\Planerve.App.Core.dll
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.Core\obj\Release\net6.0\refint\Planerve.App.Core.dll

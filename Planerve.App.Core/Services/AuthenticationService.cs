@@ -1,7 +1,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using Planerve.App.Core.Contracts.Persistence;
-using Planerve.App.Core.Interfaces.Services.Authentication;
+using Planerve.App.Core.Interfaces.Persistence;
+using Planerve.App.Core.Interfaces.Services;
 using Planerve.App.Core.Models.Authentication;
 using Planerve.App.Domain.Entities.AuthEntities;
 using System;

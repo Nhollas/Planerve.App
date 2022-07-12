@@ -29,6 +29,37 @@ namespace Planerve.App.Persistence.Contexts
         public DbSet<FormTypeD> FormTypeD { get; set; }
         public DbSet<FormTypeE> FormTypeE { get; set; }
 
+        public DbSet<AccessSection> AccessSection {get; set;}
+        public DbSet<AdviceSection> AdviceSection {get; set;}
+        public DbSet<AgentSection> AgentSection {get; set;}
+        public DbSet<ApplicantSection> ApplicantSection {get; set;}
+        public DbSet<AuthorityMemberSection> AuthorityMemberSection {get; set;}
+        public DbSet<BiodiversitySection> BiodiversitySection {get; set;}
+        public DbSet<ConditionProposalSection> ConditionProposalSection {get; set;}
+        public DbSet<DischargeConditionSection> DischargeConditionSection {get; set;}
+        public DbSet<EligibilitySection> EligibilitySection {get; set;}
+        public DbSet<EmploymentSection> EmploymentSection {get; set;}
+        public DbSet<ExistingUseSection> ExistingUseSection {get; set;}
+        public DbSet<FloodRiskSection> FloodRiskSection {get; set;}
+        public DbSet<FloorSpaceSection> FloorSpaceSection {get; set;}
+        public DbSet<FoulSewageSection> FoulSewageSection {get; set;}
+        public DbSet<HazardousSubstanceSection> HazardousSubstanceSection {get; set;}
+        public DbSet<IndustrialMachinerySection> IndustrialMachinerySection {get; set;}
+        public DbSet<MaterialSection> MaterialSection {get; set;}
+        public DbSet<NonMaterialProposalSection> NonMaterialProposalSection {get; set;}
+        public DbSet<NonMaterialSoughtSection> NonMaterialSoughtSection {get; set;}
+        public DbSet<OpeningHoursSection> OpeningHoursSection {get; set;}
+        public DbSet<OwnershipCertificationSection> OwnershipCertificationSection {get; set;}
+        public DbSet<ParkingSection> ParkingSection {get; set;}
+        public DbSet<ProposalSection> ProposalSection {get; set;}
+        public DbSet<ResidentialUnitsSection> ResidentialUnitsSection {get; set;}
+        public DbSet<SiteSection> SiteSection {get; set;}
+        public DbSet<SiteVisitSection> SiteVisitSection {get; set;}
+        public DbSet<TradeEffluentSection> TradeEffluentSection {get; set;}
+        public DbSet<TreeAndHedgeSection> TreeAndHedgeSection {get; set;}
+        public DbSet<VariationConditionSection> VariationConditionSection {get; set;}
+        public DbSet<WasteSection> WasteSection {get; set;}
+
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
         {
             foreach (var entry in ChangeTracker.Entries<AuditableEntity>())
