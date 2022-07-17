@@ -68,7 +68,7 @@ namespace Planerve.App.Persistence.Contexts
                 {
                     case EntityState.Added:
                         entry.Entity.CreatedDate = _dateTimeService.UtcNow;
-                        entry.Entity.CreatedBy = _userService.UserId();
+                        entry.Entity.Owner = _userService.UserId();
                         break;
                     case EntityState.Modified:
                         entry.Entity.LastModifiedDate = _dateTimeService.UtcNow;
@@ -82,9 +82,6 @@ namespace Planerve.App.Persistence.Contexts
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
-            modelBuilder.Entity<ApplicationDocument>()
-                .OwnsMany(t => t.DocumentRequirements);
 
             modelBuilder.Entity<MaterialSection>()
                 .OwnsMany(t => t.MaterialTypes);

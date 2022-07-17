@@ -12,7 +12,7 @@ using Planerve.App.Persistence.Contexts;
 namespace Planerve.App.Persistence.Migrations
 {
     [DbContext(typeof(PlanerveDbContext))]
-    [Migration("20220712222414_test")]
+    [Migration("20220715210036_test")]
     partial class test
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -159,17 +159,26 @@ namespace Planerve.App.Persistence.Migrations
 
             modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.Application", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<Guid>("AppId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("ApplicationName")
+                    b.Property<int>("AppCategory")
+                        .HasColumnType("int");
+
+                    b.Property<string>("AppName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ApplicationReference")
+                    b.Property<string>("AppReference")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("CreatedBy")
+                    b.Property<string>("AppStatus")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("AppType")
+                        .HasColumnType("int");
+
+                    b.Property<string>("AppVersion")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("CreatedDate")
@@ -181,162 +190,58 @@ namespace Planerve.App.Persistence.Migrations
                     b.Property<DateTime?>("LastModifiedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("VersionNumber")
+                    b.Property<string>("Owner")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.Property<int>("PercentageComplete")
+                        .HasColumnType("int");
+
+                    b.Property<Guid?>("SubmissionId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("AppId");
+
+                    b.HasIndex("SubmissionId");
 
                     b.ToTable("Application");
                 });
 
-            modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.ApplicationDocument", b =>
+            modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.Submission", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("ApplicationId");
-
-                    b.Property<int>("CompletedRequirementsCount")
-                        .HasColumnType("int");
-
-                    b.Property<int>("DocumentCount")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TotalRequirementCount")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ApplicationDocument");
-                });
-
-            modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.ApplicationPermission", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("ApplicationId");
-
-                    b.Property<string>("OwnerId")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ApplicationPermission");
-                });
-
-            modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.ApplicationProgress", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("ApplicationId");
-
-                    b.Property<string>("ApplicationStatus")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("CalculatedFee")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("FormSectionsComplete")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("PlansAndDocsComplete")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("ProgressPercentage")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("SubmittedToLocalAuthority")
-                        .HasColumnType("bit");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ApplicationProgress");
-                });
-
-            modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.ApplicationType", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("ApplicationId");
-
-                    b.Property<string>("CategoryDescription")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<Guid>("SubmissionId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("CategoryName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CategoryValue")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Group")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Value")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ApplicationType");
-                });
-
-            modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.AuthorisedUser", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("ApplicationId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("ApplicationPermissionId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool>("ArchiveApplication")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("CopyApplication")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("DeleteApplication")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("DownloadForm")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("EditPermission")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime>("ExpiryDate")
+                    b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<bool>("IsValid")
-                        .HasColumnType("bit");
+                    b.Property<Guid>("FormId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<bool>("ReadApplication")
-                        .HasColumnType("bit");
+                    b.Property<int>("FormType")
+                        .HasColumnType("int");
 
-                    b.Property<bool>("ReadForm")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("ShareApplication")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("UpdateForm")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("UserId")
+                    b.Property<string>("LastModifiedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.Property<DateTime?>("LastModifiedDate")
+                        .HasColumnType("datetime2");
 
-                    b.HasIndex("ApplicationPermissionId");
+                    b.Property<string>("Owner")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.ToTable("AuthorisedUser");
+                    b.Property<string>("TypeDescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TypeName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("SubmissionId");
+
+                    b.ToTable("Submission");
                 });
 
             modelBuilder.Entity("Planerve.App.Domain.Entities.AuthEntities.ApplicationUser", b =>
@@ -440,9 +345,6 @@ namespace Planerve.App.Persistence.Migrations
                     b.Property<Guid?>("AuthorityMemberSectionId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
@@ -454,6 +356,9 @@ namespace Planerve.App.Persistence.Migrations
 
                     b.Property<Guid?>("MaterialSectionId")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Owner")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<Guid?>("OwnershipCertificationSectionId")
                         .HasColumnType("uniqueidentifier");
@@ -526,9 +431,6 @@ namespace Planerve.App.Persistence.Migrations
                     b.Property<Guid?>("BiodiversitySectionId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
@@ -564,6 +466,9 @@ namespace Planerve.App.Persistence.Migrations
 
                     b.Property<Guid?>("OpeningHoursSectionId")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Owner")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<Guid?>("OwnershipCertificationSectionId")
                         .HasColumnType("uniqueidentifier");
@@ -663,9 +568,6 @@ namespace Planerve.App.Persistence.Migrations
                     b.Property<Guid?>("ConditionProposalSectionId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
@@ -677,6 +579,9 @@ namespace Planerve.App.Persistence.Migrations
 
                     b.Property<DateTime?>("LastModifiedDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Owner")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<Guid?>("SiteSectionId")
                         .HasColumnType("uniqueidentifier");
@@ -721,9 +626,6 @@ namespace Planerve.App.Persistence.Migrations
                     b.Property<Guid?>("AuthorityMemberSectionId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
@@ -741,6 +643,9 @@ namespace Planerve.App.Persistence.Migrations
 
                     b.Property<Guid?>("NonMaterialSoughtSectionId")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Owner")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<Guid?>("SiteSectionId")
                         .HasColumnType("uniqueidentifier");
@@ -789,9 +694,6 @@ namespace Planerve.App.Persistence.Migrations
                     b.Property<Guid?>("ConditionProposalSectionId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
@@ -800,6 +702,9 @@ namespace Planerve.App.Persistence.Migrations
 
                     b.Property<DateTime?>("LastModifiedDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Owner")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<Guid?>("OwnershipCertificationSectionId")
                         .HasColumnType("uniqueidentifier");
@@ -1814,82 +1719,13 @@ namespace Planerve.App.Persistence.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.ApplicationDocument", b =>
+            modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.Application", b =>
                 {
-                    b.HasOne("Planerve.App.Domain.Entities.ApplicationEntities.Application", "Application")
-                        .WithOne("Document")
-                        .HasForeignKey("Planerve.App.Domain.Entities.ApplicationEntities.ApplicationDocument", "Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.HasOne("Planerve.App.Domain.Entities.ApplicationEntities.Submission", "Submission")
+                        .WithMany()
+                        .HasForeignKey("SubmissionId");
 
-                    b.OwnsMany("Planerve.App.Domain.Entities.ApplicationEntities.ApplicationDocument+DocumentRequirement", "DocumentRequirements", b1 =>
-                        {
-                            b1.Property<Guid>("ApplicationDocumentId")
-                                .HasColumnType("uniqueidentifier");
-
-                            b1.Property<int>("Id")
-                                .ValueGeneratedOnAdd()
-                                .HasColumnType("int");
-
-                            SqlServerPropertyBuilderExtensions.UseIdentityColumn(b1.Property<int>("Id"), 1L, 1);
-
-                            b1.Property<string>("Description")
-                                .HasColumnType("nvarchar(max)");
-
-                            b1.Property<string>("Name")
-                                .HasColumnType("nvarchar(max)");
-
-                            b1.HasKey("ApplicationDocumentId", "Id");
-
-                            b1.ToTable("DocumentRequirement");
-
-                            b1.WithOwner()
-                                .HasForeignKey("ApplicationDocumentId");
-                        });
-
-                    b.Navigation("Application");
-
-                    b.Navigation("DocumentRequirements");
-                });
-
-            modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.ApplicationPermission", b =>
-                {
-                    b.HasOne("Planerve.App.Domain.Entities.ApplicationEntities.Application", "Application")
-                        .WithOne("Users")
-                        .HasForeignKey("Planerve.App.Domain.Entities.ApplicationEntities.ApplicationPermission", "Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Application");
-                });
-
-            modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.ApplicationProgress", b =>
-                {
-                    b.HasOne("Planerve.App.Domain.Entities.ApplicationEntities.Application", "Application")
-                        .WithOne("Progress")
-                        .HasForeignKey("Planerve.App.Domain.Entities.ApplicationEntities.ApplicationProgress", "Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Application");
-                });
-
-            modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.ApplicationType", b =>
-                {
-                    b.HasOne("Planerve.App.Domain.Entities.ApplicationEntities.Application", "Application")
-                        .WithOne("Type")
-                        .HasForeignKey("Planerve.App.Domain.Entities.ApplicationEntities.ApplicationType", "Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Application");
-                });
-
-            modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.AuthorisedUser", b =>
-                {
-                    b.HasOne("Planerve.App.Domain.Entities.ApplicationEntities.ApplicationPermission", null)
-                        .WithMany("AuthorisedUsers")
-                        .HasForeignKey("ApplicationPermissionId");
+                    b.Navigation("Submission");
                 });
 
             modelBuilder.Entity("Planerve.App.Domain.Entities.FormEntities.FormTypeA", b =>
@@ -2805,22 +2641,6 @@ namespace Planerve.App.Persistence.Migrations
                     b.HasOne("Planerve.App.Domain.Entities.FormEntities.Shared.ProposedUnits", null)
                         .WithMany("Types")
                         .HasForeignKey("ProposedUnitsId");
-                });
-
-            modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.Application", b =>
-                {
-                    b.Navigation("Document");
-
-                    b.Navigation("Progress");
-
-                    b.Navigation("Type");
-
-                    b.Navigation("Users");
-                });
-
-            modelBuilder.Entity("Planerve.App.Domain.Entities.ApplicationEntities.ApplicationPermission", b =>
-                {
-                    b.Navigation("AuthorisedUsers");
                 });
 
             modelBuilder.Entity("Planerve.App.Domain.Entities.FormEntities.Shared.ExistingUnits", b =>

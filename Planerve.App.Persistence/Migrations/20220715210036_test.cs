@@ -91,24 +91,6 @@ namespace Planerve.App.Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Application",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    ApplicationReference = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ApplicationName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    VersionNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    LastModifiedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    LastModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Application", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "AspNetRoles",
                 columns: table => new
                 {
@@ -561,6 +543,26 @@ namespace Planerve.App.Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Submission",
+                columns: table => new
+                {
+                    SubmissionId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    FormType = table.Column<int>(type: "int", nullable: false),
+                    TypeName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CategoryName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    TypeDescription = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FormId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Owner = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    LastModifiedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    LastModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Submission", x => x.SubmissionId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "TradeEffluentSection",
                 columns: table => new
                 {
@@ -614,91 +616,6 @@ namespace Planerve.App.Persistence.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_WasteSection", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "ApplicationDocument",
-                columns: table => new
-                {
-                    ApplicationId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    DocumentCount = table.Column<int>(type: "int", nullable: false),
-                    CompletedRequirementsCount = table.Column<int>(type: "int", nullable: false),
-                    TotalRequirementCount = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ApplicationDocument", x => x.ApplicationId);
-                    table.ForeignKey(
-                        name: "FK_ApplicationDocument_Application_ApplicationId",
-                        column: x => x.ApplicationId,
-                        principalTable: "Application",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "ApplicationPermission",
-                columns: table => new
-                {
-                    ApplicationId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    OwnerId = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ApplicationPermission", x => x.ApplicationId);
-                    table.ForeignKey(
-                        name: "FK_ApplicationPermission_Application_ApplicationId",
-                        column: x => x.ApplicationId,
-                        principalTable: "Application",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "ApplicationProgress",
-                columns: table => new
-                {
-                    ApplicationId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    ApplicationStatus = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ProgressPercentage = table.Column<int>(type: "int", nullable: false),
-                    FormSectionsComplete = table.Column<bool>(type: "bit", nullable: false),
-                    PlansAndDocsComplete = table.Column<bool>(type: "bit", nullable: false),
-                    CalculatedFee = table.Column<bool>(type: "bit", nullable: false),
-                    SubmittedToLocalAuthority = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ApplicationProgress", x => x.ApplicationId);
-                    table.ForeignKey(
-                        name: "FK_ApplicationProgress_Application_ApplicationId",
-                        column: x => x.ApplicationId,
-                        principalTable: "Application",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "ApplicationType",
-                columns: table => new
-                {
-                    ApplicationId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Value = table.Column<int>(type: "int", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Group = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CategoryName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CategoryDescription = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CategoryValue = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ApplicationType", x => x.ApplicationId);
-                    table.ForeignKey(
-                        name: "FK_ApplicationType_Application_ApplicationId",
-                        column: x => x.ApplicationId,
-                        principalTable: "Application",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -1095,7 +1012,7 @@ namespace Planerve.App.Persistence.Migrations
                     DischargeConditionSectionId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     SiteVisitSectionId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     AdviceSectionId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Owner = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     LastModifiedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     LastModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
@@ -1154,7 +1071,7 @@ namespace Planerve.App.Persistence.Migrations
                     SiteVisitSectionId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     AdviceSectionId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     AuthorityMemberSectionId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Owner = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     LastModifiedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     LastModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
@@ -1210,6 +1127,34 @@ namespace Planerve.App.Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Application",
+                columns: table => new
+                {
+                    AppId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    AppReference = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    AppName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    AppVersion = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    AppStatus = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    AppType = table.Column<int>(type: "int", nullable: false),
+                    AppCategory = table.Column<int>(type: "int", nullable: false),
+                    PercentageComplete = table.Column<int>(type: "int", nullable: false),
+                    SubmissionId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    Owner = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    LastModifiedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    LastModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Application", x => x.AppId);
+                    table.ForeignKey(
+                        name: "FK_Application_Submission_SubmissionId",
+                        column: x => x.SubmissionId,
+                        principalTable: "Submission",
+                        principalColumn: "SubmissionId");
+                });
+
+            migrationBuilder.CreateTable(
                 name: "FormTypeA",
                 columns: table => new
                 {
@@ -1226,7 +1171,7 @@ namespace Planerve.App.Persistence.Migrations
                     AdviceSectionId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     AuthorityMemberSectionId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     OwnershipCertificationSectionId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Owner = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     LastModifiedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     LastModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
@@ -1309,7 +1254,7 @@ namespace Planerve.App.Persistence.Migrations
                     SiteVisitSectionId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     AdviceSectionId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     OwnershipCertificationSectionId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Owner = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     LastModifiedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     LastModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
@@ -1360,57 +1305,6 @@ namespace Planerve.App.Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "DocumentRequirement",
-                columns: table => new
-                {
-                    ApplicationDocumentId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_DocumentRequirement", x => new { x.ApplicationDocumentId, x.Id });
-                    table.ForeignKey(
-                        name: "FK_DocumentRequirement_ApplicationDocument_ApplicationDocumentId",
-                        column: x => x.ApplicationDocumentId,
-                        principalTable: "ApplicationDocument",
-                        principalColumn: "ApplicationId",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "AuthorisedUser",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    ApplicationId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    UserId = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    IsValid = table.Column<bool>(type: "bit", nullable: false),
-                    ExpiryDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ApplicationPermissionId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    EditPermission = table.Column<bool>(type: "bit", nullable: false),
-                    ReadApplication = table.Column<bool>(type: "bit", nullable: false),
-                    DeleteApplication = table.Column<bool>(type: "bit", nullable: false),
-                    CopyApplication = table.Column<bool>(type: "bit", nullable: false),
-                    ArchiveApplication = table.Column<bool>(type: "bit", nullable: false),
-                    ShareApplication = table.Column<bool>(type: "bit", nullable: false),
-                    ReadForm = table.Column<bool>(type: "bit", nullable: false),
-                    UpdateForm = table.Column<bool>(type: "bit", nullable: false),
-                    DownloadForm = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_AuthorisedUser", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_AuthorisedUser_ApplicationPermission_ApplicationPermissionId",
-                        column: x => x.ApplicationPermissionId,
-                        principalTable: "ApplicationPermission",
-                        principalColumn: "ApplicationId");
-                });
-
-            migrationBuilder.CreateTable(
                 name: "FormTypeB",
                 columns: table => new
                 {
@@ -1439,7 +1333,7 @@ namespace Planerve.App.Persistence.Migrations
                     AdviceSectionId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     AuthorityMemberSectionId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     OwnershipCertificationSectionId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Owner = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     LastModifiedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     LastModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
@@ -1570,6 +1464,11 @@ namespace Planerve.App.Persistence.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_Application_SubmissionId",
+                table: "Application",
+                column: "SubmissionId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
                 column: "RoleId");
@@ -1607,11 +1506,6 @@ namespace Planerve.App.Persistence.Migrations
                 column: "NormalizedUserName",
                 unique: true,
                 filter: "[NormalizedUserName] IS NOT NULL");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_AuthorisedUser_ApplicationPermissionId",
-                table: "AuthorisedUser",
-                column: "ApplicationPermissionId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_FormTypeA_AccessSectionId",
@@ -1937,10 +1831,7 @@ namespace Planerve.App.Persistence.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "ApplicationProgress");
-
-            migrationBuilder.DropTable(
-                name: "ApplicationType");
+                name: "Application");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
@@ -1956,12 +1847,6 @@ namespace Planerve.App.Persistence.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
-
-            migrationBuilder.DropTable(
-                name: "AuthorisedUser");
-
-            migrationBuilder.DropTable(
-                name: "DocumentRequirement");
 
             migrationBuilder.DropTable(
                 name: "FloorSpace");
@@ -2009,16 +1894,13 @@ namespace Planerve.App.Persistence.Migrations
                 name: "WasteStreamDetail");
 
             migrationBuilder.DropTable(
+                name: "Submission");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
-
-            migrationBuilder.DropTable(
-                name: "ApplicationPermission");
-
-            migrationBuilder.DropTable(
-                name: "ApplicationDocument");
 
             migrationBuilder.DropTable(
                 name: "AccessSection");
@@ -2109,9 +1991,6 @@ namespace Planerve.App.Persistence.Migrations
 
             migrationBuilder.DropTable(
                 name: "IndustrialMachinerySection");
-
-            migrationBuilder.DropTable(
-                name: "Application");
 
             migrationBuilder.DropTable(
                 name: "ExistingUnits");

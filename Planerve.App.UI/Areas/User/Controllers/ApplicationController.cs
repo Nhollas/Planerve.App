@@ -20,21 +20,27 @@ public class ApplicationController : Controller
     }
 
     [HttpGet]
-    public async Task<IActionResult> Dashboard()
+    public IActionResult Dashboard()
     {
-        var applications = await _applicationService.GetApplicationList();
+        var applications = _applicationService.GetApplicationList().Result;
 
-        var removeDuplicateApplicationTypes = applications.Select(x => x.Type).DistinctBy(x => x.Value).ToList();
+        var removeDuplicateApplicationTypes = applications.Select(x => x.Submission).DistinctBy(x => x.FormType).ToList();
+        var removeDuplicateStatus = applications.DistinctBy(x => x.AppStatus).ToList();
 
-        var applicationTypes = removeDuplicateApplicationTypes.Select(x => new SelectListItem { Text = x.Name, Value = x.Value.ToString() }).ToList();
+        var applicationTypes = removeDuplicateApplicationTypes
+            .Select(x => new SelectListItem { Text = x.TypeName, Value = x.FormType.ToString() })
+            .ToList();
+
+        var applicationStatuses = removeDuplicateStatus
+            .Select(x => new SelectListItem { Text = x.AppStatus, Value = x.AppStatus })
+            .ToList();
 
         var viewModel = new ApplicationDashboardViewModel()
         {
             ApplicationList = applications,
-            ApplicationTypes = applicationTypes
+            ApplicationTypes = applicationTypes,
+            ApplicationStatus = applicationStatuses
         };
-        // Initilise the SelectLits.
-        viewModel.OnGet();
 
         return View(viewModel);
     }

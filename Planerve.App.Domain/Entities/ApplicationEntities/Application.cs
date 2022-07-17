@@ -1,16 +1,19 @@
 ﻿using Planerve.App.Domain.Common;
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Planerve.App.Domain.Entities.ApplicationEntities;
 
 public class Application : AuditableEntity
 {
-    public Guid Id { get; set; }
-    public string ApplicationReference { get; set; }
-    public string ApplicationName { get; set; }
-    public string VersionNumber { get; set; }
-    public ApplicationPermission Users { get; set; }
-    public ApplicationType Type { get; set; }
-    public ApplicationDocument Document { get; set; }
-    public ApplicationProgress Progress { get; set; }
+    [Key]
+    public Guid AppId { get; set; } = Guid.NewGuid();
+    public string AppReference { get; set; }
+    public string AppName { get; set; }
+    public string AppVersion { get; set; }
+    public string AppStatus { get; set; }
+    public int AppType { get; set; }
+    public int AppCategory { get; set; }
+    public int PercentageComplete { get; set; }
+    public Submission Submission { get; set; }
 }

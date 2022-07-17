@@ -8,9 +8,9 @@ namespace Planerve.App.Domain.Entities.FormEntities.Shared
     {
         public Guid Id { get; set; }
         public bool MaterialsRequired { get; set; }
-        public ICollection<MaterialType> MaterialTypes { get; set; }
         public bool AdditionalInformation { get; set; }
         public string DocumentReference { get; set; }
+        public ICollection<MaterialType> MaterialTypes { get; set; }
     }
     public class MaterialType
     {

@@ -16,7 +16,7 @@ namespace Planerve.App.API.Controllers
             _authenticationService = authenticationService;
         }
 
-        [HttpPost("register")]
+        [HttpPost("register", Name = "Register")]
         public async Task<ActionResult<RegistrationResponse>> Register(RegistrationRequest request)
         {
             var result = await _authenticationService.Register(request);
@@ -24,7 +24,7 @@ namespace Planerve.App.API.Controllers
             return Ok(result);
         }
 
-        [HttpPost("login")]
+        [HttpPost("login", Name = "Login")]
         public async Task<ActionResult<string>> Login(LoginRequest request)
         {
             var token = await _authenticationService.Login(request);

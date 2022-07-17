@@ -37,7 +37,6 @@ namespace Planerve.App.Domain.Entities.FormEntities.Shared
         public string LastName { get; set; }
         public DateTime DeclarationDate { get; set; }
         public bool DeclarationMade { get; set; }
-        public Guid CertificateBFK { get; set; }
     }
 
     public class CertificateC
@@ -51,12 +50,11 @@ namespace Planerve.App.Domain.Entities.FormEntities.Shared
         public string LastName { get; set; }
         public DateTime DeclarationDate { get; set; }
         public bool DeclarationMade { get; set; }
-        public Guid CertificateCFK { get; set; }
     }
 
     public class CertificateD
     {
-        public string StepsTaken { get; set; }
+        public string StepsTakenDescription { get; set; }
         public string PublishedInPaper { get; set; }
         public DateTime PublishedDate { get; set; }
         public int Role { get; set; }

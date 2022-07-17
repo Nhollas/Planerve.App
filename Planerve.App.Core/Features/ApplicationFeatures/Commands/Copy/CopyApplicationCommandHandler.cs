@@ -1,14 +1,14 @@
 ﻿using AutoMapper;
 using MediatR;
-using Microsoft.AspNetCore.Authorization;
-using Planerve.App.Core.Authorization.Requirements;
 using Planerve.App.Core.Exceptions;
 using Planerve.App.Core.Features.ApplicationFeatures.Commands.Create.DataHelpers;
 using Planerve.App.Core.Interfaces.Persistence.Generic;
 using Planerve.App.Core.Interfaces.Services;
 using Planerve.App.Core.Specification.ApplicationQueries;
+using Planerve.App.Core.Specification.FormQueries;
 using Planerve.App.Domain.Entities.ApplicationEntities;
 using Planerve.App.Domain.Entities.FormEntities;
+using Planerve.App.Domain.Entities.FormEntities.Shared;
 using System;
 using System.Linq;
 using System.Threading;
@@ -20,21 +20,18 @@ namespace Planerve.App.Core.Features.ApplicationFeatures.Commands.Copy
     {
         private readonly IUserService _userService;
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IAuthorizationService _authorizationService;
         private readonly IMapper _mapper;
         private readonly string _userId;
 
         public CopyApplicationCommandHandler(
             IUserService userService,
             IUnitOfWork unitOfWork,
-            IMapper mapper,
-            IAuthorizationService authorizationService)
+            IMapper mapper)
         {
             _userService = userService;
             _unitOfWork = unitOfWork;
             _userId = _userService.UserId();
             _mapper = mapper;
-            _authorizationService = authorizationService;
         }
 
         public async Task<Guid> Handle(CopyApplicationCommand request, CancellationToken cancellationToken)
@@ -46,53 +43,70 @@ namespace Planerve.App.Core.Features.ApplicationFeatures.Commands.Copy
             if (validationResult.Errors.Count > 0)
                 throw new ValidationException(validationResult);
 
-            var user = await _userService.GetUser();
-
             var specification = new GetApplicationByIdSpecification(request.ApplicationId, _userId);
 
             var application = _unitOfWork.ApplicationRepository.FindWithSpecificationPattern(specification).FirstOrDefault();
 
-            var authorisedResult = await _authorizationService.AuthorizeAsync(user, application.Users, ApplicationPolicies.CopyApplication);
-
-            // If check fails this user doesn't have permissions to copy this application, throw NotAuthorisedException.
-            if (!authorisedResult.Succeeded)
+            if (application == null)
             {
-                throw new NotAuthorisedException(nameof(Application), _userId);
+                throw new NotFoundException(nameof(Application), request.ApplicationId);
             }
 
-            Guid newId = await CopyApplication(application, request);
-            await CopyForm(application.Type.Value, request, newId);
+            Application copiedApplication = await CopyApplication(application, request);
+            await CopyForm(application, copiedApplication, request);
 
-            return newId;
+            return copiedApplication.AppId;
         }
 
         // Copy application data that was passed in the parameter.
-        private async Task<Guid> CopyApplication(Application application, CopyApplicationCommand command)
+        private async Task<Application> CopyApplication(Application application, CopyApplicationCommand command)
         {
-            var applicationTypeInfo = ApplicationTypeHelper.GetTypeInfo(application.Type.Value, application.Type.CategoryValue);
-            var applicationDocumentInfo = ApplicationDocumentHelper.GetDocumentInfo(application.Type.Value);
+            SubmissionHelper.Submission submissionInfo = SubmissionHelper.GetSubmissionInfo(application.AppType, application.AppCategory);
 
             Application applicationToCopy = new()
             {
-                ApplicationReference = GenerateApplicationReference(),
-                ApplicationName = command.ApplicationName,
-                VersionNumber = "V1",
-                Type = _mapper.Map<ApplicationType>(applicationTypeInfo),
-                Document = _mapper.Map<ApplicationDocument>(applicationDocumentInfo),
-                Progress = new ApplicationProgress()
-                {
-                    ApplicationStatus = "DRAFT",
-                    ProgressPercentage = 10
-                },
-                Users = new ApplicationPermission()
-                {
-                    OwnerId = _userId,
-                }
+                AppName = command.ApplicationName,
+                AppReference = GenerateApplicationReference(),
+                AppVersion = "V1",
+                AppStatus = "Draft",
+                AppType = application.AppType,
+                AppCategory = application.AppCategory,
+                PercentageComplete = 7,
+                Submission = _mapper.Map<Submission>(submissionInfo)
             };
 
-            var copiedApplication = await _unitOfWork.ApplicationRepository.AddAsync(applicationToCopy);
+            Application copiedApplication = await _unitOfWork.ApplicationRepository.AddAsync(applicationToCopy);
 
-            return copiedApplication.Id;
+            return copiedApplication;
+        }
+
+        /*
+            Based on what the user wants to copy over from the existing form will determine what gets pulled over.
+            As each form has it's own DbTable we will need to use UnitOfWork to call each repository based on it's type.
+        */
+        private async Task<Unit> CopyForm(Application existingApplication, Application copiedApplication, CopyApplicationCommand command)
+        {
+            Guid newFormId = copiedApplication.Submission.FormId;
+
+            switch (copiedApplication.AppType)
+            {
+                case 1:
+                    // Get existing form data.
+                    GetFormTypeASpecification specificationA = new(existingApplication.Submission.FormId);
+                    FormTypeA existingFormTypeA = _unitOfWork.FormTypeARepository.FindWithSpecificationPattern(specificationA).FirstOrDefault();
+
+                    FormTypeA formTypeA = new();
+                    formTypeA.Initialize(newFormId);
+
+                    // Based on the commands booleans, copy the existing data from the agent, applicant and site sections.
+                    formTypeA.AgentSection = command.AgentDetails.Equals(true) ? _mapper.Map<AgentSection>(existingFormTypeA.AgentSection) : new AgentSection() { Id = newFormId };
+                    formTypeA.ApplicantSection = command.ApplicantDetails.Equals(true) ? _mapper.Map<ApplicantSection>(existingFormTypeA.ApplicantSection) : new ApplicantSection() { Id = newFormId };
+                    formTypeA.SiteSection = command.SiteDetails.Equals(true) ? _mapper.Map<SiteSection>(existingFormTypeA.SiteSection) : new SiteSection() { Id = newFormId };
+
+                    await _unitOfWork.FormTypeARepository.AddAsync(formTypeA);
+                    break;
+            }
+            return Unit.Value;
         }
 
         // TODO: While it's very unlikely, should perform a check to make sure this ref doesn't already exist.
@@ -104,84 +118,6 @@ namespace Planerve.App.Core.Features.ApplicationFeatures.Commands.Copy
             var appReference = $"PP-{s}";
 
             return appReference;
-        }
-
-        /// <summary>
-        /// We know that a form exists with the same Id as the application as that how it's created.
-        /// Based on what the user wants to copy over from the existing form will determine what gets pulled over.
-        /// As each form has it's own DbTable we will need to use UnitOfWork to call each repository based on it's type.
-        /// </summary>
-        private async Task<Unit> CopyForm(int formType, CopyApplicationCommand command, Guid newId)
-        {
-            switch (formType)
-            {
-                case 1:
-                    var formA = await _unitOfWork.FormTypeARepository.GetByIdAsync(command.ApplicationId);
-
-                    FormTypeA formTypeA = new()
-                    {
-                        FormId = newId,
-                        AgentSection = command.AgentDetails.Equals(true) ? formA.AgentSection : null,
-                        ApplicantSection = command.ApplicantDetails.Equals(true) ? formA.ApplicantSection : null,
-                        SiteSection = command.SiteDetails.Equals(true) ? formA.SiteSection : null,
-                    };
-
-                    await _unitOfWork.FormTypeARepository.AddAsync(formTypeA);
-                    break;
-                case 2:
-                    var formB = await _unitOfWork.FormTypeBRepository.GetByIdAsync(command.ApplicationId);
-
-                    FormTypeB formTypeB = new()
-                    {
-                        FormId = newId,
-                        AgentSection = command.AgentDetails.Equals(true) ? formB.AgentSection : null,
-                        ApplicantSection = command.ApplicantDetails.Equals(true) ? formB.ApplicantSection : null,
-                        SiteSection = command.SiteDetails.Equals(true) ? formB.SiteSection : null,
-                    };
-
-                    await _unitOfWork.FormTypeBRepository.AddAsync(formTypeB);
-                    break;
-                case 3:
-                    var formC = await _unitOfWork.FormTypeCRepository.GetByIdAsync(command.ApplicationId);
-
-                    FormTypeC formTypeC = new()
-                    {
-                        FormId = newId,
-                        AgentSection = command.AgentDetails.Equals(true) ? formC.AgentSection : null,
-                        ApplicantSection = command.ApplicantDetails.Equals(true) ? formC.ApplicantSection : null,
-                        SiteSection = command.SiteDetails.Equals(true) ? formC.SiteSection : null,
-                    };
-
-                    await _unitOfWork.FormTypeCRepository.AddAsync(formTypeC);
-                    break;
-                case 4:
-                    var formD = await _unitOfWork.FormTypeDRepository.GetByIdAsync(command.ApplicationId);
-
-                    FormTypeD formTypeD = new()
-                    {
-                        FormId = newId,
-                        AgentSection = command.AgentDetails.Equals(true) ? formD.AgentSection : null,
-                        ApplicantSection = command.ApplicantDetails.Equals(true) ? formD.ApplicantSection : null,
-                        SiteSection = command.SiteDetails.Equals(true) ? formD.SiteSection : null,
-                    };
-
-                    await _unitOfWork.FormTypeDRepository.AddAsync(formTypeD);
-                    break;
-                case 5:
-                    var formE = await _unitOfWork.FormTypeERepository.GetByIdAsync(command.ApplicationId);
-
-                    FormTypeE formTypeE = new()
-                    {
-                        FormId = newId,
-                        AgentSection = command.AgentDetails.Equals(true) ? formE.AgentSection : null,
-                        ApplicantSection = command.ApplicantDetails.Equals(true) ? formE.ApplicantSection : null,
-                        SiteSection = command.SiteDetails.Equals(true) ? formE.SiteSection : null,
-                    };
-
-                    await _unitOfWork.FormTypeERepository.AddAsync(formTypeE);
-                    break;
-            }
-            return Unit.Value;
         }
     }
 }

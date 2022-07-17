@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 using Planerve.App.Core.Features.ApplicationFeatures.Commands.Copy;
 using Planerve.App.Core.Features.ApplicationFeatures.Commands.Create;
 using Planerve.App.Core.Features.ApplicationFeatures.Commands.Delete;
-using Planerve.App.Core.Features.ApplicationFeatures.Commands.Share;
 using Planerve.App.Core.Features.ApplicationFeatures.Queries.GetApplicationById;
 using Planerve.App.Core.Features.ApplicationFeatures.Queries.GetApplicationList;
 
@@ -22,7 +21,7 @@ public class ApplicationController : Controller
         _mediator = mediator;
     }
 
-    [HttpGet("Get/{id:guid}")]
+    [HttpGet("Get/{id:guid}", Name = "GetApplicationById")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesDefaultResponseType]
     public async Task<ActionResult<ApplicationDetailVm>> GetById(Guid id)
@@ -30,7 +29,7 @@ public class ApplicationController : Controller
         var applicationQuery = new GetApplicationDetailQuery { Id = id };
         return Ok(await _mediator.Send(applicationQuery));
     }
-    [HttpGet("List")]
+    [HttpGet("List", Name = "GetApplicationList")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesDefaultResponseType]
     public async Task<ActionResult<List<ApplicationListVm>>> ListAll()
@@ -41,7 +40,7 @@ public class ApplicationController : Controller
         return Ok(dtos);
     }
 
-    [HttpPost("Create")]
+    [HttpPost("Create", Name = "CreateApplication")]
     public async Task<ActionResult<Guid>> Create([FromBody] CreateApplicationCommand createAppDataCommand)
     {
         var id = await _mediator.Send(createAppDataCommand);
@@ -49,7 +48,7 @@ public class ApplicationController : Controller
         return Ok(id);
     }
 
-    [HttpPost("Copy")]
+    [HttpPost("Copy", Name = "CopyApplication")]
     public async Task<ActionResult<Guid>> Copy([FromBody] CopyApplicationCommand copyAppDataCommand)
     {
         var id = await _mediator.Send(copyAppDataCommand);
@@ -57,18 +56,7 @@ public class ApplicationController : Controller
         return Ok(id);
     }
 
-    [HttpPost("Share")]
-    [ProducesResponseType(StatusCodes.Status204NoContent)]
-    [ProducesResponseType(StatusCodes.Status404NotFound)]
-    [ProducesDefaultResponseType]
-    public async Task<ActionResult<Guid>> Share([FromBody] ShareApplicationCommand shareAppDataCommand)
-    {
-        await _mediator.Send(shareAppDataCommand);
-
-        return NoContent();
-    }
-
-    [HttpDelete("Delete/{id:guid}")]
+    [HttpDelete("Delete/{id:guid}", Name = "DeleteApplication")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesDefaultResponseType]

@@ -7,8 +7,7 @@ namespace Planerve.App.Core.Interfaces.Persistence.Generic;
 public interface IUnitOfWork
 {
     IAsyncRepository<Application> ApplicationRepository { get; }
-    IAsyncRepository<ApplicationPermission> ApplicationUserRepository { get; }
-    IAsyncRepository<ApplicationType> ApplicationTypeRepository { get; }
+    IAsyncRepository<Submission> SubmissionRepository { get; }
     IAsyncRepository<FormTypeA> FormTypeARepository { get; }
     IAsyncRepository<FormTypeB> FormTypeBRepository { get; }
     IAsyncRepository<FormTypeC> FormTypeCRepository { get; }

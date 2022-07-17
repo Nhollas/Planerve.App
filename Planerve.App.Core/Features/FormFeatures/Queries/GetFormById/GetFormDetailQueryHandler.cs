@@ -1,10 +1,9 @@
 ﻿using MediatR;
-using Microsoft.AspNetCore.Authorization;
-using Planerve.App.Core.Authorization.Requirements;
 using Planerve.App.Core.Exceptions;
 using Planerve.App.Core.Interfaces.Persistence.Generic;
-using Planerve.App.Core.Interfaces.Services;
+using Planerve.App.Core.Specification.FormQueries;
 using Planerve.App.Domain.Entities.ApplicationEntities;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -13,67 +12,56 @@ namespace Planerve.App.Core.Features.FormFeatures.Queries.GetFormById
     public class GetFormDetailQueryHandler : IRequestHandler<GetFormDetailQuery, FormDetailVM>
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IAuthorizationService _authorizationService;
-        private readonly IUserService _userService;
+        private readonly IAsyncRepository<Submission> _repository;
 
         public GetFormDetailQueryHandler(
             IUnitOfWork unitOfWork,
-            IAuthorizationService authorizationService,
-            IUserService userService)
+            IAsyncRepository<Submission> repository)
         {
             _unitOfWork = unitOfWork;
-            _authorizationService = authorizationService;
-            _userService = userService;
+            _repository = repository;
         }
 
-        public async Task<FormDetailVM> Handle(GetFormDetailQuery request, CancellationToken cancellationToken)
+        public Task<FormDetailVM> Handle(GetFormDetailQuery request, CancellationToken cancellationToken)
         {
-            var user = await _userService.GetUser();
+            GetFormIdFromSubmissionSpecification specification = new(request.FormId);
 
-            ApplicationPermission authorisedUsers = await _unitOfWork.ApplicationUserRepository.GetByIdAsync(request.Id);
+            Submission submission = _repository.FindWithSpecificationPattern(specification).FirstOrDefault();
 
-            var authorisedResult = await _authorizationService.AuthorizeAsync(user, authorisedUsers, FormPolicies.ReadForm);
-
-            // If check fails this user doesn't have permissions to read this form, throw NotAuthorisedException.
-            if (!authorisedResult.Succeeded)
+            if (submission == null)
             {
-                throw new NotAuthorisedException(nameof(request.Id), user.Identity.Name);
+                throw new NotFoundException("Form", request.FormId);
             }
 
-            object form = await GetForm(request);
+            object form = GetForm(submission);
 
-            if (form == null)
-            {
-                throw new NotFoundException(nameof(form), request.Id);
-            }
+            var result = new FormDetailVM { Data = form, Type = submission.FormType };
 
-            // As the client will need to know how to deserialise the data, we pass the forms type in as well so it can be handled on the frontend.
-            return new FormDetailVM { Data = form, Type = request.Type };
+            // As the client will need to know how to deserialize the data, we pass the forms type in as well so it can be handled on the frontend.
+            return Task.FromResult(result);
         }
 
 
         // As object is a base entity it can be anything, while I don't like to uses switches it forms an easy implementation.
-        private async Task<object> GetForm(GetFormDetailQuery request)
+        private object GetForm(Submission submission)
         {
-            object form;
-
-            switch (request.Type)
+            switch (submission.FormType)
             {
                 case 1:
-                    form = await _unitOfWork.FormTypeARepository.GetByIdAsync(request.Id);
-                    return form;
+                    GetFormTypeASpecification specificationA = new(submission.FormId);
+                    return _unitOfWork.FormTypeARepository.FindWithSpecificationPattern(specificationA).FirstOrDefault();
                 case 2:
-                    form = await _unitOfWork.FormTypeBRepository.GetByIdAsync(request.Id);
-                    return form;
+                    GetFormTypeBSpecification specificationB = new(submission.FormId);
+                    return _unitOfWork.FormTypeBRepository.FindWithSpecificationPattern(specificationB).FirstOrDefault();
                 case 3:
-                    form = await _unitOfWork.FormTypeCRepository.GetByIdAsync(request.Id);
-                    return form;
+                    GetFormTypeCSpecification specificationC = new(submission.FormId);
+                    return _unitOfWork.FormTypeCRepository.FindWithSpecificationPattern(specificationC).FirstOrDefault();
                 case 4:
-                    form = await _unitOfWork.FormTypeDRepository.GetByIdAsync(request.Id);
-                    return form;
+                    GetFormTypeDSpecification specificationD = new(submission.FormId);
+                    return _unitOfWork.FormTypeDRepository.FindWithSpecificationPattern(specificationD).FirstOrDefault();
                 case 5:
-                    form = await _unitOfWork.FormTypeERepository.GetByIdAsync(request.Id);
-                    return form;
+                    GetFormTypeESpecification specificationE = new(submission.FormId);
+                    return _unitOfWork.FormTypeERepository.FindWithSpecificationPattern(specificationE).FirstOrDefault();
                 default:
                     return null;
             }

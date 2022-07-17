@@ -9,21 +9,21 @@ public class ApplicationDataService : BaseDataService, IApplicationDataService
 {
     private readonly IMapper _mapper;
 
-    public ApplicationDataService(IApplicationClient client, IMapper mapper) : base(client)
+    public ApplicationDataService(IClient client, IMapper mapper) : base(client)
     {
         _mapper = mapper;
     }
 
     public async Task<ApplicationDetailViewModel> GetApplicationById(Guid id)
     {
-        var selectedApplication = await _applicationClient.GetAsync(id);
+        var selectedApplication = await _client.GetApplicationByIdAsync(id);
         var mappedApplication = _mapper.Map<ApplicationDetailViewModel>(selectedApplication);
         return mappedApplication;
     }
 
     public async Task<List<ApplicationListViewModel>> GetApplicationList()
     {
-        var applicationList = await _applicationClient.ListAsync();
+        var applicationList = await _client.GetApplicationListAsync();
         var mappedList = _mapper.Map<ICollection<ApplicationListViewModel>>(applicationList);
         return mappedList.ToList();
     }
@@ -33,7 +33,7 @@ public class ApplicationDataService : BaseDataService, IApplicationDataService
         try
         {
             CreateApplicationCommand createApplicationCommand = _mapper.Map<ApplicationDetailViewModel, CreateApplicationCommand>(applicationDetailViewModel);
-            var newId = await _applicationClient.CreateAsync(createApplicationCommand);
+            var newId = await _client.CreateApplicationAsync(createApplicationCommand);
             return new ApiResponse<Guid>() { Data = newId, Success = true };
         }
         catch (ApiException ex)

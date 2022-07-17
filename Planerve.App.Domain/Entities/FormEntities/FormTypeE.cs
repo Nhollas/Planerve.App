@@ -9,6 +9,19 @@ namespace Planerve.App.Domain.Entities.FormEntities
     // Removal/Variation of a condition
     public class FormTypeE : AuditableEntity
     {
+        public void Initialize(Guid formId)
+        {
+            FormId = formId;
+            SiteSection = new SiteSection() { Id = formId };
+            ApplicantSection = new ApplicantSection() { Id = formId };
+            AgentSection = new AgentSection() { Id = formId };
+            ConditionProposalSection = new ConditionProposalSection() { Id = formId };
+            VariationConditionSection = new VariationConditionSection() { Id = formId };
+            SiteVisitSection = new SiteVisitSection() { Id = formId };
+            AdviceSection = new AdviceSection() { Id = formId };
+            OwnershipCertificationSection = new OwnershipCertificationSection() { Id = formId };
+        }
+
         [Key]
         public Guid FormId { get; set; }
         public SiteSection SiteSection { get; set; }

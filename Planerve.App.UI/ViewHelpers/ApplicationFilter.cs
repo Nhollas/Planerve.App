@@ -22,13 +22,13 @@ namespace Planerve.App.UI.ViewHelpers
             if (applicationFilterModel != null)
             {
                 if (applicationFilterModel.SearchQuery != null)
-                    queriedApplications = queriedApplications.Where(x => x.ApplicationReference == applicationFilterModel.SearchQuery || x.ApplicationName == applicationFilterModel.SearchQuery);
+                    queriedApplications = queriedApplications.Where(x => x.AppReference == applicationFilterModel.SearchQuery || x.AppName == applicationFilterModel.SearchQuery);
 
                 if (applicationFilterModel.VersionNumber != null)
-                    queriedApplications = queriedApplications.Where(x => x.VersionNumber == applicationFilterModel.VersionNumber);
+                    queriedApplications = queriedApplications.Where(x => x.AppVersion == applicationFilterModel.VersionNumber);
 
-                if (applicationFilterModel.ApplicationTypes != null)
-                    queriedApplications = queriedApplications.Where(x => applicationFilterModel.ApplicationTypes.Select(x => x.Value).Contains(x.Type.Value));
+                //if (applicationFilterModel.ApplicationTypes != null)
+                //    queriedApplications = queriedApplications.Where(x => applicationFilterModel.ApplicationTypes.Select(x => x.Value).Contains(x.Id));
 
                 if (applicationFilterModel.FromDate != null && applicationFilterModel.ToDate != null)
                     queriedApplications = queriedApplications.Where(x => x.CreatedDate >= applicationFilterModel.FromDate && x.CreatedDate <= applicationFilterModel.ToDate);

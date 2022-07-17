@@ -8,6 +8,23 @@ namespace Planerve.App.Domain.Entities.FormEntities;
 // Householder Planning Permission
 public class FormTypeA : AuditableEntity
 {
+    public void Initialize(Guid formId)
+    {
+        FormId = formId;
+        SiteSection = new SiteSection() { Id = formId };
+        ApplicantSection = new ApplicantSection() { Id = formId };
+        AgentSection = new AgentSection() { Id = formId };
+        ProposalSection = new ProposalSection() { Id = formId };
+        MaterialSection = new MaterialSection() { Id = formId };
+        TreeAndHedgeSection = new TreeAndHedgeSection() { Id = formId };
+        AccessSection = new AccessSection() { Id = formId };
+        ParkingSection = new ParkingSection() { Id = formId };
+        SiteVisitSection = new SiteVisitSection() { Id = formId };
+        AdviceSection = new AdviceSection() { Id = formId };
+        AuthorityMemberSection = new AuthorityMemberSection() { Id = formId };
+        OwnershipCertificationSection = new OwnershipCertificationSection() { Id = formId };
+    }
+
     [Key]
     public Guid FormId { get; set; }
     public SiteSection SiteSection { get; set; }

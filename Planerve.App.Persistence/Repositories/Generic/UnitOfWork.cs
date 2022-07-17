@@ -11,8 +11,7 @@ public class UnitOfWork : IUnitOfWork
     private readonly PlanerveDbContext _context;
 
     private IAsyncRepository<Application> _applicationRepository;
-    private IAsyncRepository<ApplicationPermission> _applicationUserRepository;
-    private IAsyncRepository<ApplicationType> _applicationTypeRepository;
+    private IAsyncRepository<Submission> _submissionRepository;
     private IAsyncRepository<FormTypeA> _formTypeARepository;
     private IAsyncRepository<FormTypeB> _formTypeBRepository;
     private IAsyncRepository<FormTypeC> _formTypeCRepository;
@@ -24,7 +23,7 @@ public class UnitOfWork : IUnitOfWork
     private IAsyncRepository<AgentSection> _agentSectionRepository;
     private IAsyncRepository<ApplicantSection> _applicantSectionRepository;
     private IAsyncRepository<AuthorityMemberSection> _authorityMemberSectionRepository;
-    private IAsyncRepository<BiodiversitySection> _biodiversitySectionRepository; 
+    private IAsyncRepository<BiodiversitySection> _biodiversitySectionRepository;
     private IAsyncRepository<ConditionProposalSection> _conditionProposalSectionRepository;
     private IAsyncRepository<DischargeConditionSection> _dischargeConditionSectionRepository;
     private IAsyncRepository<EligibilitySection> _eligibilitySectionRepository;
@@ -63,19 +62,11 @@ public class UnitOfWork : IUnitOfWork
         }
     }
 
-    public IAsyncRepository<ApplicationPermission> ApplicationUserRepository
+    public IAsyncRepository<Submission> SubmissionRepository
     {
         get
         {
-            return _applicationUserRepository ??= new BaseRepository<ApplicationPermission>(_context);
-        }
-    }
-
-    public IAsyncRepository<ApplicationType> ApplicationTypeRepository
-    {
-        get
-        {
-            return _applicationTypeRepository ??= new BaseRepository<ApplicationType>(_context);
+            return _submissionRepository ??= new BaseRepository<Submission>(_context);
         }
     }
 

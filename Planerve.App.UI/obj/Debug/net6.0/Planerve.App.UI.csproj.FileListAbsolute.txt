@@ -287,3 +287,4 @@ C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.UI\obj\Debug\net6.0\
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.UI\obj\Debug\net6.0\Planerve.App.UI.pdb
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.UI\obj\Debug\net6.0\Planerve.App.UI.genruntimeconfig.cache
 C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.UI\obj\Debug\net6.0\ref\Planerve.App.UI.dll
+C:\Users\Nhollas\Documents\GitHub\Planerve.App\Planerve.App.UI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

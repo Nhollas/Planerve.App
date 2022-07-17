@@ -9,6 +9,18 @@ namespace Planerve.App.Domain.Entities.FormEntities;
 // Approval of details reserved by a condition (Discharge)
 public class FormTypeC : AuditableEntity
 {
+    public void Initialize(Guid formId)
+    {
+        FormId = formId;
+        SiteSection = new SiteSection() { Id = formId };
+        ApplicantSection = new ApplicantSection() { Id = formId };
+        AgentSection = new AgentSection() { Id = formId };
+        ConditionProposalSection = new ConditionProposalSection() { Id = formId };
+        DischargeConditionSection = new DischargeConditionSection() { Id = formId };
+        SiteVisitSection = new SiteVisitSection() { Id = formId };
+        AdviceSection = new AdviceSection() { Id = formId };
+    }
+
     [Key]
     public Guid FormId { get; set; }
     public SiteSection SiteSection { get; set; }

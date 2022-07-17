@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using Planerve.App.Core.Authorization.Handlers;
 using Planerve.App.Core.Interfaces.Services;
 using Planerve.App.Core.Services;
 using System.Reflection;
@@ -16,8 +15,6 @@ public static class ApplicationServiceRegistration
     {
         services.AddAutoMapper(Assembly.GetExecutingAssembly());
         services.AddMediatR(Assembly.GetExecutingAssembly());
-        services.AddScoped<IAuthorizationHandler, ApplicationAuthorizationHandler>();
-        services.AddScoped<IAuthorizationHandler, FormAuthorizationHandler>();
         services.AddScoped<IUserService, UserService>();
         services.AddScoped<IFormSectionServiceProvider, FormSectionServiceProvider>();
         services.AddScoped(typeof(IFormSectionService<,>), typeof(FormSectionService<,>));

@@ -6,8 +6,8 @@ namespace Planerve.App.Core.Features.FormFeatures.Commands.Update
 {
     public class UpdateFormCommand : IRequest
     {
-        public Guid Id { get; set; }
-        public string Section { get; set; } 
+        public Guid FormId { get; set; }
+        public string Section { get; set; }
         public JsonObject Data { get; set; }
     }
 }

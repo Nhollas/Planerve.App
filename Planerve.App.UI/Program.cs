@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.Net.Http.Headers;
 using Planerve.App.UI;
 using Planerve.App.UI.Services.Base;
@@ -14,6 +16,21 @@ builder.Services.AddHttpClient<IClient, Client>(client =>
     client.DefaultRequestHeaders.Clear();
     client.DefaultRequestHeaders.Add(HeaderNames.Accept, "application/json");
 });
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+{
+	options.TokenValidationParameters = new TokenValidationParameters
+	{
+		ValidateAudience = true,
+		ValidAudience = "domain.com",
+		ValidateIssuer = true,
+		ValidIssuer = "domain.com",
+		ValidateLifetime = true,
+		ValidateIssuerSigningKey = true,
+		IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("THIS IS THE SECRET KEY")) // NOTE: THIS SHOULD BE A SECRET KEY NOT TO BE SHARED
+	};
+});
+
 
 var app = builder.Build();
 
@@ -36,5 +53,4 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{area=Public}/{controller=Home}/{action=Index}/{id?}");
-
 app.Run();

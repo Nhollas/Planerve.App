@@ -10,11 +10,11 @@ namespace Planerve.App.Core.Features.ApplicationFeatures.Commands.Create
                 .NotEmpty().WithMessage("{PropertyName} is required.")
                 .NotNull();
             RuleFor(e => e.ApplicationType)
-                .ExclusiveBetween(0, 21).WithMessage("{PropertyName} must be between 1 and 20")
+                .InclusiveBetween(1, 5).WithMessage("{PropertyName} must be between 1 and 5")
                 .NotEmpty().WithMessage("{PropertyName} is required.")
                 .NotNull();
             RuleFor(e => e.ApplicationCategory)
-                .ExclusiveBetween(0, 4).WithMessage("{PropertyName} must be between 1 and 3")
+                .InclusiveBetween(1, 3).WithMessage("{PropertyName} must be between 1 and 3")
                 .NotEmpty().WithMessage("{PropertyName} is required.")
                 .NotNull();
         }

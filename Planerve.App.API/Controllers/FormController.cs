@@ -18,7 +18,7 @@ namespace Planerve.App.API.Controllers
             _mediator = mediator;
         }
 
-        [HttpGet("Download/{id:guid}")]
+        [HttpGet("Download/{id:guid}", Name = "DownloadFormById")]
         [ProducesDefaultResponseType]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -28,16 +28,16 @@ namespace Planerve.App.API.Controllers
             return Ok(await _mediator.Send(downloadQuery));
         }
 
-        [HttpGet("Get/{id:guid}/Type/{type}")]
+        [HttpGet("Get/{id:guid}", Name = "GetFormById")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesDefaultResponseType]
-        public async Task<ActionResult<FormDetailVM>> GetById(Guid id, int type)
+        public async Task<ActionResult<FormDetailVM>> GetById(Guid id)
         {
-            var formQuery = new GetFormDetailQuery { Id = id, Type = type };
+            var formQuery = new GetFormDetailQuery { FormId = id };
             return Ok(await _mediator.Send(formQuery));
         }
 
-        [HttpPut("Update/{id:guid}/Section/{name}")]
+        [HttpPut("Update/{id:guid}/Section/{name}", Name ="UpdateFormSectionByName")]
         [ProducesDefaultResponseType]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -45,7 +45,7 @@ namespace Planerve.App.API.Controllers
         {
             UpdateFormCommand command = new()
             {
-                Id = id,
+                FormId = id,
                 Section = name,
                 Data = content
             };

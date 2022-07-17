@@ -18,71 +18,107 @@ namespace Planerve.App.UI.Services.Base
     using System = global::System;
 
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial interface IApplicationClient
+    public partial interface IClient
     {
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<ApplicationDetailVm> GetAsync(System.Guid id);
+        System.Threading.Tasks.Task<ApplicationDetailVm> GetApplicationByIdAsync(System.Guid id);
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<ApplicationDetailVm> GetAsync(System.Guid id, System.Threading.CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ApplicationDetailVm> GetApplicationByIdAsync(System.Guid id, System.Threading.CancellationToken cancellationToken);
 
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ApplicationListVm>> ListAsync();
-
-        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-        /// <returns>Success</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ApplicationListVm>> ListAsync(System.Threading.CancellationToken cancellationToken);
-
-        /// <returns>Success</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<System.Guid> CreateAsync(CreateApplicationCommand body);
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ApplicationListVm>> GetApplicationListAsync();
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<System.Guid> CreateAsync(CreateApplicationCommand body, System.Threading.CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ApplicationListVm>> GetApplicationListAsync(System.Threading.CancellationToken cancellationToken);
 
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<System.Guid> CopyAsync(CopyApplicationCommand body);
+        System.Threading.Tasks.Task<System.Guid> CreateApplicationAsync(CreateApplicationCommand body);
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<System.Guid> CopyAsync(CopyApplicationCommand body, System.Threading.CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<System.Guid> CreateApplicationAsync(CreateApplicationCommand body, System.Threading.CancellationToken cancellationToken);
+
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        System.Threading.Tasks.Task<System.Guid> CopyApplicationAsync(CopyApplicationCommand body);
+
+        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        System.Threading.Tasks.Task<System.Guid> CopyApplicationAsync(CopyApplicationCommand body, System.Threading.CancellationToken cancellationToken);
 
         /// <returns>No Content</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task ShareAsync(ShareApplicationCommand body);
-
-        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-        /// <returns>No Content</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task ShareAsync(ShareApplicationCommand body, System.Threading.CancellationToken cancellationToken);
-
-        /// <returns>No Content</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task DeleteAsync(System.Guid id);
+        System.Threading.Tasks.Task DeleteApplicationAsync(System.Guid id);
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>No Content</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task DeleteAsync(System.Guid id, System.Threading.CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteApplicationAsync(System.Guid id, System.Threading.CancellationToken cancellationToken);
+
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        System.Threading.Tasks.Task<RegistrationResponse> RegisterAsync(RegistrationRequest body);
+
+        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        System.Threading.Tasks.Task<RegistrationResponse> RegisterAsync(RegistrationRequest body, System.Threading.CancellationToken cancellationToken);
+
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        System.Threading.Tasks.Task<string> LoginAsync(LoginRequest body);
+
+        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        System.Threading.Tasks.Task<string> LoginAsync(LoginRequest body, System.Threading.CancellationToken cancellationToken);
+
+        /// <returns>No Content</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        System.Threading.Tasks.Task DownloadFormByIdAsync(System.Guid id);
+
+        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        /// <returns>No Content</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        System.Threading.Tasks.Task DownloadFormByIdAsync(System.Guid id, System.Threading.CancellationToken cancellationToken);
+
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        System.Threading.Tasks.Task<FormDetailVM> GetFormByIdAsync(System.Guid id);
+
+        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        System.Threading.Tasks.Task<FormDetailVM> GetFormByIdAsync(System.Guid id, System.Threading.CancellationToken cancellationToken);
+
+        /// <returns>No Content</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        System.Threading.Tasks.Task UpdateFormSectionByNameAsync(System.Guid id, string name, System.Collections.Generic.IDictionary<string, JsonNode> body);
+
+        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        /// <returns>No Content</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        System.Threading.Tasks.Task UpdateFormSectionByNameAsync(System.Guid id, string name, System.Collections.Generic.IDictionary<string, JsonNode> body, System.Threading.CancellationToken cancellationToken);
 
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class ApplicationClient : IApplicationClient
+    public partial class Client : IClient
     {
         private System.Net.Http.HttpClient _httpClient;
         private System.Lazy<System.Text.Json.JsonSerializerOptions> _settings;
 
-        public ApplicationClient(System.Net.Http.HttpClient httpClient)
+        public Client(System.Net.Http.HttpClient httpClient)
         {
             _httpClient = httpClient;
             _settings = new System.Lazy<System.Text.Json.JsonSerializerOptions>(CreateSerializerSettings);
@@ -105,15 +141,15 @@ namespace Planerve.App.UI.Services.Base
 
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<ApplicationDetailVm> GetAsync(System.Guid id)
+        public virtual System.Threading.Tasks.Task<ApplicationDetailVm> GetApplicationByIdAsync(System.Guid id)
         {
-            return GetAsync(id, System.Threading.CancellationToken.None);
+            return GetApplicationByIdAsync(id, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<ApplicationDetailVm> GetAsync(System.Guid id, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<ApplicationDetailVm> GetApplicationByIdAsync(System.Guid id, System.Threading.CancellationToken cancellationToken)
         {
             if (id == null)
                 throw new System.ArgumentNullException("id");
@@ -187,15 +223,15 @@ namespace Planerve.App.UI.Services.Base
 
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ApplicationListVm>> ListAsync()
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ApplicationListVm>> GetApplicationListAsync()
         {
-            return ListAsync(System.Threading.CancellationToken.None);
+            return GetApplicationListAsync(System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ApplicationListVm>> ListAsync(System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<ApplicationListVm>> GetApplicationListAsync(System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append("api/application/list");
@@ -265,15 +301,15 @@ namespace Planerve.App.UI.Services.Base
 
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<System.Guid> CreateAsync(CreateApplicationCommand body)
+        public virtual System.Threading.Tasks.Task<System.Guid> CreateApplicationAsync(CreateApplicationCommand body)
         {
-            return CreateAsync(body, System.Threading.CancellationToken.None);
+            return CreateApplicationAsync(body, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<System.Guid> CreateAsync(CreateApplicationCommand body, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<System.Guid> CreateApplicationAsync(CreateApplicationCommand body, System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append("api/application/create");
@@ -342,15 +378,15 @@ namespace Planerve.App.UI.Services.Base
 
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<System.Guid> CopyAsync(CopyApplicationCommand body)
+        public virtual System.Threading.Tasks.Task<System.Guid> CopyApplicationAsync(CopyApplicationCommand body)
         {
-            return CopyAsync(body, System.Threading.CancellationToken.None);
+            return CopyApplicationAsync(body, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<System.Guid> CopyAsync(CopyApplicationCommand body, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<System.Guid> CopyApplicationAsync(CopyApplicationCommand body, System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append("api/application/copy");
@@ -419,100 +455,15 @@ namespace Planerve.App.UI.Services.Base
 
         /// <returns>No Content</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task ShareAsync(ShareApplicationCommand body)
+        public virtual System.Threading.Tasks.Task DeleteApplicationAsync(System.Guid id)
         {
-            return ShareAsync(body, System.Threading.CancellationToken.None);
+            return DeleteApplicationAsync(id, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>No Content</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task ShareAsync(ShareApplicationCommand body, System.Threading.CancellationToken cancellationToken)
-        {
-            var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append("api/application/share");
-
-            var client_ = _httpClient;
-            var disposeClient_ = false;
-            try
-            {
-                using (var request_ = new System.Net.Http.HttpRequestMessage())
-                {
-                    var content_ = new System.Net.Http.StringContent(System.Text.Json.JsonSerializer.Serialize(body, _settings.Value));
-                    content_.Headers.ContentType = System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json");
-                    request_.Content = content_;
-                    request_.Method = new System.Net.Http.HttpMethod("POST");
-
-                    PrepareRequest(client_, request_, urlBuilder_);
-
-                    var url_ = urlBuilder_.ToString();
-                    request_.RequestUri = new System.Uri(url_, System.UriKind.RelativeOrAbsolute);
-
-                    PrepareRequest(client_, request_, url_);
-
-                    var response_ = await client_.SendAsync(request_, System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
-                    var disposeResponse_ = true;
-                    try
-                    {
-                        var headers_ = System.Linq.Enumerable.ToDictionary(response_.Headers, h_ => h_.Key, h_ => h_.Value);
-                        if (response_.Content != null && response_.Content.Headers != null)
-                        {
-                            foreach (var item_ in response_.Content.Headers)
-                                headers_[item_.Key] = item_.Value;
-                        }
-
-                        ProcessResponse(client_, response_);
-
-                        var status_ = (int)response_.StatusCode;
-                        if (status_ == 204)
-                        {
-                            return;
-                        }
-                        else
-                        if (status_ == 404)
-                        {
-                            var objectResponse_ = await ReadObjectResponseAsync<ProblemDetails>(response_, headers_, cancellationToken).ConfigureAwait(false);
-                            if (objectResponse_.Object == null)
-                            {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
-                            }
-                            throw new ApiException<ProblemDetails>("Not Found", status_, objectResponse_.Text, headers_, objectResponse_.Object, null);
-                        }
-                        else
-                        {
-                            var objectResponse_ = await ReadObjectResponseAsync<ProblemDetails>(response_, headers_, cancellationToken).ConfigureAwait(false);
-                            if (objectResponse_.Object == null)
-                            {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
-                            }
-                            throw new ApiException<ProblemDetails>("Error", status_, objectResponse_.Text, headers_, objectResponse_.Object, null);
-                        }
-                    }
-                    finally
-                    {
-                        if (disposeResponse_)
-                            response_.Dispose();
-                    }
-                }
-            }
-            finally
-            {
-                if (disposeClient_)
-                    client_.Dispose();
-            }
-        }
-
-        /// <returns>No Content</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task DeleteAsync(System.Guid id)
-        {
-            return DeleteAsync(id, System.Threading.CancellationToken.None);
-        }
-
-        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-        /// <returns>No Content</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task DeleteAsync(System.Guid id, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task DeleteApplicationAsync(System.Guid id, System.Threading.CancellationToken cancellationToken)
         {
             if (id == null)
                 throw new System.ArgumentNullException("id");
@@ -587,156 +538,6 @@ namespace Planerve.App.UI.Services.Base
                     client_.Dispose();
             }
         }
-
-        protected struct ObjectResponseResult<T>
-        {
-            public ObjectResponseResult(T responseObject, string responseText)
-            {
-                this.Object = responseObject;
-                this.Text = responseText;
-            }
-
-            public T Object { get; }
-
-            public string Text { get; }
-        }
-
-        public bool ReadResponseAsString { get; set; }
-
-        protected virtual async System.Threading.Tasks.Task<ObjectResponseResult<T>> ReadObjectResponseAsync<T>(System.Net.Http.HttpResponseMessage response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, System.Threading.CancellationToken cancellationToken)
-        {
-            if (response == null || response.Content == null)
-            {
-                return new ObjectResponseResult<T>(default(T), string.Empty);
-            }
-
-            if (ReadResponseAsString)
-            {
-                var responseText = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-                try
-                {
-                    var typedBody = System.Text.Json.JsonSerializer.Deserialize<T>(responseText, JsonSerializerSettings);
-                    return new ObjectResponseResult<T>(typedBody, responseText);
-                }
-                catch (System.Text.Json.JsonException exception)
-                {
-                    var message = "Could not deserialize the response body string as " + typeof(T).FullName + ".";
-                    throw new ApiException(message, (int)response.StatusCode, responseText, headers, exception);
-                }
-            }
-            else
-            {
-                try
-                {
-                    using (var responseStream = await response.Content.ReadAsStreamAsync().ConfigureAwait(false))
-                    {
-                        var typedBody = await System.Text.Json.JsonSerializer.DeserializeAsync<T>(responseStream, JsonSerializerSettings, cancellationToken).ConfigureAwait(false);
-                        return new ObjectResponseResult<T>(typedBody, string.Empty);
-                    }
-                }
-                catch (System.Text.Json.JsonException exception)
-                {
-                    var message = "Could not deserialize the response body stream as " + typeof(T).FullName + ".";
-                    throw new ApiException(message, (int)response.StatusCode, string.Empty, headers, exception);
-                }
-            }
-        }
-
-        private string ConvertToString(object value, System.Globalization.CultureInfo cultureInfo)
-        {
-            if (value == null)
-            {
-                return "";
-            }
-
-            if (value is System.Enum)
-            {
-                var name = System.Enum.GetName(value.GetType(), value);
-                if (name != null)
-                {
-                    var field = System.Reflection.IntrospectionExtensions.GetTypeInfo(value.GetType()).GetDeclaredField(name);
-                    if (field != null)
-                    {
-                        var attribute = System.Reflection.CustomAttributeExtensions.GetCustomAttribute(field, typeof(System.Runtime.Serialization.EnumMemberAttribute)) 
-                            as System.Runtime.Serialization.EnumMemberAttribute;
-                        if (attribute != null)
-                        {
-                            return attribute.Value != null ? attribute.Value : name;
-                        }
-                    }
-
-                    var converted = System.Convert.ToString(System.Convert.ChangeType(value, System.Enum.GetUnderlyingType(value.GetType()), cultureInfo));
-                    return converted == null ? string.Empty : converted;
-                }
-            }
-            else if (value is bool) 
-            {
-                return System.Convert.ToString((bool)value, cultureInfo).ToLowerInvariant();
-            }
-            else if (value is byte[])
-            {
-                return System.Convert.ToBase64String((byte[]) value);
-            }
-            else if (value.GetType().IsArray)
-            {
-                var array = System.Linq.Enumerable.OfType<object>((System.Array) value);
-                return string.Join(",", System.Linq.Enumerable.Select(array, o => ConvertToString(o, cultureInfo)));
-            }
-
-            var result = System.Convert.ToString(value, cultureInfo);
-            return result == null ? "" : result;
-        }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial interface IAuthenticationClient
-    {
-        /// <returns>Success</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<RegistrationResponse> RegisterAsync(RegistrationRequest body);
-
-        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-        /// <returns>Success</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<RegistrationResponse> RegisterAsync(RegistrationRequest body, System.Threading.CancellationToken cancellationToken);
-
-        /// <returns>Success</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<string> LoginAsync(LoginRequest body);
-
-        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-        /// <returns>Success</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<string> LoginAsync(LoginRequest body, System.Threading.CancellationToken cancellationToken);
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class AuthenticationClient : IAuthenticationClient
-    {
-        private System.Net.Http.HttpClient _httpClient;
-        private System.Lazy<System.Text.Json.JsonSerializerOptions> _settings;
-
-        public AuthenticationClient(System.Net.Http.HttpClient httpClient)
-        {
-            _httpClient = httpClient;
-            _settings = new System.Lazy<System.Text.Json.JsonSerializerOptions>(CreateSerializerSettings);
-        }
-
-        private System.Text.Json.JsonSerializerOptions CreateSerializerSettings()
-        {
-            var settings = new System.Text.Json.JsonSerializerOptions();
-            UpdateJsonSerializerSettings(settings);
-            return settings;
-        }
-
-        protected System.Text.Json.JsonSerializerOptions JsonSerializerSettings { get { return _settings.Value; } }
-
-        partial void UpdateJsonSerializerSettings(System.Text.Json.JsonSerializerOptions settings);
-
-        partial void PrepareRequest(System.Net.Http.HttpClient client, System.Net.Http.HttpRequestMessage request, string url);
-        partial void PrepareRequest(System.Net.Http.HttpClient client, System.Net.Http.HttpRequestMessage request, System.Text.StringBuilder urlBuilder);
-        partial void ProcessResponse(System.Net.Http.HttpClient client, System.Net.Http.HttpResponseMessage response);
 
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
@@ -892,657 +693,17 @@ namespace Planerve.App.UI.Services.Base
             }
         }
 
-        protected struct ObjectResponseResult<T>
+        /// <returns>No Content</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual System.Threading.Tasks.Task DownloadFormByIdAsync(System.Guid id)
         {
-            public ObjectResponseResult(T responseObject, string responseText)
-            {
-                this.Object = responseObject;
-                this.Text = responseText;
-            }
-
-            public T Object { get; }
-
-            public string Text { get; }
-        }
-
-        public bool ReadResponseAsString { get; set; }
-
-        protected virtual async System.Threading.Tasks.Task<ObjectResponseResult<T>> ReadObjectResponseAsync<T>(System.Net.Http.HttpResponseMessage response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, System.Threading.CancellationToken cancellationToken)
-        {
-            if (response == null || response.Content == null)
-            {
-                return new ObjectResponseResult<T>(default(T), string.Empty);
-            }
-
-            if (ReadResponseAsString)
-            {
-                var responseText = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-                try
-                {
-                    var typedBody = System.Text.Json.JsonSerializer.Deserialize<T>(responseText, JsonSerializerSettings);
-                    return new ObjectResponseResult<T>(typedBody, responseText);
-                }
-                catch (System.Text.Json.JsonException exception)
-                {
-                    var message = "Could not deserialize the response body string as " + typeof(T).FullName + ".";
-                    throw new ApiException(message, (int)response.StatusCode, responseText, headers, exception);
-                }
-            }
-            else
-            {
-                try
-                {
-                    using (var responseStream = await response.Content.ReadAsStreamAsync().ConfigureAwait(false))
-                    {
-                        var typedBody = await System.Text.Json.JsonSerializer.DeserializeAsync<T>(responseStream, JsonSerializerSettings, cancellationToken).ConfigureAwait(false);
-                        return new ObjectResponseResult<T>(typedBody, string.Empty);
-                    }
-                }
-                catch (System.Text.Json.JsonException exception)
-                {
-                    var message = "Could not deserialize the response body stream as " + typeof(T).FullName + ".";
-                    throw new ApiException(message, (int)response.StatusCode, string.Empty, headers, exception);
-                }
-            }
-        }
-
-        private string ConvertToString(object value, System.Globalization.CultureInfo cultureInfo)
-        {
-            if (value == null)
-            {
-                return "";
-            }
-
-            if (value is System.Enum)
-            {
-                var name = System.Enum.GetName(value.GetType(), value);
-                if (name != null)
-                {
-                    var field = System.Reflection.IntrospectionExtensions.GetTypeInfo(value.GetType()).GetDeclaredField(name);
-                    if (field != null)
-                    {
-                        var attribute = System.Reflection.CustomAttributeExtensions.GetCustomAttribute(field, typeof(System.Runtime.Serialization.EnumMemberAttribute)) 
-                            as System.Runtime.Serialization.EnumMemberAttribute;
-                        if (attribute != null)
-                        {
-                            return attribute.Value != null ? attribute.Value : name;
-                        }
-                    }
-
-                    var converted = System.Convert.ToString(System.Convert.ChangeType(value, System.Enum.GetUnderlyingType(value.GetType()), cultureInfo));
-                    return converted == null ? string.Empty : converted;
-                }
-            }
-            else if (value is bool) 
-            {
-                return System.Convert.ToString((bool)value, cultureInfo).ToLowerInvariant();
-            }
-            else if (value is byte[])
-            {
-                return System.Convert.ToBase64String((byte[]) value);
-            }
-            else if (value.GetType().IsArray)
-            {
-                var array = System.Linq.Enumerable.OfType<object>((System.Array) value);
-                return string.Join(",", System.Linq.Enumerable.Select(array, o => ConvertToString(o, cultureInfo)));
-            }
-
-            var result = System.Convert.ToString(value, cultureInfo);
-            return result == null ? "" : result;
-        }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial interface IFormClient
-    {
-        /// <returns>No Content</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task HouAsync(string id, UpdateFormTypeACommand body);
-
-        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-        /// <returns>No Content</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task HouAsync(string id, UpdateFormTypeACommand body, System.Threading.CancellationToken cancellationToken);
-
-        /// <returns>No Content</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task FullAsync(string id, UpdateFormTypeBCommand body);
-
-        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-        /// <returns>No Content</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task FullAsync(string id, UpdateFormTypeBCommand body, System.Threading.CancellationToken cancellationToken);
-
-        /// <returns>No Content</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task DocAsync(string id, UpdateFormTypeCCommand body);
-
-        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-        /// <returns>No Content</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task DocAsync(string id, UpdateFormTypeCCommand body, System.Threading.CancellationToken cancellationToken);
-
-        /// <returns>No Content</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task NmaAsync(string id, UpdateFormTypeDCommand body);
-
-        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-        /// <returns>No Content</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task NmaAsync(string id, UpdateFormTypeDCommand body, System.Threading.CancellationToken cancellationToken);
-
-        /// <returns>No Content</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task VarAsync(string id, UpdateFormTypeECommand body);
-
-        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-        /// <returns>No Content</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task VarAsync(string id, UpdateFormTypeECommand body, System.Threading.CancellationToken cancellationToken);
-
-        /// <returns>No Content</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task DownloadAsync(System.Guid id);
-
-        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-        /// <returns>No Content</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task DownloadAsync(System.Guid id, System.Threading.CancellationToken cancellationToken);
-
-        /// <returns>Success</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<FormDetailVM> Get2Async(System.Guid id, int? type);
-
-        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-        /// <returns>Success</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<FormDetailVM> Get2Async(System.Guid id, int? type, System.Threading.CancellationToken cancellationToken);
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class FormClient : IFormClient
-    {
-        private System.Net.Http.HttpClient _httpClient;
-        private System.Lazy<System.Text.Json.JsonSerializerOptions> _settings;
-
-        public FormClient(System.Net.Http.HttpClient httpClient)
-        {
-            _httpClient = httpClient;
-            _settings = new System.Lazy<System.Text.Json.JsonSerializerOptions>(CreateSerializerSettings);
-        }
-
-        private System.Text.Json.JsonSerializerOptions CreateSerializerSettings()
-        {
-            var settings = new System.Text.Json.JsonSerializerOptions();
-            UpdateJsonSerializerSettings(settings);
-            return settings;
-        }
-
-        protected System.Text.Json.JsonSerializerOptions JsonSerializerSettings { get { return _settings.Value; } }
-
-        partial void UpdateJsonSerializerSettings(System.Text.Json.JsonSerializerOptions settings);
-
-        partial void PrepareRequest(System.Net.Http.HttpClient client, System.Net.Http.HttpRequestMessage request, string url);
-        partial void PrepareRequest(System.Net.Http.HttpClient client, System.Net.Http.HttpRequestMessage request, System.Text.StringBuilder urlBuilder);
-        partial void ProcessResponse(System.Net.Http.HttpClient client, System.Net.Http.HttpResponseMessage response);
-
-        /// <returns>No Content</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task HouAsync(string id, UpdateFormTypeACommand body)
-        {
-            return HouAsync(id, body, System.Threading.CancellationToken.None);
+            return DownloadFormByIdAsync(id, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>No Content</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task HouAsync(string id, UpdateFormTypeACommand body, System.Threading.CancellationToken cancellationToken)
-        {
-            if (id == null)
-                throw new System.ArgumentNullException("id");
-
-            var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append("api/form/update/hou/{id}");
-            urlBuilder_.Replace("{id}", System.Uri.EscapeDataString(ConvertToString(id, System.Globalization.CultureInfo.InvariantCulture)));
-
-            var client_ = _httpClient;
-            var disposeClient_ = false;
-            try
-            {
-                using (var request_ = new System.Net.Http.HttpRequestMessage())
-                {
-                    var content_ = new System.Net.Http.StringContent(System.Text.Json.JsonSerializer.Serialize(body, _settings.Value));
-                    content_.Headers.ContentType = System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json");
-                    request_.Content = content_;
-                    request_.Method = new System.Net.Http.HttpMethod("PUT");
-
-                    PrepareRequest(client_, request_, urlBuilder_);
-
-                    var url_ = urlBuilder_.ToString();
-                    request_.RequestUri = new System.Uri(url_, System.UriKind.RelativeOrAbsolute);
-
-                    PrepareRequest(client_, request_, url_);
-
-                    var response_ = await client_.SendAsync(request_, System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
-                    var disposeResponse_ = true;
-                    try
-                    {
-                        var headers_ = System.Linq.Enumerable.ToDictionary(response_.Headers, h_ => h_.Key, h_ => h_.Value);
-                        if (response_.Content != null && response_.Content.Headers != null)
-                        {
-                            foreach (var item_ in response_.Content.Headers)
-                                headers_[item_.Key] = item_.Value;
-                        }
-
-                        ProcessResponse(client_, response_);
-
-                        var status_ = (int)response_.StatusCode;
-                        if (status_ == 204)
-                        {
-                            return;
-                        }
-                        else
-                        if (status_ == 404)
-                        {
-                            var objectResponse_ = await ReadObjectResponseAsync<ProblemDetails>(response_, headers_, cancellationToken).ConfigureAwait(false);
-                            if (objectResponse_.Object == null)
-                            {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
-                            }
-                            throw new ApiException<ProblemDetails>("Not Found", status_, objectResponse_.Text, headers_, objectResponse_.Object, null);
-                        }
-                        else
-                        {
-                            var objectResponse_ = await ReadObjectResponseAsync<ProblemDetails>(response_, headers_, cancellationToken).ConfigureAwait(false);
-                            if (objectResponse_.Object == null)
-                            {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
-                            }
-                            throw new ApiException<ProblemDetails>("Error", status_, objectResponse_.Text, headers_, objectResponse_.Object, null);
-                        }
-                    }
-                    finally
-                    {
-                        if (disposeResponse_)
-                            response_.Dispose();
-                    }
-                }
-            }
-            finally
-            {
-                if (disposeClient_)
-                    client_.Dispose();
-            }
-        }
-
-        /// <returns>No Content</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task FullAsync(string id, UpdateFormTypeBCommand body)
-        {
-            return FullAsync(id, body, System.Threading.CancellationToken.None);
-        }
-
-        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-        /// <returns>No Content</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task FullAsync(string id, UpdateFormTypeBCommand body, System.Threading.CancellationToken cancellationToken)
-        {
-            if (id == null)
-                throw new System.ArgumentNullException("id");
-
-            var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append("api/form/update/full/{id}");
-            urlBuilder_.Replace("{id}", System.Uri.EscapeDataString(ConvertToString(id, System.Globalization.CultureInfo.InvariantCulture)));
-
-            var client_ = _httpClient;
-            var disposeClient_ = false;
-            try
-            {
-                using (var request_ = new System.Net.Http.HttpRequestMessage())
-                {
-                    var content_ = new System.Net.Http.StringContent(System.Text.Json.JsonSerializer.Serialize(body, _settings.Value));
-                    content_.Headers.ContentType = System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json");
-                    request_.Content = content_;
-                    request_.Method = new System.Net.Http.HttpMethod("PUT");
-
-                    PrepareRequest(client_, request_, urlBuilder_);
-
-                    var url_ = urlBuilder_.ToString();
-                    request_.RequestUri = new System.Uri(url_, System.UriKind.RelativeOrAbsolute);
-
-                    PrepareRequest(client_, request_, url_);
-
-                    var response_ = await client_.SendAsync(request_, System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
-                    var disposeResponse_ = true;
-                    try
-                    {
-                        var headers_ = System.Linq.Enumerable.ToDictionary(response_.Headers, h_ => h_.Key, h_ => h_.Value);
-                        if (response_.Content != null && response_.Content.Headers != null)
-                        {
-                            foreach (var item_ in response_.Content.Headers)
-                                headers_[item_.Key] = item_.Value;
-                        }
-
-                        ProcessResponse(client_, response_);
-
-                        var status_ = (int)response_.StatusCode;
-                        if (status_ == 204)
-                        {
-                            return;
-                        }
-                        else
-                        if (status_ == 404)
-                        {
-                            var objectResponse_ = await ReadObjectResponseAsync<ProblemDetails>(response_, headers_, cancellationToken).ConfigureAwait(false);
-                            if (objectResponse_.Object == null)
-                            {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
-                            }
-                            throw new ApiException<ProblemDetails>("Not Found", status_, objectResponse_.Text, headers_, objectResponse_.Object, null);
-                        }
-                        else
-                        {
-                            var objectResponse_ = await ReadObjectResponseAsync<ProblemDetails>(response_, headers_, cancellationToken).ConfigureAwait(false);
-                            if (objectResponse_.Object == null)
-                            {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
-                            }
-                            throw new ApiException<ProblemDetails>("Error", status_, objectResponse_.Text, headers_, objectResponse_.Object, null);
-                        }
-                    }
-                    finally
-                    {
-                        if (disposeResponse_)
-                            response_.Dispose();
-                    }
-                }
-            }
-            finally
-            {
-                if (disposeClient_)
-                    client_.Dispose();
-            }
-        }
-
-        /// <returns>No Content</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task DocAsync(string id, UpdateFormTypeCCommand body)
-        {
-            return DocAsync(id, body, System.Threading.CancellationToken.None);
-        }
-
-        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-        /// <returns>No Content</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task DocAsync(string id, UpdateFormTypeCCommand body, System.Threading.CancellationToken cancellationToken)
-        {
-            if (id == null)
-                throw new System.ArgumentNullException("id");
-
-            var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append("api/form/update/doc/{id}");
-            urlBuilder_.Replace("{id}", System.Uri.EscapeDataString(ConvertToString(id, System.Globalization.CultureInfo.InvariantCulture)));
-
-            var client_ = _httpClient;
-            var disposeClient_ = false;
-            try
-            {
-                using (var request_ = new System.Net.Http.HttpRequestMessage())
-                {
-                    var content_ = new System.Net.Http.StringContent(System.Text.Json.JsonSerializer.Serialize(body, _settings.Value));
-                    content_.Headers.ContentType = System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json");
-                    request_.Content = content_;
-                    request_.Method = new System.Net.Http.HttpMethod("PUT");
-
-                    PrepareRequest(client_, request_, urlBuilder_);
-
-                    var url_ = urlBuilder_.ToString();
-                    request_.RequestUri = new System.Uri(url_, System.UriKind.RelativeOrAbsolute);
-
-                    PrepareRequest(client_, request_, url_);
-
-                    var response_ = await client_.SendAsync(request_, System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
-                    var disposeResponse_ = true;
-                    try
-                    {
-                        var headers_ = System.Linq.Enumerable.ToDictionary(response_.Headers, h_ => h_.Key, h_ => h_.Value);
-                        if (response_.Content != null && response_.Content.Headers != null)
-                        {
-                            foreach (var item_ in response_.Content.Headers)
-                                headers_[item_.Key] = item_.Value;
-                        }
-
-                        ProcessResponse(client_, response_);
-
-                        var status_ = (int)response_.StatusCode;
-                        if (status_ == 204)
-                        {
-                            return;
-                        }
-                        else
-                        if (status_ == 404)
-                        {
-                            var objectResponse_ = await ReadObjectResponseAsync<ProblemDetails>(response_, headers_, cancellationToken).ConfigureAwait(false);
-                            if (objectResponse_.Object == null)
-                            {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
-                            }
-                            throw new ApiException<ProblemDetails>("Not Found", status_, objectResponse_.Text, headers_, objectResponse_.Object, null);
-                        }
-                        else
-                        {
-                            var objectResponse_ = await ReadObjectResponseAsync<ProblemDetails>(response_, headers_, cancellationToken).ConfigureAwait(false);
-                            if (objectResponse_.Object == null)
-                            {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
-                            }
-                            throw new ApiException<ProblemDetails>("Error", status_, objectResponse_.Text, headers_, objectResponse_.Object, null);
-                        }
-                    }
-                    finally
-                    {
-                        if (disposeResponse_)
-                            response_.Dispose();
-                    }
-                }
-            }
-            finally
-            {
-                if (disposeClient_)
-                    client_.Dispose();
-            }
-        }
-
-        /// <returns>No Content</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task NmaAsync(string id, UpdateFormTypeDCommand body)
-        {
-            return NmaAsync(id, body, System.Threading.CancellationToken.None);
-        }
-
-        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-        /// <returns>No Content</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task NmaAsync(string id, UpdateFormTypeDCommand body, System.Threading.CancellationToken cancellationToken)
-        {
-            if (id == null)
-                throw new System.ArgumentNullException("id");
-
-            var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append("api/form/update/nma/{id}");
-            urlBuilder_.Replace("{id}", System.Uri.EscapeDataString(ConvertToString(id, System.Globalization.CultureInfo.InvariantCulture)));
-
-            var client_ = _httpClient;
-            var disposeClient_ = false;
-            try
-            {
-                using (var request_ = new System.Net.Http.HttpRequestMessage())
-                {
-                    var content_ = new System.Net.Http.StringContent(System.Text.Json.JsonSerializer.Serialize(body, _settings.Value));
-                    content_.Headers.ContentType = System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json");
-                    request_.Content = content_;
-                    request_.Method = new System.Net.Http.HttpMethod("PUT");
-
-                    PrepareRequest(client_, request_, urlBuilder_);
-
-                    var url_ = urlBuilder_.ToString();
-                    request_.RequestUri = new System.Uri(url_, System.UriKind.RelativeOrAbsolute);
-
-                    PrepareRequest(client_, request_, url_);
-
-                    var response_ = await client_.SendAsync(request_, System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
-                    var disposeResponse_ = true;
-                    try
-                    {
-                        var headers_ = System.Linq.Enumerable.ToDictionary(response_.Headers, h_ => h_.Key, h_ => h_.Value);
-                        if (response_.Content != null && response_.Content.Headers != null)
-                        {
-                            foreach (var item_ in response_.Content.Headers)
-                                headers_[item_.Key] = item_.Value;
-                        }
-
-                        ProcessResponse(client_, response_);
-
-                        var status_ = (int)response_.StatusCode;
-                        if (status_ == 204)
-                        {
-                            return;
-                        }
-                        else
-                        if (status_ == 404)
-                        {
-                            var objectResponse_ = await ReadObjectResponseAsync<ProblemDetails>(response_, headers_, cancellationToken).ConfigureAwait(false);
-                            if (objectResponse_.Object == null)
-                            {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
-                            }
-                            throw new ApiException<ProblemDetails>("Not Found", status_, objectResponse_.Text, headers_, objectResponse_.Object, null);
-                        }
-                        else
-                        {
-                            var objectResponse_ = await ReadObjectResponseAsync<ProblemDetails>(response_, headers_, cancellationToken).ConfigureAwait(false);
-                            if (objectResponse_.Object == null)
-                            {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
-                            }
-                            throw new ApiException<ProblemDetails>("Error", status_, objectResponse_.Text, headers_, objectResponse_.Object, null);
-                        }
-                    }
-                    finally
-                    {
-                        if (disposeResponse_)
-                            response_.Dispose();
-                    }
-                }
-            }
-            finally
-            {
-                if (disposeClient_)
-                    client_.Dispose();
-            }
-        }
-
-        /// <returns>No Content</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task VarAsync(string id, UpdateFormTypeECommand body)
-        {
-            return VarAsync(id, body, System.Threading.CancellationToken.None);
-        }
-
-        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-        /// <returns>No Content</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task VarAsync(string id, UpdateFormTypeECommand body, System.Threading.CancellationToken cancellationToken)
-        {
-            if (id == null)
-                throw new System.ArgumentNullException("id");
-
-            var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append("api/form/update/var/{id}");
-            urlBuilder_.Replace("{id}", System.Uri.EscapeDataString(ConvertToString(id, System.Globalization.CultureInfo.InvariantCulture)));
-
-            var client_ = _httpClient;
-            var disposeClient_ = false;
-            try
-            {
-                using (var request_ = new System.Net.Http.HttpRequestMessage())
-                {
-                    var content_ = new System.Net.Http.StringContent(System.Text.Json.JsonSerializer.Serialize(body, _settings.Value));
-                    content_.Headers.ContentType = System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json");
-                    request_.Content = content_;
-                    request_.Method = new System.Net.Http.HttpMethod("PUT");
-
-                    PrepareRequest(client_, request_, urlBuilder_);
-
-                    var url_ = urlBuilder_.ToString();
-                    request_.RequestUri = new System.Uri(url_, System.UriKind.RelativeOrAbsolute);
-
-                    PrepareRequest(client_, request_, url_);
-
-                    var response_ = await client_.SendAsync(request_, System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
-                    var disposeResponse_ = true;
-                    try
-                    {
-                        var headers_ = System.Linq.Enumerable.ToDictionary(response_.Headers, h_ => h_.Key, h_ => h_.Value);
-                        if (response_.Content != null && response_.Content.Headers != null)
-                        {
-                            foreach (var item_ in response_.Content.Headers)
-                                headers_[item_.Key] = item_.Value;
-                        }
-
-                        ProcessResponse(client_, response_);
-
-                        var status_ = (int)response_.StatusCode;
-                        if (status_ == 204)
-                        {
-                            return;
-                        }
-                        else
-                        if (status_ == 404)
-                        {
-                            var objectResponse_ = await ReadObjectResponseAsync<ProblemDetails>(response_, headers_, cancellationToken).ConfigureAwait(false);
-                            if (objectResponse_.Object == null)
-                            {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
-                            }
-                            throw new ApiException<ProblemDetails>("Not Found", status_, objectResponse_.Text, headers_, objectResponse_.Object, null);
-                        }
-                        else
-                        {
-                            var objectResponse_ = await ReadObjectResponseAsync<ProblemDetails>(response_, headers_, cancellationToken).ConfigureAwait(false);
-                            if (objectResponse_.Object == null)
-                            {
-                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
-                            }
-                            throw new ApiException<ProblemDetails>("Error", status_, objectResponse_.Text, headers_, objectResponse_.Object, null);
-                        }
-                    }
-                    finally
-                    {
-                        if (disposeResponse_)
-                            response_.Dispose();
-                    }
-                }
-            }
-            finally
-            {
-                if (disposeClient_)
-                    client_.Dispose();
-            }
-        }
-
-        /// <returns>No Content</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task DownloadAsync(System.Guid id)
-        {
-            return DownloadAsync(id, System.Threading.CancellationToken.None);
-        }
-
-        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-        /// <returns>No Content</returns>
-        /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task DownloadAsync(System.Guid id, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task DownloadFormByIdAsync(System.Guid id, System.Threading.CancellationToken cancellationToken)
         {
             if (id == null)
                 throw new System.ArgumentNullException("id");
@@ -1620,27 +781,22 @@ namespace Planerve.App.UI.Services.Base
 
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<FormDetailVM> Get2Async(System.Guid id, int? type)
+        public virtual System.Threading.Tasks.Task<FormDetailVM> GetFormByIdAsync(System.Guid id)
         {
-            return Get2Async(id, type, System.Threading.CancellationToken.None);
+            return GetFormByIdAsync(id, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<FormDetailVM> Get2Async(System.Guid id, int? type, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<FormDetailVM> GetFormByIdAsync(System.Guid id, System.Threading.CancellationToken cancellationToken)
         {
             if (id == null)
                 throw new System.ArgumentNullException("id");
 
             var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append("api/form/get/{id}?");
+            urlBuilder_.Append("api/form/get/{id}");
             urlBuilder_.Replace("{id}", System.Uri.EscapeDataString(ConvertToString(id, System.Globalization.CultureInfo.InvariantCulture)));
-            if (type != null)
-            {
-                urlBuilder_.Append(System.Uri.EscapeDataString("type") + "=").Append(System.Uri.EscapeDataString(ConvertToString(type, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
-            }
-            urlBuilder_.Length--;
 
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -1680,6 +836,99 @@ namespace Planerve.App.UI.Services.Base
                                 throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
                             return objectResponse_.Object;
+                        }
+                        else
+                        {
+                            var objectResponse_ = await ReadObjectResponseAsync<ProblemDetails>(response_, headers_, cancellationToken).ConfigureAwait(false);
+                            if (objectResponse_.Object == null)
+                            {
+                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                            }
+                            throw new ApiException<ProblemDetails>("Error", status_, objectResponse_.Text, headers_, objectResponse_.Object, null);
+                        }
+                    }
+                    finally
+                    {
+                        if (disposeResponse_)
+                            response_.Dispose();
+                    }
+                }
+            }
+            finally
+            {
+                if (disposeClient_)
+                    client_.Dispose();
+            }
+        }
+
+        /// <returns>No Content</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual System.Threading.Tasks.Task UpdateFormSectionByNameAsync(System.Guid id, string name, System.Collections.Generic.IDictionary<string, JsonNode> body)
+        {
+            return UpdateFormSectionByNameAsync(id, name, body, System.Threading.CancellationToken.None);
+        }
+
+        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        /// <returns>No Content</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual async System.Threading.Tasks.Task UpdateFormSectionByNameAsync(System.Guid id, string name, System.Collections.Generic.IDictionary<string, JsonNode> body, System.Threading.CancellationToken cancellationToken)
+        {
+            if (id == null)
+                throw new System.ArgumentNullException("id");
+
+            if (name == null)
+                throw new System.ArgumentNullException("name");
+
+            var urlBuilder_ = new System.Text.StringBuilder();
+            urlBuilder_.Append("api/form/update/{id}/section/{name}");
+            urlBuilder_.Replace("{id}", System.Uri.EscapeDataString(ConvertToString(id, System.Globalization.CultureInfo.InvariantCulture)));
+            urlBuilder_.Replace("{name}", System.Uri.EscapeDataString(ConvertToString(name, System.Globalization.CultureInfo.InvariantCulture)));
+
+            var client_ = _httpClient;
+            var disposeClient_ = false;
+            try
+            {
+                using (var request_ = new System.Net.Http.HttpRequestMessage())
+                {
+                    var content_ = new System.Net.Http.StringContent(System.Text.Json.JsonSerializer.Serialize(body, _settings.Value));
+                    content_.Headers.ContentType = System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json");
+                    request_.Content = content_;
+                    request_.Method = new System.Net.Http.HttpMethod("PUT");
+
+                    PrepareRequest(client_, request_, urlBuilder_);
+
+                    var url_ = urlBuilder_.ToString();
+                    request_.RequestUri = new System.Uri(url_, System.UriKind.RelativeOrAbsolute);
+
+                    PrepareRequest(client_, request_, url_);
+
+                    var response_ = await client_.SendAsync(request_, System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
+                    var disposeResponse_ = true;
+                    try
+                    {
+                        var headers_ = System.Linq.Enumerable.ToDictionary(response_.Headers, h_ => h_.Key, h_ => h_.Value);
+                        if (response_.Content != null && response_.Content.Headers != null)
+                        {
+                            foreach (var item_ in response_.Content.Headers)
+                                headers_[item_.Key] = item_.Value;
+                        }
+
+                        ProcessResponse(client_, response_);
+
+                        var status_ = (int)response_.StatusCode;
+                        if (status_ == 204)
+                        {
+                            return;
+                        }
+                        else
+                        if (status_ == 404)
+                        {
+                            var objectResponse_ = await ReadObjectResponseAsync<ProblemDetails>(response_, headers_, cancellationToken).ConfigureAwait(false);
+                            if (objectResponse_.Object == null)
+                            {
+                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                            }
+                            throw new ApiException<ProblemDetails>("Not Found", status_, objectResponse_.Text, headers_, objectResponse_.Object, null);
                         }
                         else
                         {
@@ -1872,152 +1121,35 @@ namespace Planerve.App.UI.Services.Base
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class ShareApplicationCommand
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("applicationId")]
-        public System.Guid ApplicationId { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("usernameOrEmail")]
-        public string UsernameOrEmail { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("editPermission")]
-        public bool EditPermission { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("readApplication")]
-        public bool ReadApplication { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("deleteApplication")]
-        public bool DeleteApplication { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("copyApplication")]
-        public bool CopyApplication { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("archiveApplication")]
-        public bool ArchiveApplication { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("shareApplication")]
-        public bool ShareApplication { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("readForm")]
-        public bool ReadForm { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("updateForm")]
-        public bool UpdateForm { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("downloadForm")]
-        public bool DownloadForm { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("expiryDate")]
-        public System.DateTime ExpiryDate { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class ApplicationDocumentDto
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("id")]
-        public System.Guid Id { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("documentCount")]
-        public int DocumentCount { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("completedRequirementsCount")]
-        public int CompletedRequirementsCount { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("totalRequirementCount")]
-        public int TotalRequirementCount { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("documentRequirements")]
-        public System.Collections.Generic.ICollection<DocumentRequirementDto> DocumentRequirements { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class ApplicationProgressDto
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("id")]
-        public System.Guid Id { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("applicationStatus")]
-        public string ApplicationStatus { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("progressPercentage")]
-        public int ProgressPercentage { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("formSectionsComplete")]
-        public bool FormSectionsComplete { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("plansAndDocsComplete")]
-        public bool PlansAndDocsComplete { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("calculatedFee")]
-        public bool CalculatedFee { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("submittedToLocalAuthority")]
-        public bool SubmittedToLocalAuthority { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class ApplicationTypeDto
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("id")]
-        public System.Guid Id { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("value")]
-        public int Value { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string Name { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("group")]
-        public string Group { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("description")]
-        public string Description { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("categoryName")]
-        public string CategoryName { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("categoryDescription")]
-        public string CategoryDescription { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class DocumentRequirementDto
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string Name { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("description")]
-        public string Description { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
     public partial class ApplicationDetailVm
     {
 
-        [System.Text.Json.Serialization.JsonPropertyName("id")]
-        public System.Guid Id { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("appId")]
+        public System.Guid AppId { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("applicationReference")]
-        public string ApplicationReference { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("appReference")]
+        public string AppReference { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("applicationName")]
-        public string ApplicationName { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("appName")]
+        public string AppName { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("versionNumber")]
-        public string VersionNumber { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("appVersion")]
+        public string AppVersion { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("createdBy")]
-        public string CreatedBy { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("appStatus")]
+        public string AppStatus { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("appType")]
+        public int AppType { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("appCategory")]
+        public int AppCategory { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("percentageComplete")]
+        public int PercentageComplete { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("owner")]
+        public string Owner { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("createdDate")]
         public System.DateTime CreatedDate { get; set; }
@@ -2028,14 +1160,8 @@ namespace Planerve.App.UI.Services.Base
         [System.Text.Json.Serialization.JsonPropertyName("lastModifiedDate")]
         public System.DateTime LastModifiedDate { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("type")]
-        public ApplicationTypeDto Type { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("document")]
-        public ApplicationDocumentDto Document { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("progress")]
-        public ApplicationProgressDto Progress { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("submission")]
+        public Submission Submission { get; set; }
 
     }
 
@@ -2043,20 +1169,32 @@ namespace Planerve.App.UI.Services.Base
     public partial class ApplicationListVm
     {
 
-        [System.Text.Json.Serialization.JsonPropertyName("id")]
-        public System.Guid Id { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("appId")]
+        public System.Guid AppId { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("applicationReference")]
-        public string ApplicationReference { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("appReference")]
+        public string AppReference { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("applicationName")]
-        public string ApplicationName { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("appName")]
+        public string AppName { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("versionNumber")]
-        public string VersionNumber { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("appVersion")]
+        public string AppVersion { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("createdBy")]
-        public string CreatedBy { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("appStatus")]
+        public string AppStatus { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("appType")]
+        public int AppType { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("appCategory")]
+        public int AppCategory { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("percentageComplete")]
+        public int PercentageComplete { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("owner")]
+        public string Owner { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("createdDate")]
         public System.DateTime CreatedDate { get; set; }
@@ -2067,935 +1205,8 @@ namespace Planerve.App.UI.Services.Base
         [System.Text.Json.Serialization.JsonPropertyName("lastModifiedDate")]
         public System.DateTime LastModifiedDate { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("type")]
-        public ApplicationTypeDto Type { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("document")]
-        public ApplicationDocumentDto Document { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("progress")]
-        public ApplicationProgressDto Progress { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class UpdateFormTypeACommand
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("id")]
-        public System.Guid Id { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("applicantSection")]
-        public ApplicantSectionDto ApplicantSection { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("agentSection")]
-        public AgentSectionDto AgentSection { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("proposalSection")]
-        public ProposalSectionDto ProposalSection { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("siteSection")]
-        public SiteSectionDto SiteSection { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("accessSection")]
-        public AccessSectionDto AccessSection { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("adviceSection")]
-        public AdviceSectionDto AdviceSection { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("treeAndHedgeSection")]
-        public TreeAndHedgeSectionDto TreeAndHedgeSection { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("parkingSection")]
-        public ParkingSectionDto ParkingSection { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("authorityMemberSection")]
-        public AuthorityMemberSectionDto AuthorityMemberSection { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("materialSection")]
-        public MaterialSectionDto MaterialSection { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("ownershipCertificationSection")]
-        public OwnershipCertificationSectionDto OwnershipCertificationSection { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("siteVisitSection")]
-        public SiteVisitSectionDto SiteVisitSection { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class UpdateFormTypeBCommand
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("id")]
-        public System.Guid Id { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("applicantSection")]
-        public ApplicantSectionDto ApplicantSection { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("agentSection")]
-        public AgentSectionDto AgentSection { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("proposalSection")]
-        public ProposalSectionDto ProposalSection { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("siteSection")]
-        public SiteSectionDto SiteSection { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("adviceSection")]
-        public AdviceSectionDto AdviceSection { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("accessSection")]
-        public AccessSectionDto AccessSection { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("wasteSection")]
-        public WasteSectionDto WasteSection { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("authorityMemberSection")]
-        public AuthorityMemberSectionDto AuthorityMemberSection { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("materialSection")]
-        public MaterialSectionDto MaterialSection { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("parkingSection")]
-        public ParkingSectionDto ParkingSection { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("foulSewageSection")]
-        public FoulSewageSectionDto FoulSewageSection { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("floodRiskSection")]
-        public FloodRiskSectionDto FloodRiskSection { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("biodiversitySection")]
-        public BiodiversitySectionDto BiodiversitySection { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("existingUseSection")]
-        public ExistingUseSectionDto ExistingUseSection { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("treeAndHedgeSection")]
-        public TreeAndHedgeSectionDto TreeAndHedgeSection { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("tradeEffluentSection")]
-        public TradeEffluentSectionDto TradeEffluentSection { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("employmentSection")]
-        public EmploymentSectionDto EmploymentSection { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("openingHoursSection")]
-        public OpeningHoursSectionDto OpeningHoursSection { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("industrialMachinerySection")]
-        public IndustrialMachinerySectionDto IndustrialMachinerySection { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("hazardousSubstanceSection")]
-        public HazardousSubstanceSectionDto HazardousSubstanceSection { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("ownershipCertificationSection")]
-        public OwnershipCertificationSectionDto OwnershipCertificationSection { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("siteVisitSection")]
-        public SiteVisitSectionDto SiteVisitSection { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class UpdateFormTypeCCommand
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("id")]
-        public System.Guid Id { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class UpdateFormTypeDCommand
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("id")]
-        public System.Guid Id { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class UpdateFormTypeECommand
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("id")]
-        public System.Guid Id { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class AccessSectionDto
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("id")]
-        public System.Guid Id { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("newVehicleAccess")]
-        public bool NewVehicleAccess { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("newAlteredPedestrianAccess")]
-        public bool NewAlteredPedestrianAccess { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("affectingRightOfWay")]
-        public bool AffectingRightOfWay { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("drawingReferenceNumbers")]
-        public string DrawingReferenceNumbers { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class AdviceSectionDto
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("adviceSought")]
-        public bool AdviceSought { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("contactTitle")]
-        public string ContactTitle { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("contactFirstName")]
-        public string ContactFirstName { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("contactLastName")]
-        public string ContactLastName { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("referenceNumber")]
-        public string ReferenceNumber { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("date")]
-        public System.DateTime Date { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("adviceDescription")]
-        public string AdviceDescription { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class AgentSectionDto
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("title")]
-        public string Title { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("firstName")]
-        public string FirstName { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("lastName")]
-        public string LastName { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("company")]
-        public string Company { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("addressLineOne")]
-        public string AddressLineOne { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("addressLineTwo")]
-        public string AddressLineTwo { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("addressLineThree")]
-        public string AddressLineThree { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("town")]
-        public string Town { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("country")]
-        public string Country { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("postcode")]
-        public string Postcode { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("email")]
-        public string Email { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("phone")]
-        public string Phone { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class ApplicantSectionDto
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("title")]
-        public string Title { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("firstName")]
-        public string FirstName { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("lastName")]
-        public string LastName { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("company")]
-        public string Company { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("copyFromSiteAddress")]
-        public bool CopyFromSiteAddress { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("addressLineOne")]
-        public string AddressLineOne { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("addressLineTwo")]
-        public string AddressLineTwo { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("addressLineThree")]
-        public string AddressLineThree { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("town")]
-        public string Town { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("country")]
-        public string Country { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("postcode")]
-        public string Postcode { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("isAgent")]
-        public bool IsAgent { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("email")]
-        public string Email { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("phone")]
-        public string Phone { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class AuthorityMemberSectionDto
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("isRelated")]
-        public bool IsRelated { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("relatedInformation")]
-        public string RelatedInformation { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class BiodiversitySectionDto
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("protectedSpecies")]
-        public int ProtectedSpecies { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("designatedSite")]
-        public int DesignatedSite { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("featuresOfGeological")]
-        public int FeaturesOfGeological { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class CertificateADto
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("role")]
-        public int Role { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("title")]
-        public string Title { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("firstName")]
-        public string FirstName { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("lastName")]
-        public string LastName { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("declarationDate")]
-        public System.DateTime DeclarationDate { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("declarationMade")]
-        public bool DeclarationMade { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class CertificateBDto
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("certifies")]
-        public bool Certifies { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("role")]
-        public int Role { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("title")]
-        public string Title { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("firstName")]
-        public string FirstName { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("lastName")]
-        public string LastName { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("declarationDate")]
-        public System.DateTime DeclarationDate { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("declarationMade")]
-        public bool DeclarationMade { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class CertificateCDto
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("stepsTakenDescription")]
-        public string StepsTakenDescription { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("publishedInPaper")]
-        public string PublishedInPaper { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("publishedDate")]
-        public System.DateTime PublishedDate { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("role")]
-        public int Role { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("title")]
-        public string Title { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("firstName")]
-        public string FirstName { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("lastName")]
-        public string LastName { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("declarationDate")]
-        public System.DateTime DeclarationDate { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("declarationMade")]
-        public bool DeclarationMade { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class CertificateDDto
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("stepsTaken")]
-        public string StepsTaken { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("publishedInPaper")]
-        public string PublishedInPaper { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("publishedDate")]
-        public System.DateTime PublishedDate { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("role")]
-        public int Role { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("title")]
-        public string Title { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("firstName")]
-        public string FirstName { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("lastName")]
-        public string LastName { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("declarationDate")]
-        public System.DateTime DeclarationDate { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("declarationMade")]
-        public bool DeclarationMade { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class EmploymentSectionDto
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("isEmploymentChanged")]
-        public bool IsEmploymentChanged { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("existingFullTime")]
-        public string ExistingFullTime { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("existingPartTime")]
-        public string ExistingPartTime { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("existingTotalFullTimeEquivalent")]
-        public string ExistingTotalFullTimeEquivalent { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("proposedFullTime")]
-        public string ProposedFullTime { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("proposedPartTime")]
-        public string ProposedPartTime { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("proposedTotalFullTimeEquivalent")]
-        public string ProposedTotalFullTimeEquivalent { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class ExistingUseSectionDto
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("currentUseDescription")]
-        public string CurrentUseDescription { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("isVacant")]
-        public bool IsVacant { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("lastUseDescription")]
-        public string LastUseDescription { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("useEnded")]
-        public System.DateTime UseEnded { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("landToBeContaminated")]
-        public bool LandToBeContaminated { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("partLandToBeContaminated")]
-        public bool PartLandToBeContaminated { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("useSusceptibleToContamination")]
-        public bool UseSusceptibleToContamination { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class FloodRiskSectionDto
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("isFloodRisk")]
-        public bool IsFloodRisk { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("proximityOfWatercourse")]
-        public bool ProximityOfWatercourse { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("increaseFloodRisk")]
-        public bool IncreaseFloodRisk { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("sustainableDrainage")]
-        public bool SustainableDrainage { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("existingWaterCourse")]
-        public bool ExistingWaterCourse { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("soakaway")]
-        public bool Soakaway { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("mainSewer")]
-        public bool MainSewer { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("pondLake")]
-        public bool PondLake { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class FoulSewageSectionDto
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("otherMethod")]
-        public string OtherMethod { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("connectingToExistingDrainage")]
-        public bool ConnectingToExistingDrainage { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("documentReferences")]
-        public string DocumentReferences { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("mainsSewer")]
-        public bool MainsSewer { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("septicTank")]
-        public bool SepticTank { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("packageTreatmentPlant")]
-        public bool PackageTreatmentPlant { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("cessPit")]
-        public bool CessPit { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("other")]
-        public bool Other { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("unknown")]
-        public bool Unknown { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class HazardousSubstanceSectionDto
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("involvesHazardousSubstances")]
-        public bool InvolvesHazardousSubstances { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("substances")]
-        public System.Collections.Generic.ICollection<SubstanceDto> Substances { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class IndustrialMachinerySectionDto
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("processesAndProducts")]
-        public string ProcessesAndProducts { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("doesInvolveIndustrialCommercial")]
-        public bool DoesInvolveIndustrialCommercial { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("isProposalWasteManagementDevelopment")]
-        public bool IsProposalWasteManagementDevelopment { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("wasteManagementDetails")]
-        public System.Collections.Generic.ICollection<WasteManagementDetailDto> WasteManagementDetails { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("wasteStreamDetails")]
-        public System.Collections.Generic.ICollection<WasteStreamDetailDto> WasteStreamDetails { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class MaterialSectionDto
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("materialsRequired")]
-        public bool MaterialsRequired { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("materialTypes")]
-        public System.Collections.Generic.ICollection<MaterialTypeDto> MaterialTypes { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("additionalInformation")]
-        public bool AdditionalInformation { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("documentReference")]
-        public string DocumentReference { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class MaterialTypeDto
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string Name { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("existingMaterial")]
-        public string ExistingMaterial { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("proposedMaterial")]
-        public string ProposedMaterial { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class OpeningHoursSectionDto
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("isRelevant")]
-        public bool IsRelevant { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("useClasses")]
-        public System.Collections.Generic.ICollection<UseClassDto> UseClasses { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class OwnershipCertificationSectionDto
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("selectedCertificate")]
-        public int SelectedCertificate { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("soleOwner")]
-        public bool SoleOwner { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("isAgriculturalHolding")]
-        public bool IsAgriculturalHolding { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("giveAppropriateNotice")]
-        public bool GiveAppropriateNotice { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("giveSomeNotice")]
-        public bool GiveSomeNotice { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("certificateA")]
-        public CertificateADto CertificateA { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("certificateB")]
-        public CertificateBDto CertificateB { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("certificateC")]
-        public CertificateCDto CertificateC { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("certificateD")]
-        public CertificateDDto CertificateD { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("persons")]
-        public System.Collections.Generic.ICollection<PersonDto> Persons { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class ParkingSectionDto
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("affectingParking")]
-        public bool AffectingParking { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("parkingDescription")]
-        public string ParkingDescription { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class PersonDto
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("certificateId")]
-        public int CertificateId { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string Name { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("houseName")]
-        public string HouseName { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("houseNumber")]
-        public string HouseNumber { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("addressLineOne")]
-        public string AddressLineOne { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("addressLineTwo")]
-        public string AddressLineTwo { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("addressLineThree")]
-        public string AddressLineThree { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("town")]
-        public string Town { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("postcode")]
-        public string Postcode { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("noticeServed")]
-        public System.DateTime NoticeServed { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class ProposalSectionDto
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("description")]
-        public string Description { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("hasStarted")]
-        public bool HasStarted { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("startDate")]
-        public System.DateTime StartDate { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("hasCompleted")]
-        public bool HasCompleted { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("completionDate")]
-        public System.DateTime CompletionDate { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class SiteSectionDto
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("autoPopulated")]
-        public bool AutoPopulated { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("houseNumber")]
-        public string HouseNumber { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("propertyName")]
-        public string PropertyName { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("addressLineOne")]
-        public string AddressLineOne { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("addressLineTwo")]
-        public string AddressLineTwo { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("addressLineThree")]
-        public string AddressLineThree { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("town")]
-        public string Town { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("postcode")]
-        public string Postcode { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("easting")]
-        public string Easting { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("northing")]
-        public string Northing { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("description")]
-        public string Description { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class SiteVisitSectionDto
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("siteVisible")]
-        public bool SiteVisible { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("appointmentContactType")]
-        public int AppointmentContactType { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("title")]
-        public string Title { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("firstName")]
-        public string FirstName { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("lastName")]
-        public string LastName { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("phone")]
-        public string Phone { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("email")]
-        public string Email { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class SubstanceDto
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string Name { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("amount")]
-        public int Amount { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class TradeEffluentSectionDto
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("disposeTradeWaste")]
-        public bool DisposeTradeWaste { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("tradeWasteDescription")]
-        public bool TradeWasteDescription { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class TreeAndHedgeSectionDto
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("fallingTreesHedge")]
-        public bool FallingTreesHedge { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("fallingTreeHedgeReference")]
-        public string FallingTreeHedgeReference { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("treeHedgeRemoved")]
-        public bool TreeHedgeRemoved { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("treeHedgeRemovedReference")]
-        public string TreeHedgeRemovedReference { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class UseClassDto
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("type")]
-        public int Type { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("isKnown")]
-        public bool IsKnown { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("mtoFStart")]
-        public System.DateTime MtoFStart { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("mtoFEnd")]
-        public System.DateTime MtoFEnd { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("saturdayStart")]
-        public System.DateTime SaturdayStart { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("saturdayEnd")]
-        public System.DateTime SaturdayEnd { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("specialStart")]
-        public System.DateTime SpecialStart { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("specialEnd")]
-        public System.DateTime SpecialEnd { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class WasteManagementDetailDto
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("wasteManagementType")]
-        public string WasteManagementType { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("totalVoidCapacityVolumeUnit")]
-        public string TotalVoidCapacityVolumeUnit { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("maxAnnualOperationalThroughputVolumeUnit")]
-        public string MaxAnnualOperationalThroughputVolumeUnit { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("totalVoidCapacity")]
-        public int TotalVoidCapacity { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("maxAnnualOperationalThroughput")]
-        public int MaxAnnualOperationalThroughput { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class WasteSectionDto
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("storeCollectWaste")]
-        public bool StoreCollectWaste { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("storeCollectWasteDetails")]
-        public string StoreCollectWasteDetails { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("storeCollectRecyclableWaste")]
-        public bool StoreCollectRecyclableWaste { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("storeCollectRecyclableWasteDetails")]
-        public string StoreCollectRecyclableWasteDetails { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class WasteStreamDetailDto
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("wasteStreamType")]
-        public string WasteStreamType { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("maxAnnualOperationalThroughputVolumeUnit")]
-        public string MaxAnnualOperationalThroughputVolumeUnit { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("maxAnnualOperationalThroughput")]
-        public int MaxAnnualOperationalThroughput { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("submission")]
+        public Submission Submission { get; set; }
 
     }
 
@@ -3050,6 +1261,66 @@ namespace Planerve.App.UI.Services.Base
 
         [System.Text.Json.Serialization.JsonPropertyName("username")]
         public string Username { get; set; }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class Submission
+    {
+
+        [System.Text.Json.Serialization.JsonPropertyName("owner")]
+        public string Owner { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("createdDate")]
+        public System.DateTime CreatedDate { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("lastModifiedBy")]
+        public string LastModifiedBy { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("lastModifiedDate")]
+        public System.DateTime? LastModifiedDate { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("submissionId")]
+        public System.Guid SubmissionId { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("formType")]
+        public int FormType { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("typeName")]
+        public string TypeName { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("categoryName")]
+        public string CategoryName { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("typeDescription")]
+        public string TypeDescription { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("formId")]
+        public System.Guid FormId { get; set; }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class JsonNode
+    {
+
+        [System.Text.Json.Serialization.JsonPropertyName("options")]
+        public JsonNodeOptions Options { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("parent")]
+        public JsonNode Parent { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("root")]
+        public JsonNode Root { get; set; }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class JsonNodeOptions
+    {
+
+        [System.Text.Json.Serialization.JsonPropertyName("propertyNameCaseInsensitive")]
+        public bool PropertyNameCaseInsensitive { get; set; }
 
     }
 

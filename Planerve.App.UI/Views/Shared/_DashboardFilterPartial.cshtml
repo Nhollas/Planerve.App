@@ -7,14 +7,14 @@
         <div class="flex flex-col max-w-lg justify-self-center w-full">
             <div class="bg-gray-50 border-[1px] border-gray-300 flex flex-col gap-3 justify-center px-5 w-full py-5 relative">
                 <div class="flex flex-row">
-                    <a class="text-lg text-blue-600 underline font-semibold cursor-pointer" asp-contoller="Application" asp-action="View" asp-route-id="@item.Id">@item.ApplicationName</a>
+                    <a class="text-lg text-blue-600 underline font-semibold cursor-pointer" asp-contoller="Application" asp-action="View" asp-route-id="@item.AppId">@item.AppName</a>
                     <h2 class="text-lg font-semibold ml-auto uppercase">DRAFT</h2>
                 </div>
                 <p>@item.CreatedDate</p>
             </div>
             <div class="flex flex-row w-full bg-[#001534] px-5 py-3">
-                <p class="text-white text-sm">Ref: @item.ApplicationReference</p>
-                <p class="text-white text-sm ml-auto">Version: @item.VersionNumber</p>
+                <p class="text-white text-sm">Ref: @item.AppReference</p>
+                <p class="text-white text-sm ml-auto">Version: @item.AppVersion</p>
             </div>
         </div>
     }

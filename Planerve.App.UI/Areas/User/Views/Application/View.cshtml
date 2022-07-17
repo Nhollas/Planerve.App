@@ -3,7 +3,7 @@
 
 @{
     Layout = "_AuthenticatedLayout";
-    ViewBag.Title = @Model.ApplicationReference;
+    ViewBag.Title = @Model.AppReference;
 }
 
 <div class="flex flex-col w-full justify-center items-center mt-12">
@@ -14,16 +14,15 @@
                         Application
                     </h2>
                     <div class="flex flex-row">
-                        <h1 class="text-4xl font-poppins font-semibold">@Model.ApplicationReference</h1>
+                        <h1 class="text-4xl font-poppins font-semibold">@Model.AppReference</h1>
                         <button class="bg-gray-50 border-[1px] border-gray-300 font-poppins font-semibold w-max px-6 py-2 rounded-lg ml-auto">
                             Actions
                         </button>
                     </div>
             </section>
             <section class="flex flex-col w-full gap-4">
-                <p class="text-xl font-poppins">@Model.ApplicationName</p>
+                <p class="text-xl font-poppins">@Model.AppName</p>
                 <div class="flex flex-row">
-                    <p class="text-base font-poppins">@Model.Type.Name</p>
                     <p class="text-base font-poppins ml-auto">@Model.CreatedDate.ToShortDateString()</p>
                 </div>
             </section>
@@ -34,7 +33,6 @@
             </div>
             <section class="flex flex-col gap-4 w-full bg-gray-50 border-[1px] border-gray-300 p-5 max-w-lg">
                 <h2 class="text-base font-medium font-poppins">Application Questions</h2>
-                <a asp-action="View" asp-controller="Form" asp-route-id="@Model.Id, @Model.Type.Value" class="border-[1px] border-blue-500 bg-blue-300 h-10 px-4 text-gray-900 font-medium font-poppins mx-16">Continue</a>
             </section>
             <section class="flex flex-col gap-4 w-full bg-gray-50 border-[1px] border-gray-300 p-5 max-w-lg">
                 <h2 class="text-base font-medium font-poppins">Add Plans & Documents</h2>
